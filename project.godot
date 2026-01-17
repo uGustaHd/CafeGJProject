@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="CafeGJProject"
+run/main_scene="uid://bdqjd2ergavof"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://global.gd"
 
 [rendering]
 

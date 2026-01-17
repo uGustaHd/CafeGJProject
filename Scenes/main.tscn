@@ -1,3 +1,19 @@
-[gd_scene format=3 uid="uid://bdqjd2ergavof"]
+[gd_scene load_steps=5 format=3 uid="uid://bdqjd2ergavof"]
+
+[ext_resource type="Script" uid="uid://dbtic8k4hhs0a" path="res://Scenes/main.gd" id="1_8gbba"]
+[ext_resource type="PackedScene" uid="uid://df1d5o4oc5m1e" path="res://Scenes/Customers/customer_manager.tscn" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://ucuv03tdxv54" path="res://Scenes/Customers/customer.tscn" id="2_bo1nx"]
+[ext_resource type="Script" uid="uid://ciewvhcpryhfs" path="res://Scenes/card_manager.gd" id="4_jjvhh"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_8gbba")
+
+[node name="CustomerManager" parent="." node_paths=PackedStringArray("spawn_position") instance=ExtResource("1_jjgbg")]
+customer_scene = ExtResource("2_bo1nx")
+spawn_position = NodePath("../CustomerSpawn")
+
+[node name="CustomerSpawn" type="Marker2D" parent="."]
+position = Vector2(568, 294)
+
+[node name="CardManager" type="Node2D" parent="."]
+script = ExtResource("4_jjvhh")
