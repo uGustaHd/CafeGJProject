@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://df1d5o4oc5m1e"]
 
-[ext_resource type="Script" uid="uid://dv334d2gisrpa" path="res://customer_manager.gd" id="1_rmo1i"]
+[ext_resource type="Script" uid="uid://dv334d2gisrpa" path="res://Scripts/Customers/customer_manager.gd" id="1_rmo1i"]
 
 [node name="Customer Manager" type="Node2D"]
 script = ExtResource("1_rmo1i")

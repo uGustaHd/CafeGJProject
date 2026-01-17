@@ -9,7 +9,7 @@ func _process(_delta: float) -> void:
 			"Red"  : 1
 		}
 		deliver_cards(card_dict)
-		print("- Deliver ui_up")
+		print("Input emulateded: \n1x Blue\n2x Green\n1x Red")
 	elif Input.is_action_just_pressed("ui_down"):
 		var card_dict = {
 			"Blue": 1,
@@ -17,7 +17,7 @@ func _process(_delta: float) -> void:
 			"Red"  : 2
 		}
 		deliver_cards(card_dict)
-		print("- Deliver ui_down")
+		print("Input emulateded: \n1x Blue\n1x Green\n2x Red")
 signal item_delivered(card_dict: Dictionary)
 func deliver_cards(card_dict: Dictionary):
 	emit_signal("item_delivered", card_dict)

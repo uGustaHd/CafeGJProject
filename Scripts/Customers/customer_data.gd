@@ -31,10 +31,10 @@ enum RequestType {POTION, ITEM, SERVICE}
 @export var anguish_on_kill : float
 
 @export_group("Dialogs")
-@export var dialog_intro  : String
-@export var dialog_success : String
-@export var dialog_fail   : String
-@export var dialog_kill   : String
+@export var dialog_intro   : Array[String]
+@export var dialog_success : Array[String]
+@export var dialog_fail    : Array[String]
+@export var dialog_kill    : Array[String]
 
 @export_group("Spawn Rules")
 @export var spawn_weight      : int # Relative chance of this customer being selected during spawn
