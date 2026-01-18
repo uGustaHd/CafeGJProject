@@ -25,7 +25,7 @@ func _ready() -> void:
 	
 	#TO-DO Connect a signal with the potion that the player gave to the NPC
 	var card_manager = get_tree().current_scene.get_node("CardManager")
-	card_manager.connect("item_delivered", Callable(self, "_on_cards_delivered"))
+	card_manager.connect("potion_delivered", Callable(self, "_on_potion_delivered"))
 	
 	await get_tree().process_frame
 	var dialog = DialogManager.start_dialog(customer_data.dialog_intro, global_position + dialog_offset)
@@ -34,13 +34,17 @@ func _ready() -> void:
 	_type_request(request_text)
 	
 #Signal
-func _on_cards_delivered(card_dict: Dictionary) -> void: 
-	var success = true
+func _on_potion_delivered(potion : Potion) -> void: 
+	var success : bool = false
 	
-	for key in current_request.keys():
-		if !card_dict.has(key) || card_dict[key] < current_request[key]:
-			success = false
-			break
+	#for key in current_request.keys():
+		#if !card_dict.has(key) or card_dict[key] < current_request[key]:
+			#success = false
+			#break
+			
+	# NOTE: Recommend replace with check against a requested potion resource.
+	if potion.blue >= current_request["Blue"] and potion.green >= current_request["Green"] and potion.red >= current_request["Red"]:
+			success = true
 		
 	if success:
 		on_request_success()
