@@ -16,7 +16,7 @@ enum RequestType {POTION, ITEM, SERVICE}
 # List of possible requests this customer can make
 # One request will be randomly selected when the customer spawns
 # Each request is represented as a Dictionary (ex { "green": 1, "blue": 2 })
-@export var possible_requests: Array[Dictionary]
+@export var possible_requests: Potion
 
 @export_group("Consequences")
 @export var joy_on_success     : float

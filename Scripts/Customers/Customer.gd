@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var customer_data: CustomerData
-var current_request: Dictionary
+var current_request: Potion
 var dialog_offset: Vector2 = Vector2(0,110)
 var request_text: String
 @onready var request_box = $RequestBox
@@ -12,7 +12,7 @@ signal died
 func setup():
 	if customer_data != null:
 		$Sprite2D.texture = customer_data.sprite
-		current_request = customer_data.possible_requests.pick_random()
+		current_request = customer_data.possible_requests
 		#request_text = _build_request_text(Potion.new()) #"I want \n" + str(current_request.get("Blue")) + "x Blue\n" +  str(current_request.get("Green")) + "x Green\n" + str(current_request.get("Red")) + "x Red" 
 		request_box.visible = false
 		request_box.position = position + Vector2(100,-50)
@@ -38,17 +38,16 @@ func _ready() -> void:
 	
 #Signal
 func _on_potion_delivered(potion : Potion) -> void: 
-	var success : bool = false
+	var success : bool = true
 	
-	#for key in current_request.keys():
-		#if !card_dict.has(key) or card_dict[key] < current_request[key]:
-			#success = false
-			#break
-			
 	# NOTE: Recommend replace with check against a requested potion resource.
 	# TODO: Replace request Dictionary with a RequestResource
-	if potion.blue >= current_request["Blue"] and potion.green >= current_request["Green"] and potion.red >= current_request["Red"]:
-			success = true
+	#if potion.blue >= current_request["Blue"] and potion.green >= current_request["Green"] and potion.red >= current_request["Red"]:
+	var i = 0
+	for color in potion.colors:
+		if color < current_request.colors[i]:
+			success = false
+		i += 1
 		
 	if success:
 		on_request_success()
@@ -84,9 +83,9 @@ func show_request(potion: Potion):
 	text_node.clear()
 	_type_request("I want: \n")
 	var lines := []
-	lines.append(_build_line("Blue", potion.blue, current_request["Blue"]))
-	lines.append(_build_line("Green", potion.green, current_request["Green"]))
-	lines.append(_build_line("Red", potion.red, current_request["Red"]))
+	lines.append(_build_line("Blue", potion.blue, current_request.blue))
+	lines.append(_build_line("Green", potion.green, current_request.green))
+	lines.append(_build_line("Red", potion.red, current_request.red))
 	for line in lines:
 		await get_tree().create_timer(0.45).timeout
 		text_node.append_text(line + "\n")
@@ -94,9 +93,9 @@ func show_request(potion: Potion):
 	
 func _build_request_text(potion: Potion) -> String:
 	var text: String
-	var blue = _build_line("Blue", potion.blue, current_request["Blue"]) + "\n"
-	var green = _build_line("Green", potion.green, current_request["Green"]) + "\n"
-	var red = _build_line("Red", potion.red, current_request["Red"])
+	var blue = _build_line("Blue", potion.blue, current_request.blue) + "\n"
+	var green = _build_line("Green", potion.green, current_request.green) + "\n"
+	var red = _build_line("Red", potion.red, current_request.red)
 	text = "I want: \n" + blue + green + red 
 	return text
 	

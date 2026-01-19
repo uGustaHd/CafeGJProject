@@ -1,18 +1,22 @@
-[gd_resource type="Resource" script_class="CustomerData" load_steps=3 format=3 uid="uid://cy20xvr7sjw4w"]
+[gd_resource type="Resource" script_class="CustomerData" load_steps=5 format=3 uid="uid://cy20xvr7sjw4w"]
 
+[ext_resource type="Script" uid="uid://bs2svv3l66wt8" path="res://card system/potion.gd" id="1_1jy26"]
 [ext_resource type="Script" uid="uid://bdem1ni82ca3x" path="res://Scripts/Customers/customer_data.gd" id="1_f3gjh"]
 [ext_resource type="Texture2D" uid="uid://nu30movbqld2" path="res://icon.svg" id="2_b7g5a"]
+
+[sub_resource type="Resource" id="Resource_f44fo"]
+script = ExtResource("1_1jy26")
+blue = 1
+green = 1
+red = 2
+metadata/_custom_type_script = "uid://bs2svv3l66wt8"
 
 [resource]
 script = ExtResource("1_f3gjh")
 name = "Villager01"
 id = "Villager01"
 sprite = ExtResource("2_b7g5a")
-possible_requests = Array[Dictionary]([{
-"Blue": 1,
-"Green": 1,
-"Red": 2
-}])
+possible_requests = SubResource("Resource_f44fo")
 joy_on_success = 10.0
 anguish_on_success = -5.0
 joy_on_fail = -5.0
