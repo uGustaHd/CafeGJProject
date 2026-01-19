@@ -82,17 +82,6 @@ func _type_request(text: String):
 func show_request(potion: Potion):
 	var text_node := $RequestBox/TextBox/RequestText
 	text_node.clear()
-	#text_node.append_text("I want:\n")
-	#text_node.append_text(
-	#	_build_line("Blue", potion.blue, current_request["Blue"]) + "\n" +
-	#	_build_line("Green", potion.green, current_request["Green"]) + "\n" +
-	#	_build_line("Red", potion.red, current_request["Red"])
-	#)
-	
-	#no color
-	#_type_request(_build_request_text(potion))
-	
-	#line by line
 	_type_request("I want: \n")
 	var lines := []
 	lines.append(_build_line("Blue", potion.blue, current_request["Blue"]))
@@ -108,7 +97,6 @@ func _build_request_text(potion: Potion) -> String:
 	var blue = _build_line("Blue", potion.blue, current_request["Blue"]) + "\n"
 	var green = _build_line("Green", potion.green, current_request["Green"]) + "\n"
 	var red = _build_line("Red", potion.red, current_request["Red"])
-	#blue - green - red
 	text = "I want: \n" + blue + green + red 
 	return text
 	
@@ -116,11 +104,10 @@ func _build_line(color_name: String, current_amount: int, required_amount: int) 
 	var display_amount = min(current_amount, required_amount)
 	var done := current_amount >= required_amount
 	var color := '#6CCF7D' if done else "#E06C75"
-	#var prefix := "✔ " if done else "✖ "
+	var prefix := "✔ " if done else "✖ "
 
-	#return prefix + str(display_amount) + "/" + str(required_amount) + " " + color_name
-	return "[color=%s] %d/%d %s [/color]" % [
-		color, display_amount, required_amount, color_name
-	]
+	if done: return "[color=%s]%s [s]%d/%d %s[/s][/color]" % [color, prefix, display_amount, required_amount, color_name]
+	else: return "[color=%s]%s %d/%d %s[/color]" % [color, prefix, display_amount, required_amount, color_name]
+	
 func _on_potion_changed(potion: Potion):
 	$RequestBox/TextBox/RequestText.text = _build_request_text(potion)

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dkow2xel27at7" path="res://Scripts/Customers/Customer.gd" id="1_3x0r2"]
 [ext_resource type="Resource" uid="uid://cy20xvr7sjw4w" path="res://Resources/Custumers/villager_01.tres" id="2_d3c6d"]
-[ext_resource type="Texture2D" uid="uid://dujo8nisl024s" path="res://Assets/Sprites/TextBox/TextBoxPlaceholder.png" id="3_berbd"]
+[ext_resource type="Texture2D" uid="uid://doudji7y3wcd4" path="res://Assets/Sprites/TextBox/Ver4.png" id="3_berbd"]
 
 [node name="Customer" type="Node2D"]
 script = ExtResource("1_3x0r2")
@@ -28,12 +28,6 @@ theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
-
-[node name="oldRequestText" type="Label" parent="RequestBox/TextBox"]
-custom_minimum_size = Vector2(48, 48)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-vertical_alignment = 1
 
 [node name="RequestText" type="RichTextLabel" parent="RequestBox/TextBox"]
 layout_mode = 2

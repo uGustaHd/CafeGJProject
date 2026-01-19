@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dujo8nisl024s"
-path="res://.godot/imported/TextBoxPlaceholder.png-1093c25f92f0b5392b08f7605ed8d878.ctex"
+uid="uid://o8w6dii46nt2"
+path="res://.godot/imported/Ver3.png-d39296f5fcda0b6328f7472bda52812c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/TextBox/TextBoxPlaceholder.png"
-dest_files=["res://.godot/imported/TextBoxPlaceholder.png-1093c25f92f0b5392b08f7605ed8d878.ctex"]
+source_file="res://Assets/Sprites/TextBox/Ver3.png"
+dest_files=["res://.godot/imported/Ver3.png-d39296f5fcda0b6328f7472bda52812c.ctex"]
 
 [params]
 
