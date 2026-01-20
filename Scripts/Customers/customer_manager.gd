@@ -31,5 +31,5 @@ func _on_customer_finished():
 
 
 func _on_kill_button_pressed() -> void:
-	if current_customer == null : pass
+	if current_customer == null : return
 	current_customer.die()

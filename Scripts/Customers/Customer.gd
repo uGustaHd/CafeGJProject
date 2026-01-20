@@ -48,23 +48,20 @@ func _on_intro_finished():
 
 #Signal
 func _on_potion_delivered(potion : Potion) -> void: 
-	var success : bool = true
-	
 	# NOTE: Recommend replace with check against a requested potion resource.
 	# TODO: Replace request Dictionary with a RequestResource
 	#if potion.blue >= current_request["Blue"] and potion.green >= current_request["Green"] and potion.red >= current_request["Red"]:
-	var i = 0
-	for color in potion.colors:
-		print_debug("Player color: ", color, " vs Request: ", current_request.colors[i])
-		if color < current_request.colors[i]:
+	var success := true
+	for i in range(3): # 0 = blue, 1 = green, 2 = red
+		var player_color = potion.colors[i]
+		var request_color = current_request.colors[i]
+		#print("\nChecking color ", i, ": player=", player_color, " request=", request_color)
+		if player_color < request_color:
 			success = false
-		i += 1
-		
 	if success:
 		on_request_success()
 	else:
 		on_request_fail()
-	
 func on_request_success():
 	Global.joy += customer_data.joy_on_success
 	Global.anguish += customer_data.anguish_on_success
