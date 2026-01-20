@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CustomerData" load_steps=5 format=3 uid="uid://cy20xvr7sjw4w"]
 
-[ext_resource type="Script" uid="uid://bs2svv3l66wt8" path="res://card system/potion.gd" id="1_1jy26"]
+[ext_resource type="Script" uid="uid://bs2svv3l66wt8" path="res://card system/misc/potion.gd" id="1_1jy26"]
 [ext_resource type="Script" uid="uid://bdem1ni82ca3x" path="res://Scripts/Customers/customer_data.gd" id="1_f3gjh"]
 [ext_resource type="Texture2D" uid="uid://nu30movbqld2" path="res://icon.svg" id="2_b7g5a"]
 

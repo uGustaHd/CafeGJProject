@@ -1,0 +1,42 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://bu0iimg40ehu2"
+path="res://.godot/imported/Jersey10-Regular.ttf-b5eeed23e7f9bb23e8be96b72cf35c65.fontdata"
+
+[deps]
+
+source_file="res://card system/card_assets/Jersey10-Regular.ttf"
+dest_files=["res://.godot/imported/Jersey10-Regular.ttf-b5eeed23e7f9bb23e8be96b72cf35c65.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=0
+generate_mipmaps=true
+disable_embedded_bitmaps=true
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+modulate_color_glyphs=false
+hinting=0
+subpixel_positioning=1
+keep_rounding_remainders=false
+oversampling=10.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[{
+"chars": [],
+"glyphs": [],
+"name": "New Configuration",
+"size": Vector2i(16, 0),
+&"variation_embolden": 0.0
+}]
+language_support={}
+script_support={}
+opentype_features={}

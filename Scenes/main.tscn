@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdqjd2ergavof"]
+[gd_scene load_steps=7 format=3 uid="uid://bdqjd2ergavof"]
 
 [ext_resource type="Script" uid="uid://dbtic8k4hhs0a" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://df1d5o4oc5m1e" path="res://Scenes/Customers/customer_manager.tscn" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://ucuv03tdxv54" path="res://Scenes/Customers/Customer.tscn" id="2_bo1nx"]
 [ext_resource type="Script" uid="uid://ciewvhcpryhfs" path="res://Scripts/Cards/card_manager.gd" id="4_jjvhh"]
-[ext_resource type="Script" uid="uid://cilybldurbx2h" path="res://card system/potion_holder.gd" id="5_kry3j"]
+[ext_resource type="Script" uid="uid://cilybldurbx2h" path="res://card system/misc/potion_holder.gd" id="5_kry3j"]
+[ext_resource type="PackedScene" uid="uid://dpq273vjk1ck" path="res://card system/card_generic.tscn" id="6_21xkr"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_8gbba")
@@ -21,3 +22,6 @@ script = ExtResource("4_jjvhh")
 
 [node name="PotionHolder" type="Node" parent="CardManager"]
 script = ExtResource("5_kry3j")
+
+[node name="CardGeneric" parent="CardManager" instance=ExtResource("6_21xkr")]
+position = Vector2(533, 435)

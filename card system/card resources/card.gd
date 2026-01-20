@@ -1,5 +1,5 @@
 extends Resource
-class_name card
+class_name Card
 
 
 #region properties
