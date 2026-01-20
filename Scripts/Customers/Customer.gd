@@ -13,7 +13,9 @@ func setup():
 	if customer_data != null:
 		$Sprite2D.texture = customer_data.sprite
 		#NOTE: Currently only generates a potion of difficulty 1 every time.
-		current_request = customer_data.possible_requests.generate_potion(1)
+		var new_request = Potion.new()
+		new_request.generate_potion(1)
+		current_request = new_request
 		#request_text = _build_request_text(Potion.new()) #"I want \n" + str(current_request.get("Blue")) + "x Blue\n" +  str(current_request.get("Green")) + "x Green\n" + str(current_request.get("Red")) + "x Red" 
 		request_box.visible = false
 		request_box.position = position + Vector2(100,-50)
