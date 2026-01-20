@@ -5,6 +5,9 @@ var dialog_box = null
 var is_showing_dialog: bool = false
 
 func start_dialog(text: Array[String], dialog_position: Vector2):
+	if dialog_box != null and dialog_box.is_inside_tree():
+		dialog_box.queue_free()
+		is_showing_dialog = false
 	
 	if is_showing_dialog:
 		return null

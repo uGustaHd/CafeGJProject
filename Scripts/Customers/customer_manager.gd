@@ -6,6 +6,12 @@ extends Node2D
 
 var current_customer: Node = null
 
+func _ready() -> void: pass
+#	var card_manager = get_tree().current_scene.get_node("CardManager")
+#	card_manager.connect("deliver_potion", Callable(self, "_on_potion_delivered"))
+
+#func _on_potion_delivered():
+#	spawn_customer()
 
 func spawn_customer():
 	if current_customer != null: current_customer.queue_free()

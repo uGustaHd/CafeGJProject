@@ -9,14 +9,15 @@ enum potion_type {TALL, WIDE}
 @export var blue : int = 0:
 	set(value):
 		blue += value * blue_multiplier
-		
+		colors[0] = blue
 @export var green : int = 0:
 	set(value):
 		green += value * green_multiplier
-
+		colors[1] = green
 @export var red : int = 0:
 	set(value):
 		red += value * red_multiplier
+		colors[2] = red
 
 var colors : Array[int] = [blue, green, red]
 

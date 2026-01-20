@@ -46,6 +46,7 @@ func _on_potion_delivered(potion : Potion) -> void:
 	#if potion.blue >= current_request["Blue"] and potion.green >= current_request["Green"] and potion.red >= current_request["Red"]:
 	var i = 0
 	for color in potion.colors:
+		print_debug("Player color: ", color, " vs Request: ", current_request.colors[i])
 		if color < current_request.colors[i]:
 			success = false
 		i += 1
