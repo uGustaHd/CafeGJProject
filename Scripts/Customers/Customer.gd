@@ -12,7 +12,8 @@ signal died
 func setup():
 	if customer_data != null:
 		$Sprite2D.texture = customer_data.sprite
-		current_request = customer_data.possible_requests
+		#NOTE: Currently only generates a potion of difficulty 1 every time.
+		current_request = customer_data.possible_requests.generate_potion(1)
 		#request_text = _build_request_text(Potion.new()) #"I want \n" + str(current_request.get("Blue")) + "x Blue\n" +  str(current_request.get("Green")) + "x Green\n" + str(current_request.get("Red")) + "x Red" 
 		request_box.visible = false
 		request_box.position = position + Vector2(100,-50)
