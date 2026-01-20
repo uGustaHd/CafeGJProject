@@ -28,3 +28,8 @@ func _on_customer_finished():
 	#New npc spawn delay
 	await get_tree().create_timer(spawn_delay).timeout
 	spawn_customer()
+
+
+func _on_kill_button_pressed() -> void:
+	if current_customer == null : pass
+	current_customer.die()

@@ -34,11 +34,18 @@ func _ready() -> void:
 	potion_holder.potion_progress_changed.connect(_on_potion_changed)
 	
 	await get_tree().process_frame
+	
 	var dialog = DialogManager.start_dialog(customer_data.dialog_intro, global_position + dialog_offset)
 	await dialog.dialog_finished
 	request_box.visible = true
 	show_request(Potion.new())
 	
+	
+func _on_intro_finished():
+	request_box.visible = true
+	show_request(Potion.new())
+
+
 #Signal
 func _on_potion_delivered(potion : Potion) -> void: 
 	var success : bool = true
@@ -73,6 +80,17 @@ func on_request_fail():
 	request_box.visible = false
 	dialog.dialog_finished.connect(Callable(self, "_on_dialog_finished"))
 	
+var is_dying := false
+func die():
+	if is_dying:
+		return
+	is_dying = true
+	Global.joy += customer_data.joy_on_kill
+	Global.anguish += customer_data.anguish_on_kill
+	var dialog = DialogManager.start_dialog(customer_data.dialog_kill, global_position + dialog_offset)
+	request_box.visible = false
+	dialog.dialog_finished.connect(Callable(self, "_on_dialog_finished"))
+
 func _on_dialog_finished():
 	emit_signal("finished")
 	

@@ -35,7 +35,7 @@ func _type_text(text: String):
 		await get_tree().create_timer(typing_speed).timeout
 	
 	is_typing = false
-	get_tree().paused = true
+	#get_tree().paused = true
 	
 func _close_dialog():
 	is_typing = true
