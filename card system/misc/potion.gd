@@ -54,7 +54,9 @@ func generate_potion(difficulty : int) -> Potion:
 				i += 1
 				if i > colors.size() - 1:
 					i = 0
-					
+	blue = colors[0]
+	green = colors[1]
+	red = colors[2]
 	print_debug("Potion bgr = ", colors)
 	return self
 
