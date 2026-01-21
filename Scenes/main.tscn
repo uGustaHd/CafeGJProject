@@ -1,14 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://bdqjd2ergavof"]
+[gd_scene load_steps=14 format=3 uid="uid://bdqjd2ergavof"]
 
 [ext_resource type="Script" uid="uid://dbtic8k4hhs0a" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://df1d5o4oc5m1e" path="res://Scenes/Customers/customer_manager.tscn" id="1_jjgbg"]
-[ext_resource type="PackedScene" uid="uid://ucuv03tdxv54" path="res://Scenes/Customers/customer.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://ucuv03tdxv54" path="res://Scenes/Customers/Customer.tscn" id="2_bo1nx"]
 [ext_resource type="Script" uid="uid://ciewvhcpryhfs" path="res://Scripts/Cards/card_manager.gd" id="4_jjvhh"]
 [ext_resource type="Script" uid="uid://cilybldurbx2h" path="res://card system/misc/potion_holder.gd" id="5_kry3j"]
-[ext_resource type="PackedScene" uid="uid://dpq273vjk1ck" path="res://card system/card_generic.tscn" id="6_21xkr"]
+[ext_resource type="Script" uid="uid://c3qc2yexgw8c2" path="res://card system/piles/deck_holder.gd" id="6_hptm8"]
+[ext_resource type="Script" uid="uid://b7rpitbvtbdxf" path="res://card system/dealer.gd" id="6_ynf5e"]
 [ext_resource type="Texture2D" uid="uid://nu30movbqld2" path="res://icon.svg" id="7_6bp64"]
 [ext_resource type="Script" uid="uid://s6dr7vh7p3y4" path="res://Scenes/slide_kill_panel.gd" id="8_344ge"]
+[ext_resource type="Script" uid="uid://bwitx55fsfv7t" path="res://card system/piles/hand_holder.gd" id="8_fdnlq"]
+[ext_resource type="Script" uid="uid://dlfe3an8hufm5" path="res://card system/piles/banished_holder.gd" id="9_jkdf5"]
 [ext_resource type="Script" uid="uid://yusxetxubyr5" path="res://Scenes/joy_anguish_meters.gd" id="9_ynf5e"]
+[ext_resource type="Script" uid="uid://cavfpuefel5gx" path="res://card system/piles/discard_holder.gd" id="10_wsu2k"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_8gbba")
@@ -26,8 +30,20 @@ script = ExtResource("4_jjvhh")
 [node name="PotionHolder" type="Node" parent="CardManager"]
 script = ExtResource("5_kry3j")
 
-[node name="CardGeneric" parent="CardManager" instance=ExtResource("6_21xkr")]
-position = Vector2(533, 435)
+[node name="DeckHolder" type="Node2D" parent="CardManager"]
+script = ExtResource("6_hptm8")
+
+[node name="Dealer" type="Node" parent="CardManager/DeckHolder"]
+script = ExtResource("6_ynf5e")
+
+[node name="HandHolder" type="Node2D" parent="CardManager"]
+script = ExtResource("8_fdnlq")
+
+[node name="BanishedHolder" type="Node2D" parent="CardManager"]
+script = ExtResource("9_jkdf5")
+
+[node name="DiscardHolder" type="Node2D" parent="CardManager"]
+script = ExtResource("10_wsu2k")
 
 [node name="UIControl" type="Control" parent="."]
 layout_mode = 3

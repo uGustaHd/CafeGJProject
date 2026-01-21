@@ -1,6 +1,4 @@
 extends Node2D
-#Replace with the correct CardManager
-#For testing only
 
 
 signal potion_delivered(potion : Potion)
@@ -8,7 +6,7 @@ signal potion_delivered(potion : Potion)
 @onready var PotionHolder : Node = $PotionHolder
 @onready var current_potion : Potion = PotionHolder.held_potion
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_select"):
 		deliver_potion()
 

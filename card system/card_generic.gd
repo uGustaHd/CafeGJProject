@@ -13,6 +13,7 @@ var costs : Dictionary[String, int] = {
 "Red" : 0,
 }
 
+# Called by HandHolder once card resource is added.
 func initialize_card() -> void:
 	art = card_resource.card_art
 	costs["Energy"] = card_resource.energy_cost
@@ -21,6 +22,3 @@ func initialize_card() -> void:
 	costs["Green"] = card_resource.green_cost
 	costs["Blue"] = card_resource.blue_cost
 	costs["Red"] = card_resource.red_cost
-
-func _ready() -> void:
-	initialize_card()
