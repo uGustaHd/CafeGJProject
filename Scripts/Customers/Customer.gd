@@ -48,6 +48,9 @@ func _on_intro_finished():
 
 #Signal
 func _on_potion_delivered(potion : Potion) -> void: 
+	print("Potion instance id:", potion.get_instance_id())
+	print("RAW:", potion.blue, potion.green, potion.red)
+	print("ARRAY:", potion.colors)
 	# NOTE: Recommend replace with check against a requested potion resource.
 	# TODO: Replace request Dictionary with a RequestResource
 	#if potion.blue >= current_request["Blue"] and potion.green >= current_request["Green"] and potion.red >= current_request["Red"]:
@@ -55,7 +58,7 @@ func _on_potion_delivered(potion : Potion) -> void:
 	for i in range(3): # 0 = blue, 1 = green, 2 = red
 		var player_color = potion.colors[i]
 		var request_color = current_request.colors[i]
-		#print("\nChecking color ", i, ": player=", player_color, " request=", request_color)
+		print("\nChecking color ", i, ": player=", player_color, " request=", request_color)
 		if player_color < request_color:
 			success = false
 	if success:
@@ -69,6 +72,8 @@ func on_request_success():
 	var dialog = DialogManager.start_dialog(customer_data.dialog_success, global_position + dialog_offset)
 	request_box.visible = false
 	dialog.dialog_finished.connect(Callable(self, "_on_dialog_finished"))
+	print(Global.joy)
+	print(Global.anguish)
 
 func on_request_fail(): 
 	Global.joy += customer_data.joy_on_fail
@@ -76,7 +81,8 @@ func on_request_fail():
 	var dialog = DialogManager.start_dialog(customer_data.dialog_fail, global_position + dialog_offset)
 	request_box.visible = false
 	dialog.dialog_finished.connect(Callable(self, "_on_dialog_finished"))
-	
+	print(Global.joy)
+	print(Global.anguish)
 var is_dying := false
 func die():
 	if is_dying:

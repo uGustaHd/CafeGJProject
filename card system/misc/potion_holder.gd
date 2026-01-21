@@ -9,20 +9,21 @@ signal potion_progress_changed(potion: Potion)
 #Test
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_up"):
-		held_potion.blue = 1
+		held_potion.add_blue(1)
 		emit_signal("potion_progress_changed", held_potion)
 		print("blue = " + str(held_potion.blue))
 	if Input.is_action_just_pressed("ui_down"):
-		held_potion.green = 1
+		held_potion.add_green(1)
 		emit_signal("potion_progress_changed", held_potion)
 		print("green = " + str(held_potion.green))
 	if Input.is_action_just_pressed("ui_right"):
-		held_potion.red = 1
+		held_potion.add_red(1)
 		emit_signal("potion_progress_changed", held_potion)
 		print("red = " + str(held_potion.red))
 
 
 func reset_potion():
-	held_potion = Potion.new()
+	held_potion.reset_potion()
+	emit_signal("potion_progress_changed", held_potion)
 	
 	

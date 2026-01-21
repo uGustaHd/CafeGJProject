@@ -6,18 +6,36 @@ class_name Potion
 enum potion_type {TALL, WIDE}
 
 #region properties
-@export var blue : int = 0:
-	set(value):
-		blue += value * blue_multiplier
-		colors[0] = blue
-@export var green : int = 0:
-	set(value):
-		green += value * green_multiplier
-		colors[1] = green
-@export var red : int = 0:
-	set(value):
-		red += value * red_multiplier
-		colors[2] = red
+# I needed to change this, it was causing to many bugs 😬 
+# I added the add_blue, add_green and add_red functions to do what you were doing here 
+@export var blue : int = 0
+	#set(value):
+	#	blue += value * blue_multiplier
+	#	colors[0] = blue
+@export var green : int = 0
+	#set(value):
+	#	green += value * green_multiplier
+	#	colors[1] = green
+@export var red : int = 0
+	#set(value):
+	#	red += value * red_multiplier
+	#	colors[2] = red
+func add_blue(value: int):
+	blue += value * blue_multiplier
+	colors[0] = blue
+func add_green(value: int):
+	green += value * green_multiplier
+	colors[1] = green
+func add_red(value: int):
+	red += value * red_multiplier
+	colors[2] = red
+
+
+func reset_potion():
+	red = 0
+	blue = 0
+	green = 0 
+	colors = [0,0,0]
 
 var colors : Array[int] = [blue, green, red]
 

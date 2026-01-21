@@ -9,7 +9,7 @@ signal potion_delivered(potion : Potion)
 @onready var current_potion : Potion = PotionHolder.held_potion
 
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("ui_select"):
+	if Input.is_action_just_pressed("ui_select"):
 		deliver_potion()
 
 func deliver_potion():
