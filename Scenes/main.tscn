@@ -39,6 +39,8 @@ script = ExtResource("6_ynf5e")
 [node name="HandHolder" type="Node2D" parent="CardManager"]
 script = ExtResource("8_fdnlq")
 
+[node name="HandUI" type="Node2D" parent="CardManager/HandHolder"]
+
 [node name="BanishedHolder" type="Node2D" parent="CardManager"]
 script = ExtResource("9_jkdf5")
 

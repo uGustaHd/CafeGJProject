@@ -10,3 +10,5 @@ func deal_cards(cards_to_deal : int):
 		# remove cards from draw pile, add them to hand pile 
 		HandHolder.add_card_to_hand(DeckHolder.draw_card())
 		
+func on_customer_spawned():
+	deal_cards(hand_size)

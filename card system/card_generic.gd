@@ -14,7 +14,8 @@ var costs : Dictionary[String, int] = {
 }
 
 # Called by HandHolder once card resource is added.
-func initialize_card() -> void:
+func initialize_card(source_card : Card) -> void:
+	card_resource = source_card
 	art = card_resource.card_art
 	costs["Energy"] = card_resource.energy_cost
 	costs["Joy"] = card_resource.joy_cost
