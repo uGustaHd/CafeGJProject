@@ -6,6 +6,7 @@ var dialog_offset: Vector2 = Vector2(0,110)
 var request_text: String
 @onready var request_box = $RequestBox
 
+
 signal finished
 signal died
 
@@ -66,16 +67,20 @@ func _on_potion_delivered(potion : Potion) -> void:
 	else:
 		on_request_fail()
 func on_request_success():
-	Global.joy += customer_data.joy_on_success
-	Global.anguish += customer_data.anguish_on_success
+	var joy_anguish_meters = get_tree().current_scene.get_node("UIControl/JoyAnguishMeters")
+	Global.add_joy(customer_data.joy_on_success)
+	Global.add_anguish(customer_data.anguish_on_success)
 	Global.gold += customer_data.gold_reward
 	var dialog = DialogManager.start_dialog(customer_data.dialog_success, global_position + dialog_offset)
 	request_box.visible = false
 	dialog.dialog_finished.connect(Callable(self, "_on_dialog_finished"))
 	print(Global.joy)
 	print(Global.anguish)
+	joy_anguish_meters.update()
+	
 
 func on_request_fail(): 
+	var joy_anguish_meters = get_tree().current_scene.get_node("UIControl/JoyAnguishMeters")
 	Global.joy += customer_data.joy_on_fail
 	Global.anguish += customer_data.anguish_on_fail
 	var dialog = DialogManager.start_dialog(customer_data.dialog_fail, global_position + dialog_offset)
@@ -83,8 +88,10 @@ func on_request_fail():
 	dialog.dialog_finished.connect(Callable(self, "_on_dialog_finished"))
 	print(Global.joy)
 	print(Global.anguish)
+	joy_anguish_meters.update()
 var is_dying := false
 func die():
+	var joy_anguish_meters = get_tree().current_scene.get_node("UIControl/JoyAnguishMeters")
 	if is_dying:
 		return
 	is_dying = true
@@ -93,7 +100,7 @@ func die():
 	var dialog = DialogManager.start_dialog(customer_data.dialog_kill, global_position + dialog_offset)
 	request_box.visible = false
 	dialog.dialog_finished.connect(Callable(self, "_on_dialog_finished"))
-
+	joy_anguish_meters.update()
 func _on_dialog_finished():
 	emit_signal("finished")
 	

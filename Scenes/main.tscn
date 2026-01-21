@@ -78,14 +78,25 @@ grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
 
-[node name="JoyAnguishMeters" type="TextureRect" parent="UIControl"]
-layout_mode = 0
+[node name="JoyAnguishMeters" type="Control" parent="UIControl"]
+anchors_preset = 0
 offset_left = -1.0
 offset_top = 55.0
-offset_right = 144.0
+offset_right = 178.0
 offset_bottom = 652.0
-texture = ExtResource("7_6bp64")
 script = ExtResource("9_ynf5e")
+
+[node name="TextureRect" type="TextureRect" parent="UIControl/JoyAnguishMeters"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = -311.5
+offset_right = 180.0
+offset_bottom = 291.5
+grow_vertical = 2
+texture = ExtResource("7_6bp64")
 
 [node name="JoyProgressBar" type="TextureProgressBar" parent="UIControl/JoyAnguishMeters"]
 layout_mode = 1
@@ -94,10 +105,12 @@ anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 15.0
 offset_top = -260.0
-offset_right = 55.0
+offset_right = 74.0
 offset_bottom = 158.5
 grow_vertical = 2
 fill_mode = 3
+nine_patch_stretch = true
+texture_progress = ExtResource("7_6bp64")
 tint_progress = Color(0.93333334, 0.7882353, 0, 1)
 
 [node name="AnguishProgressBar" type="TextureProgressBar" parent="UIControl/JoyAnguishMeters"]
@@ -107,13 +120,15 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -50.0
+offset_left = -66.0
 offset_top = -260.0
 offset_right = -10.0
 offset_bottom = 158.5
 grow_horizontal = 0
 grow_vertical = 2
 fill_mode = 3
+nine_patch_stretch = true
+texture_progress = ExtResource("7_6bp64")
 tint_progress = Color(0.97480863, 0, 0.069732405, 1)
 
 [connection signal="pressed" from="UIControl/SlideKillPanel/ArrowButton" to="UIControl/SlideKillPanel" method="_on_arrow_button_pressed"]
