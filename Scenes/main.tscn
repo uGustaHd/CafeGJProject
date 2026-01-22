@@ -20,18 +20,17 @@
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_8gbba")
-metadata/_edit_vertical_guides_ = [576.0]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(288, 162)
-zoom = Vector2(2, 2)
+position = Vector2(576, 324)
+zoom = Vector2(1.5, 1.5)
 
 [node name="CustomerManager" parent="." node_paths=PackedStringArray("spawn_position") instance=ExtResource("1_jjgbg")]
 customer_scene = ExtResource("2_bo1nx")
 spawn_position = NodePath("../CustomerSpawn")
 
 [node name="CustomerSpawn" type="Marker2D" parent="."]
-position = Vector2(289, 83)
+position = Vector2(577, 291)
 
 [node name="CardManager" type="Node2D" parent="."]
 script = ExtResource("4_jjvhh")
@@ -40,10 +39,10 @@ script = ExtResource("4_jjvhh")
 script = ExtResource("5_kry3j")
 
 [node name="SubmitButton" type="Button" parent="CardManager/PotionHolder"]
-offset_left = 411.0
-offset_top = 186.0
-offset_right = 501.0
-offset_bottom = 217.0
+offset_left = 857.0
+offset_top = 382.0
+offset_right = 947.0
+offset_bottom = 413.0
 focus_mode = 0
 text = "Sell Potion"
 
@@ -59,10 +58,10 @@ script = ExtResource("8_fdnlq")
 [node name="HandUI" type="Control" parent="CardManager/HandHolder"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 135.0
-offset_top = 230.0
-offset_right = 500.0
-offset_bottom = 330.0
+offset_left = 327.0
+offset_top = 425.0
+offset_right = 692.0
+offset_bottom = 525.0
 mouse_filter = 2
 script = ExtResource("9_wsu2k")
 
@@ -90,16 +89,16 @@ offset_bottom = 40.0
 [node name="SlideKillPanel" type="TextureRect" parent="UIControl"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 13.825
-anchor_top = 0.45
-anchor_right = 16.325
-anchor_bottom = 4.175
+anchor_left = 23.425
+anchor_top = 3.725
+anchor_right = 25.925
+anchor_bottom = 7.45
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("13_h1bgf")
-expand_mode = 1
 script = ExtResource("8_344ge")
 metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
 
 [node name="ArrowButton" type="TextureButton" parent="UIControl/SlideKillPanel"]
 layout_mode = 1
@@ -133,9 +132,10 @@ grow_vertical = 2
 
 [node name="JoyAnguishMeters" type="Control" parent="UIControl"]
 anchors_preset = 0
-offset_left = -1.0
-offset_right = 128.0
-offset_bottom = 330.0
+offset_left = 192.0
+offset_top = 105.0
+offset_right = 321.0
+offset_bottom = 435.0
 script = ExtResource("9_ynf5e")
 
 [node name="TextureRect" type="TextureRect" parent="UIControl/JoyAnguishMeters"]
@@ -145,7 +145,7 @@ anchor_top = 0.5
 anchor_bottom = 0.5
 offset_top = -165.0
 offset_right = 128.0
-offset_bottom = 158.0
+offset_bottom = 268.0
 grow_vertical = 2
 texture = ExtResource("7_6bp64")
 
@@ -154,10 +154,10 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 79.0
-offset_top = -165.0
-offset_right = 113.0
-offset_bottom = 158.5
+offset_left = 80.0
+offset_top = -164.0
+offset_right = 114.0
+offset_bottom = 181.0
 grow_vertical = 2
 fill_mode = 3
 nine_patch_stretch = true
@@ -171,10 +171,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -112.0
+offset_left = -115.0
 offset_top = -165.0
-offset_right = -78.0
-offset_bottom = 159.0
+offset_right = -81.0
+offset_bottom = 177.0
 grow_horizontal = 0
 grow_vertical = 2
 fill_mode = 3
