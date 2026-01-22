@@ -13,3 +13,6 @@ func _process(_delta: float) -> void:
 func deliver_potion():
 	potion_delivered.emit(current_potion)
 	PotionHolder.reset_potion()
+
+func _on_submit_button_button_down() -> void:
+	deliver_potion()

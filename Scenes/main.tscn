@@ -36,6 +36,13 @@ script = ExtResource("4_jjvhh")
 [node name="PotionHolder" type="Node" parent="CardManager"]
 script = ExtResource("5_kry3j")
 
+[node name="SubmitButton" type="Button" parent="CardManager/PotionHolder"]
+offset_left = 403.0
+offset_top = 123.0
+offset_right = 493.0
+offset_bottom = 154.0
+text = "Sell Potion"
+
 [node name="DeckHolder" type="Node2D" parent="CardManager"]
 script = ExtResource("6_hptm8")
 
@@ -171,6 +178,7 @@ nine_patch_stretch = true
 texture_progress = ExtResource("7_6bp64")
 tint_progress = Color(0.97480863, 0, 0.069732405, 1)
 
+[connection signal="button_down" from="CardManager/PotionHolder/SubmitButton" to="CardManager" method="_on_submit_button_button_down"]
 [connection signal="child_entered_tree" from="CardManager/HandHolder/HandUI/HandHBox" to="CardManager/HandHolder/HandUI/HandHBox" method="_on_child_entered_tree"]
 [connection signal="child_exiting_tree" from="CardManager/HandHolder/HandUI/HandHBox" to="CardManager/HandHolder/HandUI/HandHBox" method="_on_child_exiting_tree"]
 [connection signal="pressed" from="UIControl/SlideKillPanel/ArrowButton" to="UIControl/SlideKillPanel" method="_on_arrow_button_pressed"]
