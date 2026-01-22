@@ -1,9 +1,11 @@
 extends Control
 
+signal card_color_added(color_potion : Potion)
 #region data
 var card_resource : Card
 
 @onready var DiscardPile : Pile = $"../../../../DiscardHolder".held_pile
+@onready var PotionHolder = $"../../../../PotionHolder"
 @onready var animation : AnimationPlayer = $AnimationPlayer
 @onready var button : Button = $Visuals/Button
 
@@ -36,6 +38,12 @@ func fill_effect_text() -> void:
 
 #region actions
 func activate() -> void:
+	var color_added : Potion = Potion.new()
+	color_added.add_blue(card_resource.blue_add)
+	color_added.add_green(card_resource.green_add)
+	color_added.add_red(card_resource.red_add)
+	card_color_added.emit(color_added)
+	
 	discard_self()
 	pay_cost()
 	
@@ -48,6 +56,10 @@ func pay_cost() -> void:
 	Global.add_energy(-card_resource.energy_cost) 
 
 #endregion
+
+func _ready() -> void:
+	card_color_added.connect(PotionHolder.on_card_color_added)
+	#add_to_group("Cards")
 
 #region incoming signals
 func _on_button_button_down() -> void:

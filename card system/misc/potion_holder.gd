@@ -22,10 +22,14 @@ func _process(_delta: float) -> void:
 		print("red = " + str(held_potion.red))
 
 func add_colors(added_colors : Potion) -> void:
-	pass
+	held_potion.add_blue(added_colors.blue)
+	held_potion.add_green(added_colors.green)
+	held_potion.add_red(added_colors.red)
+	potion_progress_changed.emit(held_potion)
 
 func reset_potion():
 	held_potion.reset_potion()
 	emit_signal("potion_progress_changed", held_potion)
 	
-	
+func on_card_color_added(color_added : Potion):
+	add_colors(color_added)
