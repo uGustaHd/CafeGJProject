@@ -3,7 +3,9 @@ class_name Card
 
 
 #region properties
+@export var title : String
 @export var card_art : Texture
+@export_multiline var effect_text : String
 
 @export var green_add : int = 0
 @export var blue_add : int = 0

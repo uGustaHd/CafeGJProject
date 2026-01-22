@@ -12,5 +12,5 @@ func add_card_to_hand(added_card : Card):
 	
 func spawn_card_ui(spawned_card):
 	var new_card_ui = CardGeneric.instantiate()
-	new_card_ui.initialize_card(spawned_card)
 	HBox.add_child(new_card_ui)
+	new_card_ui.initialize_card(spawned_card)

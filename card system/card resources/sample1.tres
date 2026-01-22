@@ -5,5 +5,8 @@
 
 [resource]
 script = ExtResource("1_rsh8p")
+title = "Sample1"
 card_art = ExtResource("1_8lbdq")
+effect_text = "This is sample text."
+energy_cost = 2
 metadata/_custom_type_script = "uid://b8yono3xc1siy"
