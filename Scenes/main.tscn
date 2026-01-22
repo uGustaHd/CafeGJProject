@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dbtic8k4hhs0a" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://df1d5o4oc5m1e" path="res://Scenes/Customers/customer_manager.tscn" id="1_jjgbg"]
-[ext_resource type="PackedScene" uid="uid://ucuv03tdxv54" path="res://Scenes/Customers/customer.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://ucuv03tdxv54" path="res://Scenes/Customers/Customer.tscn" id="2_bo1nx"]
 [ext_resource type="Script" uid="uid://ciewvhcpryhfs" path="res://Scripts/Cards/card_manager.gd" id="4_jjvhh"]
 [ext_resource type="Script" uid="uid://cilybldurbx2h" path="res://card system/misc/potion_holder.gd" id="5_kry3j"]
 [ext_resource type="Script" uid="uid://c3qc2yexgw8c2" path="res://card system/piles/deck_holder.gd" id="6_hptm8"]
@@ -30,7 +30,7 @@ customer_scene = ExtResource("2_bo1nx")
 spawn_position = NodePath("../CustomerSpawn")
 
 [node name="CustomerSpawn" type="Marker2D" parent="."]
-position = Vector2(577, 291)
+position = Vector2(576, 266)
 
 [node name="CardManager" type="Node2D" parent="."]
 script = ExtResource("4_jjvhh")
@@ -58,7 +58,7 @@ script = ExtResource("8_fdnlq")
 [node name="HandUI" type="Control" parent="CardManager/HandHolder"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 327.0
+offset_left = 336.0
 offset_top = 425.0
 offset_right = 692.0
 offset_bottom = 525.0
@@ -68,7 +68,8 @@ script = ExtResource("9_wsu2k")
 [node name="HandHBox" type="HBoxContainer" parent="CardManager/HandHolder/HandUI"]
 layout_mode = 1
 anchors_preset = -1
-offset_right = 648.0
+offset_left = 18.0
+offset_right = 614.0
 offset_bottom = 95.0
 mouse_filter = 2
 theme_override_constants/separation = 72
@@ -187,8 +188,10 @@ visible = false
 z_index = 1
 layout_mode = 1
 anchors_preset = 0
-offset_right = 577.0
-offset_bottom = 324.0
+offset_left = 298.0
+offset_top = 169.0
+offset_right = 875.0
+offset_bottom = 493.0
 script = ExtResource("16_k12tt")
 
 [node name="Title" type="Panel" parent="UIControl/DayReport"]

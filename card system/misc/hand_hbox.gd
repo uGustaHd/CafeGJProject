@@ -1,8 +1,8 @@
 extends HBoxContainer
 
 
-var max_separation : int = 100
-var min_separation : int = 32
+var max_separation : int = 120
+var min_separation : int = 100
 
 
 # WARNING: Not thoroughly tested for all hand sizes
