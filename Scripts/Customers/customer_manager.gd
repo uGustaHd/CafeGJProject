@@ -4,11 +4,20 @@ signal customer_spawned
 
 @onready var Dealer = $"../CardManager/DeckHolder/Dealer"
 
+
+
+
 @export var customer_scene: PackedScene
 @export var spawn_position: Node2D
 @export var spawn_delay: float = 3
 
+var customer_per_day := 5
+var customers_served_today := 0
 var current_customer: Node = null
+
+func start_day():
+	customers_served_today = 0
+	spawn_customer()
 
 func _ready() -> void:
 	customer_spawned.connect(Dealer.on_customer_spawned)
@@ -19,20 +28,29 @@ func _ready() -> void:
 #	spawn_customer()
 
 func spawn_customer():
-	if current_customer != null: current_customer.queue_free()
-	current_customer = customer_scene.instantiate();
-	get_tree().current_scene.add_child(current_customer)
-	current_customer.position = spawn_position.position
-	current_customer.connect("finished", Callable(self, "_on_customer_finished"))
+	if customers_served_today < customer_per_day:
+		if current_customer != null: current_customer.queue_free()
+		current_customer = customer_scene.instantiate();
+		get_tree().current_scene.add_child(current_customer)
+		current_customer.position = spawn_position.position
+		current_customer.connect("finished", Callable(self, "_on_customer_finished"))
+		customer_spawned.emit()
+	else:
+		end_day()
+
+func end_day(): 
 	
-	customer_spawned.emit()
-	
-	
+	Global.day += 1
+	#TODO: Show day report
+	#TODO: Go to cards shop
+
+
 func _on_customer_finished():
 	print("Customer Finished")
 	current_customer.queue_free()
 	current_customer = null
 	#New npc spawn delay
+	customers_served_today += 1
 	await get_tree().create_timer(spawn_delay).timeout
 	spawn_customer()
 

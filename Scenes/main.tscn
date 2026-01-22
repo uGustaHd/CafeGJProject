@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dbtic8k4hhs0a" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://df1d5o4oc5m1e" path="res://Scenes/Customers/customer_manager.tscn" id="1_jjgbg"]
-[ext_resource type="PackedScene" uid="uid://ucuv03tdxv54" path="res://Scenes/Customers/Customer.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://ucuv03tdxv54" path="res://Scenes/Customers/customer.tscn" id="2_bo1nx"]
 [ext_resource type="Script" uid="uid://ciewvhcpryhfs" path="res://Scripts/Cards/card_manager.gd" id="4_jjvhh"]
 [ext_resource type="Script" uid="uid://cilybldurbx2h" path="res://card system/misc/potion_holder.gd" id="5_kry3j"]
 [ext_resource type="Script" uid="uid://c3qc2yexgw8c2" path="res://card system/piles/deck_holder.gd" id="6_hptm8"]
@@ -41,6 +41,7 @@ offset_left = 403.0
 offset_top = 123.0
 offset_right = 493.0
 offset_bottom = 154.0
+focus_mode = 0
 text = "Sell Potion"
 
 [node name="DeckHolder" type="Node2D" parent="CardManager"]
@@ -54,6 +55,7 @@ script = ExtResource("8_fdnlq")
 
 [node name="HandUI" type="Control" parent="CardManager/HandHolder"]
 layout_mode = 3
+anchors_preset = 0
 offset_left = 135.0
 offset_top = 230.0
 offset_right = 500.0
@@ -85,13 +87,14 @@ offset_bottom = 40.0
 [node name="SlideKillPanel" type="TextureRect" parent="UIControl"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 13.95
-anchor_top = 1.2
-anchor_right = 17.15
-anchor_bottom = 6.775
+anchor_left = 14.3
+anchor_top = 1.425
+anchor_right = 16.8
+anchor_bottom = 5.15
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_6bp64")
+expand_mode = 1
 script = ExtResource("8_344ge")
 metadata/_edit_use_anchors_ = true
 
@@ -113,11 +116,11 @@ metadata/_edit_use_anchors_ = true
 
 [node name="KillButton" type="TextureButton" parent="UIControl/SlideKillPanel"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
+anchors_preset = -1
+anchor_left = 0.53
+anchor_top = 0.7080537
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 0.23154363
 offset_left = -47.0
 offset_top = -101.5
 offset_right = 44.0
@@ -150,9 +153,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 52.0
+offset_left = 79.0
 offset_top = -165.0
-offset_right = 86.0
+offset_right = 113.0
 offset_bottom = 158.5
 grow_vertical = 2
 fill_mode = 3
@@ -167,9 +170,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -127.0
+offset_left = -112.0
 offset_top = -165.0
-offset_right = -93.0
+offset_right = -78.0
 offset_bottom = 159.0
 grow_horizontal = 0
 grow_vertical = 2

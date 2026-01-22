@@ -15,7 +15,7 @@ func setup():
 		$Sprite2D.texture = customer_data.sprite
 		#NOTE: Currently only generates a potion of difficulty 1 every time.
 		var new_request = Potion.new()
-		new_request.generate_potion(1)
+		new_request.generate_potion(Global.get_difficulty())
 		current_request = new_request
 		#request_text = _build_request_text(Potion.new()) #"I want \n" + str(current_request.get("Blue")) + "x Blue\n" +  str(current_request.get("Green")) + "x Green\n" + str(current_request.get("Red")) + "x Red" 
 		request_box.visible = false
@@ -101,6 +101,9 @@ func die():
 	request_box.visible = false
 	dialog.dialog_finished.connect(Callable(self, "_on_dialog_finished"))
 	joy_anguish_meters.update()
+
+
+
 func _on_dialog_finished():
 	emit_signal("finished")
 	

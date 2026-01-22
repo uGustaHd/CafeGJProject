@@ -32,7 +32,11 @@ func draw_card() -> Card:
 		return drawn_card
 
 func shuffle_in_discard():
-	held_pile.append(DiscardHolder.held_pile.take_all())
+	#FIX: held_pile is a Resource, not an Array.
+	#Cards are stored inside held_pile.card_array, so we need to append to that instead.
+	#held_pile.append(DiscardHolder.held_pile.take_all())
+	var discarted_cards = DiscardHolder.held_pile.take_all()
+	held_pile.card_array.append_array(discarted_cards)
 
 func _ready() -> void:
 	# If player has no cards, they get the starting deck on scene ready

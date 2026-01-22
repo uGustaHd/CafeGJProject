@@ -2,7 +2,9 @@ extends TextureRect
 
 var pos_open := Vector2(1027, 252) 
 var pos_closed := Vector2(1142, 252)
-
+func _ready() -> void:
+	pos_closed = position
+	pos_open = pos_closed - Vector2(90,0)
 func _on_arrow_button_pressed() -> void:
 	
 	var tween = get_tree().create_tween()
