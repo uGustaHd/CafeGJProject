@@ -17,12 +17,16 @@
 [node name="Main" type="Node2D"]
 script = ExtResource("1_8gbba")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(288, 162)
+zoom = Vector2(2, 2)
+
 [node name="CustomerManager" parent="." node_paths=PackedStringArray("spawn_position") instance=ExtResource("1_jjgbg")]
 customer_scene = ExtResource("2_bo1nx")
 spawn_position = NodePath("../CustomerSpawn")
 
 [node name="CustomerSpawn" type="Marker2D" parent="."]
-position = Vector2(560, 312)
+position = Vector2(289, 83)
 
 [node name="CardManager" type="Node2D" parent="."]
 script = ExtResource("4_jjvhh")
@@ -39,7 +43,13 @@ script = ExtResource("6_ynf5e")
 [node name="HandHolder" type="Node2D" parent="CardManager"]
 script = ExtResource("8_fdnlq")
 
-[node name="HandUI" type="Node2D" parent="CardManager/HandHolder"]
+[node name="HandUI" type="HBoxContainer" parent="CardManager/HandHolder"]
+offset_left = 188.0
+offset_top = 219.0
+offset_right = 188.0
+offset_bottom = 219.0
+theme_override_constants/separation = 20
+alignment = 1
 
 [node name="BanishedHolder" type="Node2D" parent="CardManager"]
 script = ExtResource("9_jkdf5")
@@ -56,10 +66,10 @@ offset_bottom = 40.0
 [node name="SlideKillPanel" type="TextureRect" parent="UIControl"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 28.55
-anchor_top = 6.3
-anchor_right = 31.75
-anchor_bottom = 11.875
+anchor_left = 13.95
+anchor_top = 1.2
+anchor_right = 17.15
+anchor_bottom = 6.775
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_6bp64")
@@ -80,6 +90,7 @@ focus_mode = 0
 texture_normal = ExtResource("7_6bp64")
 ignore_texture_size = true
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="KillButton" type="TextureButton" parent="UIControl/SlideKillPanel"]
 layout_mode = 1
@@ -95,6 +106,7 @@ offset_bottom = 109.5
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="JoyAnguishMeters" type="Control" parent="UIControl"]
 anchors_preset = 0
@@ -110,9 +122,9 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = -1.0
-offset_top = -311.5
-offset_right = 180.0
-offset_bottom = 291.5
+offset_top = -352.5
+offset_right = 127.0
+offset_bottom = -29.5
 grow_vertical = 2
 texture = ExtResource("7_6bp64")
 
@@ -121,10 +133,10 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 15.0
-offset_top = -260.0
-offset_right = 74.0
-offset_bottom = 158.5
+offset_left = 2.0
+offset_top = -353.5
+offset_right = 61.0
+offset_bottom = -30.0
 grow_vertical = 2
 fill_mode = 3
 nine_patch_stretch = true
@@ -138,10 +150,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -66.0
-offset_top = -260.0
-offset_right = -10.0
-offset_bottom = 158.5
+offset_left = -109.0
+offset_top = -355.5
+offset_right = -53.0
+offset_bottom = -30.0
 grow_horizontal = 0
 grow_vertical = 2
 fill_mode = 3

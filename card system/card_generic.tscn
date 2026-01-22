@@ -1,19 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://dpq273vjk1ck"]
+[gd_scene load_steps=7 format=3 uid="uid://dpq273vjk1ck"]
 
 [ext_resource type="Script" uid="uid://blkjui87aggta" path="res://card system/card_generic.gd" id="1_1q60f"]
 [ext_resource type="Texture2D" uid="uid://cyfvs74rft41i" path="res://card system/card_assets/DescriptionBox_ver.1.png" id="1_sj6e3"]
-[ext_resource type="Resource" uid="uid://di7eud4upuf1b" path="res://card system/card resources/sample1.tres" id="2_11dsn"]
 [ext_resource type="Texture2D" uid="uid://x5wrhu6wyxna" path="res://card system/card_assets/Illustration_ver.1.png" id="3_1q60f"]
 [ext_resource type="Theme" uid="uid://tuw56bvfysja" path="res://card system/effect_text.tres" id="3_11dsn"]
 [ext_resource type="Texture2D" uid="uid://csc8mcpkn3j0v" path="res://card system/card_assets/Border_ver_1.png" id="3_r7wv5"]
 [ext_resource type="Texture2D" uid="uid://cenroamv2p1t6" path="res://card system/card_assets/ManaCost_ver.1.png" id="4_11dsn"]
 
-[node name="CardGeneric" type="Node2D"]
-scale = Vector2(2, 2)
+[node name="CardGeneric" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_1q60f")
-card_resource = ExtResource("2_11dsn")
 
 [node name="Base" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 2.0
 offset_top = 56.0
 offset_right = 62.0
@@ -32,6 +32,7 @@ text = "This is the card text."
 metadata/_edit_use_anchors_ = true
 
 [node name="Art" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 1.0
 offset_top = 1.0
 offset_right = 62.6
@@ -40,12 +41,14 @@ texture = ExtResource("3_1q60f")
 metadata/_edit_use_anchors_ = true
 
 [node name="Border" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 64.0
 offset_bottom = 96.0
 texture = ExtResource("3_r7wv5")
 metadata/_edit_use_anchors_ = true
 
 [node name="CostIcon" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 48.0
 offset_right = 64.0
 offset_bottom = 16.0

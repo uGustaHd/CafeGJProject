@@ -20,6 +20,14 @@ config/icon="res://icon.svg"
 Global="*res://Scripts/global.gd"
 DialogManager="*res://Scenes/TextBox/dialog_manager.tscn"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

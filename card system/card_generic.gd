@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 #WARNING: Only an export for testing
 @export var card_resource : Card
