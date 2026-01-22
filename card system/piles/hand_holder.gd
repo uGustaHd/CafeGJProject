@@ -14,3 +14,10 @@ func spawn_card_ui(spawned_card):
 	var new_card_ui = CardGeneric.instantiate()
 	HBox.add_child(new_card_ui)
 	new_card_ui.initialize_card(spawned_card)
+
+func discard_hand() -> void:
+	for card in HBox.get_children():
+		card.discard_self()
+
+func _on_submit_button_button_down() -> void:
+	discard_hand()

@@ -3,6 +3,7 @@ extends Control
 #region data
 var card_resource : Card
 
+@onready var DiscardPile : Pile = $"../../../../DiscardHolder".held_pile
 @onready var animation : AnimationPlayer = $AnimationPlayer
 @onready var button : Button = $Visuals/Button
 
@@ -34,6 +35,10 @@ func fill_effect_text() -> void:
 #endregion
 
 func activate() -> void:
+	discard_self()
+	
+func discard_self() -> void:
+	DiscardPile.add_card(card_resource)
 	queue_free()
 
 #region incoming signals

@@ -11,7 +11,7 @@ signal customer_spawned
 @export var spawn_position: Node2D
 @export var spawn_delay: float = 3
 
-var customer_per_day := 1
+var customer_per_day := 3
 var customers_served_today := 0
 var current_customer: Node = null
 
