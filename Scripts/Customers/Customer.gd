@@ -2,7 +2,7 @@ extends Node2D
 
 @export var customer_data: CustomerData
 var current_request: Potion
-var dialog_offset: Vector2 = Vector2(0,110)
+var dialog_offset: Vector2 = Vector2(0,100)
 var request_text: String
 @onready var request_box = $RequestBox
 
@@ -12,14 +12,14 @@ signal died
 
 func setup():
 	if customer_data != null:
-		$Sprite2D.texture = customer_data.sprite
+		$Sprite2D.texture = customer_data.possible_sprite.pick_random()
 		#NOTE: Currently only generates a potion of difficulty 1 every time.
 		var new_request = Potion.new()
 		new_request.generate_potion(Global.get_difficulty())
 		current_request = new_request
 		#request_text = _build_request_text(Potion.new()) #"I want \n" + str(current_request.get("Blue")) + "x Blue\n" +  str(current_request.get("Green")) + "x Green\n" + str(current_request.get("Red")) + "x Red" 
 		request_box.visible = false
-		request_box.position = position + Vector2(100,-50)
+		request_box.position = position + Vector2(80,-50)
 	else:
 		print("No CustomerData")
 

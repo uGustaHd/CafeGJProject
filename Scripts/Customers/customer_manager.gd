@@ -11,7 +11,7 @@ signal customer_spawned
 @export var spawn_position: Node2D
 @export var spawn_delay: float = 3
 
-var customer_per_day := 5
+var customer_per_day := 1
 var customers_served_today := 0
 var current_customer: Node = null
 
@@ -41,9 +41,7 @@ func spawn_customer():
 func end_day(): 
 	
 	Global.day += 1
-	#TODO: Show day report
-	#TODO: Go to cards shop
-
+	$"../UIControl/DayReport".report_day()
 
 func _on_customer_finished():
 	print("Customer Finished")

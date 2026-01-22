@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="CustomerData" load_steps=5 format=3 uid="uid://cy20xvr7sjw4w"]
+[gd_resource type="Resource" script_class="CustomerData" load_steps=6 format=3 uid="uid://cy20xvr7sjw4w"]
 
 [ext_resource type="Script" uid="uid://bs2svv3l66wt8" path="res://card system/misc/potion.gd" id="1_1jy26"]
 [ext_resource type="Script" uid="uid://bdem1ni82ca3x" path="res://Scripts/Customers/customer_data.gd" id="1_f3gjh"]
-[ext_resource type="Texture2D" uid="uid://nu30movbqld2" path="res://icon.svg" id="2_b7g5a"]
+[ext_resource type="Texture2D" uid="uid://coobjn146s0ys" path="res://Assets/Sprites/Customers/Villagers/Villager_1_female.png" id="2_f44fo"]
+[ext_resource type="Texture2D" uid="uid://bj18w8sehg2f1" path="res://Assets/Sprites/Customers/Villagers/Villager_1_male.png" id="3_dgab5"]
 
 [sub_resource type="Resource" id="Resource_1jy26"]
 script = ExtResource("1_1jy26")
@@ -12,7 +13,7 @@ metadata/_custom_type_script = "uid://bs2svv3l66wt8"
 script = ExtResource("1_f3gjh")
 name = "Villager01"
 id = "Villager01"
-sprite = ExtResource("2_b7g5a")
+possible_sprite = Array[Texture2D]([ExtResource("2_f44fo"), ExtResource("3_dgab5")])
 possible_requests = SubResource("Resource_1jy26")
 joy_on_success = 10.0
 anguish_on_success = -5.0

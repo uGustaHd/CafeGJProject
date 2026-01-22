@@ -8,7 +8,7 @@ enum RequestType {POTION, ITEM, SERVICE}
 @export var name   : String
 @export var id     : String
 @export var type   : CustomerType
-@export var sprite : Texture2D
+@export var possible_sprite : Array[Texture2D]
 
 @export_group("Request")
 @export var request_type : RequestType
