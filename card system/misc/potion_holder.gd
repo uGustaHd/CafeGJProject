@@ -21,6 +21,8 @@ func _process(_delta: float) -> void:
 		emit_signal("potion_progress_changed", held_potion)
 		print("red = " + str(held_potion.red))
 
+func add_colors(added_colors : Potion) -> void:
+	pass
 
 func reset_potion():
 	held_potion.reset_potion()
