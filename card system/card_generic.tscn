@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dpq273vjk1ck"]
+[gd_scene load_steps=10 format=3 uid="uid://dpq273vjk1ck"]
 
 [ext_resource type="Script" uid="uid://blkjui87aggta" path="res://card system/card_generic.gd" id="1_1q60f"]
 [ext_resource type="Texture2D" uid="uid://cyfvs74rft41i" path="res://card system/card_assets/DescriptionBox_ver.1.png" id="1_sj6e3"]
@@ -7,21 +7,111 @@
 [ext_resource type="Texture2D" uid="uid://csc8mcpkn3j0v" path="res://card system/card_assets/Border_ver_1.png" id="3_r7wv5"]
 [ext_resource type="Texture2D" uid="uid://cenroamv2p1t6" path="res://card system/card_assets/ManaCost_ver.1.png" id="4_11dsn"]
 
+[sub_resource type="Animation" id="Animation_r7wv5"]
+resource_name = "focus_card"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -10)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visuals:z_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_11dsn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visuals:z_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jlo26"]
+_data = {
+&"RESET": SubResource("Animation_11dsn"),
+&"focus_card": SubResource("Animation_r7wv5")
+}
+
 [node name="CardGeneric" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_1q60f")
 
-[node name="Base" type="TextureRect" parent="."]
+[node name="Visuals" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+pivot_offset = Vector2(32, 43)
+
+[node name="Base" type="TextureRect" parent="Visuals"]
 layout_mode = 0
 offset_left = 2.0
 offset_top = 56.0
 offset_right = 62.0
 offset_bottom = 96.0
 texture = ExtResource("1_sj6e3")
-metadata/_edit_use_anchors_ = true
 
-[node name="EffectText" type="RichTextLabel" parent="Base"]
+[node name="EffectText" type="RichTextLabel" parent="Visuals/Base"]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 2.0
@@ -29,18 +119,16 @@ offset_right = 59.0
 offset_bottom = 37.0
 theme = ExtResource("3_11dsn")
 text = "This is the card text."
-metadata/_edit_use_anchors_ = true
 
-[node name="Art" type="TextureRect" parent="."]
+[node name="Art" type="TextureRect" parent="Visuals"]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 1.0
 offset_right = 62.6
 offset_bottom = 57.0
 texture = ExtResource("3_1q60f")
-metadata/_edit_use_anchors_ = true
 
-[node name="Title" type="RichTextLabel" parent="Art"]
+[node name="Title" type="RichTextLabel" parent="Visuals/Art"]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 43.0
@@ -51,22 +139,20 @@ text = "Title"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Border" type="TextureRect" parent="."]
+[node name="Border" type="TextureRect" parent="Visuals"]
 layout_mode = 0
 offset_right = 64.0
 offset_bottom = 96.0
 texture = ExtResource("3_r7wv5")
-metadata/_edit_use_anchors_ = true
 
-[node name="CostIcon" type="TextureRect" parent="."]
+[node name="CostIcon" type="TextureRect" parent="Visuals"]
 layout_mode = 0
 offset_left = 48.0
 offset_right = 64.0
 offset_bottom = 16.0
 texture = ExtResource("4_11dsn")
-metadata/_edit_use_anchors_ = true
 
-[node name="EnergyCost" type="RichTextLabel" parent="CostIcon"]
+[node name="EnergyCost" type="RichTextLabel" parent="Visuals/CostIcon"]
 layout_mode = 0
 offset_left = 2.0
 offset_right = 16.0
@@ -76,3 +162,18 @@ theme_override_font_sizes/normal_font_size = 12
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Visuals"]
+self_modulate = Color(0.011764706, 0.011764706, 0.011764706, 0)
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 97.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_jlo26")
+}
+
+[connection signal="button_down" from="Visuals/Button" to="." method="_on_button_button_down"]
+[connection signal="mouse_entered" from="Visuals/Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Visuals/Button" to="." method="_on_button_mouse_exited"]

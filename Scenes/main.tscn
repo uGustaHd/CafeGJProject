@@ -51,6 +51,7 @@ offset_left = 135.0
 offset_top = 230.0
 offset_right = 500.0
 offset_bottom = 330.0
+mouse_filter = 2
 script = ExtResource("9_wsu2k")
 
 [node name="HandHBox" type="HBoxContainer" parent="CardManager/HandHolder/HandUI"]
@@ -58,6 +59,7 @@ layout_mode = 1
 anchors_preset = -1
 offset_right = 648.0
 offset_bottom = 95.0
+mouse_filter = 2
 theme_override_constants/separation = 72
 script = ExtResource("10_k12tt")
 
@@ -121,9 +123,8 @@ metadata/_edit_use_anchors_ = true
 [node name="JoyAnguishMeters" type="Control" parent="UIControl"]
 anchors_preset = 0
 offset_left = -1.0
-offset_top = 55.0
-offset_right = 178.0
-offset_bottom = 652.0
+offset_right = 128.0
+offset_bottom = 330.0
 script = ExtResource("9_ynf5e")
 
 [node name="TextureRect" type="TextureRect" parent="UIControl/JoyAnguishMeters"]
@@ -131,10 +132,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = -1.0
-offset_top = -352.5
-offset_right = 127.0
-offset_bottom = -29.5
+offset_top = -165.0
+offset_right = 128.0
+offset_bottom = 158.0
 grow_vertical = 2
 texture = ExtResource("7_6bp64")
 
@@ -143,10 +143,10 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 2.0
-offset_top = -353.5
-offset_right = 61.0
-offset_bottom = -30.0
+offset_left = 52.0
+offset_top = -165.0
+offset_right = 86.0
+offset_bottom = 158.5
 grow_vertical = 2
 fill_mode = 3
 nine_patch_stretch = true
@@ -160,10 +160,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -109.0
-offset_top = -355.5
-offset_right = -53.0
-offset_bottom = -30.0
+offset_left = -127.0
+offset_top = -165.0
+offset_right = -93.0
+offset_bottom = 159.0
 grow_horizontal = 0
 grow_vertical = 2
 fill_mode = 3
