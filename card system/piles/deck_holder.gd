@@ -17,7 +17,7 @@ var starting_deck : Array[Card] = [
 	load("res://card system/card resources/sample1.tres"),
 ]
 
-# WARNING: Will cause infinite loop if shuffle in discard fails to make deck pile not empty.
+# WARNING: Will draw empty card if shuffle in discard fails to make deck pile not empty.
 func draw_card() -> Card:
 	var drawn_card = held_pile.take_random()
 	if drawn_card == load("res://card system/card resources/is_empty.tres") and not is_looping:
@@ -32,11 +32,8 @@ func draw_card() -> Card:
 		return drawn_card
 
 func shuffle_in_discard():
-	#FIX: held_pile is a Resource, not an Array.
-	#Cards are stored inside held_pile.card_array, so we need to append to that instead.
-	#held_pile.append(DiscardHolder.held_pile.take_all())
-	var discarted_cards = DiscardHolder.held_pile.take_all()
-	held_pile.card_array.append_array(discarted_cards)
+	var discarded_cards = DiscardHolder.held_pile.take_all()
+	held_pile.card_array.append_array(discarded_cards)
 
 func _ready() -> void:
 	# If player has no cards, they get the starting deck on scene ready

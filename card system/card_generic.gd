@@ -34,12 +34,20 @@ func fill_effect_text() -> void:
 
 #endregion
 
+#region actions
 func activate() -> void:
 	discard_self()
+	pay_cost()
 	
 func discard_self() -> void:
 	DiscardPile.add_card(card_resource)
 	queue_free()
+
+#NOTE: Update for non energy costs later
+func pay_cost() -> void:
+	Global.add_energy(-card_resource.energy_cost) 
+
+#endregion
 
 #region incoming signals
 func _on_button_button_down() -> void:

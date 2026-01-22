@@ -1,6 +1,8 @@
 extends Node
 
 var gold    : int = 1
+var default_energy : int = 3
+var energy  : int = default_energy
 var joy     : float = 0
 var anguish : float = 0
 var day     : int = 1
@@ -32,8 +34,12 @@ func get_difficulty() -> int:
 			return 4
 		_:
 			return 4
+#NOTE: Doesn't this double the joy and then add the value bc of +=? idk I didnt test yet.
 func add_joy(value):
 	joy += max(0, joy + value)
 	
 func add_anguish(value):
 	anguish += max(0, anguish + value)
+
+func add_energy(value):
+	energy = max(0, energy + value)
