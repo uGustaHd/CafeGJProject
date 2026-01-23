@@ -5,16 +5,16 @@ extends PileHolder
 var is_looping : bool = false
 
 var starting_deck : Array[Card] = [
-	load("res://card system/card resources/sample1.tres"),
-	load("res://card system/card resources/sample1.tres"),
-	load("res://card system/card resources/sample1.tres"),
-	load("res://card system/card resources/sample1.tres"),
-	load("res://card system/card resources/sample1.tres"),
-	load("res://card system/card resources/sample1.tres"),
-	load("res://card system/card resources/sample1.tres"),
-	load("res://card system/card resources/sample1.tres"),
-	load("res://card system/card resources/sample1.tres"),
-	load("res://card system/card resources/sample1.tres"),
+load("res://card system/card resources/delphinium.tres"),
+load("res://card system/card resources/dried_peppers.tres"),
+load("res://card system/card resources/mushrooms.tres"),
+load("res://card system/card resources/roots.tres"),
+load("res://card system/card resources/sage_flower.tres"),
+load("res://card system/card resources/water.tres"),
+load("res://card system/card resources/water.tres"),
+load("res://card system/card resources/water.tres"),
+load("res://card system/card resources/water.tres"),
+load("res://card system/card resources/water.tres"),
 ]
 
 # WARNING: Will draw empty card if shuffle in discard fails to make deck pile not empty.
@@ -25,7 +25,7 @@ func draw_card() -> Card:
 		is_looping = true
 		return draw_card()
 	elif is_looping:
-		push_error("draw_card is stuck in infinite loop")
+		push_warning("All cards in hand, cannot draw")
 		return drawn_card
 	else:
 		is_looping = false

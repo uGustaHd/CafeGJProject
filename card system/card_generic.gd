@@ -8,7 +8,7 @@ var card_resource : Card
 @onready var DiscardPile : Pile = $"../../../../DiscardHolder".held_pile
 @onready var HandPile : Pile = $"../../..".held_pile
 @onready var PotionHolder = $"../../../../PotionHolder"
-@onready var Dealer = $"../../../../DeckHolder/Dealer"
+@onready var Dealer : Node = $"../../../../DeckHolder/Dealer"
 @onready var animation : AnimationPlayer = $AnimationPlayer
 @onready var button : Button = $Visuals/Button
 
@@ -81,6 +81,8 @@ func pay_cost() -> void:
 #endregion
 
 func _ready() -> void:
+	if card_resource == load("res://card system/card resources/is_empty.tres"):
+		queue_free()
 	card_color_added.connect(PotionHolder.on_card_color_added)
 	card_multiplier_added.connect(PotionHolder.on_card_multiplier_added)
 
