@@ -8,6 +8,7 @@ var card_resource : Card
 @onready var DiscardPile : Pile = $"../../../../DiscardHolder".held_pile
 @onready var HandPile : Pile = $"../../..".held_pile
 @onready var PotionHolder = $"../../../../PotionHolder"
+@onready var Dealer = $"../../../../DeckHolder/Dealer"
 @onready var animation : AnimationPlayer = $AnimationPlayer
 @onready var button : Button = $Visuals/Button
 
@@ -42,9 +43,17 @@ func fill_effect_text() -> void:
 func activate() -> void:
 	add_color()
 	add_multiplier()
+	add_energy()
+	add_draw()
 	
 	discard_self()
 	pay_cost()
+
+func add_draw():
+	Dealer.deal_cards(card_resource.draw_add)
+	
+func add_energy():
+	Global.add_energy(card_resource.energy_add)
 
 func add_multiplier():
 	var multiplier_added : Potion = Potion.new()
@@ -74,7 +83,6 @@ func pay_cost() -> void:
 func _ready() -> void:
 	card_color_added.connect(PotionHolder.on_card_color_added)
 	card_multiplier_added.connect(PotionHolder.on_card_multiplier_added)
-	#add_to_group("Cards")
 
 #region incoming signals
 func _on_button_button_down() -> void:

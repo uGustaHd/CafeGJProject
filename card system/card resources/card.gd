@@ -7,6 +7,9 @@ class_name Card
 @export var card_art : Texture
 @export_multiline var effect_text : String
 
+@export var energy_add : int = 0
+@export var draw_add : int = 0
+
 @export var green_add : int = 0
 @export var blue_add : int = 0
 @export var red_add : int = 0
