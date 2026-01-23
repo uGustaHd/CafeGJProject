@@ -84,6 +84,7 @@ script = ExtResource("9_jkdf5")
 script = ExtResource("10_wsu2k")
 
 [node name="UIControl" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -186,7 +187,6 @@ texture_progress = ExtResource("7_6bp64")
 tint_progress = Color(0.97480863, 0, 0.069732405, 1)
 
 [node name="DayReport" type="Control" parent="UIControl"]
-visible = false
 z_index = 1
 layout_mode = 1
 anchors_preset = 0
@@ -195,6 +195,21 @@ offset_top = 169.0
 offset_right = 875.0
 offset_bottom = 493.0
 script = ExtResource("16_k12tt")
+
+[node name="ColorRect" type="ColorRect" parent="UIControl/DayReport"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -402.5
+offset_top = -235.0
+offset_right = 402.5
+offset_bottom = 235.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.11618609, 0.07413284, 0.04983419, 0.5803922)
 
 [node name="Title" type="Panel" parent="UIControl/DayReport"]
 layout_mode = 1
@@ -235,7 +250,7 @@ anchor_bottom = 0.5
 offset_left = -205.5
 offset_top = -84.0
 offset_right = 205.5
-offset_bottom = 64.0
+offset_bottom = 66.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -276,9 +291,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -205.5
-offset_top = -94.0
+offset_top = -92.0
 offset_right = 205.5
-offset_bottom = -60.0
+offset_bottom = -58.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -320,6 +335,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
+text = "Plan and Shop"
 
 [connection signal="button_down" from="CardManager/PotionHolder/SubmitButton" to="CardManager" method="_on_submit_button_button_down"]
 [connection signal="button_down" from="CardManager/PotionHolder/SubmitButton" to="CardManager/PotionHolder/SubmitButton" method="_on_button_down"]

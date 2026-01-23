@@ -8,11 +8,11 @@ var anguish : float = 0
 var day     : int = 1
 
 #Day variables
-var plesed_customers        : int = 2
-var secret_ingredients_added: int = 3
-var killed_customers        : int = 4
-var cards_used              : int = 5
-var cards_remaining         : int = 6
+var plesed_customers        : int = 0
+var secret_ingredients_added: int = 0
+var killed_customers        : int = 0
+var cards_used              : int = 0
+var cards_remaining         : int = 0
 
 func day_variables_to_zero():
 	plesed_customers = 0

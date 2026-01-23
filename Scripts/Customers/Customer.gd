@@ -4,6 +4,7 @@ extends Node2D
 var current_request: Potion
 var dialog_offset: Vector2 = Vector2(0,100)
 var request_text: String
+var is_potion_delivered : bool = false
 @onready var request_box = $RequestBox
 
 
@@ -21,7 +22,7 @@ func setup():
 		request_box.position = position + Vector2(80,-50)
 	else:
 		print("No CustomerData")
-
+	
 func _ready() -> void:
 	setup()
 	print("\nCustomer Appeared")
@@ -41,36 +42,41 @@ func _ready() -> void:
 	
 #Signal
 func _on_potion_delivered(potion : Potion) -> void: 
-	print("Potion instance id:", potion.get_instance_id())
-	print("RAW:", potion.blue, potion.green, potion.red)
-	print("ARRAY:", potion.colors)
-	# NOTE: Recommend replace with check against a requested potion resource.
-	# TODO: Replace request Dictionary with a RequestResource
-	#if potion.blue >= current_request["Blue"] and potion.green >= current_request["Green"] and potion.red >= current_request["Red"]:
-	var success := true
-	for i in range(3): # 0 = blue, 1 = green, 2 = red
-		var player_color = potion.colors[i]
-		var request_color = current_request.colors[i]
-		print("\nChecking color ", i, ": player=", player_color, " request=", request_color)
-		if player_color < request_color:
-			success = false
-	if success:
-		on_request_success()
-	else:
-		on_request_fail()
+	if !is_potion_delivered:
+		#print("Potion instance id:", potion.get_instance_id())
+		#print("RAW:", potion.blue, potion.green, potion.red)
+		#print("ARRAY:", potion.colors)
+		# NOTE: Recommend replace with check against a requested potion resource.
+		# TODO: Replace request Dictionary with a RequestResource
+		#if potion.blue >= current_request["Blue"] and potion.green >= current_request["Green"] and potion.red >= current_request["Red"]:
+		var success := true
+		for i in range(3): # 0 = blue, 1 = green, 2 = red
+			var player_color = potion.colors[i]
+			var request_color = current_request.colors[i]
+			print("\nChecking color ", i, ": player=", player_color, " request=", request_color)
+			if player_color < request_color:
+				success = false
+		if success:
+			on_request_success()
+		else:
+			on_request_fail()
+		is_potion_delivered = true
+	return
+	
 func on_request_success():
 	var joy_anguish_meters = get_tree().current_scene.get_node("UIControl/JoyAnguishMeters")
 	Global.add_joy(customer_data.joy_on_success)
 	Global.add_anguish(customer_data.anguish_on_success)
-	Global.gold += customer_data.gold_reward
+	#NOTE: customer_data.gold_reward is the minimum amount of gold
+	Global.gold += customer_data.gold_reward + randi_range(0, 8)
 	var dialog = DialogManager.start_dialog(customer_data.dialog_success, global_position + dialog_offset)
 	request_box.visible = false
 	dialog.dialog_finished.connect(Callable(self, "_on_dialog_finished"))
 	print(Global.joy)
 	print(Global.anguish)
 	joy_anguish_meters.update()
+	Global.plesed_customers += 1
 	
-
 func on_request_fail(): 
 	var joy_anguish_meters = get_tree().current_scene.get_node("UIControl/JoyAnguishMeters")
 	Global.joy += customer_data.joy_on_fail
@@ -82,6 +88,7 @@ func on_request_fail():
 	print(Global.anguish)
 	joy_anguish_meters.update()
 var is_dying := false
+	
 func die():
 	var joy_anguish_meters = get_tree().current_scene.get_node("UIControl/JoyAnguishMeters")
 	if is_dying:
@@ -93,9 +100,9 @@ func die():
 	request_box.visible = false
 	dialog.dialog_finished.connect(Callable(self, "_on_dialog_finished"))
 	joy_anguish_meters.update()
-
-
-
+	Global.killed_customers += 1
+	
+	
 func _on_dialog_finished():
 	emit_signal("finished")
 	
@@ -110,7 +117,7 @@ func show_request(potion: Potion):
 	for line in lines:
 		#await get_tree().create_timer(0.45).timeout
 		text_node.append_text(line + "\n")
-		
+	
 	
 func _build_request_text(potion: Potion) -> String:
 	var text: String
@@ -125,7 +132,7 @@ func _build_line(color_name: String, current_amount: int, required_amount: int) 
 	var done := current_amount >= required_amount
 	var color := '#6CCF7D' if done else "#E06C75"
 	var prefix := "✔ " if done else "✖ "
-
+	
 	if done: return "[color=%s]%s [s]%d/%d %s[/s][/color]" % [color, prefix, display_amount, required_amount, color_name]
 	else: return "[color=%s]%s %d/%d %s[/color]" % [color, prefix, display_amount, required_amount, color_name]
 	
