@@ -5,6 +5,14 @@ class_name Pile
 # WARNING: If piles get very large, they may cause lag. May need to use dict in future.
 var card_array : Array[Card]
 
+#WARNING: Check that chosen card is actually in pile before using.
+func take_card(chosen_card : Card) -> Card:
+	if card_array.has(chosen_card):
+		card_array.erase(chosen_card)
+		return chosen_card
+	else:
+		return load("res://card system/card resources/is_empty.tres")
+
 # Will return is_empty card if empty
 func take_random() -> Card:
 	if not card_array.is_empty():

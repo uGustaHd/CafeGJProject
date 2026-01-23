@@ -6,6 +6,7 @@ signal card_multiplier_added(multiplier_potion : Potion)
 var card_resource : Card
 
 @onready var DiscardPile : Pile = $"../../../../DiscardHolder".held_pile
+@onready var HandPile : Pile = $"../../..".held_pile
 @onready var PotionHolder = $"../../../../PotionHolder"
 @onready var animation : AnimationPlayer = $AnimationPlayer
 @onready var button : Button = $Visuals/Button
@@ -59,8 +60,9 @@ func add_color():
 	color_added.add_red(card_resource.red_add)
 	card_color_added.emit(color_added)
 
+#WARNING: Only use when in hand.
 func discard_self() -> void:
-	DiscardPile.add_card(card_resource)
+	DiscardPile.add_card(HandPile.take_card(card_resource))
 	queue_free()
 
 #NOTE: Update for non energy costs later
