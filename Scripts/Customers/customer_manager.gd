@@ -9,7 +9,7 @@ signal customer_spawned
 
 @export var customer_scene: PackedScene
 @export var spawn_position: Node2D
-@export var spawn_delay: float = 3
+@export var spawn_delay: float = 1
 
 var customer_per_day := 3
 var customers_served_today := 0

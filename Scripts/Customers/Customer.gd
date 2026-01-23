@@ -17,7 +17,6 @@ func setup():
 		var new_request = Potion.new()
 		new_request.generate_potion(Global.get_difficulty())
 		current_request = new_request
-		#request_text = _build_request_text(Potion.new()) #"I want \n" + str(current_request.get("Blue")) + "x Blue\n" +  str(current_request.get("Green")) + "x Green\n" + str(current_request.get("Red")) + "x Red" 
 		request_box.visible = false
 		request_box.position = position + Vector2(80,-50)
 	else:
@@ -26,8 +25,6 @@ func setup():
 func _ready() -> void:
 	setup()
 	print("\nCustomer Appeared")
-	
-	
 	#TODO: Connect a signal with the potion that the player gave to the NPC
 	var card_manager = get_tree().current_scene.get_node("CardManager")
 	var potion_holder = card_manager.get_node("PotionHolder")
@@ -36,17 +33,12 @@ func _ready() -> void:
 	
 	await get_tree().process_frame
 	
-	var dialog = DialogManager.start_dialog(customer_data.dialog_intro, global_position + dialog_offset)
-	await dialog.dialog_finished
+	DialogManager.start_dialog(customer_data.dialog_intro, global_position + dialog_offset)
+	#await dialog.dialog_finished
 	request_box.visible = true
 	show_request(Potion.new())
 	
 	
-func _on_intro_finished():
-	request_box.visible = true
-	show_request(Potion.new())
-
-
 #Signal
 func _on_potion_delivered(potion : Potion) -> void: 
 	print("Potion instance id:", potion.get_instance_id())
@@ -107,22 +99,16 @@ func die():
 func _on_dialog_finished():
 	emit_signal("finished")
 	
-func _type_request(text: String):
-	$RequestBox/TextBox/RequestText.text = ""
-	for i in range(text.length()):
-		$RequestBox/TextBox/RequestText.text += text[i]
-		await get_tree().create_timer(0.05).timeout
-	
 func show_request(potion: Potion):
 	var text_node := $RequestBox/TextBox/RequestText
 	text_node.clear()
-	_type_request("I want: \n")
+	text_node.text = "I want:\n"
 	var lines := []
 	lines.append(_build_line("Blue", potion.blue, current_request.blue))
 	lines.append(_build_line("Green", potion.green, current_request.green))
 	lines.append(_build_line("Red", potion.red, current_request.red))
 	for line in lines:
-		await get_tree().create_timer(0.45).timeout
+		#await get_tree().create_timer(0.45).timeout
 		text_node.append_text(line + "\n")
 		
 	

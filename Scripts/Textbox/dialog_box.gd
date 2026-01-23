@@ -6,6 +6,7 @@ var text_to_display: Array[String] = []
 var current_index: int = 0
 var typing_speed: float = 0.03
 var is_typing: bool = false
+var current_full_text: String = ""
 
 @onready var text_label: Label = $TextContainer/TextLabel
 @onready var tween: Tween = get_tree().create_tween()
@@ -24,13 +25,16 @@ func _ready() -> void:
 func show_text():
 	if current_index < text_to_display.size():
 		is_typing = true
+		current_full_text = text_to_display[current_index]
 		text_label.text = ""
-		_type_text(text_to_display[current_index])
+		_type_text(current_full_text)
 	else:
 		_close_dialog()
 		
 func _type_text(text: String):
 	for i in range(text.length()):
+		if !is_typing:
+			return
 		text_label.text += text[i]
 		await get_tree().create_timer(typing_speed).timeout
 	
@@ -47,15 +51,14 @@ func _close_dialog():
 		
 	
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_accept") && !is_typing:
+	if event.is_action_pressed("ui_accept"):
 		if is_typing:
-			text_label.text = text_to_display[current_index]
 			is_typing = false
+			text_label.text = current_full_text
+			return
 			
-		else:
-			if current_index + 1 < text_to_display.size():
-				current_index += 1
-				show_text()
-			else :
-				get_tree().paused = false
-				_close_dialog()
+		if current_index + 1 < text_to_display.size():
+			current_index += 1
+			show_text()
+		else :
+			_close_dialog()
