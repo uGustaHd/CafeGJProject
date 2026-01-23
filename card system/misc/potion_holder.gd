@@ -27,9 +27,17 @@ func add_colors(added_colors : Potion) -> void:
 	held_potion.add_red(added_colors.red)
 	potion_progress_changed.emit(held_potion)
 
+func add_multiplier(added_multiplier : Potion):
+	held_potion.blue_multiplier *= added_multiplier.blue_multiplier
+	held_potion.green_multiplier *= added_multiplier.green_multiplier
+	held_potion.red_multiplier *= added_multiplier.red_multiplier
+
 func reset_potion():
 	held_potion.reset_potion()
 	emit_signal("potion_progress_changed", held_potion)
 	
 func on_card_color_added(color_added : Potion):
 	add_colors(color_added)
+	
+func on_card_multiplier_added(multiplier_added : Potion):
+	add_multiplier(multiplier_added)

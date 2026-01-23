@@ -1,6 +1,7 @@
 extends Control
 
 signal card_color_added(color_potion : Potion)
+signal card_multiplier_added(multiplier_potion : Potion)
 #region data
 var card_resource : Card
 
@@ -38,15 +39,26 @@ func fill_effect_text() -> void:
 
 #region actions
 func activate() -> void:
+	add_color()
+	add_multiplier()
+	
+	discard_self()
+	pay_cost()
+
+func add_multiplier():
+	var multiplier_added : Potion = Potion.new()
+	multiplier_added.blue_multiplier = card_resource.blue_multiply
+	multiplier_added.green_multiplier = card_resource.green_multiply
+	multiplier_added.red_multiplier = card_resource.red_multiply
+	card_multiplier_added.emit(multiplier_added)
+
+func add_color():
 	var color_added : Potion = Potion.new()
 	color_added.add_blue(card_resource.blue_add)
 	color_added.add_green(card_resource.green_add)
 	color_added.add_red(card_resource.red_add)
 	card_color_added.emit(color_added)
-	
-	discard_self()
-	pay_cost()
-	
+
 func discard_self() -> void:
 	DiscardPile.add_card(card_resource)
 	queue_free()
@@ -59,6 +71,7 @@ func pay_cost() -> void:
 
 func _ready() -> void:
 	card_color_added.connect(PotionHolder.on_card_color_added)
+	card_multiplier_added.connect(PotionHolder.on_card_multiplier_added)
 	#add_to_group("Cards")
 
 #region incoming signals
