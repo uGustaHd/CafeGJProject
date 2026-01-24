@@ -8,16 +8,18 @@ var typing_speed: float = 0.03
 var is_typing: bool = false
 var current_full_text: String = ""
 
+@export var animation = true
 @onready var text_label: Label = $TextContainer/TextLabel
 @onready var tween: Tween = get_tree().create_tween()
 
 func _ready() -> void:
 	
 	pivot_offset = size/2
-	self.scale = Vector2.ZERO
+	if animation:
+		self.scale = Vector2.ZERO
 	
 	
-	tween.tween_property(self, "scale", Vector2.ONE, 0.3).set_trans(Tween.TRANS_BACK)
+		tween.tween_property(self, "scale", Vector2.ONE, 0.3).set_trans(Tween.TRANS_BACK)
 	
 	if text_to_display.size() > 0:
 		show_text() 

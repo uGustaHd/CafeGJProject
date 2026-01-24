@@ -18,4 +18,3 @@ func _build_info_name_text() -> String:
 func _build_info_value_text() -> String:
 	return str(Global.gold) + "\n" + str(Global.plesed_customers) + "\n" + str(Global.secret_ingredients_added) + "\n" + str(Global.killed_customers) + "\n" + str(Global.cards_used) + "\n" + str(Global.cards_remaining)
 	
-	

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dbtic8k4hhs0a" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://df1d5o4oc5m1e" path="res://Scenes/Customers/customer_manager.tscn" id="1_jjgbg"]
-[ext_resource type="PackedScene" uid="uid://ucuv03tdxv54" path="res://Scenes/Customers/Customer.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://ucuv03tdxv54" path="res://Scenes/Customers/customer.tscn" id="2_bo1nx"]
 [ext_resource type="Script" uid="uid://ciewvhcpryhfs" path="res://Scripts/Cards/card_manager.gd" id="4_jjvhh"]
 [ext_resource type="Script" uid="uid://cilybldurbx2h" path="res://card system/misc/potion_holder.gd" id="5_kry3j"]
 [ext_resource type="Script" uid="uid://cftb5hku6m48" path="res://card system/misc/submit_button.gd" id="6_b3802"]
@@ -43,7 +43,7 @@ customer_scene = ExtResource("2_bo1nx")
 spawn_position = NodePath("../CustomerSpawn")
 
 [node name="CustomerSpawn" type="Marker2D" parent="."]
-position = Vector2(576, 266)
+position = Vector2(576, 301)
 
 [node name="CardManager" type="Node2D" parent="."]
 script = ExtResource("4_jjvhh")
@@ -96,7 +96,6 @@ script = ExtResource("9_jkdf5")
 script = ExtResource("10_wsu2k")
 
 [node name="UIControl" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -145,6 +144,7 @@ offset_top = -67.5
 offset_bottom = 68.5
 grow_horizontal = 0
 grow_vertical = 2
+focus_mode = 0
 
 [node name="JoyAnguishMeters" type="Control" parent="UIControl"]
 anchors_preset = 0
@@ -199,6 +199,7 @@ texture_progress = ExtResource("7_6bp64")
 tint_progress = Color(0.97480863, 0, 0.069732405, 1)
 
 [node name="DayReport" type="Control" parent="UIControl"]
+visible = false
 z_index = 1
 layout_mode = 1
 anchors_preset = 0
@@ -356,3 +357,4 @@ text = "Plan and Shop"
 [connection signal="child_exiting_tree" from="CardManager/HandHolder/HandUI/HandHBox" to="CardManager/HandHolder/HandUI/HandHBox" method="_on_child_exiting_tree"]
 [connection signal="pressed" from="UIControl/SlideKillPanel/ArrowButton" to="UIControl/SlideKillPanel" method="_on_arrow_button_pressed"]
 [connection signal="pressed" from="UIControl/SlideKillPanel/KillButton" to="CustomerManager" method="_on_kill_button_pressed"]
+[connection signal="pressed" from="UIControl/DayReport/GoToShop/Button" to="." method="_on_button_pressed"]
