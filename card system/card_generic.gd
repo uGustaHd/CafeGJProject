@@ -28,7 +28,8 @@ func initialize_card(source_card : Card) -> void:
 		HandPile.take_card(card_resource)
 		queue_free()
 	art.texture = card_resource.card_art
-	title.text = card_resource.title
+	color_title()
+	title.add_text(card_resource.title) 
 	energy_cost.text = str(card_resource.energy_cost)
 	fill_effect_text()
 	effect_text.add_text(card_resource.effect_text)
@@ -58,6 +59,17 @@ func fill_effect_text() -> void:
 				text_to_add = "-" + str(value) + text_to_add
 			effect_text.add_text(text_to_add)
 		i += 1
+
+func color_title() -> void:
+	match card_resource.archetype:
+		card_resource.Archetype.RED:
+			title.push_color(Color.RED)
+		card_resource.Archetype.BLUE:
+			title.push_color(Color.DODGER_BLUE)
+		card_resource.Archetype.GREEN:
+			title.push_color(Color.LIME_GREEN)
+		card_resource.Archetype.RAINBOW:
+			title.push_color(Color.WHITE)
 
 #endregion
 
