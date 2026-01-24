@@ -29,7 +29,8 @@ func initialize_card(source_card : Card) -> void:
 		queue_free()
 	art.texture = card_resource.card_art
 	color_title()
-	title.add_text(card_resource.title) 
+	if card_resource.archetype != card_resource.Archetype.RAINBOW:
+		title.add_text(card_resource.title) 
 	energy_cost.text = str(card_resource.energy_cost)
 	fill_effect_text()
 	effect_text.add_text(card_resource.effect_text)
@@ -60,6 +61,7 @@ func fill_effect_text() -> void:
 			effect_text.add_text(text_to_add)
 		i += 1
 
+# Assigns title directly if Rainbow
 func color_title() -> void:
 	match card_resource.archetype:
 		card_resource.Archetype.RED:
@@ -69,7 +71,8 @@ func color_title() -> void:
 		card_resource.Archetype.GREEN:
 			title.push_color(Color.LIME_GREEN)
 		card_resource.Archetype.RAINBOW:
-			title.push_color(Color.WHITE)
+			#[rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]{text}[/rainbow]
+			title.text = "[rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]" + card_resource.title + "[/rainbow]"
 
 #endregion
 
