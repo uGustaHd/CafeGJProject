@@ -7,6 +7,7 @@
 script = ExtResource("1_yebmc")
 title = "Delphinium"
 card_art = ExtResource("1_qdhje")
+archetype = 2
 draw_add = 1
 blue_add = 1
 metadata/_custom_type_script = "uid://b8yono3xc1siy"

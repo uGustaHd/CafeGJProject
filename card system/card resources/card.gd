@@ -5,6 +5,8 @@ class_name Card
 #region properties
 @export var title : String
 @export var card_art : Texture
+@export var archetype : Archetype
+enum Archetype {RED, GREEN, BLUE, RAINBOW}
 @export_multiline var effect_text : String
 
 @export var energy_add : int = 0

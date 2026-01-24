@@ -7,6 +7,7 @@
 script = ExtResource("1_8h7cf")
 title = "Water"
 card_art = ExtResource("1_vls2b")
+archetype = 2
 energy_add = 1
 draw_add = 1
 blue_add = 1

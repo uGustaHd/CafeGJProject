@@ -7,6 +7,7 @@
 script = ExtResource("1_6qjqt")
 title = "Sage Flower"
 card_art = ExtResource("1_ddir2")
+archetype = 1
 energy_add = 4
 green_add = 1
 energy_cost = 2

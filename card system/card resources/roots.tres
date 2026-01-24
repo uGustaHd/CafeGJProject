@@ -7,8 +7,9 @@
 script = ExtResource("1_45ikh")
 title = "Roots"
 card_art = ExtResource("1_o4qtj")
-green_add = 1
-blue_add = 1
-red_add = 1
+archetype = 3
+green_add = 2
+blue_add = 2
+red_add = 2
 energy_cost = 2
 metadata/_custom_type_script = "uid://b8yono3xc1siy"

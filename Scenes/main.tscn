@@ -1,8 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://bdqjd2ergavof"]
+[gd_scene load_steps=21 format=3 uid="uid://bdqjd2ergavof"]
 
 [ext_resource type="Script" uid="uid://dbtic8k4hhs0a" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://df1d5o4oc5m1e" path="res://Scenes/Customers/customer_manager.tscn" id="1_jjgbg"]
-[ext_resource type="PackedScene" uid="uid://ucuv03tdxv54" path="res://Scenes/Customers/customer.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://ucuv03tdxv54" path="res://Scenes/Customers/Customer.tscn" id="2_bo1nx"]
 [ext_resource type="Script" uid="uid://ciewvhcpryhfs" path="res://Scripts/Cards/card_manager.gd" id="4_jjvhh"]
 [ext_resource type="Script" uid="uid://cilybldurbx2h" path="res://card system/misc/potion_holder.gd" id="5_kry3j"]
 [ext_resource type="Script" uid="uid://cftb5hku6m48" path="res://card system/misc/submit_button.gd" id="6_b3802"]
@@ -18,9 +18,21 @@
 [ext_resource type="Script" uid="uid://cavfpuefel5gx" path="res://card system/piles/discard_holder.gd" id="10_wsu2k"]
 [ext_resource type="Texture2D" uid="uid://cnpb6it8w167k" path="res://Assets/Sprites/UI/Knife_kill.png" id="13_h1bgf"]
 [ext_resource type="Script" uid="uid://ga6oihrmatia" path="res://Scenes/day_report.gd" id="16_k12tt"]
+[ext_resource type="Texture2D" uid="uid://fd73bo7swlsj" path="res://Assets/Sprites/Background/Witch Hut.png" id="19_hibaj"]
+[ext_resource type="Texture2D" uid="uid://bcyhiucr3jp47" path="res://Assets/Sprites/Background/Counter.png" id="20_pdsj5"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_8gbba")
+
+[node name="BackGround" type="Sprite2D" parent="."]
+position = Vector2(575.99994, 325)
+scale = Vector2(1.4999999, 1.4999999)
+texture = ExtResource("19_hibaj")
+
+[node name="Counter" type="Sprite2D" parent="."]
+position = Vector2(575.99994, 325)
+scale = Vector2(1.4999999, 1.4999999)
+texture = ExtResource("20_pdsj5")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)

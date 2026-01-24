@@ -22,6 +22,10 @@ var card_resource : Card
 # Called by HandHolder once card resource is added.
 func initialize_card(source_card : Card) -> void:
 	card_resource = source_card
+	# Should remove any empty cards that get through.
+	if card_resource == load("res://card system/card resources/is_empty.tres"):
+		HandPile.take_card(card_resource)
+		queue_free()
 	art.texture = card_resource.card_art
 	title.text = card_resource.title
 	energy_cost.text = str(card_resource.energy_cost)
@@ -81,8 +85,6 @@ func pay_cost() -> void:
 #endregion
 
 func _ready() -> void:
-	if card_resource == load("res://card system/card resources/is_empty.tres"):
-		queue_free()
 	card_color_added.connect(PotionHolder.on_card_color_added)
 	card_multiplier_added.connect(PotionHolder.on_card_multiplier_added)
 
