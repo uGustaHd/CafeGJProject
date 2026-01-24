@@ -130,12 +130,14 @@ texture = ExtResource("3_1q60f")
 
 [node name="Title" type="RichTextLabel" parent="Visuals/Art"]
 layout_mode = 0
-offset_left = 10.0
-offset_top = 43.0
-offset_right = 52.0
+offset_left = 12.42857
+offset_top = 42.714287
+offset_right = 53.14285
 offset_bottom = 56.0
 theme = ExtResource("3_11dsn")
 bbcode_enabled = true
+fit_content = true
+scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
