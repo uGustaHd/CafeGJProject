@@ -16,6 +16,7 @@ var card_resource : Card
 @onready var title : RichTextLabel = $Visuals/Art/Title
 @onready var energy_cost : RichTextLabel = $Visuals/CostIcon/EnergyCost
 @onready var art : TextureRect = $Visuals/Art
+
 #endregion
 
 #region fill card
@@ -29,17 +30,34 @@ func initialize_card(source_card : Card) -> void:
 	art.texture = card_resource.card_art
 	title.text = card_resource.title
 	energy_cost.text = str(card_resource.energy_cost)
-	effect_text.text = card_resource.effect_text
-	fill_additional_costs()
 	fill_effect_text()
+	effect_text.add_text(card_resource.effect_text)
+	fill_additional_costs()
 
 #TODO: If card has costs other that energy, should add those icons to card.
 func fill_additional_costs() -> void:
 	pass
 	
-#TODO: Should generate text for numerical effects
 func fill_effect_text() -> void:
-	pass
+	var numericals = [card_resource.green_add, card_resource.blue_add, card_resource.red_add, card_resource.energy_add, card_resource.draw_add]
+	# [green_add, blue_add, red_add, energy_add, draw_add]
+	var numerical_strings : Array[String] = [
+		" Green \n",
+		" Blue \n",
+		" Red \n",
+		" Energy \n",
+		" Draw \n",
+	]
+	var i = 0
+	for value in numericals:
+		if value != 0:
+			var text_to_add : String = numerical_strings[i]
+			if value > 0:
+				text_to_add = "+" + str(value) + text_to_add
+			elif value < 0:
+				text_to_add = "-" + str(value) + text_to_add
+			effect_text.add_text(text_to_add)
+		i += 1
 
 #endregion
 
