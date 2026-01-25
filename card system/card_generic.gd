@@ -92,6 +92,13 @@ func color_title() -> void:
 #endregion
 
 #region actions
+func attempt_activation() -> bool:
+	if card_resource.energy_cost <= Global.energy:
+		activate()
+		return true
+	else:
+		return false
+
 func activate() -> void:
 	add_color()
 	add_multiplier()
@@ -138,7 +145,7 @@ func _ready() -> void:
 
 #region incoming signals
 func _on_button_button_down() -> void:
-	activate()
+	attempt_activation()
 
 #WARNING: Animation breaks if moused over too fast
 func _on_button_mouse_entered() -> void:

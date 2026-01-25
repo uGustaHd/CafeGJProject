@@ -25,12 +25,12 @@
 script = ExtResource("1_8gbba")
 
 [node name="BackGround" type="Sprite2D" parent="."]
-position = Vector2(575.99994, 325)
+position = Vector2(575.99994, 324)
 scale = Vector2(1.4999999, 1.4999999)
 texture = ExtResource("19_hibaj")
 
 [node name="Counter" type="Sprite2D" parent="."]
-position = Vector2(575.99994, 325)
+position = Vector2(575.99994, 324.00003)
 scale = Vector2(1.4999999, 1.4999999)
 texture = ExtResource("20_pdsj5")
 
