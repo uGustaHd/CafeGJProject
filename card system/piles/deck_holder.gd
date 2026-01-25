@@ -24,7 +24,7 @@ func draw_card() -> Card:
 		shuffle_in_discard()
 		is_looping = true
 		return draw_card()
-	elif is_looping:
+	elif drawn_card == load("res://card system/card resources/is_empty.tres") and is_looping:
 		push_warning("All cards in hand, cannot draw")
 		return drawn_card
 	else:
