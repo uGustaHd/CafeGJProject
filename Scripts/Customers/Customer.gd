@@ -68,7 +68,7 @@ func on_request_success():
 	Global.add_joy(customer_data.joy_on_success)
 	Global.add_anguish(customer_data.anguish_on_success)
 	#NOTE: customer_data.gold_reward is the minimum amount of gold
-	Global.gold += customer_data.gold_reward + randi_range(0, 8)
+	Global.add_gold(customer_data.gold_reward + randi_range(0, 8)) 
 	var dialog = DialogManager.start_dialog(customer_data.dialog_success, global_position + dialog_offset)
 	request_box.visible = false
 	dialog.dialog_finished.connect(Callable(self, "_on_dialog_finished"))

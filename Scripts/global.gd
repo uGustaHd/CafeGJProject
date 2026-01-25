@@ -1,6 +1,6 @@
 extends Node
 
-var gold    : int = 1
+var gold    : int = 0
 var default_energy : int = 3
 var energy  : int = default_energy
 var joy     : float = 0
@@ -43,3 +43,7 @@ func add_anguish(value):
 
 func add_energy(value):
 	energy = max(0, energy + value)
+	
+func add_gold(value):
+	gold = max(0, gold + value)
+	get_tree().call_group("gold_ui", "update_counter")

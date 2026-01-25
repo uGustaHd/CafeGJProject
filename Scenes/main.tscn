@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bdqjd2ergavof"]
+[gd_scene load_steps=24 format=3 uid="uid://bdqjd2ergavof"]
 
 [ext_resource type="Script" uid="uid://dbtic8k4hhs0a" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://df1d5o4oc5m1e" path="res://Scenes/Customers/customer_manager.tscn" id="1_jjgbg"]
@@ -20,6 +20,9 @@
 [ext_resource type="Script" uid="uid://ga6oihrmatia" path="res://Scenes/day_report.gd" id="16_k12tt"]
 [ext_resource type="Texture2D" uid="uid://fd73bo7swlsj" path="res://Assets/Sprites/Background/Witch Hut.png" id="19_hibaj"]
 [ext_resource type="Texture2D" uid="uid://bcyhiucr3jp47" path="res://Assets/Sprites/Background/Counter.png" id="20_pdsj5"]
+[ext_resource type="Texture2D" uid="uid://ceswsihbycqlg" path="res://Assets/Sprites/UI/coin_counter.png" id="21_pdsj5"]
+[ext_resource type="Script" uid="uid://dne0jfbuucu01" path="res://Scripts/gold_counter.gd" id="22_ee4r6"]
+[ext_resource type="FontFile" uid="uid://bu0iimg40ehu2" path="res://card system/card_assets/Jersey10-Regular.ttf" id="23_gt3je"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_8gbba")
@@ -52,10 +55,10 @@ script = ExtResource("4_jjvhh")
 script = ExtResource("5_kry3j")
 
 [node name="SubmitButton" type="Button" parent="CardManager/PotionHolder"]
-offset_left = 788.0
-offset_top = 343.0
-offset_right = 878.0
-offset_bottom = 374.0
+offset_left = 796.0
+offset_top = 385.0
+offset_right = 886.0
+offset_bottom = 416.0
 focus_mode = 0
 text = "Sell Potion"
 script = ExtResource("6_b3802")
@@ -100,6 +103,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
 
 [node name="SlideKillPanel" type="TextureRect" parent="UIControl"]
 layout_mode = 1
@@ -349,6 +353,31 @@ grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
 text = "Plan and Shop"
+
+[node name="GoldCounter" type="TextureRect" parent="UIControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 22.025
+anchor_top = 12.05
+anchor_right = 22.625
+anchor_bottom = 12.05
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("21_pdsj5")
+script = ExtResource("22_ee4r6")
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UIControl/GoldCounter"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 15.0
+offset_right = 45.0
+offset_bottom = 39.0
+theme_override_fonts/normal_font = ExtResource("23_gt3je")
+theme_override_font_sizes/normal_font_size = 22
+text = "0"
+fit_content = true
+scroll_active = false
 
 [connection signal="button_down" from="CardManager/PotionHolder/SubmitButton" to="CardManager" method="_on_submit_button_button_down"]
 [connection signal="button_down" from="CardManager/PotionHolder/SubmitButton" to="CardManager/PotionHolder/SubmitButton" method="_on_button_down"]
