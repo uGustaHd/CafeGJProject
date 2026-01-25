@@ -105,8 +105,10 @@ func activate() -> void:
 	add_energy()
 	add_draw()
 	
-	discard_self()
 	pay_cost()
+	for card in get_parent().get_children():
+		card.update_cost_icons()
+	discard_self()
 
 func add_draw():
 	Dealer.deal_cards(card_resource.draw_add)
@@ -142,6 +144,12 @@ func pay_cost() -> void:
 func _ready() -> void:
 	card_color_added.connect(PotionHolder.on_card_color_added)
 	card_multiplier_added.connect(PotionHolder.on_card_multiplier_added)
+
+func update_cost_icons():
+	if card_resource.energy_cost > Global.energy:
+		energy_cost.self_modulate = Color.RED
+	else:
+		energy_cost.self_modulate = Color.WHITE
 
 #region incoming signals
 func _on_button_button_down() -> void:
