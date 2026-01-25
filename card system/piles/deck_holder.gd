@@ -5,12 +5,12 @@ extends PileHolder
 var is_looping : bool = false
 
 var starting_deck : Array[Card] = [
-load("res://card system/card resources/delphinium.tres"),
-load("res://card system/card resources/dried_peppers.tres"),
-load("res://card system/card resources/mushrooms.tres"),
-load("res://card system/card resources/roots.tres"),
-load("res://card system/card resources/sage_flower.tres"),
-load("res://card system/card resources/water.tres"),
+load("res://card system/card resources/delphinium.tres"), 
+load("res://card system/card resources/dried_peppers.tres"), 
+load("res://card system/card resources/mushrooms.tres"), 
+load("res://card system/card resources/roots.tres"), 
+load("res://card system/card resources/sage_flower.tres"), 
+load("res://card system/card resources/water.tres"), 
 load("res://card system/card resources/water.tres"),
 load("res://card system/card resources/water.tres"),
 load("res://card system/card resources/water.tres"),
@@ -36,6 +36,10 @@ func shuffle_in_discard():
 	held_pile.card_array.append_array(discarded_cards)
 
 func _ready() -> void:
-	# If player has no cards, they get the starting deck on scene ready
+	if Global.day == 1:
+		Global.reset_run_deck(starting_deck)
 	if held_pile.card_array.is_empty():
-		held_pile.card_array = starting_deck.duplicate()
+		if not Global.run_deck.is_empty():
+			held_pile.card_array = Global.run_deck.duplicate()
+		else:
+			held_pile.card_array = starting_deck.duplicate()

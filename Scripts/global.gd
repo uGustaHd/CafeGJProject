@@ -1,18 +1,22 @@
 extends Node
+signal gold_changed(new_gold : int)
 
-var gold    : int = 0
+var gold    : int = 100
 var default_energy : int = 3
 var energy  : int = default_energy
 var joy     : float = 0
 var anguish : float = 0
 var day     : int = 1
-
+var run_deck : Array[Card] = []
 #Day variables
 var plesed_customers        : int = 0
 var secret_ingredients_added: int = 0
 var killed_customers        : int = 0
 var cards_used              : int = 0
 var cards_remaining         : int = 0
+
+func reset_run_deck(starting_deck : Array[Card]):
+	run_deck = starting_deck.duplicate()
 
 func day_variables_to_zero():
 	plesed_customers = 0
@@ -35,11 +39,12 @@ func get_difficulty() -> int:
 		_:
 			return 4
 #NOTE: Doesn't this double the joy and then add the value bc of +=? idk I didnt test yet.
+#NOTE: Yes it does! Thx! Already Fixed
 func add_joy(value):
-	joy += max(0, joy + value)
+	joy = max(0, joy + value)
 	
 func add_anguish(value):
-	anguish += max(0, anguish + value)
+	anguish = max(0, anguish + value)
 
 func add_energy(value):
 	energy = max(0, energy + value)
@@ -47,4 +52,5 @@ func add_energy(value):
 	
 func add_gold(value):
 	gold = max(0, gold + value)
+	gold_changed.emit(gold)
 	get_tree().call_group("gold_ui", "update_counter")

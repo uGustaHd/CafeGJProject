@@ -8,22 +8,16 @@ var typing_speed: float = 0.03
 var is_typing: bool = false
 var current_full_text: String = ""
 
-@export var animation = true
 @onready var text_label: Label = $TextContainer/TextLabel
 @onready var tween: Tween = get_tree().create_tween()
 
 func _ready() -> void:
 	
 	pivot_offset = size/2
-	if animation:
-		self.scale = Vector2.ZERO
-	
-	
-		tween.tween_property(self, "scale", Vector2.ONE, 0.3).set_trans(Tween.TRANS_BACK)
-	
+	self.scale = Vector2.ZERO
+	tween.tween_property(self, "scale", Vector2.ONE, 0.3).set_trans(Tween.TRANS_BACK)
 	if text_to_display.size() > 0:
 		show_text() 
-		
 func show_text():
 	if current_index < text_to_display.size():
 		is_typing = true
@@ -64,3 +58,6 @@ func _unhandled_input(event: InputEvent) -> void:
 			show_text()
 		else :
 			_close_dialog()
+
+func set_custom_minimum(new_size: Vector2):
+	$TextContainer/TextLabel.custom_minimum_size = new_size

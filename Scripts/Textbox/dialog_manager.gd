@@ -15,7 +15,6 @@ func start_dialog(text: Array[String], dialog_position: Vector2):
 	if dialog_scene:
 		dialog_box = dialog_scene.instantiate()
 		get_tree().current_scene.add_child(dialog_box)
-		
 		dialog_box.text_to_display = text
 		dialog_box.global_position = dialog_position
 		dialog_box.show_text()

@@ -5,6 +5,8 @@ signal card_multiplier_added(multiplier_potion : Potion)
 #region data
 var card_resource : Card
 
+
+
 @onready var DiscardPile : Pile = $"../../../../DiscardHolder".held_pile
 @onready var HandPile : Pile = $"../../..".held_pile
 @onready var PotionHolder = $"../../../../PotionHolder"
@@ -98,6 +100,8 @@ func attempt_activation() -> bool:
 		return true
 	else:
 		return false
+		
+		
 
 func activate() -> void:
 	add_color()
@@ -154,7 +158,8 @@ func update_cost_icons():
 #region incoming signals
 func _on_button_button_down() -> void:
 	attempt_activation()
-
+	
+	
 #WARNING: Animation breaks if moused over too fast
 func _on_button_mouse_entered() -> void:
 	animation.play("focus_card")
