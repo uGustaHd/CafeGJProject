@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bdqjd2ergavof"]
+[gd_scene load_steps=25 format=3 uid="uid://bdqjd2ergavof"]
 
 [ext_resource type="Script" uid="uid://dbtic8k4hhs0a" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://df1d5o4oc5m1e" path="res://Scenes/Customers/customer_manager.tscn" id="1_jjgbg"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://ceswsihbycqlg" path="res://Assets/Sprites/UI/coin_counter.png" id="21_pdsj5"]
 [ext_resource type="Script" uid="uid://dne0jfbuucu01" path="res://Scripts/gold_counter.gd" id="22_ee4r6"]
 [ext_resource type="FontFile" uid="uid://bu0iimg40ehu2" path="res://card system/card_assets/Jersey10-Regular.ttf" id="23_gt3je"]
+[ext_resource type="Script" uid="uid://bpsrl57tmr0vj" path="res://Scripts/energy_counter.gd" id="24_3pmx8"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_8gbba")
@@ -368,6 +369,30 @@ script = ExtResource("22_ee4r6")
 metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="UIControl/GoldCounter"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 15.0
+offset_right = 45.0
+offset_bottom = 39.0
+theme_override_fonts/normal_font = ExtResource("23_gt3je")
+theme_override_font_sizes/normal_font_size = 22
+text = "0"
+fit_content = true
+scroll_active = false
+
+[node name="EnergyCounter" type="TextureRect" parent="UIControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 5.525
+anchor_top = 12.0
+anchor_right = 6.125
+anchor_bottom = 12.0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("24_3pmx8")
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UIControl/EnergyCounter"]
 layout_mode = 0
 offset_left = 13.0
 offset_top = 15.0

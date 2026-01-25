@@ -43,6 +43,7 @@ func add_anguish(value):
 
 func add_energy(value):
 	energy = max(0, energy + value)
+	get_tree().call_group("energy_ui", "update_counter")
 	
 func add_gold(value):
 	gold = max(0, gold + value)
