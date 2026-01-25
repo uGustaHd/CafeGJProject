@@ -115,10 +115,12 @@ texture = ExtResource("1_sj6e3")
 [node name="EffectText" type="RichTextLabel" parent="Visuals/Base"]
 layout_mode = 0
 offset_left = 2.8571424
-offset_top = 4.1428566
+offset_top = 2.0
 offset_right = 55.714283
-offset_bottom = 34.857143
+offset_bottom = 36.999996
 theme = ExtResource("3_11dsn")
+theme_override_constants/paragraph_separation = -3
+theme_override_font_sizes/normal_font_size = 11
 
 [node name="Art" type="TextureRect" parent="Visuals"]
 layout_mode = 0
@@ -130,11 +132,12 @@ texture = ExtResource("3_1q60f")
 
 [node name="Title" type="RichTextLabel" parent="Visuals/Art"]
 layout_mode = 0
-offset_left = 12.42857
+offset_left = 12.428569
 offset_top = 42.714287
 offset_right = 53.14285
 offset_bottom = 56.0
 theme = ExtResource("3_11dsn")
+theme_override_font_sizes/normal_font_size = 8
 bbcode_enabled = true
 fit_content = true
 scroll_active = false
