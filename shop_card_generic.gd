@@ -2,15 +2,15 @@ extends Control
 
 @onready var animation : AnimationPlayer = $AnimationPlayer
 @onready var button : Button = $Visuals/Button
-
+@onready var price_label : Label = $Visuals/PricePanel/PriceLabel
 @onready var effect_text : RichTextLabel = $Visuals/Base/EffectText
 @onready var title : RichTextLabel = $Visuals/Art/Title
 @onready var energy_cost : RichTextLabel = $Visuals/CostIcon/EnergyCost
 @onready var art : TextureRect = $Visuals/Art
+#TODO: Add 
 
-var price : int = 10
 var card_resource : Card
-
+var price :int
 func _ready():
 	button.pressed.connect(_on_pressed)
 
@@ -23,7 +23,8 @@ func _on_pressed():
 
 func initialize_card(source_card : Card) -> void:
 	card_resource = source_card
-
+	price = card_resource.shop_price
+	price_label.text = str(price) + "g"
 	art.texture = card_resource.card_art
 	color_title()
 

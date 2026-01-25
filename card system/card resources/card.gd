@@ -7,6 +7,7 @@ class_name Card
 @export var card_art : Texture
 @export var archetype : Archetype
 enum Archetype {RED, GREEN, BLUE, RAINBOW}
+@export var shop_price : int = 10
 @export_multiline var effect_text : String
 
 @export var energy_add : int = 0
