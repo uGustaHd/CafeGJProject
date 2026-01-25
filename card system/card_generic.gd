@@ -60,6 +60,21 @@ func fill_effect_text() -> void:
 				text_to_add = "-" + str(value) + text_to_add
 			effect_text.add_text(text_to_add)
 		i += 1
+	
+	# Write out multipliers
+	var multipliers : Array[int] = [card_resource.green_multiply, card_resource.blue_multiply, card_resource.red_multiply]
+	var multiplier_strings : Array[String] = [
+		" Green",
+		" Blue",
+		" Red",
+	]
+	i = 0
+	for value in multipliers:
+		if value != 1:
+			var text_to_add : String = multiplier_strings[i]
+			text_to_add = "x" + str(value) + text_to_add
+			effect_text.add_text(text_to_add)
+		i += 1
 
 # Assigns title directly if Rainbow
 func color_title() -> void:
