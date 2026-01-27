@@ -48,7 +48,8 @@ func on_card_color_added(color_added : Potion):
 	add_colors(color_added)
 	# Called here because all cards add color, even if adding 0
 	held_potion.on_card_played()
-	check_volatility()
+	if held_potion.status == Potion.Status.VOLATILE:
+		check_volatility()
 	
 func on_card_multiplier_added(multiplier_added : Potion):
 	add_multiplier(multiplier_added)
