@@ -76,8 +76,21 @@ func generate_potion(difficulty : int) -> Potion:
 	print_debug("Potion bgr = ", colors)
 	return self
 
+func shift() -> void:
+	var chance_to_shift : int = 30
+	var roll = randi_range(1,100)
+	if chance_to_shift >= roll:
+		var color_taking = randi_range(0, 2)
+		var color_giving = randi_range(0, 2)
+		if color_taking == color_giving:
+			color_giving += 1
+			if color_giving >= 2:
+				color_giving = 0
+		colors[color_taking] += 1
+		colors[color_giving] -= 1
+
 func on_card_played():
-		if status == Status.SHIFTING:
-			pass
+	if status == Status.SHIFTING:
+		shift()
 
 #endregion
