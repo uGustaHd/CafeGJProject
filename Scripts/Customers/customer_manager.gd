@@ -1,9 +1,9 @@
 extends Node2D
 
-signal customer_spawned
+signal customer_spawned(request_potion)
 
 @onready var Dealer = $"../CardManager/DeckHolder/Dealer"
-
+@onready var PotionHolder = $"../CardManager/PotionHolder"
 
 
 
@@ -21,6 +21,7 @@ func start_day():
 
 func _ready() -> void:
 	customer_spawned.connect(Dealer.on_customer_spawned)
+	customer_spawned.connect(PotionHolder.on_customer_spawned)
 #	var card_manager = get_tree().current_scene.get_node("CardManager")
 #	card_manager.connect("deliver_potion", Callable(self, "_on_potion_delivered"))
 
@@ -34,7 +35,7 @@ func spawn_customer():
 		get_tree().current_scene.add_child(current_customer)
 		current_customer.position = spawn_position.position
 		current_customer.connect("finished", Callable(self, "_on_customer_finished"))
-		customer_spawned.emit()
+		customer_spawned.emit(current_customer.current_request)
 	else:
 		end_day()
 

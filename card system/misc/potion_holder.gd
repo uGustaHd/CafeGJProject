@@ -1,9 +1,10 @@
 extends Node
-# NOTE: I'm handling the potion-building progress here for now,
-# since this node already manages the potion state
-# If this is not the ideal place, we can refactor it later
+
+
+@onready var SubmitButton : Button = $SubmitButton
 
 var held_potion : Potion = Potion.new()
+var requested_potion : Potion
 signal potion_progress_changed(potion: Potion)
 
 #Test
@@ -20,6 +21,13 @@ func _process(_delta: float) -> void:
 		held_potion.add_red(1)
 		emit_signal("potion_progress_changed", held_potion)
 		print("red = " + str(held_potion.red))
+
+func check_volatility():
+	var i = 0
+	for color in held_potion.colors:
+		if color > requested_potion.colors[i]:
+			color = 0
+			SubmitButton.button_down.emit()
 
 func add_colors(added_colors : Potion) -> void:
 	held_potion.add_blue(added_colors.blue)
@@ -38,6 +46,15 @@ func reset_potion():
 	
 func on_card_color_added(color_added : Potion):
 	add_colors(color_added)
+	# Called here because all cards add color, even if adding 0
+	held_potion.on_card_played()
+	check_volatility()
 	
 func on_card_multiplier_added(multiplier_added : Potion):
 	add_multiplier(multiplier_added)
+	
+func on_customer_spawned(customer_potion : Potion):
+	held_potion.requested_potion = customer_potion
+	requested_potion = customer_potion
+	
+	

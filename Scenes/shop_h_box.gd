@@ -10,9 +10,9 @@ func adjust_separation():
 	new_separation = max(new_separation, min_separation)
 	add_theme_constant_override("separation", new_separation)
 
-func _on_child_entered_tree(node: Node) -> void:
+func _on_child_entered_tree(_node: Node) -> void:
 	adjust_separation()
 
 
-func _on_child_exiting_tree(node: Node) -> void:
+func _on_child_exiting_tree(_node: Node) -> void:
 	adjust_separation()

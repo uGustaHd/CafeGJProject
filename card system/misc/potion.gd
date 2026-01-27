@@ -7,13 +7,24 @@ enum potion_type {TALL, WIDE}
 
 #region properties
 @export var blue : int = 0
-
 @export var green : int = 0
-
 @export var red : int = 0
-
 var colors : Array[int] = [blue, green, red]
 
+var red_multiplier : int = 1
+var blue_multiplier : int = 1
+var green_multiplier : int = 1
+
+var status : Status
+enum Status {SHIFTING, VOLATILE}
+
+# Used for comparisons
+var requested_potion : Potion
+
+#endregion
+
+#_______________________________________________________________________________
+#region setters
 func add_blue(value: int):
 	blue += value * blue_multiplier
 	colors[0] = blue
@@ -31,13 +42,6 @@ func reset_potion():
 	blue = 0
 	green = 0 
 	colors = [0,0,0]
-
-#endregion
-
-#region multipliers
-var red_multiplier : int = 1
-var blue_multiplier : int = 1
-var green_multiplier : int = 1
 
 #endregion
 
@@ -71,5 +75,9 @@ func generate_potion(difficulty : int) -> Potion:
 	red = colors[2]
 	print_debug("Potion bgr = ", colors)
 	return self
+
+func on_card_played():
+		if status == Status.SHIFTING:
+			pass
 
 #endregion

@@ -38,8 +38,7 @@ func get_difficulty() -> int:
 			return 4
 		_:
 			return 4
-#NOTE: Doesn't this double the joy and then add the value bc of +=? idk I didnt test yet.
-#NOTE: Yes it does! Thx! Already Fixed
+
 func add_joy(value):
 	joy = max(0, joy + value)
 	
