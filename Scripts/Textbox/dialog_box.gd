@@ -12,12 +12,16 @@ var current_full_text: String = ""
 @onready var tween: Tween = get_tree().create_tween()
 
 func _ready() -> void:
-	
+	print(position)
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	mouse_filter = Control.MOUSE_FILTER_STOP
+	focus_mode = Control.FOCUS_ALL
+	grab_focus()
 	pivot_offset = size/2
 	self.scale = Vector2.ZERO
 	tween.tween_property(self, "scale", Vector2.ONE, 0.3).set_trans(Tween.TRANS_BACK)
-	if text_to_display.size() > 0:
-		show_text() 
+	if text_to_display.size() > 0: pass
+		#show_text() 
 func show_text():
 	if current_index < text_to_display.size():
 		is_typing = true
@@ -32,7 +36,7 @@ func _type_text(text: String):
 		if !is_typing:
 			return
 		text_label.text += text[i]
-		await get_tree().create_timer(typing_speed).timeout
+		await get_tree().create_timer(typing_speed, true).timeout
 	
 	is_typing = false
 	#get_tree().paused = true
@@ -46,7 +50,7 @@ func _close_dialog():
 	queue_free()
 		
 	
-func _unhandled_input(event: InputEvent) -> void:
+func _gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):
 		if is_typing:
 			is_typing = false

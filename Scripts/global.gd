@@ -1,10 +1,17 @@
 extends Node
 signal gold_changed(new_gold : int)
 
+var joy_warning_yesterday : bool = false
+var anguish_warning_yesterday : bool = false
+
+const JOY_WARNING = 20
+const ANGUISH_WARNING = 20
+
+
 var gold    : int = 100
 var default_energy : int = 3
 var energy  : int = default_energy
-var joy     : float = 0
+var joy     : float = 50
 var anguish : float = 0
 var day     : int = 1
 var run_deck : Array[Card] = []
@@ -14,6 +21,38 @@ var secret_ingredients_added: int = 0
 var killed_customers        : int = 0
 var cards_used              : int = 0
 var cards_remaining         : int = 0
+
+
+func end_day_check():
+	print_debug("End day check")
+	var joy_bad = Global.joy < JOY_WARNING
+	var anguish_bad = Global.anguish < ANGUISH_WARNING
+	#JOY
+	if joy_bad:
+		if joy_warning_yesterday:
+			#TODO: Function game_over()
+			#game_over()
+			print("Game over JOY")
+		else:
+			joy_warning_yesterday = true
+	else:
+		joy_warning_yesterday = false
+	#ANGUISH
+	if anguish_bad:
+		if anguish_warning_yesterday:
+			#game_over()
+			print("Game Over ANGUISH")
+		else:
+			anguish_warning_yesterday = true
+	else:
+		anguish_warning_yesterday = false
+		
+	print("Joy")
+	print(joy_bad)
+	print(joy_warning_yesterday)
+	print("anguish")
+	print(anguish_bad)
+	print(anguish_warning_yesterday)
 
 func reset_run_deck(starting_deck : Array[Card]):
 	run_deck = starting_deck.duplicate()

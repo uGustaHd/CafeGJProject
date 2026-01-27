@@ -40,7 +40,7 @@ func spawn_customer():
 		end_day()
 
 func end_day(): 
-	
+	Global.end_day_check()
 	Global.day += 1
 	$"../UIControl/DayReport".report_day()
 
