@@ -157,8 +157,9 @@ func update_cost_icons():
 
 #region incoming signals
 func _on_button_button_down() -> void:
-	attempt_activation()
-	
+	if Global.can_play_cards:
+		attempt_activation()
+	else: return
 	
 #WARNING: Animation breaks if moused over too fast
 func _on_button_mouse_entered() -> void:

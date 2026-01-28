@@ -35,9 +35,13 @@ func spawn_customer():
 		get_tree().current_scene.add_child(current_customer)
 		current_customer.position = spawn_position.position
 		current_customer.connect("finished", Callable(self, "_on_customer_finished"))
-		customer_spawned.emit(current_customer.current_request)
+		if Global.game_mode == Global.GameMode.NORMAL:
+			customer_spawned.emit(current_customer.current_request)
+		return current_customer
 	else:
-		end_day()
+		if Global.game_mode == Global.GameMode.NORMAL:
+			end_day()
+
 
 func end_day(): 
 	Global.end_day_check()

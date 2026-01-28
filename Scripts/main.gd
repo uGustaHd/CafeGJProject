@@ -3,14 +3,17 @@ extends Node2D
 
 
 func _ready() -> void:
-	await get_tree().process_frame
-	if Global.joy_warning_yesterday:
-		show_warning_dialog("JOY")
-	elif Global.anguish_warning_yesterday:
-		show_warning_dialog("ANGUISH")
+	if Global.game_mode == Global.GameMode.NORMAL:
+		Global.can_play_cards = true
+		await get_tree().process_frame
+		if Global.joy_warning_yesterday:
+			show_warning_dialog("JOY")
+		elif Global.anguish_warning_yesterday:
+			show_warning_dialog("ANGUISH")
+		else:
+			start_day()
 	else:
-		start_day()
-	
+		pass
 func show_warning_dialog(type: String):
 	var text = _build_warning_text(type)
 	var dialog = DialogManager.start_dialog(text, get_viewport_rect().size/2)

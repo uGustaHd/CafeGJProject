@@ -29,9 +29,6 @@
 [node name="Main" type="Node2D"]
 script = ExtResource("1_8gbba")
 
-[node name="TutorialManager" type="Node" parent="."]
-script = ExtResource("25_u50mg")
-
 [node name="BackGround" type="Sprite2D" parent="."]
 position = Vector2(575.99994, 324)
 scale = Vector2(1.4999999, 1.4999999)
@@ -182,11 +179,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="JoyProgressBar" type="TextureProgressBar" parent="UIControl/JoyAnguishMeters"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.007751938
-anchor_top = 0.5030303
-anchor_right = -0.007751938
-anchor_bottom = 0.5030303
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
 offset_left = 80.0
 offset_top = -164.0
 offset_right = 114.0
@@ -200,11 +195,11 @@ metadata/_edit_use_anchors_ = true
 
 [node name="AnguishProgressBar" type="TextureProgressBar" parent="UIControl/JoyAnguishMeters"]
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 6
 anchor_left = 1.0
-anchor_top = 0.5151515
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 0.5151515
+anchor_bottom = 0.5
 offset_left = -115.0
 offset_top = -165.0
 offset_right = -81.0
@@ -417,6 +412,9 @@ theme_override_font_sizes/normal_font_size = 22
 text = "0"
 fit_content = true
 scroll_active = false
+
+[node name="TutorialManager" type="Node" parent="."]
+script = ExtResource("25_u50mg")
 
 [connection signal="button_down" from="CardManager/PotionHolder/SubmitButton" to="CardManager" method="_on_submit_button_button_down"]
 [connection signal="button_down" from="CardManager/PotionHolder/SubmitButton" to="CardManager/PotionHolder/SubmitButton" method="_on_button_down"]

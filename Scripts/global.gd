@@ -1,6 +1,11 @@
 extends Node
 signal gold_changed(new_gold : int)
 
+enum GameMode {TUTORIAL, NORMAL}
+var game_mode := GameMode.TUTORIAL
+
+var can_play_cards = false
+
 var joy_warning_yesterday : bool = false
 var anguish_warning_yesterday : bool = false
 
@@ -12,7 +17,7 @@ var gold    : int = 100
 var default_energy : int = 3
 var energy  : int = default_energy
 var joy     : float = 50
-var anguish : float = 0
+var anguish : float = 50
 var day     : int = 1
 var run_deck : Array[Card] = []
 #Day variables
