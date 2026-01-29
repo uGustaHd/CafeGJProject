@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dfk127awodkeh"
+path="res://.godot/imported/Cafe Witch - 6 - Loop Ok.mp3-061e6debf9ae3bb1dbf0fff0bf9b9d92.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Cafe Witch - 6 - Loop Ok.mp3"
+dest_files=["res://.godot/imported/Cafe Witch - 6 - Loop Ok.mp3-061e6debf9ae3bb1dbf0fff0bf9b9d92.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

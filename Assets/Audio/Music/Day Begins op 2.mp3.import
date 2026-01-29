@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ddo5iwua3fiht"
+path="res://.godot/imported/Day Begins op 2.mp3-85a37479fd2f7e07613b522d39f110cb.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Day Begins op 2.mp3"
+dest_files=["res://.godot/imported/Day Begins op 2.mp3-85a37479fd2f7e07613b522d39f110cb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -49,14 +49,17 @@ func spawn_customer():
 
 
 func end_day(): 
+	$"..".end_day()
 	Global.end_day_check()
 	Global.day += 1
 	$"../UIControl/DayReport".report_day()
 
 func _on_customer_finished():
 	print("Customer Finished")
-	var audio = current_customer.play_leaving_audio()
-	await audio.finished
+	if !current_customer.died:
+		var audio = current_customer.play_leaving_audio()
+		await audio.finished
+	
 	current_customer.queue_free()
 	current_customer = null
 	#New npc spawn delay

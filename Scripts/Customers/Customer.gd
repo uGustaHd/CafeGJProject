@@ -13,7 +13,7 @@ var is_potion_delivered : bool = false
 
 
 signal finished
-signal died
+var died: bool = false
 
 
 func setup():
@@ -99,6 +99,7 @@ func on_request_fail():
 var is_dying := false
 	
 func die():
+	died = true
 	var joy_anguish_meters = get_tree().current_scene.get_node("UIControl/JoyAnguishMeters")
 	if is_dying:
 		return
@@ -110,6 +111,7 @@ func die():
 	dialog.dialog_finished.connect(Callable(self, "_on_dialog_finished"))
 	joy_anguish_meters.update()
 	Global.killed_customers += 1
+	
 	
 	
 func _on_dialog_finished():
