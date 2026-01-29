@@ -21,6 +21,9 @@ func _process(_delta: float) -> void:
 		held_potion.add_red(1)
 		emit_signal("potion_progress_changed", held_potion)
 		print("red = " + str(held_potion.red))
+	
+	if Input.is_action_just_pressed("add_energy") and OS.is_debug_build():
+		Global.add_energy(1)
 
 func check_volatility():
 	var i = 0
@@ -45,9 +48,9 @@ func reset_potion():
 	emit_signal("potion_progress_changed", held_potion)
 	
 func on_card_color_added(color_added : Potion):
-	add_colors(color_added)
 	# Called here because all cards add color, even if adding 0
 	held_potion.on_card_played()
+	add_colors(color_added)
 	if held_potion.status == Potion.Status.VOLATILE:
 		check_volatility()
 	
