@@ -37,3 +37,5 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

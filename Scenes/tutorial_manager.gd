@@ -6,6 +6,7 @@ extends Node
 @onready var gold_counter: TextureRect = $"../UIControl/GoldCounter"
 @onready var dealer: Node = $"../CardManager/DeckHolder/Dealer"
 @onready var customer_manager: Node2D = $"../CustomerManager"
+@onready var day_customer_counter: Control = $"../UIControl/DayCustomerCounter"
 
 
 enum TutorialStep {
@@ -71,6 +72,7 @@ func _ready():
 	else: queue_free()
 
 func start_tutorial(): 
+	day_customer_counter.visible = false
 	submit_button.visible = false
 	slide_kill_panel.visible = false
 	joy_anguish_meters.visible = false

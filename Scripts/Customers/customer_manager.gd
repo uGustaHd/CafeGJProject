@@ -51,6 +51,8 @@ func end_day():
 
 func _on_customer_finished():
 	print("Customer Finished")
+	var audio = current_customer.play_leaving_audio()
+	await audio.finished
 	current_customer.queue_free()
 	current_customer = null
 	#New npc spawn delay

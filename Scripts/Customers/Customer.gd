@@ -5,6 +5,10 @@ var current_request: Potion
 var dialog_offset: Vector2 = Vector2(0,100)
 var request_text: String
 var is_potion_delivered : bool = false
+@onready var footstep_aproach = customer_data.footstep_aproach.pick_random()
+@onready var footstep_leave = customer_data.footstep_leaving.pick_random()
+
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var request_box = $RequestBox
 
 
@@ -13,8 +17,11 @@ signal died
 
 
 func setup():
+
 	if customer_data != null:
+		play_approach_audio()
 		$Sprite2D.texture = customer_data.possible_sprite.pick_random()
+		$Sprite2D.visible = false
 		#NOTE: Currently only generates a potion of difficulty 1 every time.
 		var new_request = Potion.new()
 		new_request.generate_potion(Global.get_difficulty())
@@ -23,9 +30,10 @@ func setup():
 		request_box.position = position + Vector2(80,-50)
 	else:
 		print("No CustomerData")
-	
 func _ready() -> void:
 	setup()
+	await audio_stream_player_2d.finished
+	$Sprite2D.visible = true
 	print("\nCustomer Appeared")
 	#TODO: Connect a signal with the potion that the player gave to the NPC
 	var card_manager = get_tree().current_scene.get_node("CardManager")
@@ -63,7 +71,7 @@ func _on_potion_delivered(potion : Potion) -> void:
 			on_request_fail()
 		is_potion_delivered = true
 	return
-	
+
 func on_request_success():
 	var joy_anguish_meters = get_tree().current_scene.get_node("UIControl/JoyAnguishMeters")
 	Global.add_joy(customer_data.joy_on_success)
@@ -105,6 +113,8 @@ func die():
 	
 	
 func _on_dialog_finished():
+	$Sprite2D.visible = false
+	$RequestBox.visible = false
 	emit_signal("finished")
 	
 func show_request(potion: Potion):
@@ -143,3 +153,13 @@ func _build_line(color_name: String, current_amount: int, required_amount: int, 
 	
 func _on_potion_changed(potion: Potion):
 	$RequestBox/TextBox/RequestText.text = _build_request_text(potion)
+	
+func play_leaving_audio():
+	audio_stream_player_2d.stream = footstep_aproach
+	audio_stream_player_2d.play()
+	return audio_stream_player_2d
+
+func play_approach_audio():
+	audio_stream_player_2d.stream = footstep_aproach
+	audio_stream_player_2d.play()
+	return audio_stream_player_2d
