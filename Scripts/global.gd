@@ -2,7 +2,7 @@ extends Node
 signal gold_changed(new_gold : int)
 
 enum GameMode {TUTORIAL, NORMAL}
-var game_mode := GameMode.NORMAL
+var game_mode := GameMode.TUTORIAL
 
 var can_play_cards = false
 

@@ -7,6 +7,8 @@ extends Node
 @onready var dealer: Node = $"../CardManager/DeckHolder/Dealer"
 @onready var customer_manager: Node2D = $"../CustomerManager"
 @onready var day_customer_counter: Control = $"../UIControl/DayCustomerCounter"
+@onready var music_player: AudioStreamPlayer2D = $"../MusicPlayer"
+@onready var ambience_potion_sound: AudioStreamPlayer2D = $"../AmbiencePotionSound"
 
 
 enum TutorialStep {
@@ -67,7 +69,10 @@ var finish_text: Array[String] = [
 var tutorial_step := TutorialStep.INTRO
 
 func _ready():
+
 	if Global.game_mode == Global.GameMode.TUTORIAL:
+		ambience_potion_sound.play()
+		music_player.play()
 		start_tutorial()
 	else: queue_free()
 
@@ -98,6 +103,7 @@ func start_step():
 			finished()
 
 func finished():
+
 	await get_tree().process_frame
 	var dialog = DialogManager.start_dialog(finish_text, get_parent().get_viewport_rect().size/2)
 	dialog.set_custom_minimum(Vector2(500, 50))
@@ -108,6 +114,8 @@ func finished():
 	Global.joy = 50
 	Global.anguish = 50
 	queue_free()
+	music_player.stop()
+	ambience_potion_sound.stop()
 	get_tree().reload_current_scene()
 
 

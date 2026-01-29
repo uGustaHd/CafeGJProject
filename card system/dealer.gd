@@ -1,6 +1,5 @@
 extends Node
 
-
 @onready var DeckHolder = get_parent()
 @onready var HandHolder = $"../../HandHolder"
 var hand_size : int = 5

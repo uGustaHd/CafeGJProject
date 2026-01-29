@@ -3,8 +3,13 @@ extends Node2D
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @export var day_begins_audio: AudioStream = preload("res://Assets/Audio/Music/Day Begins op 2.mp3")
 @export var day_ends_audio: AudioStream = preload("res://Assets/Audio/Music/Day Ends op2.mp3")
+@onready var ambience_potion_sound: AudioStreamPlayer2D = $AmbiencePotionSound
+@onready var music_player: AudioStreamPlayer2D = $MusicPlayer
+
 
 func _ready() -> void:
+	ambience_potion_sound.stream.loop = true
+	music_player.stream.loop = true
 	if Global.game_mode == Global.GameMode.NORMAL:
 		Global.can_play_cards = true
 		await get_tree().process_frame
@@ -45,10 +50,13 @@ func start_day():
 	audio_stream_player_2d.stream = day_begins_audio
 	audio_stream_player_2d.play()
 	await audio_stream_player_2d.finished
+	ambience_potion_sound.play()
+	music_player.play()
 	await get_tree().create_timer(0.5).timeout
 	$CustomerManager.start_day()
 	print(Global.day)
 	
 func end_day():
+	music_player.stop()
 	audio_stream_player_2d.stream = day_begins_audio
 	audio_stream_player_2d.play()

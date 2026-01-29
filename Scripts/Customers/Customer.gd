@@ -8,6 +8,9 @@ var is_potion_delivered : bool = false
 @onready var footstep_aproach = customer_data.footstep_aproach.pick_random()
 @onready var footstep_leave = customer_data.footstep_leaving.pick_random()
 
+var success_fx := preload("res://Assets/Audio/FX/FX_action_7.mp3")
+var fail_fx := preload("res://Assets/Audio/FX/FX_action_6.mp3")
+
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var request_box = $RequestBox
 
@@ -73,6 +76,8 @@ func _on_potion_delivered(potion : Potion) -> void:
 	return
 
 func on_request_success():
+	audio_stream_player_2d.stream = success_fx
+	audio_stream_player_2d.play()
 	var joy_anguish_meters = get_tree().current_scene.get_node("UIControl/JoyAnguishMeters")
 	Global.add_joy(customer_data.joy_on_success)
 	Global.add_anguish(customer_data.anguish_on_success)
@@ -87,6 +92,8 @@ func on_request_success():
 	Global.plesed_customers += 1
 	
 func on_request_fail(): 
+	audio_stream_player_2d.stream = fail_fx
+	audio_stream_player_2d.play()
 	var joy_anguish_meters = get_tree().current_scene.get_node("UIControl/JoyAnguishMeters")
 	Global.joy += customer_data.joy_on_fail
 	Global.anguish += customer_data.anguish_on_fail
@@ -157,7 +164,7 @@ func _on_potion_changed(potion: Potion):
 	$RequestBox/TextBox/RequestText.text = _build_request_text(potion)
 	
 func play_leaving_audio():
-	audio_stream_player_2d.stream = footstep_aproach
+	audio_stream_player_2d.stream = footstep_leave
 	audio_stream_player_2d.play()
 	return audio_stream_player_2d
 

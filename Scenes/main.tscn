@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bdqjd2ergavof"]
+[gd_scene load_steps=43 format=3 uid="uid://bdqjd2ergavof"]
 
 [ext_resource type="Script" uid="uid://dbtic8k4hhs0a" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://df1d5o4oc5m1e" path="res://Scenes/Customers/customer_manager.tscn" id="1_jjgbg"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://yusxetxubyr5" path="res://Scenes/joy_anguish_meters.gd" id="9_ynf5e"]
 [ext_resource type="Script" uid="uid://dig3q1bbujkox" path="res://card system/misc/hand_hbox.gd" id="10_k12tt"]
 [ext_resource type="Script" uid="uid://cavfpuefel5gx" path="res://card system/piles/discard_holder.gd" id="10_wsu2k"]
+[ext_resource type="AudioStream" uid="uid://812473dokm8m" path="res://Assets/Audio/FX/draw_card_3.mp3" id="12_o1aky"]
 [ext_resource type="Script" uid="uid://ga6oihrmatia" path="res://Scenes/day_report.gd" id="16_k12tt"]
 [ext_resource type="Texture2D" uid="uid://drqgpfesycfba" path="res://Assets/Sprites/UI/knife_ui/Knife_container.png" id="17_ueoa1"]
 [ext_resource type="Texture2D" uid="uid://ddntlkfesfi5k" path="res://Assets/Sprites/UI/knife_ui/Knife_hide_button.png" id="19_1w6v2"]
@@ -39,6 +40,8 @@
 [ext_resource type="Texture2D" uid="uid://bedb7loeohl15" path="res://Assets/Sprites/UI/Day_counter.png" id="37_536cc"]
 [ext_resource type="Texture2D" uid="uid://bdhxbnubm4inp" path="res://Assets/Sprites/UI/Customer_counter.png" id="38_aqgau"]
 [ext_resource type="Texture2D" uid="uid://djsagqljtyun5" path="res://Assets/Sprites/UI/Customer_icon.png" id="39_536cc"]
+[ext_resource type="AudioStream" uid="uid://cvhh0vp50ybjg" path="res://Assets/Audio/Ambience/Potion_1.mp3" id="40_aqgau"]
+[ext_resource type="AudioStream" uid="uid://dfk127awodkeh" path="res://Assets/Audio/Music/Cafe Witch - 6 - Loop Ok.mp3" id="41_8cuat"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_8gbba")
@@ -48,7 +51,7 @@ metadata/_edit_horizontal_guides_ = [452.0]
 script = ExtResource("25_u50mg")
 
 [node name="BackGround" type="Sprite2D" parent="."]
-position = Vector2(576.00006, 242)
+position = Vector2(576.00006, 243)
 scale = Vector2(1.4999999, 1.4999999)
 texture = ExtResource("3_u50mg")
 
@@ -89,6 +92,9 @@ script = ExtResource("6_hptm8")
 
 [node name="Dealer" type="Node" parent="CardManager/DeckHolder"]
 script = ExtResource("6_ynf5e")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CardManager/DeckHolder"]
+stream = ExtResource("12_o1aky")
 
 [node name="HandHolder" type="Node2D" parent="CardManager"]
 script = ExtResource("8_fdnlq")
@@ -521,6 +527,14 @@ texture = ExtResource("39_536cc")
 stretch_mode = 2
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="AmbiencePotionSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("40_aqgau")
+volume_db = -6.0
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("41_8cuat")
+volume_db = -10.0
 
 [connection signal="button_down" from="CardManager/PotionHolder/SubmitButton" to="CardManager" method="_on_submit_button_button_down"]
 [connection signal="button_down" from="CardManager/PotionHolder/SubmitButton" to="CardManager/PotionHolder/SubmitButton" method="_on_button_down"]

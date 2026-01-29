@@ -1,0 +1,122 @@
+[gd_scene load_steps=6 format=3 uid="uid://da3lqo3mnwar4"]
+
+[ext_resource type="Script" uid="uid://cd2pqnuagkc4w" path="res://Scenes/menu.gd" id="1_158mb"]
+[ext_resource type="Texture2D" uid="uid://fmlvtppb2jje" path="res://Assets/Sprites/Background/Background_rendered.png" id="1_xhh6f"]
+[ext_resource type="Texture2D" uid="uid://clto7guvbxmjv" path="res://Assets/Sprites/Background/counter_top_rendered.png" id="2_cayip"]
+[ext_resource type="Texture2D" uid="uid://nu30movbqld2" path="res://icon.svg" id="3_cayip"]
+[ext_resource type="AudioStream" uid="uid://cabk3oromqw1a" path="res://Assets/Audio/Music/Cafe Jam - Another Witch - 6 - loop ok.mp3" id="5_wwsa2"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_158mb")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+zoom = Vector2(1.5, 1.5)
+
+[node name="UIControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="BackGround" type="Sprite2D" parent="UIControl"]
+modulate = Color(0.601223, 0.601223, 0.60122293, 1)
+position = Vector2(576.00006, 243)
+scale = Vector2(1.4999999, 1.4999999)
+texture = ExtResource("1_xhh6f")
+
+[node name="Counter" type="Sprite2D" parent="UIControl"]
+modulate = Color(0.6, 0.6, 0.6, 1)
+position = Vector2(576, 429.00006)
+scale = Vector2(1.4999999, 1.4999999)
+texture = ExtResource("2_cayip")
+
+[node name="PlayButton" type="TextureButton" parent="UIControl"]
+layout_mode = 0
+offset_left = 429.0
+offset_top = 278.0
+offset_right = 722.0
+offset_bottom = 344.0
+focus_mode = 0
+texture_normal = ExtResource("3_cayip")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="UIControl/PlayButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 45
+text = "Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SettingsButton" type="TextureButton" parent="UIControl"]
+layout_mode = 0
+offset_left = 429.0
+offset_top = 350.0
+offset_right = 722.0
+offset_bottom = 416.0
+focus_mode = 0
+texture_normal = ExtResource("3_cayip")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="UIControl/SettingsButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 45
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CreditsButton" type="TextureButton" parent="UIControl"]
+layout_mode = 0
+offset_left = 428.0
+offset_top = 421.0
+offset_right = 721.0
+offset_bottom = 487.0
+focus_mode = 0
+texture_normal = ExtResource("3_cayip")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="UIControl/CreditsButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 45
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="UIControl"]
+layout_mode = 0
+offset_left = 356.0
+offset_top = 143.0
+offset_right = 786.0
+offset_bottom = 249.0
+theme_override_font_sizes/font_size = 50
+text = "Witch's Hand"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_wwsa2")
+volume_db = -10.0
+
+[connection signal="pressed" from="UIControl/PlayButton" to="." method="_on_play_button_pressed"]

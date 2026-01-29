@@ -47,7 +47,6 @@ func spawn_customer():
 		if Global.game_mode == Global.GameMode.NORMAL:
 			end_day()
 
-
 func end_day(): 
 	$"..".end_day()
 	Global.end_day_check()
@@ -59,7 +58,6 @@ func _on_customer_finished():
 	if !current_customer.died:
 		var audio = current_customer.play_leaving_audio()
 		await audio.finished
-	
 	current_customer.queue_free()
 	current_customer = null
 	#New npc spawn delay
