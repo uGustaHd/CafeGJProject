@@ -14,7 +14,7 @@ load("res://card system/card resources/water.tres"),
 load("res://card system/card resources/water.tres"),
 load("res://card system/card resources/water.tres"),
 load("res://card system/card resources/water.tres"),
-load("res://card system/card resources/water.tres"),
+load("res://card system/card resources/poison_test.tres"),
 ]
 
 # WARNING: Will draw empty card if shuffle in discard fails to make deck pile not empty.

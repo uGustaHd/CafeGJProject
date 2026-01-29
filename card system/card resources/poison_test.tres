@@ -7,5 +7,5 @@
 script = ExtResource("1_nqiyd")
 card_art = ExtResource("1_x42cx")
 archetype = 3
-kill_add = 0.3
+kill_add = 1.2
 metadata/_custom_type_script = "uid://b8yono3xc1siy"
