@@ -2,6 +2,7 @@ extends Node2D
 
 
 func _ready() -> void:
+	
 	if Global.game_mode == Global.GameMode.NORMAL:
 		Global.can_play_cards = true
 		await get_tree().process_frame
@@ -37,7 +38,8 @@ func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/shop.tscn")
 	
 func start_day():
+	$UIControl/DayCustomerCounter.update_day()
 	$UIControl/JoyAnguishMeters.update()
 	await get_tree().create_timer(0.5).timeout
-	$CustomerManager.spawn_customer()
+	$CustomerManager.start_day()
 	print(Global.day)

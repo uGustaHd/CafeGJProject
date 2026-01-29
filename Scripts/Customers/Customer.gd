@@ -11,6 +11,7 @@ var is_potion_delivered : bool = false
 signal finished
 signal died
 
+
 func setup():
 	if customer_data != null:
 		$Sprite2D.texture = customer_data.possible_sprite.pick_random()
@@ -111,9 +112,9 @@ func show_request(potion: Potion):
 	text_node.clear()
 	text_node.text = "I want:\n"
 	var lines := []
-	lines.append(_build_line("Blue", potion.blue, current_request.blue))
-	lines.append(_build_line("Green", potion.green, current_request.green))
-	lines.append(_build_line("Red", potion.red, current_request.red))
+	lines.append(_build_line("Blue", potion.blue, current_request.blue, potion.blue_multiplier))
+	lines.append(_build_line("Green", potion.green, current_request.green, potion.green_multiplier))
+	lines.append(_build_line("Red", potion.red, current_request.red, potion.red_multiplier))
 	for line in lines:
 		#await get_tree().create_timer(0.45).timeout
 		text_node.append_text(line + "\n")
@@ -121,21 +122,24 @@ func show_request(potion: Potion):
 	
 func _build_request_text(potion: Potion) -> String:
 	var text: String
-	var blue = _build_line("Blue", potion.blue, current_request.blue) + "\n"
-	var green = _build_line("Green", potion.green, current_request.green) + "\n"
-	var red = _build_line("Red", potion.red, current_request.red)
+	var blue = _build_line("Blue", potion.blue, current_request.blue, potion.blue_multiplier) + "\n"
+	var green = _build_line("Green", potion.green, current_request.green, potion.green_multiplier) + "\n"
+	var red = _build_line("Red", potion.red, current_request.red, potion.red_multiplier)
 	text = "I want: \n" + blue + green + red 
 	return text
 	
-func _build_line(color_name: String, current_amount: int, required_amount: int) -> String:
-	#var display_amount = min(current_amount, required_amount)
+func _build_line(color_name: String, current_amount: int, required_amount: int, multiplier: int) -> String:
 	var display_amount = current_amount
 	var done := current_amount >= required_amount
 	var color := '#6CCF7D' if done else "#E06C75"
 	var prefix := "✔ " if done else "✖ "
-	
-	if done: return "[color=%s]%s [s]%d/%d %s[/s][/color]" % [color, prefix, display_amount, required_amount, color_name]
-	else: return "[color=%s]%s %d/%d %s[/color]" % [color, prefix, display_amount, required_amount, color_name]
+	var multi
+	if multiplier > 1:
+		multi = str(multiplier) + "x"
+	else: 
+		multi = ""
+	if done: return "[color=%s]%s [s]%d/%d %s[/s] %s[/color]" % [color, prefix, display_amount, required_amount, color_name, multi]
+	else: return "[color=%s]%s %d/%d %s %s[/color]" % [color, prefix, display_amount, required_amount, color_name, multi]
 	
 func _on_potion_changed(potion: Potion):
 	$RequestBox/TextBox/RequestText.text = _build_request_text(potion)

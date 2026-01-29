@@ -17,6 +17,7 @@ var current_customer: Node = null
 
 func start_day():
 	customers_served_today = 0
+	$"../UIControl/DayCustomerCounter".update_customer(customer_per_day, customers_served_today)
 	spawn_customer()
 
 func _ready() -> void:
@@ -54,6 +55,7 @@ func _on_customer_finished():
 	current_customer = null
 	#New npc spawn delay
 	customers_served_today += 1
+	$"../UIControl/DayCustomerCounter".update_customer(customer_per_day, customers_served_today)
 	await get_tree().create_timer(spawn_delay).timeout
 	spawn_customer()
 
