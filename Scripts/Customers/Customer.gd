@@ -128,7 +128,8 @@ func _build_request_text(potion: Potion) -> String:
 	return text
 	
 func _build_line(color_name: String, current_amount: int, required_amount: int) -> String:
-	var display_amount = min(current_amount, required_amount)
+	#var display_amount = min(current_amount, required_amount)
+	var display_amount = current_amount
 	var done := current_amount >= required_amount
 	var color := '#6CCF7D' if done else "#E06C75"
 	var prefix := "✔ " if done else "✖ "

@@ -87,7 +87,6 @@ func shift() -> void:
 			valid_giving_indexes.append(i)
 		i += 1
 		
-	
 	# Decide if shifting
 	var chance_to_shift : int = 100
 	var roll = randi_range(1,100)
@@ -97,10 +96,6 @@ func shift() -> void:
 		var color_giving = valid_giving_indexes.pick_random()
 		valid_taking_indexes.erase(color_giving)
 		var color_taking = valid_taking_indexes.pick_random()
-		if color_taking == color_giving:
-			color_giving += 1
-			if color_giving >= 2:
-				color_giving = 0
 
 		colors[color_taking] += 1
 		colors[color_giving] -= 1
