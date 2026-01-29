@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ceswsihbycqlg"
-path="res://.godot/imported/coin_counter.png-d6ef65e7d665a3683dd1e56224950a12.ctex"
+uid="uid://pne5sjnd6cea"
+path="res://.godot/imported/Container_dark_layer.png-e813d768b3915723f8015f77550f24d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/UI/coin_counter.png"
-dest_files=["res://.godot/imported/coin_counter.png-d6ef65e7d665a3683dd1e56224950a12.ctex"]
+source_file="res://Assets/Sprites/UI/energy_ui/Container_dark_layer.png"
+dest_files=["res://.godot/imported/Container_dark_layer.png-e813d768b3915723f8015f77550f24d7.ctex"]
 
 [params]
 

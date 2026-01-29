@@ -1,14 +1,15 @@
-[gd_scene load_steps=26 format=3 uid="uid://bdqjd2ergavof"]
+[gd_scene load_steps=36 format=3 uid="uid://bdqjd2ergavof"]
 
 [ext_resource type="Script" uid="uid://dbtic8k4hhs0a" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://df1d5o4oc5m1e" path="res://Scenes/Customers/customer_manager.tscn" id="1_jjgbg"]
-[ext_resource type="PackedScene" uid="uid://ucuv03tdxv54" path="res://Scenes/Customers/customer.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://ucuv03tdxv54" path="res://Scenes/Customers/Customer.tscn" id="2_bo1nx"]
+[ext_resource type="Texture2D" uid="uid://fmlvtppb2jje" path="res://Assets/Sprites/Background/Background_rendered.png" id="3_u50mg"]
+[ext_resource type="Texture2D" uid="uid://clto7guvbxmjv" path="res://Assets/Sprites/Background/counter_top_rendered.png" id="4_cbgmd"]
 [ext_resource type="Script" uid="uid://ciewvhcpryhfs" path="res://Scripts/Cards/card_manager.gd" id="4_jjvhh"]
 [ext_resource type="Script" uid="uid://cilybldurbx2h" path="res://card system/misc/potion_holder.gd" id="5_kry3j"]
 [ext_resource type="Script" uid="uid://cftb5hku6m48" path="res://card system/misc/submit_button.gd" id="6_b3802"]
 [ext_resource type="Script" uid="uid://c3qc2yexgw8c2" path="res://card system/piles/deck_holder.gd" id="6_hptm8"]
 [ext_resource type="Script" uid="uid://b7rpitbvtbdxf" path="res://card system/dealer.gd" id="6_ynf5e"]
-[ext_resource type="Texture2D" uid="uid://nu30movbqld2" path="res://icon.svg" id="7_6bp64"]
 [ext_resource type="Script" uid="uid://s6dr7vh7p3y4" path="res://Scenes/slide_kill_panel.gd" id="8_344ge"]
 [ext_resource type="Script" uid="uid://bwitx55fsfv7t" path="res://card system/piles/hand_holder.gd" id="8_fdnlq"]
 [ext_resource type="Script" uid="uid://dlfe3an8hufm5" path="res://card system/piles/banished_holder.gd" id="9_jkdf5"]
@@ -16,15 +17,24 @@
 [ext_resource type="Script" uid="uid://yusxetxubyr5" path="res://Scenes/joy_anguish_meters.gd" id="9_ynf5e"]
 [ext_resource type="Script" uid="uid://dig3q1bbujkox" path="res://card system/misc/hand_hbox.gd" id="10_k12tt"]
 [ext_resource type="Script" uid="uid://cavfpuefel5gx" path="res://card system/piles/discard_holder.gd" id="10_wsu2k"]
-[ext_resource type="Texture2D" uid="uid://cnpb6it8w167k" path="res://Assets/Sprites/UI/Knife_kill.png" id="13_h1bgf"]
 [ext_resource type="Script" uid="uid://ga6oihrmatia" path="res://Scenes/day_report.gd" id="16_k12tt"]
-[ext_resource type="Texture2D" uid="uid://fd73bo7swlsj" path="res://Assets/Sprites/Background/Witch Hut.png" id="19_hibaj"]
-[ext_resource type="Texture2D" uid="uid://bcyhiucr3jp47" path="res://Assets/Sprites/Background/Counter.png" id="20_pdsj5"]
-[ext_resource type="Texture2D" uid="uid://ceswsihbycqlg" path="res://Assets/Sprites/UI/coin_counter.png" id="21_pdsj5"]
+[ext_resource type="Texture2D" uid="uid://drqgpfesycfba" path="res://Assets/Sprites/UI/knife_ui/Knife_container.png" id="17_ueoa1"]
+[ext_resource type="Texture2D" uid="uid://ddntlkfesfi5k" path="res://Assets/Sprites/UI/knife_ui/Knife_hide_button.png" id="19_1w6v2"]
+[ext_resource type="Texture2D" uid="uid://ddg1wn01w0bjt" path="res://Assets/Sprites/UI/knife_ui/Knife_hide_selected.png" id="20_ueoa1"]
+[ext_resource type="Texture2D" uid="uid://cqo8umogu58y0" path="res://Assets/Sprites/UI/knife_ui/Knife.png" id="21_6vcvc"]
+[ext_resource type="Texture2D" uid="uid://d4j101p1oju7o" path="res://Assets/Sprites/UI/coin_counter2.png" id="22_1w6v2"]
 [ext_resource type="Script" uid="uid://dne0jfbuucu01" path="res://Scripts/gold_counter.gd" id="22_ee4r6"]
+[ext_resource type="Texture2D" uid="uid://c8uh2wsvmj7k1" path="res://Assets/Sprites/UI/meter_ui/resource_section.png" id="23_6vcvc"]
 [ext_resource type="FontFile" uid="uid://bu0iimg40ehu2" path="res://card system/card_assets/Jersey10-Regular.ttf" id="23_gt3je"]
 [ext_resource type="Script" uid="uid://bpsrl57tmr0vj" path="res://Scripts/energy_counter.gd" id="24_3pmx8"]
+[ext_resource type="Texture2D" uid="uid://pne5sjnd6cea" path="res://Assets/Sprites/UI/energy_ui/Container_dark_layer.png" id="24_e08e2"]
+[ext_resource type="Texture2D" uid="uid://0iefrrkux7e1" path="res://Assets/Sprites/UI/meter_ui/Joy_container.png" id="24_kltya"]
+[ext_resource type="Texture2D" uid="uid://h8347qt0v35r" path="res://Assets/Sprites/UI/meter_ui/Joy_progress.png" id="25_e08e2"]
 [ext_resource type="Script" uid="uid://ci5agnsf5sjjb" path="res://Scenes/tutorial_manager.gd" id="25_u50mg"]
+[ext_resource type="Texture2D" uid="uid://ce7a0xvla0sm2" path="res://Assets/Sprites/UI/meter_ui/Anguish_container.png" id="26_neg2b"]
+[ext_resource type="Texture2D" uid="uid://dx8pp4x3q6hax" path="res://Assets/Sprites/UI/meter_ui/Anguish_progress.png" id="27_r33sp"]
+[ext_resource type="Texture2D" uid="uid://cyuaw3hb5x4kw" path="res://Assets/Sprites/UI/energy_ui/Mana_container.png" id="33_neg2b"]
+[ext_resource type="Texture2D" uid="uid://bqkyw6rhiwchk" path="res://Assets/Sprites/UI/energy_ui/Mana_layer.png" id="35_r33sp"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_8gbba")
@@ -33,14 +43,14 @@ script = ExtResource("1_8gbba")
 script = ExtResource("25_u50mg")
 
 [node name="BackGround" type="Sprite2D" parent="."]
-position = Vector2(575.99994, 324)
+position = Vector2(576.00006, 242)
 scale = Vector2(1.4999999, 1.4999999)
-texture = ExtResource("19_hibaj")
+texture = ExtResource("3_u50mg")
 
 [node name="Counter" type="Sprite2D" parent="."]
-position = Vector2(575.99994, 324.00003)
+position = Vector2(576, 429.00006)
 scale = Vector2(1.4999999, 1.4999999)
-texture = ExtResource("20_pdsj5")
+texture = ExtResource("4_cbgmd")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
@@ -122,10 +132,22 @@ anchor_right = 25.925
 anchor_bottom = 7.45
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("13_h1bgf")
+texture = ExtResource("17_ueoa1")
 script = ExtResource("8_344ge")
 metadata/_edit_use_anchors_ = true
 metadata/_edit_group_ = true
+
+[node name="ProgressBar" type="ProgressBar" parent="UIControl/SlideKillPanel"]
+self_modulate = Color(0.90727323, 0, 0.18777213, 1)
+layout_mode = 0
+offset_left = 9.0
+offset_top = 13.0
+offset_right = 102.0
+offset_bottom = 144.0
+mouse_filter = 2
+max_value = 1.0
+fill_mode = 3
+show_percentage = false
 
 [node name="ArrowButton" type="TextureButton" parent="UIControl/SlideKillPanel"]
 layout_mode = 1
@@ -140,23 +162,27 @@ offset_right = 17.0
 offset_bottom = 14.5
 grow_vertical = 2
 focus_mode = 0
+texture_normal = ExtResource("19_1w6v2")
+texture_pressed = ExtResource("20_ueoa1")
 ignore_texture_size = true
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="KillButton" type="TextureButton" parent="UIControl/SlideKillPanel"]
 layout_mode = 1
-anchors_preset = 6
+anchors_preset = -1
 anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
+anchor_top = 0.57051456
+anchor_right = 0.92
+anchor_bottom = 0.47315437
 offset_left = -75.0
 offset_top = -67.5
 offset_bottom = 68.5
 grow_horizontal = 0
 grow_vertical = 2
 focus_mode = 0
+texture_normal = ExtResource("21_6vcvc")
+stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="JoyAnguishMeters" type="Control" parent="UIControl"]
@@ -177,7 +203,7 @@ offset_top = -165.0
 offset_right = 128.0
 offset_bottom = 268.0
 grow_vertical = 2
-texture = ExtResource("7_6bp64")
+texture = ExtResource("23_6vcvc")
 metadata/_edit_use_anchors_ = true
 
 [node name="JoyProgressBar" type="TextureProgressBar" parent="UIControl/JoyAnguishMeters"]
@@ -192,10 +218,12 @@ offset_top = -164.0
 offset_right = 114.0
 offset_bottom = 181.0
 grow_vertical = 2
+value = 50.0
 fill_mode = 3
 nine_patch_stretch = true
-texture_progress = ExtResource("7_6bp64")
-tint_progress = Color(0.93333334, 0.7882353, 0, 1)
+texture_under = ExtResource("24_e08e2")
+texture_over = ExtResource("24_kltya")
+texture_progress = ExtResource("25_e08e2")
 metadata/_edit_use_anchors_ = true
 
 [node name="AnguishProgressBar" type="TextureProgressBar" parent="UIControl/JoyAnguishMeters"]
@@ -211,9 +239,12 @@ offset_right = -81.0
 offset_bottom = 177.0
 grow_horizontal = 0
 grow_vertical = 2
+value = 50.0
 fill_mode = 3
 nine_patch_stretch = true
-texture_progress = ExtResource("7_6bp64")
+texture_under = ExtResource("24_e08e2")
+texture_over = ExtResource("26_neg2b")
+texture_progress = ExtResource("27_r33sp")
 tint_progress = Color(0.97480863, 0, 0.069732405, 1)
 metadata/_edit_use_anchors_ = true
 
@@ -378,7 +409,7 @@ anchor_right = 22.625
 anchor_bottom = 12.05
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("21_pdsj5")
+texture = ExtResource("22_1w6v2")
 script = ExtResource("22_ee4r6")
 metadata/_edit_use_anchors_ = true
 
@@ -395,28 +426,42 @@ fit_content = true
 scroll_active = false
 
 [node name="EnergyCounter" type="TextureRect" parent="UIControl"]
+z_index = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 5.525
-anchor_top = 12.0
+anchor_top = 11.575
 anchor_right = 6.125
-anchor_bottom = 12.0
+anchor_bottom = 11.7
 offset_right = 40.0
 offset_bottom = 40.0
+texture = ExtResource("33_neg2b")
 script = ExtResource("24_3pmx8")
 metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="UIControl/EnergyCounter"]
 layout_mode = 0
-offset_left = 13.0
-offset_top = 15.0
-offset_right = 45.0
-offset_bottom = 39.0
+offset_left = 28.0
+offset_top = 8.0
+offset_right = 60.0
+offset_bottom = 32.0
 theme_override_fonts/normal_font = ExtResource("23_gt3je")
 theme_override_font_sizes/normal_font_size = 22
 text = "0"
 fit_content = true
 scroll_active = false
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="UIControl/EnergyCounter"]
+z_as_relative = false
+layout_mode = 0
+offset_left = 12.0
+offset_top = 1.0
+offset_right = 52.0
+offset_bottom = 41.0
+max_value = 3.0
+value = 3.0
+fill_mode = 3
+texture_progress = ExtResource("35_r33sp")
 
 [connection signal="button_down" from="CardManager/PotionHolder/SubmitButton" to="CardManager" method="_on_submit_button_button_down"]
 [connection signal="button_down" from="CardManager/PotionHolder/SubmitButton" to="CardManager/PotionHolder/SubmitButton" method="_on_button_down"]

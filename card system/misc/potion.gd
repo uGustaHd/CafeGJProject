@@ -15,7 +15,7 @@ var red_multiplier : int = 1
 var blue_multiplier : int = 1
 var green_multiplier : int = 1
 
-var status : Status
+var status : Status = Status.VOLATILE
 enum Status {SHIFTING, VOLATILE}
 
 # Used for comparisons

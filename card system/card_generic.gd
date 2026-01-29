@@ -100,14 +100,13 @@ func attempt_activation() -> bool:
 		return true
 	else:
 		return false
-		
-		
 
 func activate() -> void:
+	add_draw()
 	add_color()
 	add_multiplier()
 	add_energy()
-	add_draw()
+	add_kill()
 	
 	pay_cost()
 	for card in get_parent().get_children():
@@ -119,6 +118,9 @@ func add_draw():
 	
 func add_energy():
 	Global.add_energy(card_resource.energy_add)
+
+func add_kill():
+	Global.add_kill(card_resource.kill_add)
 
 func add_multiplier():
 	var multiplier_added : Potion = Potion.new()

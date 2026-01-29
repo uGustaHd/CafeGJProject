@@ -12,6 +12,7 @@ enum Archetype {RED, GREEN, BLUE, RAINBOW}
 
 @export var energy_add : int = 0
 @export var draw_add : int = 0
+@export var kill_add : float = 0
 
 @export var green_add : int = 0
 @export var blue_add : int = 0

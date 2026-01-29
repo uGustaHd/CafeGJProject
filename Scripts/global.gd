@@ -2,7 +2,7 @@ extends Node
 signal gold_changed(new_gold : int)
 
 enum GameMode {TUTORIAL, NORMAL}
-var game_mode := GameMode.TUTORIAL
+var game_mode := GameMode.NORMAL
 
 var can_play_cards = false
 
@@ -18,6 +18,7 @@ var default_energy : int = 3
 var energy  : int = default_energy
 var joy     : float = 50
 var anguish : float = 50
+var kill : float = 0
 var day     : int = 1
 var run_deck : Array[Card] = []
 #Day variables
@@ -97,3 +98,7 @@ func add_gold(value):
 	gold = max(0, gold + value)
 	gold_changed.emit(gold)
 	get_tree().call_group("gold_ui", "update_counter")
+	
+func add_kill(value):
+	kill = max(0, kill + value)
+	get_tree().call_group("kill_ui", "update_meter")
