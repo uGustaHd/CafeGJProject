@@ -164,11 +164,27 @@ func _on_button_button_down() -> void:
 		attempt_activation()
 	else: return
 	
+	#NOTE: Does not show up that well since card frees right after playing
+	Input.set_custom_mouse_cursor(
+		load("res://Assets/Sprites/UI/mouse_pointer/Cursor_ver1_click.png")
+	)
+
+func _on_button_button_up() -> void:
+	Input.set_custom_mouse_cursor(
+		load("res://Assets/Sprites/UI/mouse_pointer/Cursor_ver1.png")
+	)
+
 #WARNING: Animation breaks if moused over too fast
 func _on_button_mouse_entered() -> void:
 	animation.play("focus_card")
+	Input.set_custom_mouse_cursor(
+		load("res://Assets/Sprites/UI/mouse_pointer/Cursor_ver1_hover.png")
+	)
 
 func _on_button_mouse_exited() -> void:
 	animation.play_backwards("focus_card")
+	Input.set_custom_mouse_cursor(
+		load("res://Assets/Sprites/UI/mouse_pointer/Cursor_ver1.png")
+	)
 
 #endregion

@@ -23,6 +23,7 @@ DialogManager="*res://Scenes/TextBox/dialog_manager.tscn"
 [display]
 
 window/stretch/mode="canvas_items"
+mouse_cursor/custom_image="uid://c76su3ym2coim"
 
 [gui]
 

@@ -38,6 +38,7 @@
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_8gbba")
+metadata/_edit_horizontal_guides_ = [452.0, 112.0]
 
 [node name="TutorialManager" type="Node" parent="."]
 script = ExtResource("25_u50mg")
@@ -210,7 +211,7 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.007751938
-anchor_top = 0.5030303
+anchor_top = 0.5181818
 anchor_right = -0.007751938
 anchor_bottom = 0.5030303
 offset_left = 80.0
@@ -466,8 +467,15 @@ texture_progress = ExtResource("35_r33sp")
 [connection signal="button_down" from="CardManager/PotionHolder/SubmitButton" to="CardManager" method="_on_submit_button_button_down"]
 [connection signal="button_down" from="CardManager/PotionHolder/SubmitButton" to="CardManager/PotionHolder/SubmitButton" method="_on_button_down"]
 [connection signal="button_down" from="CardManager/PotionHolder/SubmitButton" to="CardManager/HandHolder" method="_on_submit_button_button_down"]
+[connection signal="button_up" from="CardManager/PotionHolder/SubmitButton" to="CardManager/PotionHolder/SubmitButton" method="_on_button_up"]
+[connection signal="mouse_entered" from="CardManager/PotionHolder/SubmitButton" to="CardManager/PotionHolder/SubmitButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CardManager/PotionHolder/SubmitButton" to="CardManager/PotionHolder/SubmitButton" method="_on_mouse_exited"]
 [connection signal="child_entered_tree" from="CardManager/HandHolder/HandUI/HandHBox" to="CardManager/HandHolder/HandUI/HandHBox" method="_on_child_entered_tree"]
 [connection signal="child_exiting_tree" from="CardManager/HandHolder/HandUI/HandHBox" to="CardManager/HandHolder/HandUI/HandHBox" method="_on_child_exiting_tree"]
 [connection signal="pressed" from="UIControl/SlideKillPanel/ArrowButton" to="UIControl/SlideKillPanel" method="_on_arrow_button_pressed"]
+[connection signal="button_down" from="UIControl/SlideKillPanel/KillButton" to="UIControl/SlideKillPanel" method="_on_kill_button_button_down"]
+[connection signal="button_up" from="UIControl/SlideKillPanel/KillButton" to="UIControl/SlideKillPanel" method="_on_kill_button_button_up"]
+[connection signal="mouse_entered" from="UIControl/SlideKillPanel/KillButton" to="UIControl/SlideKillPanel" method="_on_kill_button_mouse_entered"]
+[connection signal="mouse_exited" from="UIControl/SlideKillPanel/KillButton" to="UIControl/SlideKillPanel" method="_on_kill_button_mouse_exited"]
 [connection signal="pressed" from="UIControl/SlideKillPanel/KillButton" to="CustomerManager" method="_on_kill_button_pressed"]
 [connection signal="pressed" from="UIControl/DayReport/GoToShop/Button" to="." method="_on_button_pressed"]

@@ -1,7 +1,6 @@
 extends Node2D
 
 
-
 func _ready() -> void:
 	if Global.game_mode == Global.GameMode.NORMAL:
 		Global.can_play_cards = true

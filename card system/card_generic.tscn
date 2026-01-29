@@ -181,5 +181,6 @@ libraries = {
 }
 
 [connection signal="button_down" from="Visuals/Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Visuals/Button" to="." method="_on_button_button_up"]
 [connection signal="mouse_entered" from="Visuals/Button" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Visuals/Button" to="." method="_on_button_mouse_exited"]

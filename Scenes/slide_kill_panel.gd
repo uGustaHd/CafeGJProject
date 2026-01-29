@@ -20,3 +20,29 @@ func _on_arrow_button_pressed() -> void:
 	
 func update_meter():
 	meter.value = Global.kill
+
+#region Incoming Signals
+func _on_kill_button_button_down() -> void:
+	Global.energy = Global.default_energy
+	
+	Input.set_custom_mouse_cursor(
+		load("res://Assets/Sprites/UI/mouse_pointer/Cursor_ver1_click.png")
+	)
+
+func _on_kill_button_button_up() -> void:
+	Input.set_custom_mouse_cursor(
+		load("res://Assets/Sprites/UI/mouse_pointer/Cursor_ver1.png")
+	)
+
+func _on_kill_button_mouse_entered() -> void:
+	Input.set_custom_mouse_cursor(
+		load("res://Assets/Sprites/UI/mouse_pointer/Cursor_ver1_hover.png")
+	)
+
+func _on_kill_button_mouse_exited() -> void:
+	Input.set_custom_mouse_cursor(
+		load("res://Assets/Sprites/UI/mouse_pointer/Cursor_ver1.png")
+	)
+
+
+#endregion
