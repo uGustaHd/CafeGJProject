@@ -104,6 +104,7 @@ func attempt_activation() -> bool:
 
 func activate() -> void:
 	add_draw()
+	#NOTE: Color adding before multiplier takes effect is expected for balance
 	add_color()
 	add_multiplier()
 	add_energy()

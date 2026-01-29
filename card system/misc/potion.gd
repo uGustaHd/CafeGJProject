@@ -15,7 +15,7 @@ var red_multiplier : int = 1
 var blue_multiplier : int = 1
 var green_multiplier : int = 1
 
-var status : Status
+var status : Status = Status.SHIFTING
 enum Status {SHIFTING, VOLATILE}
 
 # Used for comparisons
@@ -77,17 +77,34 @@ func generate_potion(difficulty : int) -> Potion:
 	return self
 
 func shift() -> void:
-	var chance_to_shift : int = 30
+	# Get non-zero color indexes
+	var i = 0
+	var valid_giving_indexes : Array[int]
+	var valid_taking_indexes : Array[int]
+	for color in colors:
+		valid_taking_indexes.append(i)
+		if color >= 1:
+			valid_giving_indexes.append(i)
+		i += 1
+		
+	
+	# Decide if shifting
+	var chance_to_shift : int = 100
 	var roll = randi_range(1,100)
-	if chance_to_shift >= roll:
-		var color_taking = randi_range(0, 2)
-		var color_giving = randi_range(0, 2)
+	if chance_to_shift >= roll and valid_giving_indexes.size() > 0:
+		
+		print_debug("Potion shifting")
+		var color_giving = valid_giving_indexes.pick_random()
+		valid_taking_indexes.erase(color_giving)
+		var color_taking = valid_taking_indexes.pick_random()
 		if color_taking == color_giving:
 			color_giving += 1
 			if color_giving >= 2:
 				color_giving = 0
+
 		colors[color_taking] += 1
 		colors[color_giving] -= 1
+		print_debug("Potion BGR = ", colors)
 
 func on_card_played():
 	if status == Status.SHIFTING:

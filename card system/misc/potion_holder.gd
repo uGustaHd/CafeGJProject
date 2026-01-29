@@ -53,6 +53,8 @@ func on_card_color_added(color_added : Potion):
 	
 func on_card_multiplier_added(multiplier_added : Potion):
 	add_multiplier(multiplier_added)
+	# Emitted here to catch shifting potion
+	potion_progress_changed.emit(held_potion)
 	
 func on_customer_spawned(customer_potion : Potion):
 	held_potion.requested_potion = customer_potion
