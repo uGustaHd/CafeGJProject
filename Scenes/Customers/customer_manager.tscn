@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://df1d5o4oc5m1e"]
+[gd_scene load_steps=3 format=3 uid="uid://df1d5o4oc5m1e"]
 
 [ext_resource type="Script" uid="uid://dv334d2gisrpa" path="res://Scripts/Customers/customer_manager.gd" id="1_rmo1i"]
+[ext_resource type="AudioStream" uid="uid://dtbybse56sneh" path="res://Assets/Audio/Costumer_bell.mp3" id="2_y8e22"]
 
 [node name="Customer Manager" type="Node2D"]
 script = ExtResource("1_rmo1i")
+
+[node name="Bell" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_y8e22")

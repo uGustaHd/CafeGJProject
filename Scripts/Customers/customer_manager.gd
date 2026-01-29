@@ -4,6 +4,7 @@ signal customer_spawned(request_potion)
 
 @onready var Dealer = $"../CardManager/DeckHolder/Dealer"
 @onready var PotionHolder = $"../CardManager/PotionHolder"
+@onready var Bell: AudioStreamPlayer2D = $Bell
 
 
 
@@ -31,6 +32,9 @@ func _ready() -> void:
 
 func spawn_customer():
 	if customers_served_today < customer_per_day:
+
+		Bell.play()
+		#await Bell.finished
 		if current_customer != null: current_customer.queue_free()
 		current_customer = customer_scene.instantiate();
 		get_tree().current_scene.add_child(current_customer)
