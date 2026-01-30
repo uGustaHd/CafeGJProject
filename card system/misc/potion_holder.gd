@@ -1,7 +1,7 @@
 extends Node
 
 
-@onready var SubmitButton : Button = $SubmitButton
+@onready var SubmitButton : TextureButton = $SubmitButton
 
 var held_potion : Potion = Potion.new()
 var requested_potion : Potion

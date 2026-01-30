@@ -1,7 +1,7 @@
 extends HBoxContainer
 
 var max_separation : int = 120
-var min_separation : int = 100
+var min_separation : int = 168
 
 
 

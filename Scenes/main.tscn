@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://bdqjd2ergavof"]
+[gd_scene load_steps=53 format=3 uid="uid://bdqjd2ergavof"]
 
 [ext_resource type="Script" uid="uid://dbtic8k4hhs0a" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://df1d5o4oc5m1e" path="res://Scenes/Customers/customer_manager.tscn" id="1_jjgbg"]
@@ -12,11 +12,14 @@
 [ext_resource type="Script" uid="uid://b7rpitbvtbdxf" path="res://card system/dealer.gd" id="6_ynf5e"]
 [ext_resource type="Script" uid="uid://s6dr7vh7p3y4" path="res://Scenes/slide_kill_panel.gd" id="8_344ge"]
 [ext_resource type="Script" uid="uid://bwitx55fsfv7t" path="res://card system/piles/hand_holder.gd" id="8_fdnlq"]
+[ext_resource type="Texture2D" uid="uid://ciwgyu8lon4ff" path="res://Assets/Sprites/UI/potion_button/Sell_button_not_active.png" id="9_54nrm"]
 [ext_resource type="Script" uid="uid://dlfe3an8hufm5" path="res://card system/piles/banished_holder.gd" id="9_jkdf5"]
 [ext_resource type="Script" uid="uid://ftxj5put3ip1" path="res://card system/misc/hand_ui.gd" id="9_wsu2k"]
 [ext_resource type="Script" uid="uid://yusxetxubyr5" path="res://Scenes/joy_anguish_meters.gd" id="9_ynf5e"]
+[ext_resource type="Texture2D" uid="uid://c3oq3nt0xrf4e" path="res://Assets/Sprites/UI/potion_button/Sell_button_active.png" id="10_55jeb"]
 [ext_resource type="Script" uid="uid://dig3q1bbujkox" path="res://card system/misc/hand_hbox.gd" id="10_k12tt"]
 [ext_resource type="Script" uid="uid://cavfpuefel5gx" path="res://card system/piles/discard_holder.gd" id="10_wsu2k"]
+[ext_resource type="Texture2D" uid="uid://qgs35du8eu21" path="res://Assets/Sprites/UI/potion_button/Sell_button_selected.png" id="11_gsvbx"]
 [ext_resource type="Script" uid="uid://b8yono3xc1siy" path="res://card system/card resources/card.gd" id="11_nwwfm"]
 [ext_resource type="AudioStream" uid="uid://812473dokm8m" path="res://Assets/Audio/FX/draw_card_3.mp3" id="12_o1aky"]
 [ext_resource type="Resource" uid="uid://ddjh1ex61trw3" path="res://card system/card resources/blue/water.tres" id="12_s8vy0"]
@@ -83,16 +86,34 @@ script = ExtResource("4_jjvhh")
 [node name="PotionHolder" type="Node" parent="CardManager"]
 script = ExtResource("5_kry3j")
 
-[node name="SubmitButton" type="Button" parent="CardManager/PotionHolder"]
-offset_left = 796.0
-offset_top = 385.0
-offset_right = 886.0
-offset_bottom = 416.0
+[node name="SubmitButton" type="TextureButton" parent="CardManager/PotionHolder"]
+anchors_preset = -1
+anchor_left = -0.022569444
+anchor_top = -0.020061728
+anchor_right = -0.022569444
+anchor_bottom = -0.020061728
+offset_left = 889.0
+offset_top = 426.0
+offset_right = 953.0
+offset_bottom = 444.0
+scale = Vector2(1.5, 1.5)
 focus_mode = 0
-theme_override_fonts/font = ExtResource("23_gt3je")
-text = "Sell Potion"
+texture_normal = ExtResource("9_54nrm")
+texture_pressed = ExtResource("11_gsvbx")
+texture_hover = ExtResource("10_55jeb")
 script = ExtResource("6_b3802")
 metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CardManager/PotionHolder"]
+offset_left = 866.0
+offset_top = 415.0
+offset_right = 941.0
+offset_bottom = 438.0
+theme_override_fonts/font = ExtResource("23_gt3je")
+theme_override_font_sizes/font_size = 12
+text = "Submit Potion"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="DeckHolder" type="Node2D" parent="CardManager"]
 script = ExtResource("6_hptm8")
@@ -523,7 +544,7 @@ offset_top = 13.0
 offset_right = 103.0
 offset_bottom = 27.0
 theme_override_fonts/font = ExtResource("23_gt3je")
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 12
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -544,7 +565,7 @@ offset_top = -1.0
 offset_right = 79.0
 offset_bottom = 15.0
 theme_override_fonts/font = ExtResource("23_gt3je")
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 12
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -568,8 +589,8 @@ stream = ExtResource("41_8cuat")
 volume_db = -10.0
 
 [connection signal="button_down" from="CardManager/PotionHolder/SubmitButton" to="CardManager" method="_on_submit_button_button_down"]
-[connection signal="button_down" from="CardManager/PotionHolder/SubmitButton" to="CardManager/PotionHolder/SubmitButton" method="_on_button_down"]
 [connection signal="button_down" from="CardManager/PotionHolder/SubmitButton" to="CardManager/HandHolder" method="_on_submit_button_button_down"]
+[connection signal="button_down" from="CardManager/PotionHolder/SubmitButton" to="CardManager/PotionHolder/SubmitButton" method="_on_button_down"]
 [connection signal="button_up" from="CardManager/PotionHolder/SubmitButton" to="CardManager/PotionHolder/SubmitButton" method="_on_button_up"]
 [connection signal="mouse_entered" from="CardManager/PotionHolder/SubmitButton" to="CardManager/PotionHolder/SubmitButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CardManager/PotionHolder/SubmitButton" to="CardManager/PotionHolder/SubmitButton" method="_on_mouse_exited"]

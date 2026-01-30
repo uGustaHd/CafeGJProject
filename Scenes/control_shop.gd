@@ -3,6 +3,8 @@ extends Node2D
 @export var tip_texts: Array[String]
 @onready var dialog_position = $DialogPosition
 @onready var gold_label = $Control/Gold/Label
+@onready var dialog_box: MarginContainer = $Control/DialogBox
+
 
 
 func _ready() -> void:
@@ -10,15 +12,13 @@ func _ready() -> void:
 	update_gold(Global.gold)
 
 func update_gold(value : int):
-	gold_label.text ="Gold: " + str(value)
+	gold_label.text = "Gold: " + str(value)
 	
 func _on_button_talk_pressed() -> void:
-	var dialog_box = DialogManager.start_dialog(talk_texts, dialog_position.position)
-	dialog_box.set_custom_minimum(Vector2(527, 50))
+	dialog_box.start_dialog(talk_texts)
 
 func _on_button_tips_pressed() -> void:
-	var dialog_box = DialogManager.start_dialog(tip_texts, dialog_position.position)
-	dialog_box.set_custom_minimum(Vector2(527, 50))
+	dialog_box.start_dialog(tip_texts)
 
 
 func _on_next_day_button_pressed() -> void:

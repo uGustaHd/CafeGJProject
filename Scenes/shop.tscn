@@ -1,14 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://43eywb40ult6"]
+[gd_scene load_steps=9 format=3 uid="uid://43eywb40ult6"]
 
-[ext_resource type="Texture2D" uid="uid://nu30movbqld2" path="res://icon.svg" id="1_2shtd"]
 [ext_resource type="Script" uid="uid://d01cmk3fdncpb" path="res://Scenes/control_shop.gd" id="1_io27d"]
+[ext_resource type="Texture2D" uid="uid://bky6jgrit5q5" path="res://Assets/Sprites/Background/Shop_Background.png" id="2_k6jq0"]
 [ext_resource type="Script" uid="uid://b1aq3uowe3jjy" path="res://Scenes/shop_h_box.gd" id="3_fdj0q"]
 [ext_resource type="Script" uid="uid://cdr44l30ymg83" path="res://Scenes/shop_manager.gd" id="3_io27d"]
+[ext_resource type="Texture2D" uid="uid://cybuiu5tfwnh1" path="res://Assets/Sprites/TextBox/Ver1.png" id="5_3ps1r"]
+[ext_resource type="Script" uid="uid://dwi3fs65oywfb" path="res://Scenes/patron_dialog_box.gd" id="5_ymrm4"]
+[ext_resource type="FontFile" uid="uid://bu0iimg40ehu2" path="res://card system/card_assets/Jersey10-Regular.ttf" id="6_ymrm4"]
+[ext_resource type="AudioStream" uid="uid://dfk127awodkeh" path="res://Assets/Audio/Music/Cafe Witch - 6 - Loop Ok.mp3" id="8_s8dlv"]
 
 [node name="Shop" type="Node2D"]
 script = ExtResource("1_io27d")
 talk_texts = Array[String](["I'm talking now!", "Yes! And i can have multiple texts!", "Isn't that incredible?"])
 tip_texts = Array[String](["Tip Tip Tip Tip"])
+
+[node name="ShopBG" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_k6jq0")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
@@ -22,79 +31,6 @@ offset_top = 108.0
 offset_right = 960.0
 offset_bottom = 540.0
 
-[node name="Dealer" type="Panel" parent="Control"]
-z_index = -1
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 7.0
-offset_top = -131.0
-offset_right = -88.0
-offset_bottom = -7.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="ButtonTalk" type="Button" parent="Control/Dealer"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -211.5
-offset_top = -45.0
-offset_right = 49.5
-offset_bottom = -5.0
-grow_horizontal = 2
-grow_vertical = 0
-focus_mode = 0
-text = "Talk"
-
-[node name="Panel" type="Panel" parent="Control/Dealer"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 6.0
-offset_top = -55.0
-offset_right = 117.0
-offset_bottom = 56.0
-grow_vertical = 2
-
-[node name="TextureRect" type="TextureRect" parent="Control/Dealer/Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -55.0
-offset_top = -55.0
-offset_right = 55.5
-offset_bottom = 55.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_2shtd")
-expand_mode = 1
-
-[node name="ButtonTips" type="Button" parent="Control/Dealer"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 70.5
-offset_top = -44.0
-offset_right = 331.5
-offset_bottom = -4.0
-grow_horizontal = 2
-grow_vertical = 0
-focus_mode = 0
-text = "Tips"
-
 [node name="NextDayButton" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = 3
@@ -103,9 +39,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -86.0
-offset_top = -38.0
+offset_top = -37.0
 offset_right = -3.0
-offset_bottom = -7.0
+offset_bottom = -6.0
 grow_horizontal = 0
 grow_vertical = 0
 focus_mode = 0
@@ -119,9 +55,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -86.0
-offset_top = -73.0
+offset_top = -72.0
 offset_right = -3.0
-offset_bottom = -42.0
+offset_bottom = -41.0
 grow_horizontal = 0
 grow_vertical = 0
 focus_mode = 0
@@ -135,9 +71,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -86.0
-offset_top = -108.0
+offset_top = -106.0
 offset_right = -3.0
-offset_bottom = -77.0
+offset_bottom = -75.0
 grow_horizontal = 0
 grow_vertical = 0
 
@@ -146,6 +82,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Gold: "
@@ -171,10 +109,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 15.0
-offset_top = 27.0
-offset_right = 87.0
-offset_bottom = -129.0
+offset_left = 29.0
+offset_top = 33.0
+offset_right = -197.0
+offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("3_fdj0q")
@@ -184,10 +122,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 15.0
-offset_top = 171.0
-offset_right = 87.0
-offset_bottom = 15.0
+offset_left = 28.0
+offset_top = 203.0
+offset_right = -188.0
+offset_bottom = 58.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("3_fdj0q")
@@ -195,13 +133,84 @@ script = ExtResource("3_fdj0q")
 [node name="ShopManager" type="Node" parent="Control/ShopUI"]
 script = ExtResource("3_io27d")
 
+[node name="ButtonTalk" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 112.0
+offset_top = -130.0
+offset_right = 201.0
+offset_bottom = -99.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+text = "Talk"
+
+[node name="ButtonTips" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 210.0
+offset_top = -130.0
+offset_right = 294.0
+offset_bottom = -99.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+text = "Tips"
+
+[node name="DialogBox" type="MarginContainer" parent="Control"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 334.0
+offset_right = 677.0
+offset_bottom = 429.0
+script = ExtResource("5_ymrm4")
+
+[node name="BGDialogBox" type="NinePatchRect" parent="Control/DialogBox"]
+layout_mode = 2
+texture = ExtResource("5_3ps1r")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="TextContainer" type="MarginContainer" parent="Control/DialogBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="TextLabel" type="Label" parent="Control/DialogBox/TextContainer"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6666667, 0.9647059, 0.93333334, 1)
+theme_override_fonts/font = ExtResource("6_ymrm4")
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="DialogPosition" type="Marker2D" parent="."]
 position = Vector2(597, 450)
 
-[connection signal="pressed" from="Control/Dealer/ButtonTalk" to="." method="_on_button_talk_pressed"]
-[connection signal="pressed" from="Control/Dealer/ButtonTips" to="." method="_on_button_tips_pressed"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_s8dlv")
+pitch_scale = 0.8
+autoplay = true
+parameters/looping = true
+
 [connection signal="pressed" from="Control/NextDayButton" to="." method="_on_next_day_button_pressed"]
 [connection signal="child_entered_tree" from="Control/ShopUI/ShopHBox" to="Control/ShopUI/ShopHBox" method="_on_child_entered_tree"]
 [connection signal="child_exiting_tree" from="Control/ShopUI/ShopHBox" to="Control/ShopUI/ShopHBox" method="_on_child_exiting_tree"]
 [connection signal="child_entered_tree" from="Control/ShopUI/ShopHBox2" to="Control/ShopUI/ShopHBox2" method="_on_child_entered_tree"]
 [connection signal="child_exiting_tree" from="Control/ShopUI/ShopHBox2" to="Control/ShopUI/ShopHBox2" method="_on_child_exiting_tree"]
+[connection signal="pressed" from="Control/ButtonTalk" to="." method="_on_button_talk_pressed"]
+[connection signal="pressed" from="Control/ButtonTips" to="." method="_on_button_tips_pressed"]
