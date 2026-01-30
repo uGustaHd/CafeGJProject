@@ -45,7 +45,7 @@ func add_multiplier(added_multiplier : Potion):
 	potion_progress_changed.emit(held_potion)
 
 func reset_potion():
-	held_potion.reset_potion()
+	held_potion = Potion.new()
 	emit_signal("potion_progress_changed", held_potion)
 	
 func on_card_color_added(color_added : Potion):

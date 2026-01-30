@@ -37,12 +37,6 @@ func add_red(value: int):
 	red += value * red_multiplier
 	colors[2] = red
 
-func reset_potion():
-	red = 0
-	blue = 0
-	green = 0 
-	colors = [0,0,0]
-
 #endregion
 
 #region logic
