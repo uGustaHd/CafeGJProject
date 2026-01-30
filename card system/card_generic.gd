@@ -89,7 +89,6 @@ func color_title() -> void:
 		card_resource.Archetype.GREEN:
 			title.push_color(Color.LIME_GREEN)
 		card_resource.Archetype.RAINBOW:
-			#[rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]{text}[/rainbow]
 			title.text = "[rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]" + card_resource.title + "[/rainbow]"
 
 #endregion

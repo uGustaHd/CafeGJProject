@@ -42,6 +42,7 @@ func add_multiplier(added_multiplier : Potion):
 	held_potion.blue_multiplier *= added_multiplier.blue_multiplier
 	held_potion.green_multiplier *= added_multiplier.green_multiplier
 	held_potion.red_multiplier *= added_multiplier.red_multiplier
+	potion_progress_changed.emit(held_potion)
 
 func reset_potion():
 	held_potion.reset_potion()
