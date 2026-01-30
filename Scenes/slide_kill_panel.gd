@@ -7,7 +7,7 @@ var pos_closed := Vector2(1142, 252)
 
 func _ready() -> void:
 	pos_closed = position
-	pos_open = pos_closed - Vector2(70,0)
+	pos_open = pos_closed - Vector2(50,0)
 	
 	add_to_group("kill_ui")
 	

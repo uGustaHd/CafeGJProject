@@ -24,7 +24,7 @@ func setup():
 	if customer_data != null:
 		play_approach_audio()
 		$Sprite2D.texture = customer_data.possible_sprite.pick_random()
-		$Sprite2D.scale = Vector2(1.3,1.3)
+		$Sprite2D.scale = Vector2(1.5,1.5)
 		$Sprite2D.visible = false
 		#NOTE: Currently only generates a potion of difficulty 1 every time.
 		var new_request = Potion.new()

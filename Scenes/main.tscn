@@ -75,7 +75,7 @@ customer_scene = ExtResource("2_bo1nx")
 spawn_position = NodePath("../CustomerSpawn")
 
 [node name="CustomerSpawn" type="Marker2D" parent="."]
-position = Vector2(576, 261)
+position = Vector2(576, 244)
 
 [node name="CardManager" type="Node2D" parent="."]
 script = ExtResource("4_jjvhh")
@@ -89,6 +89,7 @@ offset_top = 385.0
 offset_right = 886.0
 offset_bottom = 416.0
 focus_mode = 0
+theme_override_fonts/font = ExtResource("23_gt3je")
 text = "Sell Potion"
 script = ExtResource("6_b3802")
 metadata/_edit_use_anchors_ = true
@@ -144,24 +145,25 @@ metadata/_edit_use_anchors_ = true
 [node name="SlideKillPanel" type="TextureRect" parent="UIControl"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 23.425
-anchor_top = 4.2
-anchor_right = 25.925
-anchor_bottom = 8.6
+anchor_left = 23.650005
+anchor_top = 4.725
+anchor_right = 26.125
+anchor_bottom = 9.075
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("17_ueoa1")
+stretch_mode = 2
 script = ExtResource("8_344ge")
 metadata/_edit_use_anchors_ = true
-metadata/_edit_group_ = true
 
 [node name="ProgressBar" type="ProgressBar" parent="UIControl/SlideKillPanel"]
 self_modulate = Color(0.90727323, 0, 0.18777213, 1)
 layout_mode = 0
 offset_left = 9.0
-offset_top = 13.0
-offset_right = 102.0
-offset_bottom = 144.0
+offset_top = 8.0
+offset_right = 45.0
+offset_bottom = 93.0
 mouse_filter = 2
 max_value = 1.0
 fill_mode = 3
@@ -170,10 +172,10 @@ show_percentage = false
 [node name="ArrowButton" type="TextureButton" parent="UIControl/SlideKillPanel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.03
-anchor_top = 0.45973155
-anchor_right = 0.06
-anchor_bottom = 0.45973155
+anchor_left = 0.04
+anchor_top = 0.2949588
+anchor_right = 0.07
+anchor_bottom = 0.2949588
 offset_left = -7.0
 offset_top = -13.5
 offset_right = 17.0
@@ -183,24 +185,23 @@ focus_mode = 0
 texture_normal = ExtResource("19_1w6v2")
 texture_pressed = ExtResource("20_ueoa1")
 ignore_texture_size = true
-stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="KillButton" type="TextureButton" parent="UIControl/SlideKillPanel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.92
-anchor_top = 0.47315437
-anchor_right = 0.92
-anchor_bottom = 0.57670456
+anchor_left = 0.84
+anchor_top = 0.43338165
+anchor_right = 0.84
+anchor_bottom = 0.43338165
 offset_left = -75.0
 offset_top = -67.5
-offset_bottom = 68.5
+offset_right = -39.599926
+offset_bottom = 15.113632
 grow_horizontal = 0
 grow_vertical = 2
 focus_mode = 0
 texture_normal = ExtResource("21_6vcvc")
-stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="JoyAnguishMeters" type="Control" parent="UIControl"]
@@ -232,7 +233,7 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.18604651
 anchor_top = 0.5849596
-anchor_right = -0.12157927
+anchor_right = -0.105831236
 anchor_bottom = 0.5851035
 offset_left = 80.0
 offset_top = -164.0
@@ -249,9 +250,9 @@ metadata/_edit_use_anchors_ = true
 [node name="AnguishProgressBar" type="TextureProgressBar" parent="UIControl/JoyAnguishMeters"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 1.0
+anchor_left = 1.0310078
 anchor_top = 0.58829087
-anchor_right = 1.0155039
+anchor_right = 1.007874
 anchor_bottom = 0.58829087
 offset_left = -118.93799
 offset_top = -165.0
@@ -422,12 +423,13 @@ text = "Plan and Shop"
 [node name="GoldCounter" type="TextureRect" parent="UIControl"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 22.025
-anchor_top = 12.05
-anchor_right = 22.625
-anchor_bottom = 12.05
+anchor_left = 21.600002
+anchor_top = 11.975004
+anchor_right = 22.200008
+anchor_bottom = 11.975
 offset_right = 40.0
 offset_bottom = 40.0
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("22_1w6v2")
 script = ExtResource("22_ee4r6")
 metadata/_edit_use_anchors_ = true
@@ -506,26 +508,32 @@ script = ExtResource("36_k2e45")
 
 [node name="DayCounter" type="TextureRect" parent="UIControl/DayCustomerCounter"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -52.0
+offset_top = 2.0
+offset_right = 52.0
+offset_bottom = 42.0
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("37_536cc")
+stretch_mode = 2
 
 [node name="Label" type="Label" parent="UIControl/DayCustomerCounter/DayCounter"]
 layout_mode = 0
 offset_left = 9.0
-offset_top = 17.0
+offset_top = 13.0
 offset_right = 103.0
-offset_bottom = 40.0
+offset_bottom = 27.0
+theme_override_fonts/font = ExtResource("23_gt3je")
 theme_override_font_sizes/font_size = 10
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CustomerCounter" type="TextureRect" parent="UIControl/DayCustomerCounter"]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 39.0
-offset_right = 104.0
-offset_bottom = 55.0
+offset_left = -16.0
+offset_top = 44.0
+offset_right = 64.0
+offset_bottom = 60.0
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("38_aqgau")
 stretch_mode = 2
 
@@ -535,16 +543,17 @@ offset_left = 5.0
 offset_top = -1.0
 offset_right = 79.0
 offset_bottom = 15.0
+theme_override_fonts/font = ExtResource("23_gt3je")
 theme_override_font_sizes/font_size = 10
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="UIControl/DayCustomerCounter/CustomerCounter"]
 layout_mode = 0
-offset_left = 18.0
-offset_top = 1.0
-offset_right = 58.0
-offset_bottom = 41.0
+offset_left = 16.667114
+offset_top = -0.33332825
+offset_right = 56.667114
+offset_bottom = 39.66667
 texture = ExtResource("39_536cc")
 stretch_mode = 2
 
