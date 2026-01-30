@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://bdqjd2ergavof"]
+[gd_scene load_steps=54 format=3 uid="uid://bdqjd2ergavof"]
 
 [ext_resource type="Script" uid="uid://dbtic8k4hhs0a" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://df1d5o4oc5m1e" path="res://Scenes/Customers/customer_manager.tscn" id="1_jjgbg"]
@@ -52,6 +52,7 @@
 [ext_resource type="AudioStream" uid="uid://cvhh0vp50ybjg" path="res://Assets/Audio/Ambience/Potion_1.mp3" id="40_aqgau"]
 [ext_resource type="AudioStream" uid="uid://dfk127awodkeh" path="res://Assets/Audio/Music/Cafe Witch - 6 - Loop Ok.mp3" id="41_8cuat"]
 [ext_resource type="Texture2D" uid="uid://b66uwx41eb0m3" path="res://Assets/Sprites/UI/energy_ui/Mana_counter.png" id="42_54nrm"]
+[ext_resource type="Texture2D" uid="uid://cnccp41y75p70" path="res://Assets/Sprites/UI/Card_counter.png" id="51_55jeb"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_8gbba")
@@ -227,6 +228,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="JoyAnguishMeters" type="Control" parent="UIControl"]
 layout_mode = 1
+anchor_left = -0.05
+anchor_top = -0.075
 anchor_right = -0.05
 anchor_bottom = -0.075
 offset_left = 192.0
@@ -239,7 +242,7 @@ metadata/_edit_use_anchors_ = true
 [node name="TextureRect" type="TextureRect" parent="UIControl/JoyAnguishMeters"]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.5243536
+anchor_top = 0.5122324
 anchor_bottom = 0.5122324
 offset_top = -165.0
 offset_right = 128.0
@@ -271,7 +274,7 @@ metadata/_edit_use_anchors_ = true
 [node name="AnguishProgressBar" type="TextureProgressBar" parent="UIControl/JoyAnguishMeters"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 1.0310078
+anchor_left = 1.007874
 anchor_top = 0.58829087
 anchor_right = 1.007874
 anchor_bottom = 0.58829087
@@ -445,7 +448,7 @@ text = "Plan and Shop"
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 21.600002
-anchor_top = 11.975004
+anchor_top = 11.975
 anchor_right = 22.200008
 anchor_bottom = 11.975
 offset_right = 40.0
@@ -578,6 +581,27 @@ offset_bottom = 39.66667
 texture = ExtResource("39_536cc")
 stretch_mode = 2
 
+[node name="TextureRect" type="TextureRect" parent="UIControl"]
+layout_mode = 0
+offset_left = 301.0
+offset_top = 370.0
+offset_right = 349.0
+offset_bottom = 392.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("51_55jeb")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="UIControl/TextureRect"]
+layout_mode = 0
+offset_left = 12.000002
+offset_top = 3.3333335
+offset_right = 59.333336
+offset_bottom = 26.333334
+theme_override_fonts/font = ExtResource("23_gt3je")
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 [node name="AmbiencePotionSound" type="AudioStreamPlayer2D" parent="."]
@@ -589,8 +613,8 @@ stream = ExtResource("41_8cuat")
 volume_db = -10.0
 
 [connection signal="button_down" from="CardManager/PotionHolder/SubmitButton" to="CardManager" method="_on_submit_button_button_down"]
-[connection signal="button_down" from="CardManager/PotionHolder/SubmitButton" to="CardManager/HandHolder" method="_on_submit_button_button_down"]
 [connection signal="button_down" from="CardManager/PotionHolder/SubmitButton" to="CardManager/PotionHolder/SubmitButton" method="_on_button_down"]
+[connection signal="button_down" from="CardManager/PotionHolder/SubmitButton" to="CardManager/HandHolder" method="_on_submit_button_button_down"]
 [connection signal="button_up" from="CardManager/PotionHolder/SubmitButton" to="CardManager/PotionHolder/SubmitButton" method="_on_button_up"]
 [connection signal="mouse_entered" from="CardManager/PotionHolder/SubmitButton" to="CardManager/PotionHolder/SubmitButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CardManager/PotionHolder/SubmitButton" to="CardManager/PotionHolder/SubmitButton" method="_on_mouse_exited"]

@@ -23,8 +23,8 @@ var day     : int = 1
 var run_deck : Array[Card] = []
 #Day variables
 var plesed_customers        : int = 0
-var secret_ingredients_added: int = 0
 var killed_customers        : int = 0
+var secret_ingredients_added: int = 0
 var cards_used              : int = 0
 var cards_remaining         : int = 0
 

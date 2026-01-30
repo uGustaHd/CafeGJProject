@@ -41,6 +41,7 @@ custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.6666667, 0.9647059, 0.93333334, 1)
 theme_override_fonts/font = ExtResource("3_34pgn")
+theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2

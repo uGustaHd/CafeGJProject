@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://43eywb40ult6"]
+[gd_scene load_steps=11 format=3 uid="uid://43eywb40ult6"]
 
 [ext_resource type="Script" uid="uid://d01cmk3fdncpb" path="res://Scenes/control_shop.gd" id="1_io27d"]
 [ext_resource type="Texture2D" uid="uid://bky6jgrit5q5" path="res://Assets/Sprites/Background/Shop_Background.png" id="2_k6jq0"]
+[ext_resource type="Texture2D" uid="uid://cpxg842w41o3i" path="res://Assets/Sprites/UI/inventory.png" id="3_5xp22"]
 [ext_resource type="Script" uid="uid://b1aq3uowe3jjy" path="res://Scenes/shop_h_box.gd" id="3_fdj0q"]
 [ext_resource type="Script" uid="uid://cdr44l30ymg83" path="res://Scenes/shop_manager.gd" id="3_io27d"]
+[ext_resource type="Texture2D" uid="uid://d4j101p1oju7o" path="res://Assets/Sprites/UI/coin_counter2.png" id="4_ow1eo"]
 [ext_resource type="Texture2D" uid="uid://cybuiu5tfwnh1" path="res://Assets/Sprites/TextBox/Ver1.png" id="5_3ps1r"]
 [ext_resource type="Script" uid="uid://dwi3fs65oywfb" path="res://Scenes/patron_dialog_box.gd" id="5_ymrm4"]
 [ext_resource type="FontFile" uid="uid://bu0iimg40ehu2" path="res://card system/card_assets/Jersey10-Regular.ttf" id="6_ymrm4"]
@@ -38,55 +40,61 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -86.0
-offset_top = -37.0
-offset_right = -3.0
-offset_bottom = -6.0
+offset_left = -87.0
+offset_top = -36.0
+offset_right = -4.0
+offset_bottom = -5.0
 grow_horizontal = 0
 grow_vertical = 0
 focus_mode = 0
 text = "Next Day"
 
-[node name="InventoryButton" type="Button" parent="Control"]
+[node name="InventoryButton" type="TextureButton" parent="Control"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -86.0
+offset_left = -96.0
 offset_top = -72.0
-offset_right = -3.0
-offset_bottom = -41.0
+offset_right = -32.0
+offset_bottom = -50.0
 grow_horizontal = 0
 grow_vertical = 0
+scale = Vector2(1.5, 1.5)
 focus_mode = 0
-text = "Inventory"
+texture_normal = ExtResource("3_5xp22")
 
-[node name="Gold" type="Panel" parent="Control"]
+[node name="Gold" type="TextureRect" parent="Control"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -86.0
-offset_top = -106.0
-offset_right = -3.0
-offset_bottom = -75.0
+offset_left = -124.0
+offset_top = -122.0
+offset_right = -41.0
+offset_bottom = -91.0
 grow_horizontal = 0
 grow_vertical = 0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_ow1eo")
 
 [node name="Label" type="Label" parent="Control/Gold"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 1.0
-offset_bottom = 1.0
+offset_left = -14.0
+offset_top = 6.6666665
+offset_right = -14.0
+offset_bottom = 6.666668
 grow_horizontal = 2
 grow_vertical = 2
-text = "Gold: "
+theme_override_fonts/font = ExtResource("6_ymrm4")
+text = "40"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -169,7 +177,7 @@ text = "Tips"
 layout_mode = 0
 offset_left = 2.0
 offset_top = 334.0
-offset_right = 677.0
+offset_right = 642.0
 offset_bottom = 429.0
 script = ExtResource("5_ymrm4")
 
@@ -191,7 +199,7 @@ theme_override_constants/margin_bottom = 8
 [node name="TextLabel" type="Label" parent="Control/DialogBox/TextContainer"]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.6666667, 0.9647059, 0.93333334, 1)
+theme_override_colors/font_color = Color(0.7921569, 0.11372549, 0.078431375, 1)
 theme_override_fonts/font = ExtResource("6_ymrm4")
 theme_override_font_sizes/font_size = 24
 horizontal_alignment = 1
@@ -203,7 +211,7 @@ position = Vector2(597, 450)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_s8dlv")
-pitch_scale = 0.8
+pitch_scale = 0.9
 autoplay = true
 parameters/looping = true
 

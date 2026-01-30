@@ -12,7 +12,7 @@ func _ready() -> void:
 	update_gold(Global.gold)
 
 func update_gold(value : int):
-	gold_label.text = "Gold: " + str(value)
+	gold_label.text = str(value)
 	
 func _on_button_talk_pressed() -> void:
 	dialog_box.start_dialog(talk_texts)
