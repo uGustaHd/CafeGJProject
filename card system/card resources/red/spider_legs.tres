@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://dkfk1ii1ti1ib"]
+
+[ext_resource type="Texture2D" uid="uid://x5wrhu6wyxna" path="res://card system/card_assets/card_art/roots.png" id="1_1ham5"]
+[ext_resource type="Script" uid="uid://b8yono3xc1siy" path="res://card system/card resources/card.gd" id="2_ufgx7"]
+
+[resource]
+script = ExtResource("2_ufgx7")
+title = "Spider Legs"
+card_art = ExtResource("1_1ham5")
+kill_add = 0.3
+red_add = 1
+red_multiply = 2
+metadata/_custom_type_script = "uid://b8yono3xc1siy"

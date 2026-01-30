@@ -5,13 +5,19 @@ extends Node
 @onready var CardGeneric = preload("res://shop_card_generic.tscn")
 var cards_per_shop : int = 3
 
+#NOTE: Shop pool last updated: 1/30/2026
 var shop_pool : Array[Card] = [
-	load("res://card system/card resources/delphinium.tres"),
-	load("res://card system/card resources/dried_peppers.tres"),
-	load("res://card system/card resources/mushrooms.tres"),
-	load("res://card system/card resources/roots.tres"),
-	load("res://card system/card resources/sage_flower.tres"),
-	load("res://card system/card resources/water.tres")
+	#Blue
+	load("res://card system/card resources/blue/delphinium.tres"),
+	load("res://card system/card resources/blue/water.tres"),
+	#Red
+	load("res://card system/card resources/red/dried_peppers.tres"),
+	load("res://card system/card resources/red/mushrooms.tres"),
+	load("res://card system/card resources/red/spider_legs.tres"),
+	#Green
+	load("res://card system/card resources/green/sage_flower.tres"),
+	#Rainbow
+	load("res://card system/card resources/rainbow/roots.tres"),
 ]
 
 func spawn_shop():

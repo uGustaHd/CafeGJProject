@@ -13,7 +13,7 @@ const JOY_WARNING = 20
 const ANGUISH_WARNING = 20
 
 
-var gold    : int = 100
+var gold    : int = 0
 var default_energy : int = 3
 var energy  : int = default_energy
 var joy     : float = 50

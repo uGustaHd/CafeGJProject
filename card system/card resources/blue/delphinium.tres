@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://bpx0f3nqvch3d"]
+
+[ext_resource type="Texture2D" uid="uid://co1rdo0c2io2p" path="res://card system/card_assets/card_art/Delphinium.png" id="1_i55er"]
+[ext_resource type="Script" uid="uid://b8yono3xc1siy" path="res://card system/card resources/card.gd" id="2_phlwb"]
+
+[resource]
+script = ExtResource("2_phlwb")
+title = "Delphinium"
+card_art = ExtResource("1_i55er")
+archetype = 2
+draw_add = 1
+green_add = 1
+blue_add = 1
+metadata/_custom_type_script = "uid://b8yono3xc1siy"

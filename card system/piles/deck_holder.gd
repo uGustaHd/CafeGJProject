@@ -9,22 +9,10 @@ var draw_card_sound := preload("res://Assets/Audio/FX/draw_card_3.mp3")
 var shuffle_card_sound := preload("res://Assets/Audio/FX/shuffle_1 .mp3")
 var is_looping : bool = false
 
-var starting_deck : Array[Card] = [
-load("res://card system/card resources/delphinium.tres"), 
-load("res://card system/card resources/dried_peppers.tres"), 
-load("res://card system/card resources/mushrooms.tres"), 
-load("res://card system/card resources/roots.tres"), 
-load("res://card system/card resources/sage_flower.tres"), 
-load("res://card system/card resources/water.tres"), 
-load("res://card system/card resources/water.tres"),
-load("res://card system/card resources/water.tres"),
-load("res://card system/card resources/water.tres"),
-load("res://card system/card resources/poison_test.tres"),
-]
+@export var starting_deck : Array[Card]
 
-# WARNING: Will draw empty card if shuffle in discard fails to make deck pile not empty.
+# NOTE: Will draw empty card if shuffle in discard fails to make deck pile not empty.
 func draw_card() -> Card:
-
 	var drawn_card = held_pile.take_random()
 	if drawn_card == load("res://card system/card resources/is_empty.tres") and not is_looping:
 		shuffle_in_discard()

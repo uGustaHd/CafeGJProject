@@ -1,8 +1,8 @@
-[gd_scene load_steps=43 format=3 uid="uid://bdqjd2ergavof"]
+[gd_scene load_steps=50 format=3 uid="uid://bdqjd2ergavof"]
 
 [ext_resource type="Script" uid="uid://dbtic8k4hhs0a" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://df1d5o4oc5m1e" path="res://Scenes/Customers/customer_manager.tscn" id="1_jjgbg"]
-[ext_resource type="PackedScene" uid="uid://ucuv03tdxv54" path="res://Scenes/Customers/customer.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://ucuv03tdxv54" path="res://Scenes/Customers/Customer.tscn" id="2_bo1nx"]
 [ext_resource type="Texture2D" uid="uid://fmlvtppb2jje" path="res://Assets/Sprites/Background/Background_rendered.png" id="3_u50mg"]
 [ext_resource type="Texture2D" uid="uid://clto7guvbxmjv" path="res://Assets/Sprites/Background/counter_top_rendered.png" id="4_cbgmd"]
 [ext_resource type="Script" uid="uid://ciewvhcpryhfs" path="res://Scripts/Cards/card_manager.gd" id="4_jjvhh"]
@@ -17,9 +17,16 @@
 [ext_resource type="Script" uid="uid://yusxetxubyr5" path="res://Scenes/joy_anguish_meters.gd" id="9_ynf5e"]
 [ext_resource type="Script" uid="uid://dig3q1bbujkox" path="res://card system/misc/hand_hbox.gd" id="10_k12tt"]
 [ext_resource type="Script" uid="uid://cavfpuefel5gx" path="res://card system/piles/discard_holder.gd" id="10_wsu2k"]
+[ext_resource type="Script" uid="uid://b8yono3xc1siy" path="res://card system/card resources/card.gd" id="11_nwwfm"]
 [ext_resource type="AudioStream" uid="uid://812473dokm8m" path="res://Assets/Audio/FX/draw_card_3.mp3" id="12_o1aky"]
+[ext_resource type="Resource" uid="uid://ddjh1ex61trw3" path="res://card system/card resources/blue/water.tres" id="12_s8vy0"]
+[ext_resource type="Resource" uid="uid://dkfk1ii1ti1ib" path="res://card system/card resources/red/spider_legs.tres" id="13_jut3y"]
+[ext_resource type="Resource" uid="uid://bpx0f3nqvch3d" path="res://card system/card resources/blue/delphinium.tres" id="14_v2nl5"]
+[ext_resource type="Resource" uid="uid://c7g0cheydkt32" path="res://card system/card resources/green/sage_flower.tres" id="15_v2nl5"]
+[ext_resource type="Resource" uid="uid://cxcqfyh8uil6e" path="res://card system/card resources/red/dried_peppers.tres" id="16_dmskm"]
 [ext_resource type="Script" uid="uid://ga6oihrmatia" path="res://Scenes/day_report.gd" id="16_k12tt"]
 [ext_resource type="Texture2D" uid="uid://drqgpfesycfba" path="res://Assets/Sprites/UI/knife_ui/Knife_container.png" id="17_ueoa1"]
+[ext_resource type="Resource" uid="uid://biuk2lnowfevk" path="res://card system/card resources/red/mushrooms.tres" id="17_xdkp6"]
 [ext_resource type="Texture2D" uid="uid://ddntlkfesfi5k" path="res://Assets/Sprites/UI/knife_ui/Knife_hide_button.png" id="19_1w6v2"]
 [ext_resource type="Texture2D" uid="uid://ddg1wn01w0bjt" path="res://Assets/Sprites/UI/knife_ui/Knife_hide_selected.png" id="20_ueoa1"]
 [ext_resource type="Texture2D" uid="uid://cqo8umogu58y0" path="res://Assets/Sprites/UI/knife_ui/Knife.png" id="21_6vcvc"]
@@ -89,6 +96,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="DeckHolder" type="Node2D" parent="CardManager"]
 script = ExtResource("6_hptm8")
+starting_deck = Array[ExtResource("11_nwwfm")]([ExtResource("12_s8vy0"), ExtResource("12_s8vy0"), ExtResource("14_v2nl5"), ExtResource("15_v2nl5"), ExtResource("15_v2nl5"), ExtResource("15_v2nl5"), ExtResource("17_xdkp6"), ExtResource("16_dmskm"), ExtResource("16_dmskm"), ExtResource("13_jut3y")])
 
 [node name="Dealer" type="Node" parent="CardManager/DeckHolder"]
 script = ExtResource("6_ynf5e")

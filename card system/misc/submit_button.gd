@@ -3,6 +3,8 @@ extends Button
 
 func _on_button_down() -> void:
 	Global.energy = Global.default_energy
+	# To update energy meter
+	Global.add_energy(0)
 	
 	Input.set_custom_mouse_cursor(
 		load("res://Assets/Sprites/UI/mouse_pointer/Cursor_ver1_click.png")
