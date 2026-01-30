@@ -48,7 +48,7 @@ var first_customer_text: Array[String] = [
 
 
 var gold_text: Array[String] = [
-	"Fulfilling customer requests earns you gold, shown at the bottom left",
+	"Fulfilling customer requests earns you gold, shown at the bottom right",
 	"Use gold to buy new cards for your deck",
 	"The shop opens at the end of each day"
 ]
@@ -56,7 +56,7 @@ var gold_text: Array[String] = [
 var kill_text: Array[String] = [
 	"Sometimes, your patron demands more than just potions",
 	"Killing a customer requires building up kill progress through specific cards",
-	"When ready, you can kill the customer using the button on the left side of the screen",
+	"When ready, you can kill the customer using the button on the right side of the screen",
 	"This will greatly increase Anguish, but drastically reduce Joy",
 	"Choose carefully when to cross this line"
 ]

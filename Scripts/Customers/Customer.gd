@@ -20,10 +20,11 @@ var died: bool = false
 
 
 func setup():
-
+	
 	if customer_data != null:
 		play_approach_audio()
 		$Sprite2D.texture = customer_data.possible_sprite.pick_random()
+		$Sprite2D.scale = Vector2(1.3,1.3)
 		$Sprite2D.visible = false
 		#NOTE: Currently only generates a potion of difficulty 1 every time.
 		var new_request = Potion.new()
@@ -99,6 +100,7 @@ func on_request_fail():
 	Global.anguish += customer_data.anguish_on_fail
 	var dialog = DialogManager.start_dialog(customer_data.dialog_fail, global_position + dialog_offset)
 	request_box.visible = false
+	await get_tree().process_frame
 	dialog.dialog_finished.connect(Callable(self, "_on_dialog_finished"))
 	print(Global.joy)
 	print(Global.anguish)

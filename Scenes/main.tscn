@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dbtic8k4hhs0a" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://df1d5o4oc5m1e" path="res://Scenes/Customers/customer_manager.tscn" id="1_jjgbg"]
-[ext_resource type="PackedScene" uid="uid://ucuv03tdxv54" path="res://Scenes/Customers/Customer.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://ucuv03tdxv54" path="res://Scenes/Customers/customer.tscn" id="2_bo1nx"]
 [ext_resource type="Texture2D" uid="uid://fmlvtppb2jje" path="res://Assets/Sprites/Background/Background_rendered.png" id="3_u50mg"]
 [ext_resource type="Texture2D" uid="uid://clto7guvbxmjv" path="res://Assets/Sprites/Background/counter_top_rendered.png" id="4_cbgmd"]
 [ext_resource type="Script" uid="uid://ciewvhcpryhfs" path="res://Scripts/Cards/card_manager.gd" id="4_jjvhh"]
@@ -35,24 +35,23 @@
 [ext_resource type="Texture2D" uid="uid://c8uh2wsvmj7k1" path="res://Assets/Sprites/UI/meter_ui/resource_section.png" id="23_6vcvc"]
 [ext_resource type="FontFile" uid="uid://bu0iimg40ehu2" path="res://card system/card_assets/Jersey10-Regular.ttf" id="23_gt3je"]
 [ext_resource type="Script" uid="uid://bpsrl57tmr0vj" path="res://Scripts/energy_counter.gd" id="24_3pmx8"]
-[ext_resource type="Texture2D" uid="uid://pne5sjnd6cea" path="res://Assets/Sprites/UI/energy_ui/Container_dark_layer.png" id="24_e08e2"]
-[ext_resource type="Texture2D" uid="uid://0iefrrkux7e1" path="res://Assets/Sprites/UI/meter_ui/Joy_container.png" id="24_kltya"]
-[ext_resource type="Texture2D" uid="uid://h8347qt0v35r" path="res://Assets/Sprites/UI/meter_ui/Joy_progress.png" id="25_e08e2"]
 [ext_resource type="Script" uid="uid://ci5agnsf5sjjb" path="res://Scenes/tutorial_manager.gd" id="25_u50mg"]
 [ext_resource type="Texture2D" uid="uid://ce7a0xvla0sm2" path="res://Assets/Sprites/UI/meter_ui/Anguish_container.png" id="26_neg2b"]
-[ext_resource type="Texture2D" uid="uid://dx8pp4x3q6hax" path="res://Assets/Sprites/UI/meter_ui/Anguish_progress.png" id="27_r33sp"]
+[ext_resource type="Texture2D" uid="uid://ug73g8yft6uj" path="res://Assets/Sprites/UI/meter_ui/Joy_container_new.png" id="32_v2nl5"]
+[ext_resource type="Texture2D" uid="uid://bbpdjgnh7rx4w" path="res://Assets/Sprites/UI/meter_ui/joy_full_bar2.png" id="33_dmskm"]
 [ext_resource type="Texture2D" uid="uid://cyuaw3hb5x4kw" path="res://Assets/Sprites/UI/energy_ui/Mana_container.png" id="33_neg2b"]
 [ext_resource type="Texture2D" uid="uid://bqkyw6rhiwchk" path="res://Assets/Sprites/UI/energy_ui/Mana_layer.png" id="35_r33sp"]
+[ext_resource type="Texture2D" uid="uid://cftck5b35swol" path="res://Assets/Sprites/UI/meter_ui/Anguish_full_bar.png" id="35_xdkp6"]
 [ext_resource type="Script" uid="uid://p7sowdqv6iir" path="res://Scenes/day_customer_counter.gd" id="36_k2e45"]
 [ext_resource type="Texture2D" uid="uid://bedb7loeohl15" path="res://Assets/Sprites/UI/Day_counter.png" id="37_536cc"]
 [ext_resource type="Texture2D" uid="uid://bdhxbnubm4inp" path="res://Assets/Sprites/UI/Customer_counter.png" id="38_aqgau"]
 [ext_resource type="Texture2D" uid="uid://djsagqljtyun5" path="res://Assets/Sprites/UI/Customer_icon.png" id="39_536cc"]
 [ext_resource type="AudioStream" uid="uid://cvhh0vp50ybjg" path="res://Assets/Audio/Ambience/Potion_1.mp3" id="40_aqgau"]
 [ext_resource type="AudioStream" uid="uid://dfk127awodkeh" path="res://Assets/Audio/Music/Cafe Witch - 6 - Loop Ok.mp3" id="41_8cuat"]
+[ext_resource type="Texture2D" uid="uid://b66uwx41eb0m3" path="res://Assets/Sprites/UI/energy_ui/Mana_counter.png" id="42_54nrm"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_8gbba")
-metadata/_edit_horizontal_guides_ = [452.0]
 
 [node name="TutorialManager" type="Node" parent="."]
 script = ExtResource("25_u50mg")
@@ -76,7 +75,7 @@ customer_scene = ExtResource("2_bo1nx")
 spawn_position = NodePath("../CustomerSpawn")
 
 [node name="CustomerSpawn" type="Marker2D" parent="."]
-position = Vector2(576, 287)
+position = Vector2(576, 261)
 
 [node name="CardManager" type="Node2D" parent="."]
 script = ExtResource("4_jjvhh")
@@ -148,7 +147,7 @@ anchors_preset = -1
 anchor_left = 23.425
 anchor_top = 4.2
 anchor_right = 25.925
-anchor_bottom = 7.925
+anchor_bottom = 8.6
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("17_ueoa1")
@@ -193,7 +192,7 @@ anchors_preset = -1
 anchor_left = 0.92
 anchor_top = 0.47315437
 anchor_right = 0.92
-anchor_bottom = 0.47315437
+anchor_bottom = 0.57670456
 offset_left = -75.0
 offset_top = -67.5
 offset_bottom = 68.5
@@ -205,7 +204,9 @@ stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="JoyAnguishMeters" type="Control" parent="UIControl"]
-anchors_preset = 0
+layout_mode = 1
+anchor_right = -0.05
+anchor_bottom = -0.075
 offset_left = 192.0
 offset_top = 105.0
 offset_right = 321.0
@@ -215,56 +216,55 @@ metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="UIControl/JoyAnguishMeters"]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
+anchors_preset = -1
+anchor_top = 0.5243536
+anchor_bottom = 0.5122324
 offset_top = -165.0
 offset_right = 128.0
 offset_bottom = 268.0
 grow_vertical = 2
 texture = ExtResource("23_6vcvc")
+stretch_mode = 4
 metadata/_edit_use_anchors_ = true
 
 [node name="JoyProgressBar" type="TextureProgressBar" parent="UIControl/JoyAnguishMeters"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.007751938
-anchor_top = 0.5030303
-anchor_right = -0.007751938
-anchor_bottom = 0.5030303
+anchor_left = -0.18604651
+anchor_top = 0.5849596
+anchor_right = -0.12157927
+anchor_bottom = 0.5851035
 offset_left = 80.0
 offset_top = -164.0
-offset_right = 114.0
-offset_bottom = 181.0
+offset_right = 112.44056
+offset_bottom = 120.67116
 grow_vertical = 2
 value = 50.0
 fill_mode = 3
 nine_patch_stretch = true
-texture_under = ExtResource("24_e08e2")
-texture_over = ExtResource("24_kltya")
-texture_progress = ExtResource("25_e08e2")
+texture_over = ExtResource("32_v2nl5")
+texture_progress = ExtResource("33_dmskm")
 metadata/_edit_use_anchors_ = true
 
 [node name="AnguishProgressBar" type="TextureProgressBar" parent="UIControl/JoyAnguishMeters"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
-anchor_top = 0.5151515
-anchor_right = 1.0
-anchor_bottom = 0.5151515
-offset_left = -115.0
+anchor_top = 0.58829087
+anchor_right = 1.0155039
+anchor_bottom = 0.58829087
+offset_left = -118.93799
 offset_top = -165.0
 offset_right = -81.0
-offset_bottom = 177.0
+offset_bottom = 117.42888
 grow_horizontal = 0
 grow_vertical = 2
 value = 50.0
 fill_mode = 3
 nine_patch_stretch = true
-texture_under = ExtResource("24_e08e2")
 texture_over = ExtResource("26_neg2b")
-texture_progress = ExtResource("27_r33sp")
-tint_progress = Color(0.97480863, 0, 0.069732405, 1)
+texture_progress = ExtResource("35_xdkp6")
+texture_progress_offset = Vector2(0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="DayReport" type="Control" parent="UIControl"]
@@ -448,38 +448,52 @@ scroll_active = false
 z_index = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 5.525
-anchor_top = 11.575
-anchor_right = 6.125
+anchor_left = 4.800111
+anchor_top = 10.825001
+anchor_right = 6.466666
 anchor_bottom = 11.7
+offset_left = -0.004425049
+offset_top = -3.0517578e-05
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("33_neg2b")
 script = ExtResource("24_3pmx8")
 metadata/_edit_use_anchors_ = true
 
+[node name="TextureRect" type="TextureRect" parent="UIControl/EnergyCounter"]
+layout_mode = 0
+offset_left = 15.6666565
+offset_top = 78.0
+offset_right = 90.66666
+offset_bottom = 103.0
+texture = ExtResource("42_54nrm")
+stretch_mode = 4
+
 [node name="RichTextLabel" type="RichTextLabel" parent="UIControl/EnergyCounter"]
 layout_mode = 0
-offset_left = 28.0
-offset_top = 8.0
-offset_right = 60.0
-offset_bottom = 32.0
+offset_left = 19.666656
+offset_top = 79.0
+offset_right = 92.66666
+offset_bottom = 103.0
 theme_override_fonts/normal_font = ExtResource("23_gt3je")
-theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/normal_font_size = 20
 text = "0"
 fit_content = true
 scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="UIControl/EnergyCounter"]
 z_as_relative = false
 layout_mode = 0
-offset_left = 12.0
-offset_top = 1.0
-offset_right = 52.0
-offset_bottom = 41.0
+offset_left = 19.666656
+offset_top = 2.0
+offset_right = 85.66666
+offset_bottom = 68.0
 max_value = 3.0
 value = 3.0
 fill_mode = 3
+nine_patch_stretch = true
 texture_progress = ExtResource("35_r33sp")
 
 [node name="DayCustomerCounter" type="Control" parent="UIControl"]

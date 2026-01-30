@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0iefrrkux7e1"
-path="res://.godot/imported/Joy_container.png-15bbffd2b054e18ef255c80cc454fc36.ctex"
+uid="uid://cftck5b35swol"
+path="res://.godot/imported/Anguish_full_bar.png-96fc34f150836302426080a3cd6768cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/UI/meter_ui/Joy_container.png"
-dest_files=["res://.godot/imported/Joy_container.png-15bbffd2b054e18ef255c80cc454fc36.ctex"]
+source_file="res://Assets/Sprites/UI/meter_ui/Anguish_full_bar.png"
+dest_files=["res://.godot/imported/Anguish_full_bar.png-96fc34f150836302426080a3cd6768cd.ctex"]
 
 [params]
 

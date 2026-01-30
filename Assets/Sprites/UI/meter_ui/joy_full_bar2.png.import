@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://o8pymnye0d7h"
-path="res://.godot/imported/Joy_rising.png-ab6498ae6b3786a5c2835febb15a3f9c.ctex"
+uid="uid://bbpdjgnh7rx4w"
+path="res://.godot/imported/joy_full_bar2.png-864cc57902c4c7967f221e2788805951.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/UI/meter_ui/Joy_rising.png"
-dest_files=["res://.godot/imported/Joy_rising.png-ab6498ae6b3786a5c2835febb15a3f9c.ctex"]
+source_file="res://Assets/Sprites/UI/meter_ui/joy_full_bar2.png"
+dest_files=["res://.godot/imported/joy_full_bar2.png-864cc57902c4c7967f221e2788805951.ctex"]
 
 [params]
 

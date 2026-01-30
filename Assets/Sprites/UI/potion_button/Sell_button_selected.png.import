@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpfmfongsj3wn"
-path="res://.godot/imported/Anguish_rising.png-e6d398e68c05e8a511bd2a30fded7531.ctex"
+uid="uid://qgs35du8eu21"
+path="res://.godot/imported/Sell_button_selected.png-ee6d5417adb8a080dbff56a006623a31.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/UI/meter_ui/Anguish_rising.png"
-dest_files=["res://.godot/imported/Anguish_rising.png-e6d398e68c05e8a511bd2a30fded7531.ctex"]
+source_file="res://Assets/Sprites/UI/potion_button/Sell_button_selected.png"
+dest_files=["res://.godot/imported/Sell_button_selected.png-ee6d5417adb8a080dbff56a006623a31.ctex"]
 
 [params]
 

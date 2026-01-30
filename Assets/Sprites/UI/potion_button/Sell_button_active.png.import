@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0rhfi1ojx55c"
-path="res://.godot/imported/Joy_bottom.png-a4690dfe901ca38272e0c2d00bcc0b80.ctex"
+uid="uid://c3oq3nt0xrf4e"
+path="res://.godot/imported/Sell_button_active.png-5e62fd77a24969e67848413625a01c74.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/UI/meter_ui/Joy_bottom.png"
-dest_files=["res://.godot/imported/Joy_bottom.png-a4690dfe901ca38272e0c2d00bcc0b80.ctex"]
+source_file="res://Assets/Sprites/UI/potion_button/Sell_button_active.png"
+dest_files=["res://.godot/imported/Sell_button_active.png-5e62fd77a24969e67848413625a01c74.ctex"]
 
 [params]
 

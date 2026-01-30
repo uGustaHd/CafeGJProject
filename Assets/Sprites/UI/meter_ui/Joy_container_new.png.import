@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://h8347qt0v35r"
-path="res://.godot/imported/Joy_progress.png-1ee5e930de65b533a224c12347db0532.ctex"
+uid="uid://ug73g8yft6uj"
+path="res://.godot/imported/Joy_container_new.png-cca52c1a7586597715af5e5b223cba05.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/UI/meter_ui/Joy_progress.png"
-dest_files=["res://.godot/imported/Joy_progress.png-1ee5e930de65b533a224c12347db0532.ctex"]
+source_file="res://Assets/Sprites/UI/meter_ui/Joy_container_new.png"
+dest_files=["res://.godot/imported/Joy_container_new.png-cca52c1a7586597715af5e5b223cba05.ctex"]
 
 [params]
 
