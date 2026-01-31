@@ -8,7 +8,8 @@ var is_potion_delivered : bool = false
 @onready var footstep_aproach = customer_data.footstep_aproach.pick_random()
 @onready var footstep_leave = customer_data.footstep_leaving.pick_random()
 #NOTE: There is an error here, it seems to not break the game. I'll leave it this way
-@onready var HandHolder: PileHolder = $"../CardManager/HandHolder"
+@onready var HandHolder: PileHolder = $CardManager/HandHolder
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var current_potion : Potion
 
@@ -27,22 +28,25 @@ func setup():
 	current_potion = Potion.new()
 	Global.can_play_cards = false
 	if customer_data != null:
+		
 		play_approach_audio()
 		$Sprite2D.texture = customer_data.possible_sprite.pick_random()
 		$Sprite2D.scale = Vector2(1.5,1.5)
 		$Sprite2D.visible = false
+		animation_player.play("appear_animation")
 		#NOTE: Currently only generates a potion of difficulty 1 every time.
 		var new_request = Potion.new()
 		new_request.generate_potion(Global.get_difficulty())
 		current_request = new_request
-		request_box.visible = false
 		request_box.position = position + Vector2(80,-50)
+		request_box.visible = true
+		show_request(Potion.new())
+		
 	else:
 		print("No CustomerData")
 func _ready() -> void:
 	setup()
 	await audio_stream_player_2d.finished
-	$Sprite2D.visible = true
 	Global.can_play_cards = true
 	print("\nCustomer Appeared")
 	#TODO: Connect a signal with the potion that the player gave to the NPC
@@ -55,8 +59,7 @@ func _ready() -> void:
 	
 	DialogManager.start_dialog(customer_data.dialog_intro, global_position + dialog_offset)
 	#await dialog.dialog_finished
-	request_box.visible = true
-	show_request(Potion.new())
+
 	
 	
 #Signal
