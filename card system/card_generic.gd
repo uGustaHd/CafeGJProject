@@ -81,9 +81,9 @@ func fill_effect_text() -> void:
 	# Write out multipliers
 	var multipliers : Array[int] = [card_resource.green_multiply, card_resource.blue_multiply, card_resource.red_multiply]
 	var multiplier_strings : Array[String] = [
-		" Green",
-		" Blue",
-		" Red",
+		" Green \n",
+		" Blue \n",
+		" Red \n",
 	]
 	i = 0
 	for value in multipliers:
@@ -92,6 +92,12 @@ func fill_effect_text() -> void:
 			text_to_add = "x" + str(value) + text_to_add
 			effect_text.add_text(text_to_add)
 		i += 1
+	fit_text()
+	
+# Returns bool to check if text needed fitting
+func fit_text() -> bool:
+	
+	return true
 
 # Assigns title directly if Rainbow
 func color_title() -> void:

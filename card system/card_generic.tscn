@@ -2,11 +2,13 @@
 
 [ext_resource type="Script" uid="uid://blkjui87aggta" path="res://card system/card_generic.gd" id="1_1q60f"]
 [ext_resource type="Texture2D" uid="uid://cyfvs74rft41i" path="res://card system/card_assets/DescriptionBox_ver.1.png" id="1_sj6e3"]
-[ext_resource type="Texture2D" uid="uid://x5wrhu6wyxna" path="res://card system/card_assets/card_art/New  Illusts/Green/roots.png" id="3_1q60f"]
 [ext_resource type="Theme" uid="uid://tuw56bvfysja" path="res://card system/effect_text.tres" id="3_11dsn"]
 [ext_resource type="Texture2D" uid="uid://csc8mcpkn3j0v" path="res://card system/card_assets/card_art/New  Illusts/Green/Border_ver_1.png" id="3_r7wv5"]
 [ext_resource type="Texture2D" uid="uid://cenroamv2p1t6" path="res://card system/card_assets/ManaCost_ver.1.png" id="4_11dsn"]
 [ext_resource type="FontFile" uid="uid://bu0iimg40ehu2" path="res://card system/card_assets/Jersey10-Regular.ttf" id="4_jlo26"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r7wv5"]
+load_path = "res://.godot/imported/roots.png-3e2697ccc37905c142187e72ae21a414.ctex"
 
 [sub_resource type="Animation" id="Animation_11dsn"]
 length = 0.001
@@ -118,11 +120,12 @@ layout_mode = 0
 offset_left = 2.8571424
 offset_top = 2.0
 offset_right = 55.714283
-offset_bottom = 36.999996
+offset_bottom = 39.857143
 theme = ExtResource("3_11dsn")
 theme_override_constants/paragraph_separation = -3
 theme_override_fonts/normal_font = ExtResource("4_jlo26")
 theme_override_font_sizes/normal_font_size = 11
+fit_content = true
 
 [node name="Art" type="TextureRect" parent="Visuals"]
 layout_mode = 0
@@ -130,7 +133,7 @@ offset_left = 1.0
 offset_top = 1.0
 offset_right = 62.6
 offset_bottom = 57.0
-texture = ExtResource("3_1q60f")
+texture = SubResource("CompressedTexture2D_r7wv5")
 
 [node name="Title" type="RichTextLabel" parent="Visuals/Art"]
 layout_mode = 0
