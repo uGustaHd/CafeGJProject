@@ -35,7 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://cqo8umogu58y0" path="res://Assets/Sprites/UI/knife_ui/Knife.png" id="21_6vcvc"]
 [ext_resource type="Texture2D" uid="uid://d4j101p1oju7o" path="res://Assets/Sprites/UI/coin_counter2.png" id="22_1w6v2"]
 [ext_resource type="Script" uid="uid://dne0jfbuucu01" path="res://Scripts/gold_counter.gd" id="22_ee4r6"]
-[ext_resource type="Resource" uid="uid://d00nyq7o5sfat" path="res://card system/card resources/green/frog_eggs.tres" id="22_gsvbx"]
+[ext_resource type="Resource" uid="uid://bmtttnvwrlvqh" path="res://card system/card resources/rainbow/salamander.tres" id="22_gsvbx"]
 [ext_resource type="Texture2D" uid="uid://c8uh2wsvmj7k1" path="res://Assets/Sprites/UI/meter_ui/resource_section.png" id="23_6vcvc"]
 [ext_resource type="FontFile" uid="uid://bu0iimg40ehu2" path="res://card system/card_assets/Jersey10-Regular.ttf" id="23_gt3je"]
 [ext_resource type="Script" uid="uid://bpsrl57tmr0vj" path="res://Scripts/energy_counter.gd" id="24_3pmx8"]
@@ -168,9 +168,9 @@ metadata/_edit_use_anchors_ = true
 [node name="SlideKillPanel" type="TextureRect" parent="UIControl"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 23.650005
+anchor_left = 23.575006
 anchor_top = 4.725
-anchor_right = 26.125
+anchor_right = 26.05
 anchor_bottom = 9.075
 grow_horizontal = 2
 grow_vertical = 2
@@ -224,6 +224,7 @@ offset_bottom = 15.113632
 grow_horizontal = 0
 grow_vertical = 2
 focus_mode = 0
+disabled = true
 texture_normal = ExtResource("21_6vcvc")
 metadata/_edit_use_anchors_ = true
 

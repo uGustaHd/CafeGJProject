@@ -24,6 +24,8 @@ func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("add_energy") and OS.is_debug_build():
 		Global.add_energy(1)
+	if Input.is_action_just_pressed("add_kill") and OS.is_debug_build():
+		Global.add_kill(1)
 
 func check_volatility():
 	var i = 0

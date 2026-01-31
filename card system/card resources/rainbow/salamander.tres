@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_615g8")
-title = "Salamander Tail"
+title = "Salamander"
 card_art = ExtResource("1_tilcd")
 archetype = 5
 draw_add = 4

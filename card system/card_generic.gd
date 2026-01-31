@@ -115,7 +115,7 @@ func color_title() -> void:
 			title.push_color(Color.REBECCA_PURPLE)
 			
 		card_resource.Archetype.RAINBOW:
-			title.text = "[rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]" + card_resource.title + "[/rainbow]"
+			title.text = "[outline_color=BLACK][outline_size=4.0][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]" + card_resource.title + "[/rainbow]"
 
 func set_border() -> void:
 	border.texture = borders[card_resource.archetype]
