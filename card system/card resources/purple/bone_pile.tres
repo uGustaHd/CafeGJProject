@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://bre7n6lly0q3x"]
+
+[ext_resource type="Texture2D" uid="uid://dvv1tx67wdlto" path="res://card system/card_assets/card_art/New  Illusts/Purple/Bone_pile_illust.png" id="1_3kpw7"]
+[ext_resource type="Script" uid="uid://b8yono3xc1siy" path="res://card system/card resources/card.gd" id="1_q4e1r"]
+
+[resource]
+script = ExtResource("1_q4e1r")
+title = "Bone Pile"
+card_art = ExtResource("1_3kpw7")
+archetype = 4
+kill_add = 0.2
+anguish_add = 10
+red_add = 1
+energy_cost = 0
+evil = true
+metadata/_custom_type_script = "uid://b8yono3xc1siy"

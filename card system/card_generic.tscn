@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://blkjui87aggta" path="res://card system/card_generic.gd" id="1_1q60f"]
 [ext_resource type="Texture2D" uid="uid://cyfvs74rft41i" path="res://card system/card_assets/DescriptionBox_ver.1.png" id="1_sj6e3"]
-[ext_resource type="Texture2D" uid="uid://x5wrhu6wyxna" path="res://card system/card_assets/card_art/New  Illusts/Rainbow/roots.png" id="3_1q60f"]
+[ext_resource type="Texture2D" uid="uid://x5wrhu6wyxna" path="res://card system/card_assets/card_art/New  Illusts/Green/roots.png" id="3_1q60f"]
 [ext_resource type="Theme" uid="uid://tuw56bvfysja" path="res://card system/effect_text.tres" id="3_11dsn"]
 [ext_resource type="Texture2D" uid="uid://csc8mcpkn3j0v" path="res://card system/card_assets/card_art/New  Illusts/Green/Border_ver_1.png" id="3_r7wv5"]
 [ext_resource type="Texture2D" uid="uid://cenroamv2p1t6" path="res://card system/card_assets/ManaCost_ver.1.png" id="4_11dsn"]

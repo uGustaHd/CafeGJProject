@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://byhfbkpnr81cy"]
+
+[ext_resource type="Texture2D" uid="uid://bqw7mxopvrjlg" path="res://card system/card_assets/card_art/New  Illusts/Blue/Azure_butterfly_illust.png" id="1_dwmcm"]
+[ext_resource type="Script" uid="uid://b8yono3xc1siy" path="res://card system/card resources/card.gd" id="1_qh5ei"]
+
+[resource]
+script = ExtResource("1_qh5ei")
+title = "Azure Butterfly"
+card_art = ExtResource("1_dwmcm")
+archetype = 2
+designer_notes = "The big blue"
+draw_add = 2
+blue_add = 3
+energy_cost = 2
+metadata/_custom_type_script = "uid://b8yono3xc1siy"

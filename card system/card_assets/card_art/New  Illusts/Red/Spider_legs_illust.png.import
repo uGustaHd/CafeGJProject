@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x5wrhu6wyxna"
-path="res://.godot/imported/roots.png-e761185a7eba413cf250de6f82b201fa.ctex"
+uid="uid://dwsoq4dqinjr4"
+path="res://.godot/imported/Spider_legs_illust.png-1be15956f36d46430afa98f738e57e6d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://card system/card_assets/card_art/New  Illusts/Rainbow/roots.png"
-dest_files=["res://.godot/imported/roots.png-e761185a7eba413cf250de6f82b201fa.ctex"]
+source_file="res://card system/card_assets/card_art/New  Illusts/Red/Spider_legs_illust.png"
+dest_files=["res://.godot/imported/Spider_legs_illust.png-1be15956f36d46430afa98f738e57e6d.ctex"]
 
 [params]
 
