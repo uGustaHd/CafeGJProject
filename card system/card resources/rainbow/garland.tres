@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://diu26of0l0tse"]
+
+[ext_resource type="Texture2D" uid="uid://c1mi1efy3qvmb" path="res://card system/card_assets/card_art/New  Illusts/Rainbow/Garland_illust.png" id="1_pgvs3"]
+[ext_resource type="Script" uid="uid://b8yono3xc1siy" path="res://card system/card resources/card.gd" id="2_y1twe"]
+
+[resource]
+script = ExtResource("2_y1twe")
+title = "Garland"
+card_art = ExtResource("1_pgvs3")
+archetype = 5
+designer_notes = "Unsure what to do with this one to make it different than rainbow."
+joy_add = 10
+anguish_add = 10
+green_add = 1
+blue_add = 1
+red_add = 1
+energy_cost = 2
+metadata/_custom_type_script = "uid://b8yono3xc1siy"

@@ -10,6 +10,7 @@ card_art = ExtResource("1_pi2se")
 archetype = 4
 shop_price = 5
 draw_add = 1
+kill_add = 0.3
 anguish_add = 10
 energy_cost = 0
 evil = true

@@ -8,6 +8,7 @@ script = ExtResource("2_u420e")
 title = "Snake Fangs"
 card_art = ExtResource("1_64k84")
 archetype = 4
+kill_add = 0.2
 anguish_add = 10
 red_add = 1
 energy_cost = 0

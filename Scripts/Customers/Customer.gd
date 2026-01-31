@@ -8,7 +8,7 @@ var is_potion_delivered : bool = false
 @onready var footstep_aproach = customer_data.footstep_aproach.pick_random()
 @onready var footstep_leave = customer_data.footstep_leaving.pick_random()
 #NOTE: There is an error here, it seems to not break the game. I'll leave it this way
-@onready var HandHolder: PileHolder = $CardManager/HandHolder
+@onready var HandHolder: PileHolder = $"../CardManager/HandHolder"
 
 var current_potion : Potion
 

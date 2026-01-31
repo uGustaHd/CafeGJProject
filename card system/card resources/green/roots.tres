@@ -1,16 +1,14 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://bpa787o7g1l73"]
 
 [ext_resource type="Script" uid="uid://b8yono3xc1siy" path="res://card system/card resources/card.gd" id="1_45ikh"]
-[ext_resource type="Texture2D" uid="uid://x5wrhu6wyxna" path="res://card system/card_assets/card_art/New  Illusts/Rainbow/roots.png" id="1_o4qtj"]
+[ext_resource type="Texture2D" uid="uid://c7y8nxqlaw74w" path="res://card system/card_assets/card_art/New  Illusts/Green/Roots_illust.png" id="1_d6m7a"]
 
 [resource]
 script = ExtResource("1_45ikh")
 title = "Roots"
-card_art = ExtResource("1_o4qtj")
-archetype = 5
-shop_price = 15
-green_add = 2
-blue_add = 2
-red_add = 2
-energy_cost = 2
+card_art = ExtResource("1_d6m7a")
+archetype = 1
+designer_notes = "Meant as a lighter version of Sage Flower."
+energy_add = 2
+green_add = 1
 metadata/_custom_type_script = "uid://b8yono3xc1siy"
