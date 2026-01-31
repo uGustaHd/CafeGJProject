@@ -1,0 +1,137 @@
+[gd_scene load_steps=10 format=3 uid="uid://bwwasjqmkwmff"]
+
+[ext_resource type="Script" uid="uid://bdbnrijki1cyn" path="res://game_over.gd" id="1_ccer4"]
+[ext_resource type="Texture2D" uid="uid://fmlvtppb2jje" path="res://Assets/Sprites/Background/Background_rendered.png" id="1_yxx3c"]
+[ext_resource type="Texture2D" uid="uid://clto7guvbxmjv" path="res://Assets/Sprites/Background/counter_top_rendered.png" id="2_ccer4"]
+[ext_resource type="Texture2D" uid="uid://dobdiptiy55d" path="res://Assets/Sprites/Background/Low_Joy_Cutscene.png" id="2_yxx3c"]
+[ext_resource type="Texture2D" uid="uid://2sjuxe0n2hqa" path="res://Assets/Sprites/Background/Low Anguish_cutscene1.png" id="4_ftari"]
+
+[sub_resource type="Animation" id="Animation_ftari"]
+resource_name = "fade_in"
+length = 0.45
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_28vn7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_k2vha"]
+resource_name = "fade_out"
+length = 0.45
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.45),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k2vha"]
+_data = {
+&"RESET": SubResource("Animation_28vn7"),
+&"fade_in": SubResource("Animation_ftari"),
+&"fade_out": SubResource("Animation_k2vha")
+}
+
+[node name="GameOver" type="Node2D"]
+script = ExtResource("1_ccer4")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+zoom = Vector2(1.5, 1.5)
+
+[node name="LowJoyCutscene" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(576, 324)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_yxx3c")
+
+[node name="DayBackGround" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(576.00006, 243)
+scale = Vector2(1.4999999, 1.4999999)
+texture = ExtResource("1_yxx3c")
+
+[node name="LowAnguishCutscene" type="Sprite2D" parent="."]
+position = Vector2(576, 242)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_ftari")
+
+[node name="DayBackgroundCounter" type="Sprite2D" parent="."]
+position = Vector2(576, 429.00006)
+scale = Vector2(1.4999999, 1.4999999)
+texture = ExtResource("2_ccer4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_right = 1175.0
+offset_bottom = 656.0
+color = Color(0.06053035, 0.06053035, 0.060530342, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
+libraries = {
+&"": SubResource("AnimationLibrary_k2vha")
+}

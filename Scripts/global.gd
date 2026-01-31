@@ -11,7 +11,9 @@ var anguish_warning_yesterday : bool = false
 
 const JOY_WARNING = 20
 const ANGUISH_WARNING = 20
-
+enum GameOver {DAY, JOY, ANGUISH}
+var game_over_reason : GameOver
+var game_over_scene: PackedScene = preload("res://game_over.tscn")
 
 var gold    : int = 0
 var default_energy : int = 3
@@ -36,9 +38,8 @@ func end_day_check():
 	#JOY
 	if joy_bad:
 		if joy_warning_yesterday:
-			#TODO: Function game_over()
-			#game_over()
-			print("Game over JOY")
+			game_over_reason = GameOver.JOY
+			get_tree().change_scene_to_file("res://game_over.tscn")
 		else:
 			joy_warning_yesterday = true
 	else:
@@ -46,8 +47,8 @@ func end_day_check():
 	#ANGUISH
 	if anguish_bad:
 		if anguish_warning_yesterday:
-			#game_over()
-			print("Game Over ANGUISH")
+			game_over_reason = GameOver.JOY
+			get_tree().change_scene_to_file("res://game_over.tscn")
 		else:
 			anguish_warning_yesterday = true
 	else:
@@ -59,6 +60,8 @@ func end_day_check():
 	print("anguish")
 	print(anguish_bad)
 	print(anguish_warning_yesterday)
+
+
 
 func reset_run_deck(starting_deck : Array[Card]):
 	run_deck = starting_deck.duplicate()

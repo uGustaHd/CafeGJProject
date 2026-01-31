@@ -12,5 +12,4 @@ func deliver_potion():
 
 func _on_submit_button_button_down() -> void:
 	if Global.can_play_cards:
-		print("dentro do if")
 		deliver_potion()

@@ -1,6 +1,7 @@
 extends MarginContainer
 
 signal dialog_finished()
+signal text_changed()
 
 var text_to_display: Array[String] = []
 var current_index: int = 0
@@ -28,6 +29,7 @@ func show_text():
 		current_full_text = text_to_display[current_index]
 		text_label.text = ""
 		_type_text(current_full_text)
+		text_changed.emit()
 	else:
 		_close_dialog()
 		
