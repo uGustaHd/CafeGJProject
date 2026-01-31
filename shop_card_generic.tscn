@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b0cug4ksl08cp"]
+[gd_scene load_steps=11 format=3 uid="uid://b0cug4ksl08cp"]
 
 [ext_resource type="Script" uid="uid://ce2iy2a6ie5o4" path="res://shop_card_generic.gd" id="1_asw60"]
 [ext_resource type="Texture2D" uid="uid://cyfvs74rft41i" path="res://card system/card_assets/DescriptionBox_ver.1.png" id="2_5cc2w"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c7y8nxqlaw74w" path="res://card system/card_assets/card_art/New  Illusts/Green/Roots_illust.png" id="4_t826k"]
 [ext_resource type="Texture2D" uid="uid://csc8mcpkn3j0v" path="res://card system/card_assets/card_art/New  Illusts/Green/Border_ver_1.png" id="5_ud7bb"]
 [ext_resource type="Texture2D" uid="uid://cenroamv2p1t6" path="res://card system/card_assets/ManaCost_ver.1.png" id="6_3rxiw"]
+[ext_resource type="Texture2D" uid="uid://dm3nrxg8v3d6r" path="res://Assets/Sprites/UI/Gold_cost.png" id="7_5cc2w"]
 
 [sub_resource type="Animation" id="Animation_11dsn"]
 length = 0.001
@@ -175,12 +176,13 @@ offset_right = 64.0
 offset_bottom = 97.0
 focus_mode = 0
 
-[node name="PricePanel" type="Panel" parent="Visuals"]
+[node name="PricePanel" type="TextureRect" parent="Visuals"]
 layout_mode = 0
 offset_left = 5.5714283
 offset_top = 86.57143
 offset_right = 58.428574
 offset_bottom = 100.14285
+texture = ExtResource("7_5cc2w")
 
 [node name="PriceLabel" type="Label" parent="Visuals/PricePanel"]
 layout_mode = 1
