@@ -46,7 +46,8 @@ func setup():
 		print("No CustomerData")
 func _ready() -> void:
 	setup()
-	await audio_stream_player_2d.finished
+	
+	
 	Global.can_play_cards = true
 	print("\nCustomer Appeared")
 	#TODO: Connect a signal with the potion that the player gave to the NPC
@@ -54,9 +55,8 @@ func _ready() -> void:
 	var potion_holder = card_manager.get_node("PotionHolder")
 	card_manager.connect("potion_delivered", Callable(self, "_on_potion_delivered"))
 	potion_holder.potion_progress_changed.connect(_on_potion_changed)
-	
+	await audio_stream_player_2d.finished
 	await get_tree().process_frame
-	
 	DialogManager.start_dialog(customer_data.dialog_intro, global_position + dialog_offset)
 	#await dialog.dialog_finished
 
