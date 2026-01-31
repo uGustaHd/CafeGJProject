@@ -12,4 +12,5 @@ kill_add = 0.2
 anguish_add = 10
 red_add = 1
 energy_cost = 0
+evil = true
 metadata/_custom_type_script = "uid://b8yono3xc1siy"
