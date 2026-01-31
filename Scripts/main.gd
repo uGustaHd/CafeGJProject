@@ -6,9 +6,17 @@ extends Node2D
 @onready var ambience_potion_sound: AudioStreamPlayer2D = $AmbiencePotionSound
 @onready var music_player: AudioStreamPlayer2D = $MusicPlayer
 
+var day_animation : PackedScene = preload("res://Scenes/day_start_animation.tscn")
+
+var possible_musics : Array[AudioStream] = [
+	preload("res://Assets/Audio/Music/Cafe Jam - Another Witch - 6 - loop ok.mp3"),
+	preload("res://Assets/Audio/Music/Cafe Witch - 6 - Loop Ok.mp3")
+]
 
 func _ready() -> void:
+	Global.day_variables_to_zero()
 	ambience_potion_sound.stream.loop = true
+	music_player.stream = possible_musics.pick_random()
 	music_player.stream.loop = true
 	if Global.game_mode == Global.GameMode.NORMAL:
 		Global.can_play_cards = true
@@ -45,6 +53,11 @@ func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/shop.tscn")
 	
 func start_day():
+	var _day_animation = day_animation.instantiate()
+	_day_animation.position = position
+	add_child(_day_animation)
+	var animation = _day_animation.play_animation()
+	
 	$UIControl/DayCustomerCounter.update_day()
 	$UIControl/JoyAnguishMeters.update()
 	audio_stream_player_2d.stream = day_begins_audio

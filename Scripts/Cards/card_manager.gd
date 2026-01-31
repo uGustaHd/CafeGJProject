@@ -11,4 +11,6 @@ func deliver_potion():
 	PotionHolder.reset_potion()
 
 func _on_submit_button_button_down() -> void:
-	deliver_potion()
+	if Global.can_play_cards:
+		print("dentro do if")
+		deliver_potion()

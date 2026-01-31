@@ -1,8 +1,8 @@
-[gd_scene load_steps=55 format=3 uid="uid://bdqjd2ergavof"]
+[gd_scene load_steps=54 format=3 uid="uid://bdqjd2ergavof"]
 
 [ext_resource type="Script" uid="uid://dbtic8k4hhs0a" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://df1d5o4oc5m1e" path="res://Scenes/Customers/customer_manager.tscn" id="1_jjgbg"]
-[ext_resource type="PackedScene" uid="uid://ucuv03tdxv54" path="res://Scenes/Customers/Customer.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://ucuv03tdxv54" path="res://Scenes/Customers/customer.tscn" id="2_bo1nx"]
 [ext_resource type="Texture2D" uid="uid://fmlvtppb2jje" path="res://Assets/Sprites/Background/Background_rendered.png" id="3_u50mg"]
 [ext_resource type="Texture2D" uid="uid://clto7guvbxmjv" path="res://Assets/Sprites/Background/counter_top_rendered.png" id="4_cbgmd"]
 [ext_resource type="Script" uid="uid://ciewvhcpryhfs" path="res://Scripts/Cards/card_manager.gd" id="4_jjvhh"]
@@ -51,7 +51,6 @@
 [ext_resource type="Texture2D" uid="uid://bdhxbnubm4inp" path="res://Assets/Sprites/UI/Customer_counter.png" id="38_aqgau"]
 [ext_resource type="Texture2D" uid="uid://djsagqljtyun5" path="res://Assets/Sprites/UI/Customer_icon.png" id="39_536cc"]
 [ext_resource type="AudioStream" uid="uid://cvhh0vp50ybjg" path="res://Assets/Audio/Ambience/Potion_1.mp3" id="40_aqgau"]
-[ext_resource type="AudioStream" uid="uid://dfk127awodkeh" path="res://Assets/Audio/Music/Cafe Witch - 6 - Loop Ok.mp3" id="41_8cuat"]
 [ext_resource type="Texture2D" uid="uid://b66uwx41eb0m3" path="res://Assets/Sprites/UI/energy_ui/Mana_counter.png" id="42_54nrm"]
 [ext_resource type="Texture2D" uid="uid://cnccp41y75p70" path="res://Assets/Sprites/UI/Card_counter.png" id="51_55jeb"]
 
@@ -612,7 +611,6 @@ stream = ExtResource("40_aqgau")
 volume_db = -6.0
 
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("41_8cuat")
 volume_db = -10.0
 
 [connection signal="button_down" from="CardManager/PotionHolder/SubmitButton" to="CardManager" method="_on_submit_button_button_down"]

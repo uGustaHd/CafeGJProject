@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=3 uid="uid://ch5oo8tf0lul5"]
+
+[ext_resource type="FontFile" uid="uid://bu0iimg40ehu2" path="res://card system/card_assets/Jersey10-Regular.ttf" id="1_7lhvy"]
+[ext_resource type="Script" uid="uid://gxjm408jytxf" path="res://Scenes/day_start_animation.gd" id="1_7n0ta"]
+
+[sub_resource type="Animation" id="Animation_7n0ta"]
+resource_name = "day_animation"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.99, 3.01, 5),
+"transitions": PackedFloat32Array(0.5, 1, 0.5, 1),
+"update": 0,
+"values": [Vector2(480, -35), Vector2(480, 290), Vector2(480, 290), Vector2(480, 586)]
+}
+
+[sub_resource type="Animation" id="Animation_21kjm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(480, 290)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4kvpr"]
+_data = {
+&"RESET": SubResource("Animation_21kjm"),
+&"day_animation": SubResource("Animation_7n0ta")
+}
+
+[node name="DayStartAnimation" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -576.0
+offset_bottom = -324.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7n0ta")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+offset_left = 480.0
+offset_top = 290.0
+offset_right = 674.0001
+offset_bottom = 345.9995
+theme_override_fonts/font = ExtResource("1_7lhvy")
+theme_override_font_sizes/font_size = 50
+text = "Day 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_4kvpr")
+}

@@ -68,8 +68,8 @@ func _on_customer_finished():
 
 
 func _on_kill_button_pressed() -> void:
-	
-	if current_customer == null : return
-	if Global.kill >= 1.0:
-		Global.add_kill(-1.0)
-		current_customer.die()
+	if Global.can_play_cards:
+		if current_customer == null : return
+		if Global.kill >= 1.0:
+			Global.add_kill(-1.0)
+			current_customer.die()

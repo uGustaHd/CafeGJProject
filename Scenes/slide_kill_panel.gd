@@ -2,7 +2,7 @@ extends TextureRect
 
 @onready var meter : ProgressBar = $ProgressBar
 @onready var kill_button : TextureButton = $KillButton
-@onready var HandHolder = $"../../CardManager/HandHolder"
+
 
 var pos_open := Vector2(1027, 252) 
 var pos_closed := Vector2(1142, 252)
@@ -28,13 +28,15 @@ func update_meter():
 
 #region Incoming Signals
 func _on_kill_button_button_down() -> void:
-	Global.energy = Global.default_energy
-	Global.add_energy(0)
-	HandHolder.discard_hand()
-	
-	Input.set_custom_mouse_cursor(
-		load("res://Assets/Sprites/UI/mouse_pointer/Cursor_ver1_click.png")
-	)
+	if Global.can_play_cards:
+		Global.energy = Global.default_energy
+		Global.add_energy(0)
+		
+		
+		Input.set_custom_mouse_cursor(
+			load("res://Assets/Sprites/UI/mouse_pointer/Cursor_ver1_click.png")
+		)
+		
 
 func _on_kill_button_button_up() -> void:
 	Input.set_custom_mouse_cursor(

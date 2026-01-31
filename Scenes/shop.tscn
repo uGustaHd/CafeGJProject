@@ -211,6 +211,7 @@ position = Vector2(597, 450)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_s8dlv")
+volume_db = -10.0
 pitch_scale = 0.9
 autoplay = true
 parameters/looping = true

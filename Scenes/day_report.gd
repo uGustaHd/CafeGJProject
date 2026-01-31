@@ -13,8 +13,8 @@ func report_day():
 	visible = true
 	
 func _build_info_name_text() -> String:
-	return " Gold\n Plesed Customers\n Secret Ingredients Added\n Killed Customers\n Cards Used\n Cards Remaining"
+	return " Gold\n Plesed Customers\n Secret Ingredients Added\n Killed Customers\n Cards Used"
 	
 func _build_info_value_text() -> String:
-	return str(Global.gold) + "\n" + str(Global.plesed_customers) + "\n" + str(Global.secret_ingredients_added) + "\n" + str(Global.killed_customers) + "\n" + str(Global.cards_used) + "\n" + str(Global.cards_remaining)
+	return str(Global.gold) + "\n" + str(Global.plesed_customers) + "\n" + str(Global.secret_ingredients_added) + "\n" + str(Global.killed_customers) + "\n" + str(Global.cards_used)
 	

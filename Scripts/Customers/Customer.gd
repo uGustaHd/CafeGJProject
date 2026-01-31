@@ -7,6 +7,10 @@ var request_text: String
 var is_potion_delivered : bool = false
 @onready var footstep_aproach = customer_data.footstep_aproach.pick_random()
 @onready var footstep_leave = customer_data.footstep_leaving.pick_random()
+#NOTE: There is an error here, it seems to not break the game. I'll leave it this way
+@onready var HandHolder: PileHolder = $CardManager/HandHolder
+
+var current_potion : Potion
 
 var success_fx := preload("res://Assets/Audio/FX/FX_action_7.mp3")
 var fail_fx := preload("res://Assets/Audio/FX/FX_action_6.mp3")
@@ -20,7 +24,8 @@ var died: bool = false
 
 
 func setup():
-	
+	current_potion = Potion.new()
+	Global.can_play_cards = false
 	if customer_data != null:
 		play_approach_audio()
 		$Sprite2D.texture = customer_data.possible_sprite.pick_random()
@@ -38,6 +43,7 @@ func _ready() -> void:
 	setup()
 	await audio_stream_player_2d.finished
 	$Sprite2D.visible = true
+	Global.can_play_cards = true
 	print("\nCustomer Appeared")
 	#TODO: Connect a signal with the potion that the player gave to the NPC
 	var card_manager = get_tree().current_scene.get_node("CardManager")
@@ -54,7 +60,7 @@ func _ready() -> void:
 	
 	
 #Signal
-func _on_potion_delivered(potion : Potion) -> void: 
+func _on_potion_delivered(_potion : Potion) -> void: 
 	if !is_potion_delivered:
 		#print("Potion instance id:", potion.get_instance_id())
 		#print("RAW:", potion.blue, potion.green, potion.red)
@@ -64,7 +70,7 @@ func _on_potion_delivered(potion : Potion) -> void:
 		#if potion.blue >= current_request["Blue"] and potion.green >= current_request["Green"] and potion.red >= current_request["Red"]:
 		var success := true
 		for i in range(3): # 0 = blue, 1 = green, 2 = red
-			var player_color = potion.colors[i]
+			var player_color = current_potion.colors[i]
 			var request_color = current_request.colors[i]
 			print("\nChecking color ", i, ": player=", player_color, " request=", request_color)
 			if player_color < request_color:
@@ -108,7 +114,9 @@ func on_request_fail():
 var is_dying := false
 	
 func die():
+	
 	died = true
+	HandHolder.discard_hand()
 	var joy_anguish_meters = get_tree().current_scene.get_node("UIControl/JoyAnguishMeters")
 	if is_dying:
 		return
@@ -164,6 +172,7 @@ func _build_line(color_name: String, current_amount: int, required_amount: int, 
 	else: return "[color=%s]%s %d/%d %s %s[/color]" % [color, prefix, display_amount, required_amount, color_name, multi]
 	
 func _on_potion_changed(potion: Potion):
+	current_potion = potion
 	$RequestBox/TextBox/RequestText.text = _build_request_text(potion)
 	
 func play_leaving_audio():

@@ -20,4 +20,5 @@ func discard_hand() -> void:
 		card.discard_self()
 
 func _on_submit_button_button_down() -> void:
-	discard_hand()
+	if Global.can_play_cards:
+		discard_hand()
