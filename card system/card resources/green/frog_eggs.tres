@@ -8,6 +8,7 @@ script = ExtResource("1_k61re")
 title = "Frog Eggs"
 card_art = ExtResource("1_0qy4x")
 archetype = 1
+energy_add = 1
 green_add = 3
 energy_cost = 2
 metadata/_custom_type_script = "uid://b8yono3xc1siy"

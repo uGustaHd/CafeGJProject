@@ -143,6 +143,11 @@ func activate() -> void:
 	pay_cost()
 	for card in get_parent().get_children():
 		card.update_cost_icons()
+		
+	Global.cards_used += 1
+	if card_resource.evil == true:
+		Global.secret_ingredients_added += 1
+		
 	discard_self()
 
 func add_joy():

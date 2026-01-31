@@ -33,6 +33,8 @@ enum Archetype {RED, GREEN, BLUE, GOLD, PURPLE, RAINBOW}
 @export var green_cost : int = 0
 @export var blue_cost : int = 0
 @export var red_cost : int = 0
+# Mainly for counting "secret ingredients" in end of day report.
+@export var evil : bool = false
 
 #endregion
 

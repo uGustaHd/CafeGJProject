@@ -63,7 +63,7 @@ func _on_potion_delivered(potion : Potion) -> void:
 		# TODO: Replace request Dictionary with a RequestResource
 		#if potion.blue >= current_request["Blue"] and potion.green >= current_request["Green"] and potion.red >= current_request["Red"]:
 		var success := true
-		for i in range(2): # 0 = blue, 1 = green, 2 = red
+		for i in range(3): # 0 = blue, 1 = green, 2 = red
 			var player_color = potion.colors[i]
 			var request_color = current_request.colors[i]
 			print("\nChecking color ", i, ": player=", player_color, " request=", request_color)
@@ -115,6 +115,7 @@ func die():
 	is_dying = true
 	Global.joy += customer_data.joy_on_kill
 	Global.anguish += customer_data.anguish_on_kill
+	Global.add_gold(customer_data.gold_reward + randi_range(0, 8)) 
 	var dialog = DialogManager.start_dialog(customer_data.dialog_kill, global_position + dialog_offset)
 	request_box.visible = false
 	dialog.dialog_finished.connect(Callable(self, "_on_dialog_finished"))

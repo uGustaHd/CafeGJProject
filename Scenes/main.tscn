@@ -175,6 +175,7 @@ anchor_bottom = 9.075
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.5, 1.5)
+mouse_filter = 2
 texture = ExtResource("17_ueoa1")
 stretch_mode = 2
 script = ExtResource("8_344ge")

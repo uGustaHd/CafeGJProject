@@ -29,6 +29,7 @@ func update_meter():
 #region Incoming Signals
 func _on_kill_button_button_down() -> void:
 	Global.energy = Global.default_energy
+	Global.add_energy(0)
 	HandHolder.discard_hand()
 	
 	Input.set_custom_mouse_cursor(
