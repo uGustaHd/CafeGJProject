@@ -15,7 +15,8 @@ var red_multiplier : int = 1
 var blue_multiplier : int = 1
 var green_multiplier : int = 1
 
-var status : Status = Status.SHIFTING
+var status : Status
+#NOTE: Volatile will not be used for jam build
 enum Status {SHIFTING, VOLATILE}
 
 # Used for comparisons

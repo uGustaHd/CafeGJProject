@@ -37,7 +37,7 @@ func initialize_card(source_card : Card) -> void:
 	effect_text.add_text(card_resource.effect_text)
 	
 func fill_effect_text() -> void:
-	var numericals = [card_resource.green_add, card_resource.blue_add, card_resource.red_add, card_resource.energy_add, card_resource.draw_add]
+	var numericals = [card_resource.green_add, card_resource.blue_add, card_resource.red_add, card_resource.energy_add, card_resource.draw_add, card_resource.kill_add]
 	# [green_add, blue_add, red_add, energy_add, draw_add]
 	var numerical_strings : Array[String] = [
 		" Green \n",
@@ -45,6 +45,7 @@ func fill_effect_text() -> void:
 		" Red \n",
 		" Energy \n",
 		" Draw \n",
+		" Kill \n",
 	]
 	var i = 0
 	for value in numericals:
