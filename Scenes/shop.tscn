@@ -162,6 +162,18 @@ focus_mode = 0
 texture_normal = ExtResource("10_3568l")
 texture_hover = ExtResource("11_mjtuy")
 
+[node name="Label" type="Label" parent="Control/ButtonTalk"]
+layout_mode = 0
+offset_left = 3.3333335
+offset_top = -2.666667
+offset_right = 65.99999
+offset_bottom = 20.333332
+theme_override_fonts/font = ExtResource("6_ymrm4")
+theme_override_font_sizes/font_size = 12
+text = "Talk"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="ButtonTips" type="TextureButton" parent="Control"]
 layout_mode = 1
 anchors_preset = 7
@@ -179,6 +191,18 @@ scale = Vector2(1.5, 1.5)
 focus_mode = 0
 texture_normal = ExtResource("12_cuuv1")
 texture_hover = ExtResource("13_yl1pv")
+
+[node name="Label" type="Label" parent="Control/ButtonTips"]
+layout_mode = 0
+offset_left = 2.6666565
+offset_top = -3.3333435
+offset_right = 65.33331
+offset_bottom = 19.666656
+theme_override_fonts/font = ExtResource("6_ymrm4")
+theme_override_font_sizes/font_size = 12
+text = "Tips"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="DialogBox" type="MarginContainer" parent="Control"]
 layout_mode = 0
