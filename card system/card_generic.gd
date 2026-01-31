@@ -2,15 +2,16 @@ extends Control
 
 signal card_color_added(color_potion : Potion)
 signal card_multiplier_added(multiplier_potion : Potion)
+
 #region data
 var card_resource : Card
-
-
 
 @onready var DiscardPile : Pile = $"../../../../DiscardHolder".held_pile
 @onready var HandPile : Pile = $"../../..".held_pile
 @onready var PotionHolder = $"../../../../PotionHolder"
 @onready var Dealer : Node = $"../../../../DeckHolder/Dealer"
+
+@onready var border : TextureRect = $Visuals/Border
 @onready var animation : AnimationPlayer = $AnimationPlayer
 @onready var button : Button = $Visuals/Button
 
@@ -18,6 +19,16 @@ var card_resource : Card
 @onready var title : RichTextLabel = $Visuals/Art/Title
 @onready var energy_cost : RichTextLabel = $Visuals/CostIcon/EnergyCost
 @onready var art : TextureRect = $Visuals/Art
+
+#{RED, GREEN, BLUE, GOLD, PURPLE, RAINBOW}
+@onready var borders : Array[Texture] = [
+	load("res://card system/card_assets/card_art/New  Illusts/Red/Red_border.png"),
+	load("res://card system/card_assets/Border_ver_1.png"),
+	load("res://card system/card_assets/card_art/New  Illusts/Blue/Blue_border.png"),
+	load("res://card system/card_assets/card_art/New  Illusts/Gold/Gold_border.png"),
+	load("res://card system/card_assets/card_art/New  Illusts/Purple/Purple_border.png"),
+	load("res://card system/card_assets/card_art/New  Illusts/Rainbow/Rainbow_border.png"),
+	]
 
 #endregion
 
@@ -37,13 +48,14 @@ func initialize_card(source_card : Card) -> void:
 	fill_effect_text()
 	effect_text.add_text(card_resource.effect_text)
 	fill_additional_costs()
+	set_border()
 
 #TODO: If card has costs other that energy, should add those icons to card.
 func fill_additional_costs() -> void:
 	pass
 	
 func fill_effect_text() -> void:
-	var numericals = [card_resource.green_add, card_resource.blue_add, card_resource.red_add, card_resource.energy_add, card_resource.draw_add, card_resource.kill_add]
+	var numericals = [card_resource.green_add, card_resource.blue_add, card_resource.red_add, card_resource.energy_add, card_resource.draw_add, card_resource.kill_add, card_resource.joy_add, card_resource.anguish_add]
 	# [green_add, blue_add, red_add, energy_add, draw_add]
 	var numerical_strings : Array[String] = [
 		" Green \n",
@@ -52,6 +64,8 @@ func fill_effect_text() -> void:
 		" Energy \n",
 		" Draw \n",
 		" Kill \n",
+		" Joy \n",
+		" Anguish \n",
 	]
 	var i = 0
 	for value in numericals:
@@ -91,6 +105,9 @@ func color_title() -> void:
 		card_resource.Archetype.RAINBOW:
 			title.text = "[rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]" + card_resource.title + "[/rainbow]"
 
+func set_border() -> void:
+	border.texture = borders[card_resource.archetype]
+
 #endregion
 
 #region actions
@@ -106,6 +123,8 @@ func activate() -> void:
 	#NOTE: Color adding before multiplier takes effect is expected for balance
 	add_color()
 	add_multiplier()
+	add_joy()
+	add_anguish()
 	add_energy()
 	add_kill()
 	
@@ -113,6 +132,12 @@ func activate() -> void:
 	for card in get_parent().get_children():
 		card.update_cost_icons()
 	discard_self()
+
+func add_joy():
+	Global.add_joy(card_resource.joy_add)
+
+func add_anguish():
+	Global.add_anguish(card_resource.anguish_add)
 
 func add_draw():
 	Dealer.deal_cards(card_resource.draw_add)

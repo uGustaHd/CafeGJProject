@@ -6,13 +6,16 @@ class_name Card
 @export var title : String
 @export var card_art : Texture
 @export var archetype : Archetype
-enum Archetype {RED, GREEN, BLUE, RAINBOW}
+enum Archetype {RED, GREEN, BLUE, GOLD, PURPLE, RAINBOW}
 @export var shop_price : int = 10
 @export_multiline var effect_text : String
 
 @export var energy_add : int = 0
 @export var draw_add : int = 0
 @export var kill_add : float = 0
+
+@export var joy_add : int = 0
+@export var anguish_add : int = 0
 
 @export var green_add : int = 0
 @export var blue_add : int = 0
@@ -30,6 +33,9 @@ enum Archetype {RED, GREEN, BLUE, RAINBOW}
 @export var red_cost : int = 0
 
 #endregion
+
+#func _init() -> void:
+	#
 
 #region logic
 func apply_other_effect():
