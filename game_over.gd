@@ -4,7 +4,10 @@ extends Node2D
 @onready var day_background_counter: Sprite2D = $DayBackgroundCounter
 @onready var animation_player: AnimationPlayer = $ColorRect/AnimationPlayer
 @onready var low_anguish_cutscene: Sprite2D = $LowAnguishCutscene
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
+
+var audio = preload("res://Assets/Audio/Music/Day Ends op2.mp3")
 
 
 var low_anguish_cutscenes := [
@@ -32,9 +35,10 @@ var text_anguish : Array[String] = [
 ]
 
 func _ready() -> void:
+	audio_stream_player_2d.stream = audio
+	audio_stream_player_2d.play()
 	print(get_viewport_rect().size/2)
 	text_position.y += 10
-	Global.game_over_reason = Global.GameOver.DAY
 	low_anguish_cutscene.visible = false
 	low_joy_cutscene.visible = false
 	day_back_ground.visible = false
@@ -58,7 +62,9 @@ func _ready() -> void:
 
 func _on_dialog_finished():
 	animation_player.play("fade_in")
-	print("Fim")
+	await animation_player.animation_finished
+	await get_tree().create_timer(0.5).timeout
+	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 
 func _on_text_changed():
 	match cutscene_index:
@@ -77,15 +83,3 @@ func _on_text_changed():
 		2:
 			cutscene_index += 1
 		
-func _on_play_button_pressed() -> void:
-	Global.game_mode = Global.GameMode.NORMAL
-	get_tree().change_scene_to_file("res://Scenes/main.tscn")
-
-
-func _on_credits_button_pressed() -> void:
-	#TODO Credits scene
-	pass # Replace with function body.
-
-
-func _on_quit_button_pressed() -> void:
-	get_tree().quit()
