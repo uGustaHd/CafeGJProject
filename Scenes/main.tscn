@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dbtic8k4hhs0a" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://df1d5o4oc5m1e" path="res://Scenes/Customers/customer_manager.tscn" id="1_jjgbg"]
-[ext_resource type="PackedScene" uid="uid://ucuv03tdxv54" path="res://Scenes/Customers/Customer.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://ucuv03tdxv54" path="res://Scenes/Customers/customer.tscn" id="2_bo1nx"]
 [ext_resource type="Texture2D" uid="uid://fmlvtppb2jje" path="res://Assets/Sprites/Background/Background_rendered.png" id="3_u50mg"]
 [ext_resource type="Texture2D" uid="uid://clto7guvbxmjv" path="res://Assets/Sprites/Background/counter_top_rendered.png" id="4_cbgmd"]
 [ext_resource type="Script" uid="uid://ciewvhcpryhfs" path="res://Scripts/Cards/card_manager.gd" id="4_jjvhh"]
@@ -46,7 +46,7 @@
 [ext_resource type="Texture2D" uid="uid://cyuaw3hb5x4kw" path="res://Assets/Sprites/UI/energy_ui/Mana_container.png" id="33_neg2b"]
 [ext_resource type="Texture2D" uid="uid://bqkyw6rhiwchk" path="res://Assets/Sprites/UI/energy_ui/Mana_layer.png" id="35_r33sp"]
 [ext_resource type="Script" uid="uid://p7sowdqv6iir" path="res://Scenes/day_customer_counter.gd" id="36_k2e45"]
-[ext_resource type="Texture2D" uid="uid://bedb7loeohl15" path="res://Assets/Sprites/UI/Day_counter.png" id="37_536cc"]
+[ext_resource type="Texture2D" uid="uid://bxoaxsu3x4wfh" path="res://Assets/Sprites/UI/Day_counter.png" id="37_536cc"]
 [ext_resource type="Texture2D" uid="uid://bdhxbnubm4inp" path="res://Assets/Sprites/UI/Customer_counter.png" id="38_aqgau"]
 [ext_resource type="Texture2D" uid="uid://djsagqljtyun5" path="res://Assets/Sprites/UI/Customer_icon.png" id="39_536cc"]
 [ext_resource type="Texture2D" uid="uid://ce7a0xvla0sm2" path="res://Assets/Sprites/UI/meter_ui/Anguish_full_bar.png" id="40_55jeb"]

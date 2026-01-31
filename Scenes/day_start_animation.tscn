@@ -1,34 +1,35 @@
-[gd_scene load_steps=6 format=3 uid="uid://ch5oo8tf0lul5"]
+[gd_scene load_steps=7 format=3 uid="uid://ch5oo8tf0lul5"]
 
 [ext_resource type="FontFile" uid="uid://bu0iimg40ehu2" path="res://card system/card_assets/Jersey10-Regular.ttf" id="1_7lhvy"]
 [ext_resource type="Script" uid="uid://gxjm408jytxf" path="res://Scenes/day_start_animation.gd" id="1_7n0ta"]
+[ext_resource type="Texture2D" uid="uid://bedb7loeohl15" path="res://Assets/Sprites/UI/Day_animation_counter.png" id="2_21kjm"]
 
 [sub_resource type="Animation" id="Animation_21kjm"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Label:position")
+tracks/0/path = NodePath("TextureRect:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(480, 290)]
+"values": [Vector2(480, -35)]
 }
 
-[sub_resource type="Animation" id="Animation_7n0ta"]
-resource_name = "day_animation"
+[sub_resource type="Animation" id="Animation_4kvpr"]
+resource_name = "_day_animation"
 length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Label:position")
+tracks/0/path = NodePath("TextureRect:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.99, 3.01, 5),
+"times": PackedFloat32Array(0, 2, 3, 4.9666667),
 "transitions": PackedFloat32Array(0.5, 1, 0.5, 1),
 "update": 0,
 "values": [Vector2(480, -35), Vector2(480, 290), Vector2(480, 290), Vector2(480, 586)]
@@ -37,7 +38,7 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4kvpr"]
 _data = {
 &"RESET": SubResource("Animation_21kjm"),
-&"day_animation": SubResource("Animation_7n0ta")
+&"day_animation": SubResource("Animation_4kvpr")
 }
 
 [node name="DayStartAnimation" type="Control"]
@@ -55,12 +56,20 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7n0ta")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 480.0
-offset_top = 290.0
-offset_right = 674.0001
-offset_bottom = 345.9995
+offset_top = -35.0
+offset_right = 673.0
+offset_bottom = 63.0
+texture = ExtResource("2_21kjm")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 1
+offset_top = 29.0
+offset_right = 194.00012
+offset_bottom = 84.99951
 theme_override_fonts/font = ExtResource("1_7lhvy")
 theme_override_font_sizes/font_size = 50
 text = "Day 1"

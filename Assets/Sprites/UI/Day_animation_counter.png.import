@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxoaxsu3x4wfh"
-path="res://.godot/imported/Day_counter.png-c5d42a43c584df45bc1ac35b77bfcfbd.ctex"
+uid="uid://bedb7loeohl15"
+path="res://.godot/imported/Day_animation_counter.png-129380ace90d05db57b67f0c86cb7eb6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/UI/Day_counter.png"
-dest_files=["res://.godot/imported/Day_counter.png-c5d42a43c584df45bc1ac35b77bfcfbd.ctex"]
+source_file="res://Assets/Sprites/UI/Day_animation_counter.png"
+dest_files=["res://.godot/imported/Day_animation_counter.png-129380ace90d05db57b67f0c86cb7eb6.ctex"]
 
 [params]
 

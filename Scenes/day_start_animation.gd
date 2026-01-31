@@ -1,6 +1,6 @@
 extends Control
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var label: Label = $Label
+@onready var label: Label = $TextureRect/Label
 
 
 func play_animation():
