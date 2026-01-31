@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://bmtttnvwrlvqh"]
+
+[ext_resource type="Script" uid="uid://b8yono3xc1siy" path="res://card system/card resources/card.gd" id="1_615g8"]
+[ext_resource type="Texture2D" uid="uid://c8fc1qvrjn85r" path="res://card system/card_assets/card_art/New  Illusts/Rainbow/Salamander_tail_illust.png" id="1_tilcd"]
+
+[resource]
+script = ExtResource("1_615g8")
+title = "Salamander Tail"
+card_art = ExtResource("1_tilcd")
+archetype = 5
+draw_add = 4
+energy_cost = 2
+metadata/_custom_type_script = "uid://b8yono3xc1siy"

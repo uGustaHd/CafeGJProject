@@ -23,7 +23,7 @@ var card_resource : Card
 #{RED, GREEN, BLUE, GOLD, PURPLE, RAINBOW}
 @onready var borders : Array[Texture] = [
 	load("res://card system/card_assets/card_art/New  Illusts/Red/Red_border.png"),
-	load("res://card system/card_assets/Border_ver_1.png"),
+	load("res://card system/card_assets/card_art/New  Illusts/Green/Border_ver_1.png"),
 	load("res://card system/card_assets/card_art/New  Illusts/Blue/Blue_border.png"),
 	load("res://card system/card_assets/card_art/New  Illusts/Gold/Gold_border.png"),
 	load("res://card system/card_assets/card_art/New  Illusts/Purple/Purple_border.png"),
@@ -95,13 +95,25 @@ func fill_effect_text() -> void:
 
 # Assigns title directly if Rainbow
 func color_title() -> void:
+	title.push_outline_size(4)
+	title.push_outline_color(Color.BLACK)
+	
 	match card_resource.archetype:
 		card_resource.Archetype.RED:
 			title.push_color(Color.RED)
+			
 		card_resource.Archetype.BLUE:
 			title.push_color(Color.DODGER_BLUE)
+			
 		card_resource.Archetype.GREEN:
 			title.push_color(Color.LIME_GREEN)
+			
+		card_resource.Archetype.GOLD:
+			title.push_color(Color.GOLDENROD)
+			
+		card_resource.Archetype.PURPLE:
+			title.push_color(Color.REBECCA_PURPLE)
+			
 		card_resource.Archetype.RAINBOW:
 			title.text = "[rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]" + card_resource.title + "[/rainbow]"
 

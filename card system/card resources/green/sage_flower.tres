@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://c7g0cheydkt32"]
 
 [ext_resource type="Script" uid="uid://b8yono3xc1siy" path="res://card system/card resources/card.gd" id="1_6qjqt"]
-[ext_resource type="Texture2D" uid="uid://drm6vm6yj81ko" path="res://card system/card_assets/card_art/SageFlower.png" id="1_ddir2"]
+[ext_resource type="Texture2D" uid="uid://cjh5bqbc4gc4r" path="res://card system/card_assets/card_art/New  Illusts/Green/Sage_flower_illust.png" id="1_wlgsp"]
 
 [resource]
 script = ExtResource("1_6qjqt")
 title = "Sage Flower"
-card_art = ExtResource("1_ddir2")
+card_art = ExtResource("1_wlgsp")
 archetype = 1
 energy_add = 4
 green_add = 1

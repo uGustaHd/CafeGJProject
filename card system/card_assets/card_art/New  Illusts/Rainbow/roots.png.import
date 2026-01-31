@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://x5wrhu6wyxna"
-path="res://.godot/imported/roots.png-fe77cf009e2e931dd64ab11c53619379.ctex"
+path="res://.godot/imported/roots.png-e761185a7eba413cf250de6f82b201fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://card system/card_assets/card_art/roots.png"
-dest_files=["res://.godot/imported/roots.png-fe77cf009e2e931dd64ab11c53619379.ctex"]
+source_file="res://card system/card_assets/card_art/New  Illusts/Rainbow/roots.png"
+dest_files=["res://.godot/imported/roots.png-e761185a7eba413cf250de6f82b201fa.ctex"]
 
 [params]
 

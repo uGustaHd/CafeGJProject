@@ -9,6 +9,8 @@ class_name Card
 enum Archetype {RED, GREEN, BLUE, GOLD, PURPLE, RAINBOW}
 @export var shop_price : int = 10
 @export_multiline var effect_text : String
+# Not seen in game, just for leaving notes on design intentions
+@export_multiline var designer_notes : String
 
 @export var energy_add : int = 0
 @export var draw_add : int = 0

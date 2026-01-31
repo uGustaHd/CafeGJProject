@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://d00nyq7o5sfat"]
+
+[ext_resource type="Texture2D" uid="uid://cex6axrw3om2e" path="res://card system/card_assets/card_art/New  Illusts/Green/Frog_eggs_illust.png" id="1_0qy4x"]
+[ext_resource type="Script" uid="uid://b8yono3xc1siy" path="res://card system/card resources/card.gd" id="1_k61re"]
+
+[resource]
+script = ExtResource("1_k61re")
+title = "Frog Eggs"
+card_art = ExtResource("1_0qy4x")
+archetype = 1
+green_add = 3
+energy_cost = 2
+metadata/_custom_type_script = "uid://b8yono3xc1siy"

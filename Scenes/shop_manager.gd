@@ -14,10 +14,18 @@ var shop_pool : Array[Card] = [
 	load("res://card system/card resources/red/dried_peppers.tres"),
 	load("res://card system/card resources/red/mushrooms.tres"),
 	load("res://card system/card resources/red/spider_legs.tres"),
+	load("res://card system/card resources/red/nutmeg.tres"),
 	#Green
 	load("res://card system/card resources/green/sage_flower.tres"),
+	load("res://card system/card resources/green/frog_eggs.tres"),
+	#Gold
+	load("res://card system/card resources/gold/pixie_dust.tres"),
+	#Purple
+	load("res://card system/card resources/purple/snake_fangs.tres"),
+	load("res://card system/card resources/purple/soul_essence.tres"),
 	#Rainbow
 	load("res://card system/card resources/rainbow/roots.tres"),
+	load("res://card system/card resources/rainbow/salamander.tres"),
 ]
 
 func spawn_shop():

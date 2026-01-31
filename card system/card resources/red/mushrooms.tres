@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://biuk2lnowfevk"]
 
 [ext_resource type="Script" uid="uid://b8yono3xc1siy" path="res://card system/card resources/card.gd" id="1_i1dbf"]
-[ext_resource type="Texture2D" uid="uid://bstmwstpmd0xh" path="res://card system/card_assets/card_art/Mushrooms.png" id="1_yqhxs"]
+[ext_resource type="Texture2D" uid="uid://dmso8gfdkey22" path="res://card system/card_assets/card_art/New  Illusts/Red/Mushrooms_illust.png" id="1_n5a73"]
 
 [resource]
 script = ExtResource("1_i1dbf")
 title = "Mushrooms"
-card_art = ExtResource("1_yqhxs")
+card_art = ExtResource("1_n5a73")
 red_add = 1
 blue_multiply = 2
 metadata/_custom_type_script = "uid://b8yono3xc1siy"

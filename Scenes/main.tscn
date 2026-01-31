@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://bdqjd2ergavof"]
+[gd_scene load_steps=55 format=3 uid="uid://bdqjd2ergavof"]
 
 [ext_resource type="Script" uid="uid://dbtic8k4hhs0a" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://df1d5o4oc5m1e" path="res://Scenes/Customers/customer_manager.tscn" id="1_jjgbg"]
@@ -35,6 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://cqo8umogu58y0" path="res://Assets/Sprites/UI/knife_ui/Knife.png" id="21_6vcvc"]
 [ext_resource type="Texture2D" uid="uid://d4j101p1oju7o" path="res://Assets/Sprites/UI/coin_counter2.png" id="22_1w6v2"]
 [ext_resource type="Script" uid="uid://dne0jfbuucu01" path="res://Scripts/gold_counter.gd" id="22_ee4r6"]
+[ext_resource type="Resource" uid="uid://d00nyq7o5sfat" path="res://card system/card resources/green/frog_eggs.tres" id="22_gsvbx"]
 [ext_resource type="Texture2D" uid="uid://c8uh2wsvmj7k1" path="res://Assets/Sprites/UI/meter_ui/resource_section.png" id="23_6vcvc"]
 [ext_resource type="FontFile" uid="uid://bu0iimg40ehu2" path="res://card system/card_assets/Jersey10-Regular.ttf" id="23_gt3je"]
 [ext_resource type="Script" uid="uid://bpsrl57tmr0vj" path="res://Scripts/energy_counter.gd" id="24_3pmx8"]
@@ -118,7 +119,7 @@ vertical_alignment = 1
 
 [node name="DeckHolder" type="Node2D" parent="CardManager"]
 script = ExtResource("6_hptm8")
-starting_deck = Array[ExtResource("11_nwwfm")]([ExtResource("12_s8vy0"), ExtResource("12_s8vy0"), ExtResource("14_v2nl5"), ExtResource("15_v2nl5"), ExtResource("15_v2nl5"), ExtResource("15_v2nl5"), ExtResource("17_xdkp6"), ExtResource("16_dmskm"), ExtResource("16_dmskm"), ExtResource("13_jut3y")])
+starting_deck = Array[ExtResource("11_nwwfm")]([ExtResource("12_s8vy0"), ExtResource("12_s8vy0"), ExtResource("14_v2nl5"), ExtResource("15_v2nl5"), ExtResource("15_v2nl5"), ExtResource("17_xdkp6"), ExtResource("16_dmskm"), ExtResource("16_dmskm"), ExtResource("13_jut3y"), ExtResource("22_gsvbx")])
 
 [node name="Dealer" type="Node" parent="CardManager/DeckHolder"]
 script = ExtResource("6_ynf5e")

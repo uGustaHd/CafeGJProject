@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://dpq273vjk1ck"]
+[gd_scene load_steps=11 format=3 uid="uid://dpq273vjk1ck"]
 
 [ext_resource type="Script" uid="uid://blkjui87aggta" path="res://card system/card_generic.gd" id="1_1q60f"]
 [ext_resource type="Texture2D" uid="uid://cyfvs74rft41i" path="res://card system/card_assets/DescriptionBox_ver.1.png" id="1_sj6e3"]
-[ext_resource type="Texture2D" uid="uid://x5wrhu6wyxna" path="res://card system/card_assets/card_art/roots.png" id="3_1q60f"]
+[ext_resource type="Texture2D" uid="uid://x5wrhu6wyxna" path="res://card system/card_assets/card_art/New  Illusts/Rainbow/roots.png" id="3_1q60f"]
 [ext_resource type="Theme" uid="uid://tuw56bvfysja" path="res://card system/effect_text.tres" id="3_11dsn"]
-[ext_resource type="Texture2D" uid="uid://csc8mcpkn3j0v" path="res://card system/card_assets/Border_ver_1.png" id="3_r7wv5"]
+[ext_resource type="Texture2D" uid="uid://csc8mcpkn3j0v" path="res://card system/card_assets/card_art/New  Illusts/Green/Border_ver_1.png" id="3_r7wv5"]
 [ext_resource type="Texture2D" uid="uid://cenroamv2p1t6" path="res://card system/card_assets/ManaCost_ver.1.png" id="4_11dsn"]
+[ext_resource type="FontFile" uid="uid://bu0iimg40ehu2" path="res://card system/card_assets/Jersey10-Regular.ttf" id="4_jlo26"]
 
 [sub_resource type="Animation" id="Animation_11dsn"]
 length = 0.001
@@ -120,6 +121,7 @@ offset_right = 55.714283
 offset_bottom = 36.999996
 theme = ExtResource("3_11dsn")
 theme_override_constants/paragraph_separation = -3
+theme_override_fonts/normal_font = ExtResource("4_jlo26")
 theme_override_font_sizes/normal_font_size = 11
 
 [node name="Art" type="TextureRect" parent="Visuals"]
@@ -137,6 +139,7 @@ offset_top = 42.714287
 offset_right = 53.14285
 offset_bottom = 56.0
 theme = ExtResource("3_11dsn")
+theme_override_fonts/normal_font = ExtResource("4_jlo26")
 theme_override_font_sizes/normal_font_size = 8
 bbcode_enabled = true
 fit_content = true

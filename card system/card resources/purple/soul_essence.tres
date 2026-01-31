@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://b26dmxm8bl10i"]
+
+[ext_resource type="Texture2D" uid="uid://3umf7djqtadm" path="res://card system/card_assets/card_art/New  Illusts/Purple/Soul_essence_illust.png" id="1_mvksy"]
+[ext_resource type="Script" uid="uid://b8yono3xc1siy" path="res://card system/card resources/card.gd" id="1_r3l1x"]
+
+[resource]
+script = ExtResource("1_r3l1x")
+title = "Soul Essence"
+card_art = ExtResource("1_mvksy")
+archetype = 4
+shop_price = 5
+draw_add = 1
+anguish_add = 10
+energy_cost = 0
+metadata/_custom_type_script = "uid://b8yono3xc1siy"

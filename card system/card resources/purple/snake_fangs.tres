@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://bijmc72mx6qlf"]
+
+[ext_resource type="Script" uid="uid://b8yono3xc1siy" path="res://card system/card resources/card.gd" id="1_afgwl"]
+[ext_resource type="Texture2D" uid="uid://chfoqbcauvn1m" path="res://card system/card_assets/card_art/New  Illusts/Purple/Snake_fangs_illust.png" id="1_teyqu"]
+
+[resource]
+script = ExtResource("1_afgwl")
+title = "Snake Fangs"
+card_art = ExtResource("1_teyqu")
+archetype = 4
+anguish_add = 10
+red_add = 1
+energy_cost = 0
+metadata/_custom_type_script = "uid://b8yono3xc1siy"

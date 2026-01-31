@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://bpx0f3nqvch3d"]
 
-[ext_resource type="Texture2D" uid="uid://co1rdo0c2io2p" path="res://card system/card_assets/card_art/Delphinium.png" id="1_i55er"]
+[ext_resource type="Texture2D" uid="uid://qbp1rv34cpf7" path="res://card system/card_assets/card_art/New  Illusts/Blue/Delphinium_illust.png" id="1_i55er"]
 [ext_resource type="Script" uid="uid://b8yono3xc1siy" path="res://card system/card resources/card.gd" id="2_phlwb"]
 
 [resource]

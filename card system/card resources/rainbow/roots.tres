@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://bpa787o7g1l73"]
 
 [ext_resource type="Script" uid="uid://b8yono3xc1siy" path="res://card system/card resources/card.gd" id="1_45ikh"]
-[ext_resource type="Texture2D" uid="uid://x5wrhu6wyxna" path="res://card system/card_assets/card_art/roots.png" id="1_o4qtj"]
+[ext_resource type="Texture2D" uid="uid://x5wrhu6wyxna" path="res://card system/card_assets/card_art/New  Illusts/Rainbow/roots.png" id="1_o4qtj"]
 
 [resource]
 script = ExtResource("1_45ikh")
 title = "Roots"
 card_art = ExtResource("1_o4qtj")
-archetype = 3
+archetype = 5
 shop_price = 15
 green_add = 2
 blue_add = 2

@@ -76,15 +76,26 @@ func fill_effect_text() -> void:
 		i += 1
 
 func color_title() -> void:
+	title.push_outline_size(5)
+	title.push_outline_color(Color.BLACK)
+	
 	match card_resource.archetype:
 		card_resource.Archetype.RED:
 			title.push_color(Color.RED)
+			
 		card_resource.Archetype.BLUE:
 			title.push_color(Color.DODGER_BLUE)
+			
 		card_resource.Archetype.GREEN:
 			title.push_color(Color.LIME_GREEN)
+			
+		card_resource.Archetype.GOLD:
+			title.push_color(Color.GOLDENROD)
+			
+		card_resource.Archetype.PURPLE:
+			title.push_color(Color.REBECCA_PURPLE)
+			
 		card_resource.Archetype.RAINBOW:
-			#[rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]{text}[/rainbow]
 			title.text = "[rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]" + card_resource.title + "[/rainbow]"
 
 func _on_button_mouse_entered() -> void:
