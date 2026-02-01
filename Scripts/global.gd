@@ -102,9 +102,11 @@ func get_difficulty() -> int:
 
 func add_joy(value):
 	joy = max(0, joy + value)
+	get_tree().call_group("joy_ui", "update")
 	
 func add_anguish(value):
 	anguish = max(0, anguish + value)
+	get_tree().call_group("anguish_ui", "update")
 
 func add_energy(value):
 	energy = max(0, energy + value)
