@@ -1,0 +1,189 @@
+[gd_scene load_steps=9 format=3 uid="uid://juojrtioyml4"]
+
+[ext_resource type="Script" uid="uid://cclbfuujcu4cx" path="res://Scripts/credits.gd" id="1_640q4"]
+[ext_resource type="Texture2D" uid="uid://dmmua7hg316tp" path="res://Assets/Sprites/UI/Credits/Artist.png" id="1_i8h6y"]
+[ext_resource type="Texture2D" uid="uid://bnnv4eqeyosv0" path="res://Assets/Sprites/UI/Credits/Producer.png" id="2_7xmno"]
+[ext_resource type="FontFile" uid="uid://bu0iimg40ehu2" path="res://card system/card_assets/Jersey10-Regular.ttf" id="2_iynit"]
+[ext_resource type="Texture2D" uid="uid://jj1ajc07sgjq" path="res://Assets/Sprites/UI/Credits/Dev.png" id="3_uy3b0"]
+[ext_resource type="Texture2D" uid="uid://ddkrj87o7iffi" path="res://Assets/Sprites/Main Menu/Title-screen.png" id="5_f64u0"]
+[ext_resource type="Texture2D" uid="uid://vhebvic46hbg" path="res://Assets/Sprites/UI/restart and home buttons/Main_menu_button.png" id="6_lpub1"]
+[ext_resource type="Texture2D" uid="uid://cj10pjwpxxtes" path="res://Assets/Sprites/UI/restart and home buttons/Main_menu_hovered.png" id="7_640q4"]
+
+[node name="Credits" type="Node2D"]
+script = ExtResource("1_640q4")
+metadata/_edit_vertical_guides_ = [528.0, 914.0]
+metadata/_edit_horizontal_guides_ = [267.0]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+zoom = Vector2(1.5, 1.5)
+
+[node name="BackGround" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_f64u0")
+
+[node name="Artist1" type="TextureRect" parent="."]
+offset_left = 240.0
+offset_top = 267.0
+offset_right = 304.0
+offset_bottom = 307.0
+scale = Vector2(4.5, 4.5)
+texture = ExtResource("1_i8h6y")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="Artist1"]
+layout_mode = 0
+offset_left = 16.444443
+offset_top = 7.777778
+offset_right = 66.44444
+offset_bottom = 34.77778
+theme_override_fonts/font = ExtResource("2_iynit")
+theme_override_font_sizes/font_size = 10
+text = "Salamendro"
+
+[node name="Label2" type="Label" parent="Artist1"]
+layout_mode = 0
+offset_left = 19.111109
+offset_top = 1.5555551
+offset_right = 70.11111
+offset_bottom = 28.555555
+theme_override_fonts/font = ExtResource("2_iynit")
+theme_override_font_sizes/font_size = 6
+text = "Background Artist"
+
+[node name="Artist2" type="TextureRect" parent="."]
+offset_left = 236.00002
+offset_top = 399.00003
+offset_right = 300.0
+offset_bottom = 422.00003
+scale = Vector2(4.5, 4.5)
+texture = ExtResource("1_i8h6y")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="Artist2"]
+layout_mode = 0
+offset_left = 35.555553
+offset_top = 7.777778
+offset_right = 85.55555
+offset_bottom = 19.777779
+theme_override_fonts/font = ExtResource("2_iynit")
+theme_override_font_sizes/font_size = 10
+text = "M"
+
+[node name="Label2" type="Label" parent="Artist2"]
+layout_mode = 0
+offset_left = 31.555553
+offset_top = 1.5555551
+offset_right = 43.555553
+offset_bottom = 8.555555
+theme_override_fonts/font = ExtResource("2_iynit")
+theme_override_font_sizes/font_size = 6
+text = "Artist"
+
+[node name="Dev" type="TextureRect" parent="."]
+offset_left = 626.0
+offset_top = 134.0
+offset_right = 690.0
+offset_bottom = 174.0
+scale = Vector2(4.5, 4.5)
+texture = ExtResource("3_uy3b0")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="Dev"]
+layout_mode = 0
+offset_left = 21.777777
+offset_top = 7.777778
+offset_right = 66.444435
+offset_bottom = 19.777782
+theme_override_fonts/font = ExtResource("2_iynit")
+theme_override_font_sizes/font_size = 10
+text = "uGustaHd"
+
+[node name="Label2" type="Label" parent="Dev"]
+layout_mode = 0
+offset_left = 25.333332
+offset_top = 1.5555551
+offset_right = 76.33333
+offset_bottom = 8.555555
+theme_override_fonts/font = ExtResource("2_iynit")
+theme_override_font_sizes/font_size = 6
+text = "Programmer"
+
+[node name="Dev2" type="TextureRect" parent="."]
+offset_left = 626.00006
+offset_top = 267.0
+offset_right = 690.00006
+offset_bottom = 307.0
+scale = Vector2(4.5, 4.5)
+texture = ExtResource("3_uy3b0")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="Dev2"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 7.777778
+offset_right = 76.66666
+offset_bottom = 19.777782
+theme_override_fonts/font = ExtResource("2_iynit")
+theme_override_font_sizes/font_size = 10
+text = "Ava"
+
+[node name="Label2" type="Label" parent="Dev2"]
+layout_mode = 0
+offset_left = 25.333332
+offset_top = 1.5555551
+offset_right = 76.33333
+offset_bottom = 8.555555
+theme_override_fonts/font = ExtResource("2_iynit")
+theme_override_font_sizes/font_size = 6
+text = "Programmer"
+
+[node name="Musician" type="TextureRect" parent="."]
+offset_left = 626.00006
+offset_top = 400.00003
+offset_right = 690.00006
+offset_bottom = 423.00003
+scale = Vector2(4.5, 4.5)
+texture = ExtResource("2_7xmno")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="Musician"]
+layout_mode = 0
+offset_left = 24.222221
+offset_top = 7.777778
+offset_right = 61.77777
+offset_bottom = 19.777779
+theme_override_fonts/font = ExtResource("2_iynit")
+theme_override_font_sizes/font_size = 10
+text = "Gustavo"
+
+[node name="Label2" type="Label" parent="Musician"]
+layout_mode = 0
+offset_left = 28.888885
+offset_top = 1.5555551
+offset_right = 58.666664
+offset_bottom = 8.555555
+theme_override_fonts/font = ExtResource("2_iynit")
+theme_override_font_sizes/font_size = 6
+text = "Musician"
+
+[node name="Button" type="TextureButton" parent="."]
+offset_left = 740.0
+offset_top = 509.00003
+offset_right = 804.0
+offset_bottom = 525.0
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("6_lpub1")
+texture_hover = ExtResource("7_640q4")
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 0
+offset_left = 16.666656
+offset_top = 1.9999695
+offset_right = 60.666656
+offset_bottom = 13.1666565
+theme_override_font_sizes/font_size = 8
+text = "Main Menu"
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

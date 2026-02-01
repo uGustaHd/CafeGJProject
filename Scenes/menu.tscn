@@ -174,3 +174,4 @@ libraries = {
 }
 
 [connection signal="pressed" from="UIControl/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="button_down" from="UIControl/CreditsButton" to="." method="_on_credits_button_button_down"]
