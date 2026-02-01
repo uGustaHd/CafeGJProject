@@ -9,6 +9,7 @@ extends Node
 @onready var day_customer_counter: Control = $"../UIControl/DayCustomerCounter"
 @onready var music_player: AudioStreamPlayer2D = $"../MusicPlayer"
 @onready var ambience_potion_sound: AudioStreamPlayer2D = $"../AmbiencePotionSound"
+@onready var label: Label = $"../CardManager/PotionHolder/Label"
 
 
 enum TutorialStep {
@@ -77,6 +78,7 @@ func _ready():
 	else: queue_free()
 
 func start_tutorial(): 
+	label.visible = false
 	day_customer_counter.visible = false
 	submit_button.visible = false
 	slide_kill_panel.visible = false
@@ -139,6 +141,7 @@ func show_customer():
 	var dialog = DialogManager.start_dialog(first_customer_text, get_parent().get_viewport_rect().size/2)
 	dialog.set_custom_minimum(Vector2(500, 50))
 	await dialog.dialog_finished
+	label.visible = true
 	submit_button.visible = true
 	Global.can_play_cards = true
 	customer_manager.customer_per_day = 1
