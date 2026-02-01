@@ -1,10 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://bwwasjqmkwmff"]
+[gd_scene load_steps=13 format=3 uid="uid://bwwasjqmkwmff"]
 
 [ext_resource type="Script" uid="uid://bdbnrijki1cyn" path="res://game_over.gd" id="1_ccer4"]
 [ext_resource type="Texture2D" uid="uid://fmlvtppb2jje" path="res://Assets/Sprites/Background/Background_rendered.png" id="1_yxx3c"]
 [ext_resource type="Texture2D" uid="uid://clto7guvbxmjv" path="res://Assets/Sprites/Background/counter_top_rendered.png" id="2_ccer4"]
 [ext_resource type="Texture2D" uid="uid://dobdiptiy55d" path="res://Assets/Sprites/Background/Low_Joy_Cutscene.png" id="2_yxx3c"]
 [ext_resource type="Texture2D" uid="uid://2sjuxe0n2hqa" path="res://Assets/Sprites/Background/Low Anguish_cutscene1.png" id="4_ftari"]
+[ext_resource type="Script" uid="uid://dq2fjt0xyn8r5" path="res://Scripts/end_screen_buttons.gd" id="6_fkf4o"]
+[ext_resource type="Texture2D" uid="uid://vhebvic46hbg" path="res://Assets/Sprites/UI/restart and home buttons/Main_menu_button.png" id="6_k2vha"]
+[ext_resource type="Texture2D" uid="uid://bmun80ueokg3d" path="res://Assets/Sprites/UI/restart and home buttons/Restart_button.png" id="7_fkf4o"]
 
 [sub_resource type="Animation" id="Animation_28vn7"]
 length = 0.001
@@ -138,3 +141,40 @@ libraries = {
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 volume_db = -5.0
+
+[node name="EndScreenButtons" type="VBoxContainer" parent="."]
+offset_left = 503.0
+offset_top = 335.0
+offset_right = 575.0
+offset_bottom = 387.0
+scale = Vector2(2, 2)
+script = ExtResource("6_fkf4o")
+
+[node name="HomeButton" type="Button" parent="EndScreenButtons"]
+layout_mode = 2
+icon = ExtResource("6_k2vha")
+
+[node name="Label" type="Label" parent="EndScreenButtons/HomeButton"]
+layout_mode = 0
+offset_left = 22.5
+offset_top = 5.0
+offset_right = 62.5
+offset_bottom = 28.0
+theme_override_font_sizes/font_size = 10
+text = "Home"
+
+[node name="RestartButton" type="Button" parent="EndScreenButtons"]
+layout_mode = 2
+icon = ExtResource("7_fkf4o")
+
+[node name="Label2" type="Label" parent="EndScreenButtons/RestartButton"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 5.0
+offset_right = 63.0
+offset_bottom = 28.0
+theme_override_font_sizes/font_size = 10
+text = "Restart"
+
+[connection signal="button_down" from="EndScreenButtons/HomeButton" to="EndScreenButtons" method="_on_home_button_button_down"]
+[connection signal="button_down" from="EndScreenButtons/RestartButton" to="EndScreenButtons" method="_on_restart_button_button_down"]

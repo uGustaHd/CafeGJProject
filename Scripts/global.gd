@@ -62,6 +62,19 @@ func end_day_check():
 	print(anguish_warning_yesterday)
 
 
+func reset() -> void:
+	joy_warning_yesterday = false
+	anguish_warning_yesterday = false
+	gold = 0
+	joy = 50
+	anguish = 50
+	kill = 0
+	day = 1
+	plesed_customers = 0
+	killed_customers = 0
+	secret_ingredients_added = 0
+	cards_used = 0
+	cards_remaining = 0
 
 func reset_run_deck(starting_deck : Array[Card]):
 	run_deck = starting_deck.duplicate()

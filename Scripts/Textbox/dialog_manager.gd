@@ -31,3 +31,6 @@ func _on_dialog_finished():
 	#dialog_box.queue_free()
 	dialog_box = null
 	
+func reset() -> void:
+	dialog_box = null
+	is_showing_dialog = false

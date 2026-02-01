@@ -56,7 +56,7 @@ func start_day():
 	var _day_animation = day_animation.instantiate()
 	_day_animation.position = position
 	add_child(_day_animation)
-	var animation = _day_animation.play_animation()
+	var _animation = _day_animation.play_animation()
 	
 	$UIControl/DayCustomerCounter.update_day()
 	$UIControl/JoyAnguishMeters.update()
