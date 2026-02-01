@@ -186,4 +186,13 @@ offset_bottom = 13.1666565
 theme_override_font_sizes/font_size = 8
 text = "Main Menu"
 
+[node name="Label" type="Label" parent="."]
+offset_left = 216.0
+offset_top = 505.0
+offset_right = 553.0
+offset_bottom = 528.0
+theme_override_fonts/font = ExtResource("2_iynit")
+theme_override_font_sizes/font_size = 20
+text = "Font: Jersey 10 Designed by Sarah Cadigan-Fried"
+
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

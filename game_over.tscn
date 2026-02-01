@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bwwasjqmkwmff"]
+[gd_scene load_steps=15 format=3 uid="uid://bwwasjqmkwmff"]
 
 [ext_resource type="Script" uid="uid://bdbnrijki1cyn" path="res://game_over.gd" id="1_ccer4"]
 [ext_resource type="Texture2D" uid="uid://fmlvtppb2jje" path="res://Assets/Sprites/Background/Background_rendered.png" id="1_yxx3c"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://dq2fjt0xyn8r5" path="res://Scripts/end_screen_buttons.gd" id="6_fkf4o"]
 [ext_resource type="Texture2D" uid="uid://vhebvic46hbg" path="res://Assets/Sprites/UI/restart and home buttons/Main_menu_button.png" id="6_k2vha"]
 [ext_resource type="Texture2D" uid="uid://bmun80ueokg3d" path="res://Assets/Sprites/UI/restart and home buttons/Restart_button.png" id="7_fkf4o"]
+[ext_resource type="Texture2D" uid="uid://cj10pjwpxxtes" path="res://Assets/Sprites/UI/restart and home buttons/Main_menu_hovered.png" id="8_woa3c"]
+[ext_resource type="Texture2D" uid="uid://qq7uup36r3n3" path="res://Assets/Sprites/UI/restart and home buttons/Restart_hovered.png" id="10_dd2jf"]
 
 [sub_resource type="Animation" id="Animation_28vn7"]
 length = 0.001
@@ -101,6 +103,7 @@ _data = {
 
 [node name="GameOver" type="Node2D"]
 script = ExtResource("1_ccer4")
+metadata/_edit_vertical_guides_ = [576.0]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
@@ -143,36 +146,37 @@ libraries = {
 volume_db = -5.0
 
 [node name="EndScreenButtons" type="VBoxContainer" parent="."]
-offset_left = 503.0
-offset_top = 335.0
-offset_right = 575.0
-offset_bottom = 387.0
+offset_left = 512.0
+offset_top = 344.0
+offset_right = 576.0
+offset_bottom = 396.0
 scale = Vector2(2, 2)
 script = ExtResource("6_fkf4o")
 
-[node name="HomeButton" type="Button" parent="EndScreenButtons"]
+[node name="HomeButton" type="TextureButton" parent="EndScreenButtons"]
 layout_mode = 2
-icon = ExtResource("6_k2vha")
+texture_normal = ExtResource("6_k2vha")
+texture_hover = ExtResource("8_woa3c")
 
 [node name="Label" type="Label" parent="EndScreenButtons/HomeButton"]
 layout_mode = 0
-offset_left = 22.5
-offset_top = 5.0
-offset_right = 62.5
-offset_bottom = 28.0
+offset_left = 18.0
+offset_top = 1.0
+offset_right = 58.0
+offset_bottom = 24.0
 theme_override_font_sizes/font_size = 10
 text = "Home"
 
-[node name="RestartButton" type="Button" parent="EndScreenButtons"]
+[node name="RestartButton" type="TextureButton" parent="EndScreenButtons"]
 layout_mode = 2
-icon = ExtResource("7_fkf4o")
+texture_normal = ExtResource("7_fkf4o")
+texture_hover = ExtResource("10_dd2jf")
 
 [node name="Label2" type="Label" parent="EndScreenButtons/RestartButton"]
 layout_mode = 0
-offset_left = 23.0
-offset_top = 5.0
-offset_right = 63.0
-offset_bottom = 28.0
+offset_left = 18.0
+offset_right = 58.0
+offset_bottom = 23.0
 theme_override_font_sizes/font_size = 10
 text = "Restart"
 

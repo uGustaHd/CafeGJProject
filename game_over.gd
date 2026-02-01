@@ -24,14 +24,16 @@ var text_day : Array[String] = [
 
 
 var text_joy : Array[String] = [
-	"The joy went to low, you lost"
+	"They come at night, no longer whispering your name",
+	"Torches are thrown, and your hut catches fire in an instant",
+	"The flames rise, and the village takes back what it believes you stole",
 ]
 
 
 var text_anguish : Array[String] = [
-	"Anguish went to low, you lost",
-	"Anguish went to low, you lost",
-	"Anguish went to low, you lost"
+	"You grew soft, little witch. Their pain no longer feeds me",
+	"I gave you power, and you answered with mercy",
+	"Come. Your suffering will make up for what you denied me",
 ]
 
 func _ready() -> void:
