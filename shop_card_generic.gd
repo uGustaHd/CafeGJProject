@@ -63,9 +63,9 @@ func fill_effect_text() -> void:
 	# Write out multipliers
 	var multipliers : Array[int] = [card_resource.green_multiply, card_resource.blue_multiply, card_resource.red_multiply]
 	var multiplier_strings : Array[String] = [
-		" Green",
-		" Blue",
-		" Red",
+		" Green \n",
+		" Blue \n",
+		" Red \n",
 	]
 	i = 0
 	for value in multipliers:

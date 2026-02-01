@@ -39,9 +39,9 @@ func _build_warning_text(type: String) -> Array[String]:
 	var text: Array[String]
 	match type:
 		"JOY": 
-			text = ["Joy was too low, warning text here!"]
+			text = ["Joy was too low, fulfil more potion requests!"]
 		"ANGUISH":
-			text = ["Anguish was too low, warning text here!"]
+			text = ["Anguish was too low, poison the villagers!"]
 		_:
 			text = ["no text"]
 	return text
