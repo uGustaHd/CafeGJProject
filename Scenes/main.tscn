@@ -584,6 +584,7 @@ texture = ExtResource("39_536cc")
 stretch_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="UIControl"]
+visible = false
 layout_mode = 0
 offset_left = 301.0
 offset_top = 370.0

@@ -19,7 +19,7 @@
 [node name="Shop" type="Node2D"]
 script = ExtResource("1_io27d")
 talk_texts = Array[String](["Remember our deal. Keep them in anguish and you keep your powers. Lose that ingredient and you lose my help forever", "The townsfolk seem to be planning a happy celebration soon. How easy would it be to ruin that for them?", "Don't feel bad for ruining their plans, if they were honest they wouldn't have come to a witch in the first place"])
-tip_texts = Array[String](["Tip Tip Tip Tip"])
+tip_texts = Array[String](["Keep a mix of drawing and energy cards", "Some cards cost more energy than others", "Multipliers multiply each other", "Cards add colors before adding multipliers", "Fail potions on purpose if you need more anguish", "Killing customers lets you keep their gold"])
 
 [node name="ShopBG" type="Sprite2D" parent="."]
 position = Vector2(576, 324)
