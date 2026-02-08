@@ -6,6 +6,7 @@ signal card_multiplier_added(multiplier_potion : Potion)
 #region data
 var card_resource : Card
 
+@onready var Router : EffectRouter = $CardManager/EffectRouter
 @onready var DiscardPile : Pile = $"../../../../DiscardHolder".held_pile
 @onready var HandPile : Pile = $"../../..".held_pile
 @onready var PotionHolder = $"../../../../PotionHolder"
@@ -131,21 +132,13 @@ func set_border() -> void:
 #region actions
 func attempt_activation() -> bool:
 	if card_resource.energy_cost <= Global.energy:
-		activate()
+		activate_effect()
 		return true
 	else:
 		return false
 
-func activate() -> void:
-	add_draw()
-	#NOTE: Color adding before multiplier takes effect is expected for balance
-	add_color()
-	add_multiplier()
-	add_joy()
-	add_anguish()
-	add_energy()
-	add_kill()
-	
+func activate_effect() -> void:
+	card_resource.effect.activate(Router)
 	pay_cost()
 	for card in get_parent().get_children():
 		card.update_cost_icons()
@@ -192,7 +185,7 @@ func discard_self() -> void:
 
 #NOTE: Update for non energy costs later
 func pay_cost() -> void:
-	Global.add_energy(-card_resource.energy_cost) 
+	card_resource.cost.pay()
 
 #endregion
 

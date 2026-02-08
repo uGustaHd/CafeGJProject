@@ -1,4 +1,5 @@
 extends Node
+class_name CardDealer
 
 @onready var DeckHolder = get_parent()
 @onready var HandHolder = $"../../HandHolder"

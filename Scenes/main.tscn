@@ -1,8 +1,8 @@
-[gd_scene load_steps=54 format=3 uid="uid://bdqjd2ergavof"]
+[gd_scene load_steps=49 format=3 uid="uid://bdqjd2ergavof"]
 
 [ext_resource type="Script" uid="uid://dbtic8k4hhs0a" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://df1d5o4oc5m1e" path="res://Scenes/Customers/customer_manager.tscn" id="1_jjgbg"]
-[ext_resource type="PackedScene" uid="uid://ucuv03tdxv54" path="res://Scenes/Customers/customer.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://ucuv03tdxv54" path="res://Scenes/Customers/Customer.tscn" id="2_bo1nx"]
 [ext_resource type="Texture2D" uid="uid://fmlvtppb2jje" path="res://Assets/Sprites/Background/Background_rendered.png" id="3_u50mg"]
 [ext_resource type="Texture2D" uid="uid://clto7guvbxmjv" path="res://Assets/Sprites/Background/counter_top_rendered.png" id="4_cbgmd"]
 [ext_resource type="Script" uid="uid://ciewvhcpryhfs" path="res://Scripts/Cards/card_manager.gd" id="4_jjvhh"]
@@ -23,24 +23,19 @@
 [ext_resource type="Script" uid="uid://b8yono3xc1siy" path="res://card system/card resources/card.gd" id="11_nwwfm"]
 [ext_resource type="AudioStream" uid="uid://812473dokm8m" path="res://Assets/Audio/FX/draw_card_3.mp3" id="12_o1aky"]
 [ext_resource type="Resource" uid="uid://ddjh1ex61trw3" path="res://card system/card resources/blue/water.tres" id="12_s8vy0"]
-[ext_resource type="Resource" uid="uid://dkfk1ii1ti1ib" path="res://card system/card resources/red/spider_legs.tres" id="13_jut3y"]
-[ext_resource type="Resource" uid="uid://bpx0f3nqvch3d" path="res://card system/card resources/blue/delphinium.tres" id="14_v2nl5"]
-[ext_resource type="Resource" uid="uid://c7g0cheydkt32" path="res://card system/card resources/green/sage_flower.tres" id="15_v2nl5"]
-[ext_resource type="Resource" uid="uid://cxcqfyh8uil6e" path="res://card system/card resources/red/dried_peppers.tres" id="16_dmskm"]
 [ext_resource type="Script" uid="uid://ga6oihrmatia" path="res://Scenes/day_report.gd" id="16_k12tt"]
 [ext_resource type="Texture2D" uid="uid://drqgpfesycfba" path="res://Assets/Sprites/UI/knife_ui/Knife_container.png" id="17_ueoa1"]
-[ext_resource type="Resource" uid="uid://biuk2lnowfevk" path="res://card system/card resources/red/mushrooms.tres" id="17_xdkp6"]
 [ext_resource type="Texture2D" uid="uid://ddntlkfesfi5k" path="res://Assets/Sprites/UI/knife_ui/Knife_hide_button.png" id="19_1w6v2"]
 [ext_resource type="Texture2D" uid="uid://ddg1wn01w0bjt" path="res://Assets/Sprites/UI/knife_ui/Knife_hide_selected.png" id="20_ueoa1"]
 [ext_resource type="Texture2D" uid="uid://cqo8umogu58y0" path="res://Assets/Sprites/UI/knife_ui/Knife.png" id="21_6vcvc"]
 [ext_resource type="Texture2D" uid="uid://d4j101p1oju7o" path="res://Assets/Sprites/UI/coin_counter2.png" id="22_1w6v2"]
 [ext_resource type="Script" uid="uid://dne0jfbuucu01" path="res://Scripts/gold_counter.gd" id="22_ee4r6"]
-[ext_resource type="Resource" uid="uid://bmtttnvwrlvqh" path="res://card system/card resources/rainbow/salamander.tres" id="22_gsvbx"]
 [ext_resource type="Texture2D" uid="uid://c8uh2wsvmj7k1" path="res://Assets/Sprites/UI/meter_ui/resource_section.png" id="23_6vcvc"]
 [ext_resource type="FontFile" uid="uid://bu0iimg40ehu2" path="res://card system/card_assets/Jersey10-Regular.ttf" id="23_gt3je"]
 [ext_resource type="Script" uid="uid://bpsrl57tmr0vj" path="res://Scripts/energy_counter.gd" id="24_3pmx8"]
 [ext_resource type="Script" uid="uid://ci5agnsf5sjjb" path="res://Scenes/tutorial_manager.gd" id="25_u50mg"]
 [ext_resource type="Texture2D" uid="uid://14qmciyubswp" path="res://Assets/Sprites/UI/meter_ui/Anguish_container.png" id="26_neg2b"]
+[ext_resource type="Script" uid="uid://e4guf8yg662v" path="res://card system/effect_router.gd" id="30_gsvbx"]
 [ext_resource type="Texture2D" uid="uid://ug73g8yft6uj" path="res://Assets/Sprites/UI/meter_ui/Joy_container_new.png" id="32_v2nl5"]
 [ext_resource type="Texture2D" uid="uid://bbpdjgnh7rx4w" path="res://Assets/Sprites/UI/meter_ui/joy_full_bar2.png" id="33_dmskm"]
 [ext_resource type="Texture2D" uid="uid://cyuaw3hb5x4kw" path="res://Assets/Sprites/UI/energy_ui/Mana_container.png" id="33_neg2b"]
@@ -118,7 +113,7 @@ vertical_alignment = 1
 
 [node name="DeckHolder" type="Node2D" parent="CardManager"]
 script = ExtResource("6_hptm8")
-starting_deck = Array[ExtResource("11_nwwfm")]([ExtResource("12_s8vy0"), ExtResource("12_s8vy0"), ExtResource("14_v2nl5"), ExtResource("15_v2nl5"), ExtResource("15_v2nl5"), ExtResource("17_xdkp6"), ExtResource("16_dmskm"), ExtResource("16_dmskm"), ExtResource("13_jut3y"), ExtResource("22_gsvbx")])
+starting_deck = Array[ExtResource("11_nwwfm")]([ExtResource("12_s8vy0"), ExtResource("12_s8vy0"), ExtResource("12_s8vy0"), ExtResource("12_s8vy0"), ExtResource("12_s8vy0"), ExtResource("12_s8vy0"), ExtResource("12_s8vy0"), ExtResource("12_s8vy0"), ExtResource("12_s8vy0"), ExtResource("12_s8vy0")])
 
 [node name="Dealer" type="Node" parent="CardManager/DeckHolder"]
 script = ExtResource("6_ynf5e")
@@ -156,6 +151,9 @@ script = ExtResource("9_jkdf5")
 
 [node name="DiscardHolder" type="Node2D" parent="CardManager"]
 script = ExtResource("10_wsu2k")
+
+[node name="EffectRouter" type="Node" parent="CardManager"]
+script = ExtResource("30_gsvbx")
 
 [node name="UIControl" type="Control" parent="."]
 layout_mode = 3

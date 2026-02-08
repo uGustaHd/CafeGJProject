@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="AddColor" load_steps=2 format=3 uid="uid://diu557sbwksmy"]
+
+[ext_resource type="Script" uid="uid://bgcbw21ujlkcm" path="res://card system/effect resources/effects/add_color.gd" id="1_r3bai"]
+
+[resource]
+script = ExtResource("1_r3bai")
+metadata/_custom_type_script = "uid://bgcbw21ujlkcm"

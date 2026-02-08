@@ -1,12 +1,13 @@
-[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://cxcqfyh8uil6e"]
+[gd_resource type="Resource" script_class="Card" load_steps=4 format=3 uid="uid://cxcqfyh8uil6e"]
 
 [ext_resource type="Script" uid="uid://b8yono3xc1siy" path="res://card system/card resources/card.gd" id="1_7c32d"]
 [ext_resource type="Texture2D" uid="uid://df3rabjyarudw" path="res://card system/card_assets/card_art/New  Illusts/Red/Peppers_illust.png" id="1_nkfy0"]
+[ext_resource type="Resource" uid="uid://diu557sbwksmy" path="res://card system/effect resources/effects/AddColor.tres" id="2_pdk3n"]
 
 [resource]
 script = ExtResource("1_7c32d")
 title = "Dried Peppers"
 card_art = ExtResource("1_nkfy0")
-red_add = 1
+effect = ExtResource("2_pdk3n")
 green_multiply = 2
 metadata/_custom_type_script = "uid://b8yono3xc1siy"

@@ -12,16 +12,19 @@ enum Archetype {RED, GREEN, BLUE, GOLD, PURPLE, RAINBOW}
 # Not seen in game, just for leaving notes on design intentions
 @export_multiline var designer_notes : String
 
+@export var effect : CardEffect
+@export var cost : Script
+
 @export var energy_add : int = 0
 @export var draw_add : int = 0
 @export var kill_add : float = 0
 
-@export var joy_add : int = 0
-@export var anguish_add : int = 0
-
+@export var red_add : int = 0
 @export var green_add : int = 0
 @export var blue_add : int = 0
-@export var red_add : int = 0
+
+@export var joy_add : int = 0
+@export var anguish_add : int = 0
 
 @export var green_multiply : int = 1
 @export var blue_multiply : int = 1

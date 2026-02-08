@@ -2,7 +2,6 @@ extends PileHolder
 
 
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
-
 @onready var DiscardHolder = $"../DiscardHolder"
 
 var draw_card_sound := preload("res://Assets/Audio/FX/draw_card_3.mp3")
