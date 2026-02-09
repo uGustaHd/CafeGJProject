@@ -8,7 +8,6 @@ func activate(router : EffectRouter, card : Card) -> void:
 	color_added.add_green(card.green_add)
 	color_added.add_red(card.red_add)
 	
-	print_debug("Add color effect used")
 	router.PotionHolder.add_colors(color_added)
 
 func get_text(card : Card) -> String:

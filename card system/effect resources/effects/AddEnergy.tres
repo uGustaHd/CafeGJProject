@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="AddEnergy" load_steps=2 format=3 uid="uid://dojue6xo1l37e"]
+
+[ext_resource type="Script" uid="uid://cq0erkbf2oc7n" path="res://card system/effect resources/effects/add_energy.gd" id="1_laefu"]
+
+[resource]
+script = ExtResource("1_laefu")
+metadata/_custom_type_script = "uid://cq0erkbf2oc7n"

@@ -1,9 +1,8 @@
 extends Control
 
-signal card_color_added(color_potion : Potion)
 signal card_multiplier_added(multiplier_potion : Potion)
 
-#region data
+#region Initial Data
 var card_resource : Card
 
 @onready var Router : EffectRouter = $"../../../../EffectRouter"
@@ -48,15 +47,12 @@ func initialize_card(source_card : Card) -> void:
 	energy_cost.text = str(card_resource.energy_cost)
 	fill_effect_text()
 	effect_text.add_text(card_resource.effect_text)
-	fill_additional_costs()
 	set_border()
-
-#TODO: If card has costs other that energy, should add those icons to card.
-func fill_additional_costs() -> void:
-	pass
 	
 func fill_effect_text() -> void:
-	effect_text.add_text(card_resource.effect.get_text(card_resource))
+	for effect : CardEffect in card_resource.effects:
+		effect_text.add_text(effect.get_text(card_resource))
+	
 	#var numericals = [card_resource.green_add, card_resource.blue_add, card_resource.red_add, card_resource.energy_add, card_resource.draw_add, card_resource.kill_add, card_resource.joy_add, card_resource.anguish_add]
 	## [green_add, blue_add, red_add, energy_add, draw_add]
 	#var numerical_strings : Array[String] = [
@@ -98,7 +94,6 @@ func fill_effect_text() -> void:
 	
 # Returns bool to check if text needed fitting
 func fit_text() -> bool:
-	
 	return true
 
 # Assigns title directly if Rainbow
@@ -132,16 +127,16 @@ func set_border() -> void:
 
 #region actions
 func attempt_activation() -> bool:
-	if card_resource.energy_cost <= Global.energy:
-		activate_effect()
-		return true
-	else:
-		return false
+	var can_activate : bool = true
+	for cost : CardCost in card_resource.costs:
+		if cost.check_cost(card_resource) == false:
+			can_activate = false
+	return can_activate
 
-func activate_effect() -> void:
-	card_resource.effect.activate(Router, card_resource)
-	pay_cost()
-	
+func activate_effects() -> void:
+	for effect : CardEffect in card_resource.effects:
+		effect.activate(Router, card_resource)
+
 	for card in get_parent().get_children():
 		card.update_cost_icons()
 		
@@ -151,48 +146,40 @@ func activate_effect() -> void:
 		
 	discard_self()
 
-func add_joy():
-	Global.add_joy(card_resource.joy_add)
+func pay_costs():
+	for cost : CardCost in card_resource.costs:
+		cost.pay_cost(card_resource)
 
-func add_anguish():
-	Global.add_anguish(card_resource.anguish_add)
-
-func add_draw():
-	Dealer.deal_cards(card_resource.draw_add)
-	
-func add_energy():
-	Global.add_energy(card_resource.energy_add)
-
-func add_kill():
-	Global.add_kill(card_resource.kill_add)
-
-func add_multiplier():
-	var multiplier_added : Potion = Potion.new()
-	multiplier_added.blue_multiplier = card_resource.blue_multiply
-	multiplier_added.green_multiplier = card_resource.green_multiply
-	multiplier_added.red_multiplier = card_resource.red_multiply
-	card_multiplier_added.emit(multiplier_added)
-
-func add_color():
-	var color_added : Potion = Potion.new()
-	color_added.add_blue(card_resource.blue_add)
-	color_added.add_green(card_resource.green_add)
-	color_added.add_red(card_resource.red_add)
-	card_color_added.emit(color_added)
-
+#func add_joy():
+	#Global.add_joy(card_resource.joy_add)
+#
+#func add_anguish():
+	#Global.add_anguish(card_resource.anguish_add)
+#
+#func add_draw():
+	#Dealer.deal_cards(card_resource.draw_add)
+	#
+#func add_energy():
+	#Global.add_energy(card_resource.energy_add)
+#
+#func add_kill():
+	#Global.add_kill(card_resource.kill_add)
+#
+#func add_multiplier():
+	#var multiplier_added : Potion = Potion.new()
+	#multiplier_added.blue_multiplier = card_resource.blue_multiply
+	#multiplier_added.green_multiplier = card_resource.green_multiply
+	#multiplier_added.red_multiplier = card_resource.red_multiply
+	#card_multiplier_added.emit(multiplier_added)
+#
 #WARNING: Only use when in hand.
 func discard_self() -> void:
 	DiscardPile.add_card(HandPile.take_card(card_resource))
 	queue_free()
 
-#NOTE: Update for non energy costs later
-func pay_cost() -> void:
-	card_resource.cost.pay()
-
 #endregion
 
 func _ready() -> void:
-	card_color_added.connect(PotionHolder.on_card_color_added)
 	card_multiplier_added.connect(PotionHolder.on_card_multiplier_added)
 
 func update_cost_icons():
@@ -204,9 +191,11 @@ func update_cost_icons():
 #region incoming signals
 func _on_button_button_down() -> void:
 	if Global.can_play_cards:
-		attempt_activation()
+		if attempt_activation():
+			activate_effects()
+			pay_costs()
 	else: return
-	
+	#region UI Visuals
 	#NOTE: Does not show up that well since card frees right after playing
 	Input.set_custom_mouse_cursor(
 		load("res://Assets/Sprites/UI/mouse_pointer/Cursor_ver1_click.png")
@@ -229,5 +218,5 @@ func _on_button_mouse_exited() -> void:
 	Input.set_custom_mouse_cursor(
 		load("res://Assets/Sprites/UI/mouse_pointer/Cursor_ver1.png")
 	)
-
+	#endregion
 #endregion
