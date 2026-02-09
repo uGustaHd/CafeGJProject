@@ -2,30 +2,32 @@ extends CardEffect
 class_name AddColor
 
 
-enum ColorAdd {RED, GREEN, BLUE}
-@export var color : ColorAdd
-@export var amount : int = 1
-
-func activate(router : EffectRouter) -> void:
-	var potion_to_add : Potion = Potion.new()
-	match color:
-		ColorAdd.RED:
-			potion_to_add.add_red(amount)
-		ColorAdd.GREEN:
-			potion_to_add.add_green(amount)
-		ColorAdd.BLUE:
-			potion_to_add.add_blue(amount)
+func activate(router : EffectRouter, card : Card) -> void:
+	var color_added : Potion = Potion.new()
+	color_added.add_blue(card.blue_add)
+	color_added.add_green(card.green_add)
+	color_added.add_red(card.red_add)
 	
-	router.PotionHolder.add_colors(potion_to_add)
+	print_debug("Add color effect used")
+	router.PotionHolder.add_colors(color_added)
 
-func get_text() -> String:
-	var text_to_add : String = "+ "
-	text_to_add += str(amount) + " "
-	match color:
-		ColorAdd.RED:
-			text_to_add += "Red"
-		ColorAdd.GREEN:
-			text_to_add += "Green"
-		ColorAdd.BLUE:
-			text_to_add += "Blue"
-	return text_to_add
+func get_text(card : Card) -> String:
+	var numerical_strings : Array[String] = [
+		" Red \n",
+		" Green \n",
+		" Blue \n",
+		]
+	var effect_text : String = ""
+	var colors : Array[int] = [card.red_add, card.green_add, card.blue_add]
+	var i = 0
+	for value in colors:
+		if value != 0:
+			var text_to_add : String = numerical_strings[i]
+			if value > 0:
+				text_to_add = "+" + str(value) + text_to_add
+			elif value < 0:
+				text_to_add = "-" + str(value) + text_to_add
+			effect_text += text_to_add
+		i += 1
+	return effect_text
+	

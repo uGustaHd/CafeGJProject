@@ -6,7 +6,7 @@ signal card_multiplier_added(multiplier_potion : Potion)
 #region data
 var card_resource : Card
 
-@onready var Router : EffectRouter = $CardManager/EffectRouter
+@onready var Router : EffectRouter = $"../../../../EffectRouter"
 @onready var DiscardPile : Pile = $"../../../../DiscardHolder".held_pile
 @onready var HandPile : Pile = $"../../..".held_pile
 @onready var PotionHolder = $"../../../../PotionHolder"
@@ -56,44 +56,45 @@ func fill_additional_costs() -> void:
 	pass
 	
 func fill_effect_text() -> void:
-	var numericals = [card_resource.green_add, card_resource.blue_add, card_resource.red_add, card_resource.energy_add, card_resource.draw_add, card_resource.kill_add, card_resource.joy_add, card_resource.anguish_add]
-	# [green_add, blue_add, red_add, energy_add, draw_add]
-	var numerical_strings : Array[String] = [
-		" Green \n",
-		" Blue \n",
-		" Red \n",
-		" Energy \n",
-		" Draw \n",
-		" Kill \n",
-		" Joy \n",
-		" Anguish \n",
-	]
-	var i = 0
-	for value in numericals:
-		if value != 0:
-			var text_to_add : String = numerical_strings[i]
-			if value > 0:
-				text_to_add = "+" + str(value) + text_to_add
-			elif value < 0:
-				text_to_add = "-" + str(value) + text_to_add
-			effect_text.add_text(text_to_add)
-		i += 1
-	
-	# Write out multipliers
-	var multipliers : Array[int] = [card_resource.green_multiply, card_resource.blue_multiply, card_resource.red_multiply]
-	var multiplier_strings : Array[String] = [
-		" Green \n",
-		" Blue \n",
-		" Red \n",
-	]
-	i = 0
-	for value in multipliers:
-		if value != 1:
-			var text_to_add : String = multiplier_strings[i]
-			text_to_add = "x" + str(value) + text_to_add
-			effect_text.add_text(text_to_add)
-		i += 1
-	fit_text()
+	effect_text.add_text(card_resource.effect.get_text(card_resource))
+	#var numericals = [card_resource.green_add, card_resource.blue_add, card_resource.red_add, card_resource.energy_add, card_resource.draw_add, card_resource.kill_add, card_resource.joy_add, card_resource.anguish_add]
+	## [green_add, blue_add, red_add, energy_add, draw_add]
+	#var numerical_strings : Array[String] = [
+		#" Green \n",
+		#" Blue \n",
+		#" Red \n",
+		#" Energy \n",
+		#" Draw \n",
+		#" Kill \n",
+		#" Joy \n",
+		#" Anguish \n",
+	#]
+	#var i = 0
+	#for value in numericals:
+		#if value != 0:
+			#var text_to_add : String = numerical_strings[i]
+			#if value > 0:
+				#text_to_add = "+" + str(value) + text_to_add
+			#elif value < 0:
+				#text_to_add = "-" + str(value) + text_to_add
+			#effect_text.add_text(text_to_add)
+		#i += 1
+	#
+	## Write out multipliers
+	#var multipliers : Array[int] = [card_resource.green_multiply, card_resource.blue_multiply, card_resource.red_multiply]
+	#var multiplier_strings : Array[String] = [
+		#" Green \n",
+		#" Blue \n",
+		#" Red \n",
+	#]
+	#i = 0
+	#for value in multipliers:
+		#if value != 1:
+			#var text_to_add : String = multiplier_strings[i]
+			#text_to_add = "x" + str(value) + text_to_add
+			#effect_text.add_text(text_to_add)
+		#i += 1
+	#fit_text()
 	
 # Returns bool to check if text needed fitting
 func fit_text() -> bool:
@@ -138,8 +139,9 @@ func attempt_activation() -> bool:
 		return false
 
 func activate_effect() -> void:
-	card_resource.effect.activate(Router)
+	card_resource.effect.activate(Router, card_resource)
 	pay_cost()
+	
 	for card in get_parent().get_children():
 		card.update_cost_icons()
 		

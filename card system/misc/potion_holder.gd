@@ -1,4 +1,5 @@
 extends Node
+class_name PotionHold
 
 
 @onready var SubmitButton : TextureButton = $SubmitButton
@@ -7,6 +8,12 @@ var held_potion : Potion = Potion.new()
 var requested_potion : Potion
 signal potion_progress_changed(potion: Potion)
 
+#/##############################################################################
+
+func _process(_delta: float) -> void:
+	if OS.is_debug_build():
+		if Input.is_action_just_pressed("debug_held_potion"):
+			print_debug("rgb = ", held_potion.red, held_potion.green, held_potion.blue)
 
 func check_volatility():
 	var i = 0
@@ -20,6 +27,7 @@ func add_colors(added_colors : Potion) -> void:
 	held_potion.add_green(added_colors.green)
 	held_potion.add_red(added_colors.red)
 	potion_progress_changed.emit(held_potion)
+	print_debug("Colors added")
 
 func add_multiplier(added_multiplier : Potion):
 	held_potion.blue_multiplier *= added_multiplier.blue_multiplier
@@ -30,7 +38,9 @@ func add_multiplier(added_multiplier : Potion):
 func reset_potion():
 	held_potion = Potion.new()
 	emit_signal("potion_progress_changed", held_potion)
-	
+
+#/##############################################################################
+
 func on_card_color_added(color_added : Potion):
 	# Called here because all cards add color, even if adding 0
 	held_potion.on_card_played()

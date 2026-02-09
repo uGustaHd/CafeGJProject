@@ -3,4 +3,4 @@ class_name EffectRouter
 
 
 @onready var Dealer = $"../DeckHolder/Dealer"
-@onready var PotionHolder = $"../PotionHolder"
+@onready var PotionHolder : PotionHold = $"../PotionHolder"

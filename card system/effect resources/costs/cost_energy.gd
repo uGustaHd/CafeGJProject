@@ -1,10 +1,15 @@
 extends CardCost
+class_name CostEnergy
 
 
 @export var amount : int
 
-func pay() -> void:
-	Global.add_energy(-amount)
+func pay() -> bool:
+	if Global.energy >= amount:
+		Global.add_energy(-amount)
+		return true
+	else:
+		return false
 
 func get_icon() -> CostIcon:
 	var new_cost_icon = CostIcon.new()

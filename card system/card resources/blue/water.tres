@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Card" load_steps=4 format=3 uid="uid://ddjh1ex61trw3"]
+[gd_resource type="Resource" script_class="Card" load_steps=5 format=3 uid="uid://ddjh1ex61trw3"]
 
 [ext_resource type="Script" uid="uid://b8yono3xc1siy" path="res://card system/card resources/card.gd" id="1_8h7cf"]
 [ext_resource type="Texture2D" uid="uid://chjbi2mrffhpc" path="res://card system/card_assets/card_art/New  Illusts/Blue/Water_illust.png" id="1_lcay3"]
+[ext_resource type="Resource" uid="uid://d61rsalmlu48" path="res://card system/effect resources/costs/CostEnergy.tres" id="2_mxv4r"]
 [ext_resource type="Resource" uid="uid://diu557sbwksmy" path="res://card system/effect resources/effects/AddColor.tres" id="2_xfk2m"]
 
 [resource]
@@ -10,6 +11,8 @@ title = "Water"
 card_art = ExtResource("1_lcay3")
 archetype = 2
 effect = ExtResource("2_xfk2m")
+cost = ExtResource("2_mxv4r")
 energy_add = 1
 draw_add = 1
+blue_add = 1
 metadata/_custom_type_script = "uid://b8yono3xc1siy"

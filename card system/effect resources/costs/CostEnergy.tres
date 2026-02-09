@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="CostEnergy" load_steps=2 format=3 uid="uid://d61rsalmlu48"]
+
+[ext_resource type="Script" uid="uid://du4gp3b6li00y" path="res://card system/effect resources/costs/cost_energy.gd" id="1_kn7if"]
+
+[resource]
+script = ExtResource("1_kn7if")
+metadata/_custom_type_script = "uid://du4gp3b6li00y"

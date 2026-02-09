@@ -13,7 +13,7 @@ enum Archetype {RED, GREEN, BLUE, GOLD, PURPLE, RAINBOW}
 @export_multiline var designer_notes : String
 
 @export var effect : CardEffect
-@export var cost : Script
+@export var cost : CardCost
 
 @export var energy_add : int = 0
 @export var draw_add : int = 0

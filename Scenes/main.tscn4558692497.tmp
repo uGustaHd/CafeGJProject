@@ -1,0 +1,629 @@
+[gd_scene load_steps=49 format=3 uid="uid://bdqjd2ergavof"]
+
+[ext_resource type="Script" uid="uid://dbtic8k4hhs0a" path="res://Scripts/main.gd" id="1_8gbba"]
+[ext_resource type="PackedScene" uid="uid://df1d5o4oc5m1e" path="res://Scenes/Customers/customer_manager.tscn" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://ucuv03tdxv54" path="res://Scenes/Customers/Customer.tscn" id="2_bo1nx"]
+[ext_resource type="Texture2D" uid="uid://fmlvtppb2jje" path="res://Assets/Sprites/Background/Background_rendered.png" id="3_u50mg"]
+[ext_resource type="Texture2D" uid="uid://clto7guvbxmjv" path="res://Assets/Sprites/Background/counter_top_rendered.png" id="4_cbgmd"]
+[ext_resource type="Script" uid="uid://ciewvhcpryhfs" path="res://Scripts/Cards/card_manager.gd" id="4_jjvhh"]
+[ext_resource type="Script" uid="uid://cilybldurbx2h" path="res://card system/misc/potion_holder.gd" id="5_kry3j"]
+[ext_resource type="Script" uid="uid://cftb5hku6m48" path="res://card system/misc/submit_button.gd" id="6_b3802"]
+[ext_resource type="Script" uid="uid://c3qc2yexgw8c2" path="res://card system/piles/deck_holder.gd" id="6_hptm8"]
+[ext_resource type="Script" uid="uid://b7rpitbvtbdxf" path="res://card system/dealer.gd" id="6_ynf5e"]
+[ext_resource type="Script" uid="uid://s6dr7vh7p3y4" path="res://Scenes/slide_kill_panel.gd" id="8_344ge"]
+[ext_resource type="Script" uid="uid://bwitx55fsfv7t" path="res://card system/piles/hand_holder.gd" id="8_fdnlq"]
+[ext_resource type="Texture2D" uid="uid://ciwgyu8lon4ff" path="res://Assets/Sprites/UI/potion_button/Sell_button_not_active.png" id="9_54nrm"]
+[ext_resource type="Script" uid="uid://dlfe3an8hufm5" path="res://card system/piles/banished_holder.gd" id="9_jkdf5"]
+[ext_resource type="Script" uid="uid://ftxj5put3ip1" path="res://card system/misc/hand_ui.gd" id="9_wsu2k"]
+[ext_resource type="Script" uid="uid://yusxetxubyr5" path="res://Scenes/joy_anguish_meters.gd" id="9_ynf5e"]
+[ext_resource type="Texture2D" uid="uid://c3oq3nt0xrf4e" path="res://Assets/Sprites/UI/potion_button/Sell_button_active.png" id="10_55jeb"]
+[ext_resource type="Script" uid="uid://dig3q1bbujkox" path="res://card system/misc/hand_hbox.gd" id="10_k12tt"]
+[ext_resource type="Script" uid="uid://cavfpuefel5gx" path="res://card system/piles/discard_holder.gd" id="10_wsu2k"]
+[ext_resource type="Texture2D" uid="uid://qgs35du8eu21" path="res://Assets/Sprites/UI/potion_button/Sell_button_selected.png" id="11_gsvbx"]
+[ext_resource type="Script" uid="uid://b8yono3xc1siy" path="res://card system/card resources/card.gd" id="11_nwwfm"]
+[ext_resource type="AudioStream" uid="uid://812473dokm8m" path="res://Assets/Audio/FX/draw_card_3.mp3" id="12_o1aky"]
+[ext_resource type="Resource" uid="uid://ddjh1ex61trw3" path="res://card system/card resources/blue/water.tres" id="12_s8vy0"]
+[ext_resource type="Script" uid="uid://ga6oihrmatia" path="res://Scenes/day_report.gd" id="16_k12tt"]
+[ext_resource type="Texture2D" uid="uid://drqgpfesycfba" path="res://Assets/Sprites/UI/knife_ui/Knife_container.png" id="17_ueoa1"]
+[ext_resource type="Texture2D" uid="uid://ddntlkfesfi5k" path="res://Assets/Sprites/UI/knife_ui/Knife_hide_button.png" id="19_1w6v2"]
+[ext_resource type="Texture2D" uid="uid://ddg1wn01w0bjt" path="res://Assets/Sprites/UI/knife_ui/Knife_hide_selected.png" id="20_ueoa1"]
+[ext_resource type="Texture2D" uid="uid://cqo8umogu58y0" path="res://Assets/Sprites/UI/knife_ui/Knife.png" id="21_6vcvc"]
+[ext_resource type="Texture2D" uid="uid://d4j101p1oju7o" path="res://Assets/Sprites/UI/coin_counter2.png" id="22_1w6v2"]
+[ext_resource type="Script" uid="uid://dne0jfbuucu01" path="res://Scripts/gold_counter.gd" id="22_ee4r6"]
+[ext_resource type="Texture2D" uid="uid://c8uh2wsvmj7k1" path="res://Assets/Sprites/UI/meter_ui/resource_section.png" id="23_6vcvc"]
+[ext_resource type="FontFile" uid="uid://bu0iimg40ehu2" path="res://card system/card_assets/Jersey10-Regular.ttf" id="23_gt3je"]
+[ext_resource type="Script" uid="uid://bpsrl57tmr0vj" path="res://Scripts/energy_counter.gd" id="24_3pmx8"]
+[ext_resource type="Script" uid="uid://ci5agnsf5sjjb" path="res://Scenes/tutorial_manager.gd" id="25_u50mg"]
+[ext_resource type="Texture2D" uid="uid://14qmciyubswp" path="res://Assets/Sprites/UI/meter_ui/Anguish_container.png" id="26_neg2b"]
+[ext_resource type="Script" uid="uid://e4guf8yg662v" path="res://card system/effect_router.gd" id="30_gsvbx"]
+[ext_resource type="Texture2D" uid="uid://ug73g8yft6uj" path="res://Assets/Sprites/UI/meter_ui/Joy_container_new.png" id="32_v2nl5"]
+[ext_resource type="Texture2D" uid="uid://bbpdjgnh7rx4w" path="res://Assets/Sprites/UI/meter_ui/joy_full_bar2.png" id="33_dmskm"]
+[ext_resource type="Texture2D" uid="uid://cyuaw3hb5x4kw" path="res://Assets/Sprites/UI/energy_ui/Mana_container.png" id="33_neg2b"]
+[ext_resource type="Texture2D" uid="uid://bqkyw6rhiwchk" path="res://Assets/Sprites/UI/energy_ui/Mana_layer.png" id="35_r33sp"]
+[ext_resource type="Script" uid="uid://p7sowdqv6iir" path="res://Scenes/day_customer_counter.gd" id="36_k2e45"]
+[ext_resource type="Texture2D" uid="uid://bxoaxsu3x4wfh" path="res://Assets/Sprites/UI/Day_counter.png" id="37_536cc"]
+[ext_resource type="Texture2D" uid="uid://bdhxbnubm4inp" path="res://Assets/Sprites/UI/Customer_counter.png" id="38_aqgau"]
+[ext_resource type="Texture2D" uid="uid://djsagqljtyun5" path="res://Assets/Sprites/UI/Customer_icon.png" id="39_536cc"]
+[ext_resource type="Texture2D" uid="uid://ce7a0xvla0sm2" path="res://Assets/Sprites/UI/meter_ui/Anguish_full_bar.png" id="40_55jeb"]
+[ext_resource type="AudioStream" uid="uid://cvhh0vp50ybjg" path="res://Assets/Audio/Ambience/Potion_1.mp3" id="40_aqgau"]
+[ext_resource type="Texture2D" uid="uid://b66uwx41eb0m3" path="res://Assets/Sprites/UI/energy_ui/Mana_counter.png" id="42_54nrm"]
+[ext_resource type="Texture2D" uid="uid://cnccp41y75p70" path="res://Assets/Sprites/UI/Card_counter.png" id="51_55jeb"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_8gbba")
+
+[node name="TutorialManager" type="Node" parent="."]
+script = ExtResource("25_u50mg")
+
+[node name="BackGround" type="Sprite2D" parent="."]
+position = Vector2(576.00006, 243)
+scale = Vector2(1.4999999, 1.4999999)
+texture = ExtResource("3_u50mg")
+
+[node name="Counter" type="Sprite2D" parent="."]
+position = Vector2(576, 429.00006)
+scale = Vector2(1.4999999, 1.4999999)
+texture = ExtResource("4_cbgmd")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+zoom = Vector2(1.5, 1.5)
+
+[node name="CustomerManager" parent="." node_paths=PackedStringArray("spawn_position") instance=ExtResource("1_jjgbg")]
+customer_scene = ExtResource("2_bo1nx")
+spawn_position = NodePath("../CustomerSpawn")
+
+[node name="CustomerSpawn" type="Marker2D" parent="."]
+position = Vector2(576, 244)
+
+[node name="CardManager" type="Node2D" parent="."]
+script = ExtResource("4_jjvhh")
+
+[node name="PotionHolder" type="Node" parent="CardManager"]
+script = ExtResource("5_kry3j")
+
+[node name="SubmitButton" type="TextureButton" parent="CardManager/PotionHolder"]
+anchors_preset = -1
+anchor_left = -0.022569444
+anchor_top = -0.020061728
+anchor_right = -0.022569444
+anchor_bottom = -0.020061728
+offset_left = 889.0
+offset_top = 426.0
+offset_right = 953.0
+offset_bottom = 444.0
+scale = Vector2(1.5, 1.5)
+focus_mode = 0
+texture_normal = ExtResource("9_54nrm")
+texture_pressed = ExtResource("11_gsvbx")
+texture_hover = ExtResource("10_55jeb")
+script = ExtResource("6_b3802")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CardManager/PotionHolder"]
+offset_left = 866.0
+offset_top = 415.0
+offset_right = 941.0
+offset_bottom = 438.0
+theme_override_fonts/font = ExtResource("23_gt3je")
+theme_override_font_sizes/font_size = 12
+text = "Submit Potion"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DeckHolder" type="Node2D" parent="CardManager"]
+script = ExtResource("6_hptm8")
+starting_deck = Array[ExtResource("11_nwwfm")]([ExtResource("12_s8vy0"), ExtResource("12_s8vy0"), ExtResource("12_s8vy0"), ExtResource("12_s8vy0"), ExtResource("12_s8vy0"), ExtResource("12_s8vy0"), ExtResource("12_s8vy0"), ExtResource("12_s8vy0"), ExtResource("12_s8vy0"), ExtResource("12_s8vy0")])
+
+[node name="Dealer" type="Node" parent="CardManager/DeckHolder"]
+script = ExtResource("6_ynf5e")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CardManager/DeckHolder"]
+stream = ExtResource("12_o1aky")
+
+[node name="HandHolder" type="Node2D" parent="CardManager"]
+script = ExtResource("8_fdnlq")
+
+[node name="HandUI" type="Control" parent="CardManager/HandHolder"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 336.0
+offset_top = 425.0
+offset_right = 692.0
+offset_bottom = 525.0
+mouse_filter = 2
+script = ExtResource("9_wsu2k")
+metadata/_edit_use_anchors_ = true
+
+[node name="HandHBox" type="HBoxContainer" parent="CardManager/HandHolder/HandUI"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 18.0
+offset_right = 614.0
+offset_bottom = 95.0
+mouse_filter = 2
+theme_override_constants/separation = 72
+script = ExtResource("10_k12tt")
+metadata/_edit_use_anchors_ = true
+
+[node name="BanishedHolder" type="Node2D" parent="CardManager"]
+script = ExtResource("9_jkdf5")
+
+[node name="DiscardHolder" type="Node2D" parent="CardManager"]
+script = ExtResource("10_wsu2k")
+
+[node name="EffectRouter" type="Node" parent="CardManager"]
+script = ExtResource("30_gsvbx")
+
+[node name="UIControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="SlideKillPanel" type="TextureRect" parent="UIControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 23.575006
+anchor_top = 4.725
+anchor_right = 26.05
+anchor_bottom = 9.075
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+mouse_filter = 2
+texture = ExtResource("17_ueoa1")
+stretch_mode = 2
+script = ExtResource("8_344ge")
+metadata/_edit_use_anchors_ = true
+
+[node name="ProgressBar" type="ProgressBar" parent="UIControl/SlideKillPanel"]
+self_modulate = Color(0.90727323, 0, 0.18777213, 1)
+layout_mode = 0
+offset_left = 9.0
+offset_top = 8.0
+offset_right = 45.0
+offset_bottom = 93.0
+mouse_filter = 2
+max_value = 1.0
+fill_mode = 3
+show_percentage = false
+
+[node name="ArrowButton" type="TextureButton" parent="UIControl/SlideKillPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.04
+anchor_top = 0.2949588
+anchor_right = 0.07
+anchor_bottom = 0.2949588
+offset_left = -7.0
+offset_top = -13.5
+offset_right = 17.0
+offset_bottom = 14.5
+grow_vertical = 2
+focus_mode = 0
+texture_normal = ExtResource("19_1w6v2")
+texture_pressed = ExtResource("20_ueoa1")
+ignore_texture_size = true
+metadata/_edit_use_anchors_ = true
+
+[node name="KillButton" type="TextureButton" parent="UIControl/SlideKillPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.84
+anchor_top = 0.43338165
+anchor_right = 0.84
+anchor_bottom = 0.43338165
+offset_left = -75.0
+offset_top = -67.5
+offset_right = -39.599926
+offset_bottom = 15.113632
+grow_horizontal = 0
+grow_vertical = 2
+focus_mode = 0
+disabled = true
+texture_normal = ExtResource("21_6vcvc")
+metadata/_edit_use_anchors_ = true
+
+[node name="JoyAnguishMeters" type="Control" parent="UIControl"]
+layout_mode = 1
+anchor_left = -0.05
+anchor_top = -0.075
+anchor_right = -0.05
+anchor_bottom = -0.075
+offset_left = 192.0
+offset_top = 105.0
+offset_right = 321.0
+offset_bottom = 435.0
+script = ExtResource("9_ynf5e")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="UIControl/JoyAnguishMeters"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5122324
+anchor_bottom = 0.5122324
+offset_top = -165.0
+offset_right = 128.0
+offset_bottom = 268.0
+grow_vertical = 2
+texture = ExtResource("23_6vcvc")
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="JoyProgressBar" type="TextureProgressBar" parent="UIControl/JoyAnguishMeters"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.18604651
+anchor_top = 0.5849596
+anchor_right = -0.105831236
+anchor_bottom = 0.5851035
+offset_left = 80.0
+offset_top = -164.0
+offset_right = 112.44056
+offset_bottom = 120.67116
+grow_vertical = 2
+value = 50.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_over = ExtResource("32_v2nl5")
+texture_progress = ExtResource("33_dmskm")
+metadata/_edit_use_anchors_ = true
+
+[node name="AnguishProgressBar" type="TextureProgressBar" parent="UIControl/JoyAnguishMeters"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.007874
+anchor_top = 0.58829087
+anchor_right = 1.007874
+anchor_bottom = 0.58829087
+offset_left = -118.93799
+offset_top = -165.0
+offset_right = -81.0
+offset_bottom = 117.42888
+grow_horizontal = 0
+grow_vertical = 2
+value = 50.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_over = ExtResource("26_neg2b")
+texture_progress = ExtResource("40_55jeb")
+texture_progress_offset = Vector2(0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="DayReport" type="Control" parent="UIControl"]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = 0
+offset_left = 298.0
+offset_top = 169.0
+offset_right = 875.0
+offset_bottom = 493.0
+script = ExtResource("16_k12tt")
+
+[node name="ColorRect" type="ColorRect" parent="UIControl/DayReport"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -402.5
+offset_top = -235.0
+offset_right = 402.5
+offset_bottom = 235.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.11618609, 0.07413284, 0.04983419, 0.5803922)
+
+[node name="Title" type="Panel" parent="UIControl/DayReport"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -203.5
+offset_top = -130.0
+offset_right = 203.5
+offset_bottom = -90.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="UIControl/DayReport/Title"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Day Report"
+
+[node name="Information" type="Panel" parent="UIControl/DayReport"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.5
+offset_top = -84.0
+offset_right = 205.5
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InformationNameLabel" type="Label" parent="UIControl/DayReport/Information"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -196.5
+offset_top = -68.0
+offset_right = -5.5
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InformationValueLabel" type="Label" parent="UIControl/DayReport/Information"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -109.0
+offset_top = -70.0
+offset_right = -5.0
+offset_bottom = 70.0
+grow_horizontal = 0
+grow_vertical = 2
+horizontal_alignment = 2
+
+[node name="PatronInfo" type="Panel" parent="UIControl/DayReport"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -205.5
+offset_top = -92.0
+offset_right = 205.5
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="UIControl/DayReport/PatronInfo"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.5
+offset_top = -11.5
+offset_right = 123.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GoToShop" type="Panel" parent="UIControl/DayReport"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -205.5
+offset_top = -55.0
+offset_right = 205.5
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Button" type="Button" parent="UIControl/DayReport/GoToShop"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+text = "Plan and Shop"
+
+[node name="GoldCounter" type="TextureRect" parent="UIControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 21.600002
+anchor_top = 11.975
+anchor_right = 22.200008
+anchor_bottom = 11.975
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("22_1w6v2")
+script = ExtResource("22_ee4r6")
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UIControl/GoldCounter"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 15.0
+offset_right = 45.0
+offset_bottom = 39.0
+theme_override_fonts/normal_font = ExtResource("23_gt3je")
+theme_override_font_sizes/normal_font_size = 22
+text = "0"
+fit_content = true
+scroll_active = false
+
+[node name="EnergyCounter" type="TextureRect" parent="UIControl"]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 4.800111
+anchor_top = 10.825001
+anchor_right = 6.466666
+anchor_bottom = 11.7
+offset_left = -0.004425049
+offset_top = -3.0517578e-05
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("33_neg2b")
+script = ExtResource("24_3pmx8")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="UIControl/EnergyCounter"]
+layout_mode = 0
+offset_left = 15.6666565
+offset_top = 78.0
+offset_right = 90.66666
+offset_bottom = 103.0
+texture = ExtResource("42_54nrm")
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UIControl/EnergyCounter"]
+layout_mode = 0
+offset_left = 19.666656
+offset_top = 79.0
+offset_right = 92.66666
+offset_bottom = 103.0
+theme_override_fonts/normal_font = ExtResource("23_gt3je")
+theme_override_font_sizes/normal_font_size = 20
+text = "0"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="UIControl/EnergyCounter"]
+z_as_relative = false
+layout_mode = 0
+offset_left = 19.666656
+offset_top = 2.0
+offset_right = 85.66666
+offset_bottom = 68.0
+max_value = 3.0
+value = 3.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_progress = ExtResource("35_r33sp")
+
+[node name="DayCustomerCounter" type="Control" parent="UIControl"]
+anchors_preset = 0
+offset_left = 856.0
+offset_top = 109.0
+offset_right = 896.0
+offset_bottom = 149.0
+script = ExtResource("36_k2e45")
+
+[node name="DayCounter" type="TextureRect" parent="UIControl/DayCustomerCounter"]
+layout_mode = 0
+offset_left = -52.0
+offset_top = 2.0
+offset_right = 52.0
+offset_bottom = 42.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("37_536cc")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="UIControl/DayCustomerCounter/DayCounter"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 13.0
+offset_right = 103.0
+offset_bottom = 27.0
+theme_override_fonts/font = ExtResource("23_gt3je")
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CustomerCounter" type="TextureRect" parent="UIControl/DayCustomerCounter"]
+layout_mode = 0
+offset_left = -16.0
+offset_top = 44.0
+offset_right = 64.0
+offset_bottom = 60.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("38_aqgau")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="UIControl/DayCustomerCounter/CustomerCounter"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -1.0
+offset_right = 79.0
+offset_bottom = 15.0
+theme_override_fonts/font = ExtResource("23_gt3je")
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="UIControl/DayCustomerCounter/CustomerCounter"]
+layout_mode = 0
+offset_left = 16.667114
+offset_top = -0.33332825
+offset_right = 56.667114
+offset_bottom = 39.66667
+texture = ExtResource("39_536cc")
+stretch_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UIControl"]
+visible = false
+layout_mode = 0
+offset_left = 301.0
+offset_top = 370.0
+offset_right = 349.0
+offset_bottom = 392.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("51_55jeb")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="UIControl/TextureRect"]
+layout_mode = 0
+offset_left = 12.000002
+offset_top = 3.3333335
+offset_right = 59.333336
+offset_bottom = 26.333334
+theme_override_fonts/font = ExtResource("23_gt3je")
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="AmbiencePotionSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("40_aqgau")
+volume_db = -6.0
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
+volume_db = -10.0
+
+[connection signal="button_down" from="CardManager/PotionHolder/SubmitButton" to="CardManager" method="_on_submit_button_button_down"]
+[connection signal="button_down" from="CardManager/PotionHolder/SubmitButton" to="CardManager/PotionHolder/SubmitButton" method="_on_button_down"]
+[connection signal="button_down" from="CardManager/PotionHolder/SubmitButton" to="CardManager/HandHolder" method="_on_submit_button_button_down"]
+[connection signal="button_up" from="CardManager/PotionHolder/SubmitButton" to="CardManager/PotionHolder/SubmitButton" method="_on_button_up"]
+[connection signal="mouse_entered" from="CardManager/PotionHolder/SubmitButton" to="CardManager/PotionHolder/SubmitButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CardManager/PotionHolder/SubmitButton" to="CardManager/PotionHolder/SubmitButton" method="_on_mouse_exited"]
+[connection signal="child_entered_tree" from="CardManager/HandHolder/HandUI/HandHBox" to="CardManager/HandHolder/HandUI/HandHBox" method="_on_child_entered_tree"]
+[connection signal="child_exiting_tree" from="CardManager/HandHolder/HandUI/HandHBox" to="CardManager/HandHolder/HandUI/HandHBox" method="_on_child_exiting_tree"]
+[connection signal="pressed" from="UIControl/SlideKillPanel/ArrowButton" to="UIControl/SlideKillPanel" method="_on_arrow_button_pressed"]
+[connection signal="button_down" from="UIControl/SlideKillPanel/KillButton" to="UIControl/SlideKillPanel" method="_on_kill_button_button_down"]
+[connection signal="button_up" from="UIControl/SlideKillPanel/KillButton" to="UIControl/SlideKillPanel" method="_on_kill_button_button_up"]
+[connection signal="mouse_entered" from="UIControl/SlideKillPanel/KillButton" to="UIControl/SlideKillPanel" method="_on_kill_button_mouse_entered"]
+[connection signal="mouse_exited" from="UIControl/SlideKillPanel/KillButton" to="UIControl/SlideKillPanel" method="_on_kill_button_mouse_exited"]
+[connection signal="pressed" from="UIControl/SlideKillPanel/KillButton" to="CustomerManager" method="_on_kill_button_pressed"]
+[connection signal="pressed" from="UIControl/DayReport/GoToShop/Button" to="." method="_on_button_pressed"]
