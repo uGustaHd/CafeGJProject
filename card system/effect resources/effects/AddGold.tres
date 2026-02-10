@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="AddGold" load_steps=2 format=3 uid="uid://ceg31frlsmut8"]
+
+[ext_resource type="Script" uid="uid://cog3s0j3nt62g" path="res://card system/effect resources/effects/add_gold.gd" id="1_iv5k6"]
+
+[resource]
+script = ExtResource("1_iv5k6")
+metadata/_custom_type_script = "uid://cog3s0j3nt62g"

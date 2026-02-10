@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="AddMultiplier" load_steps=2 format=3 uid="uid://cufyerg03l621"]
+
+[ext_resource type="Script" uid="uid://bs4fimap4xl0m" path="res://card system/effect resources/effects/add_multiplier.gd" id="1_icspb"]
+
+[resource]
+script = ExtResource("1_icspb")
+metadata/_custom_type_script = "uid://bs4fimap4xl0m"

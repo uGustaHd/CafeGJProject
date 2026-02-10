@@ -4,9 +4,9 @@ class_name AddColor
 
 func activate(router : EffectRouter, card : Card) -> void:
 	var color_added : Potion = Potion.new()
-	color_added.add_blue(card.blue_add)
-	color_added.add_green(card.green_add)
 	color_added.add_red(card.red_add)
+	color_added.add_green(card.green_add)
+	color_added.add_blue(card.blue_add)
 	
 	router.PotionHolder.add_colors(color_added)
 

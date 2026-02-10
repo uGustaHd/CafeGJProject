@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="AddKill" load_steps=2 format=3 uid="uid://14i0gf0g8r6m"]
+
+[ext_resource type="Script" uid="uid://ch2wjxn4p2pxk" path="res://card system/effect resources/effects/add_kill.gd" id="1_htgbl"]
+
+[resource]
+script = ExtResource("1_htgbl")
+metadata/_custom_type_script = "uid://ch2wjxn4p2pxk"

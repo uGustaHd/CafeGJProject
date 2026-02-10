@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="AddJoy" load_steps=2 format=3 uid="uid://c765qxofwj5ic"]
+
+[ext_resource type="Script" uid="uid://dflm16oj0cuve" path="res://card system/effect resources/effects/add_joy.gd" id="1_0vv5i"]
+
+[resource]
+script = ExtResource("1_0vv5i")
+metadata/_custom_type_script = "uid://dflm16oj0cuve"

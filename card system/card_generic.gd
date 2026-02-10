@@ -53,45 +53,6 @@ func fill_effect_text() -> void:
 	for effect : CardEffect in card_resource.effects:
 		effect_text.add_text(effect.get_text(card_resource))
 	
-	#var numericals = [card_resource.green_add, card_resource.blue_add, card_resource.red_add, card_resource.energy_add, card_resource.draw_add, card_resource.kill_add, card_resource.joy_add, card_resource.anguish_add]
-	## [green_add, blue_add, red_add, energy_add, draw_add]
-	#var numerical_strings : Array[String] = [
-		#" Green \n",
-		#" Blue \n",
-		#" Red \n",
-		#" Energy \n",
-		#" Draw \n",
-		#" Kill \n",
-		#" Joy \n",
-		#" Anguish \n",
-	#]
-	#var i = 0
-	#for value in numericals:
-		#if value != 0:
-			#var text_to_add : String = numerical_strings[i]
-			#if value > 0:
-				#text_to_add = "+" + str(value) + text_to_add
-			#elif value < 0:
-				#text_to_add = "-" + str(value) + text_to_add
-			#effect_text.add_text(text_to_add)
-		#i += 1
-	#
-	## Write out multipliers
-	#var multipliers : Array[int] = [card_resource.green_multiply, card_resource.blue_multiply, card_resource.red_multiply]
-	#var multiplier_strings : Array[String] = [
-		#" Green \n",
-		#" Blue \n",
-		#" Red \n",
-	#]
-	#i = 0
-	#for value in multipliers:
-		#if value != 1:
-			#var text_to_add : String = multiplier_strings[i]
-			#text_to_add = "x" + str(value) + text_to_add
-			#effect_text.add_text(text_to_add)
-		#i += 1
-	#fit_text()
-	
 # Returns bool to check if text needed fitting
 func fit_text() -> bool:
 	return true
@@ -150,28 +111,6 @@ func pay_costs():
 	for cost : CardCost in card_resource.costs:
 		cost.pay_cost(card_resource)
 
-#func add_joy():
-	#Global.add_joy(card_resource.joy_add)
-#
-#func add_anguish():
-	#Global.add_anguish(card_resource.anguish_add)
-#
-#func add_draw():
-	#Dealer.deal_cards(card_resource.draw_add)
-	#
-#func add_energy():
-	#Global.add_energy(card_resource.energy_add)
-#
-#func add_kill():
-	#Global.add_kill(card_resource.kill_add)
-#
-#func add_multiplier():
-	#var multiplier_added : Potion = Potion.new()
-	#multiplier_added.blue_multiplier = card_resource.blue_multiply
-	#multiplier_added.green_multiplier = card_resource.green_multiply
-	#multiplier_added.red_multiplier = card_resource.red_multiply
-	#card_multiplier_added.emit(multiplier_added)
-#
 #WARNING: Only use when in hand.
 func discard_self() -> void:
 	DiscardPile.add_card(HandPile.take_card(card_resource))
