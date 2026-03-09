@@ -29,8 +29,10 @@ func draw_card() -> Card:
 func shuffle_in_discard():
 	audio_stream_player_2d.stream = shuffle_card_sound
 	audio_stream_player_2d.play()
+	
 	var discarded_cards = DiscardHolder.held_pile.take_all()
 	held_pile.card_array.append_array(discarded_cards)
+	Global.add_fatigue(1)
 
 func _ready() -> void:
 	if Global.day == 1:

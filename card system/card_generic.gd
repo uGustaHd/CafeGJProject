@@ -44,7 +44,7 @@ func initialize_card(source_card : Card) -> void:
 	color_title()
 	if card_resource.archetype != card_resource.Archetype.RAINBOW:
 		title.add_text(card_resource.title) 
-	energy_cost.text = str(card_resource.energy_cost)
+	energy_cost.text = str(card_resource.energy_cost + Global.fatigue)
 	fill_effect_text()
 	effect_text.add_text(card_resource.effect_text)
 	set_border()
@@ -120,6 +120,7 @@ func discard_self() -> void:
 
 func _ready() -> void:
 	card_multiplier_added.connect(PotionHolder.on_card_multiplier_added)
+	add_to_group("cards")
 
 func update_cost_icons():
 	if card_resource.energy_cost > Global.energy:
@@ -128,6 +129,9 @@ func update_cost_icons():
 		energy_cost.self_modulate = Color.WHITE
 
 #region incoming signals
+func update_fatigue():
+	energy_cost.text = str(card_resource.energy_cost + Global.fatigue)
+
 func _on_button_button_down() -> void:
 	if Global.can_play_cards:
 		if attempt_activation():

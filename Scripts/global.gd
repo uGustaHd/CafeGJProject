@@ -30,6 +30,7 @@ var secret_ingredients_added: int = 0
 var cards_used              : int = 0
 var cards_remaining         : int = 0
 
+var fatigue : int = 0
 
 func end_day_check():
 	print_debug("End day check")
@@ -75,6 +76,7 @@ func reset() -> void:
 	secret_ingredients_added = 0
 	cards_used = 0
 	cards_remaining = 0
+	reset_fatigue()
 
 func reset_run_deck(starting_deck : Array[Card]):
 	run_deck = starting_deck.duplicate()
@@ -120,3 +122,11 @@ func add_gold(value):
 func add_kill(value):
 	kill = max(0, kill + value)
 	get_tree().call_group("kill_ui", "update_meter")
+	
+func add_fatigue(value):
+	fatigue = max(0, fatigue + value)
+	get_tree().call_group("cards", "update_fatigue")
+	
+func reset_fatigue():
+	fatigue = 0
+	get_tree().call_group("cards", "update_fatigue")

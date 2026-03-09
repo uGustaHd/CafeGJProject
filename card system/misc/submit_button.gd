@@ -3,6 +3,7 @@ extends TextureButton
 
 func _on_button_down() -> void:
 	if Global.can_play_cards:
+		Global.reset_fatigue()
 		Global.energy = Global.default_energy
 		# To update energy meter
 		Global.add_energy(0)
