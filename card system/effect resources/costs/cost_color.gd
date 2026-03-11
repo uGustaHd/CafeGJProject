@@ -36,11 +36,14 @@ func get_icon(card : Card) -> CostIcon:
 	match cost_color:
 		GlobalNames.RGBColors.RED:
 			new_cost_icon.number = card.red_cost
+			new_cost_icon.icon = load("res://card system/card_assets/card_art/cost icons/RedCost.png")
 			
 		GlobalNames.RGBColors.GREEN:
 			new_cost_icon.number = card.green_cost
+			new_cost_icon.icon = load("res://card system/card_assets/card_art/cost icons/GreenCost.png")
 			
 		GlobalNames.RGBColors.BLUE:
 			new_cost_icon.number = card.green_cost
+			new_cost_icon.icon = load("res://card system/card_assets/card_art/cost icons/BlueCost.png")
 		
 	return new_cost_icon

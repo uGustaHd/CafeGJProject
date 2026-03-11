@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dewggluex00ms"]
+
+[ext_resource type="Texture2D" uid="uid://cenroamv2p1t6" path="res://card system/card_assets/card_art/cost icons/ManaCost_ver.1.png" id="1_dm5mv"]
+[ext_resource type="Theme" uid="uid://tuw56bvfysja" path="res://card system/effect_text.tres" id="2_gtn41"]
+
+[node name="CostIcon" type="TextureRect"]
+texture = ExtResource("1_dm5mv")
+stretch_mode = 2
+
+[node name="EnergyCost" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 16.0
+offset_bottom = 16.0
+theme = ExtResource("2_gtn41")
+theme_override_font_sizes/normal_font_size = 12
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -15,6 +15,5 @@ card_art = ExtResource("1_lcay3")
 archetype = 2
 effects = Array[ExtResource("4_kay5p")]([ExtResource("5_kay5p"), ExtResource("5_ynoq8")])
 costs = Array[ExtResource("2_ynoq8")]([ExtResource("2_mxv4r")])
-energy_add = 2
 draw_add = 1
 metadata/_custom_type_script = "uid://b8yono3xc1siy"

@@ -14,10 +14,13 @@ var card_resource : Card
 @onready var border : TextureRect = $Visuals/Border
 @onready var animation : AnimationPlayer = $AnimationPlayer
 @onready var button : Button = $Visuals/Button
+@onready var cost_icon_container = $Visuals/CostIconContainer
+# Used only if card has energy cost.
+var energy_icon
+var energy_text : RichTextLabel
 
 @onready var effect_text : RichTextLabel = $Visuals/Base/EffectText
 @onready var title : RichTextLabel = $Visuals/Art/Title
-@onready var energy_cost : RichTextLabel = $Visuals/CostIcon/EnergyCost
 @onready var art : TextureRect = $Visuals/Art
 
 #{RED, GREEN, BLUE, GOLD, PURPLE, RAINBOW}
@@ -44,10 +47,25 @@ func initialize_card(source_card : Card) -> void:
 	color_title()
 	if card_resource.archetype != card_resource.Archetype.RAINBOW:
 		title.add_text(card_resource.title) 
-	energy_cost.text = str(card_resource.energy_cost + Global.fatigue)
+	add_cost_icons()
 	fill_effect_text()
 	effect_text.add_text(card_resource.effect_text)
 	set_border()
+	
+func add_cost_icons() -> void:
+	var icon_scene : PackedScene = load("res://card system/cost_icon.tscn")
+	for cost : CardCost in card_resource.costs:
+		var card_icon : CostIcon = cost.get_icon(card_resource)
+		var new_icon = icon_scene.instantiate()
+		new_icon.texture = card_icon.icon
+		if cost is CostEnergy:
+			energy_icon = new_icon
+			energy_text = energy_icon.get_child(0)
+			new_icon.get_child(0).text = str(card_icon.number + Global.fatigue)
+			print_debug("cost icon is energy")
+		else:
+			new_icon.get_child(0).text = str(card_icon.number)
+		cost_icon_container.add_child(new_icon)
 	
 func fill_effect_text() -> void:
 	for effect : CardEffect in card_resource.effects:
@@ -97,9 +115,6 @@ func attempt_activation() -> bool:
 func activate_effects() -> void:
 	for effect : CardEffect in card_resource.effects:
 		effect.activate(Router, card_resource)
-
-	for card in get_parent().get_children():
-		card.update_cost_icons()
 		
 	Global.cards_used += 1
 	if card_resource.evil == true:
@@ -110,6 +125,9 @@ func activate_effects() -> void:
 func pay_costs():
 	for cost : CardCost in card_resource.costs:
 		cost.pay_cost(Router, card_resource)
+		
+	for card in get_parent().get_children():
+		card.update_cost_icons()
 
 #WARNING: Only use when in hand.
 func discard_self() -> void:
@@ -124,15 +142,17 @@ func _ready() -> void:
 
 #Updates color of cost icon text
 func update_cost_icons():
-	if card_resource.energy_cost > Global.energy:
-		energy_cost.self_modulate = Color.RED
-	else:
-		energy_cost.self_modulate = Color.WHITE
+	if energy_icon != null:
+		if (card_resource.energy_cost + Global.fatigue) > Global.energy:
+			energy_text.self_modulate = Color.RED
+		else:
+			energy_text.self_modulate = Color.WHITE
 
 #region incoming signals
 func update_fatigue():
-	energy_cost.text = str(card_resource.energy_cost + Global.fatigue)
-	update_cost_icons()
+	if energy_icon != null:
+		energy_text.text = str(card_resource.energy_cost + Global.fatigue)
+		update_cost_icons()
 
 func _on_button_button_down() -> void:
 	if Global.can_play_cards:
