@@ -90,7 +90,7 @@ func set_border() -> void:
 func attempt_activation() -> bool:
 	var can_activate : bool = true
 	for cost : CardCost in card_resource.costs:
-		if cost.check_cost(card_resource) == false:
+		if cost.check_cost(Router, card_resource) == false:
 			can_activate = false
 	return can_activate
 
@@ -109,7 +109,7 @@ func activate_effects() -> void:
 
 func pay_costs():
 	for cost : CardCost in card_resource.costs:
-		cost.pay_cost(card_resource)
+		cost.pay_cost(Router, card_resource)
 
 #WARNING: Only use when in hand.
 func discard_self() -> void:
@@ -122,6 +122,7 @@ func _ready() -> void:
 	card_multiplier_added.connect(PotionHolder.on_card_multiplier_added)
 	add_to_group("cards")
 
+#Updates color of cost icon text
 func update_cost_icons():
 	if card_resource.energy_cost > Global.energy:
 		energy_cost.self_modulate = Color.RED
@@ -131,6 +132,7 @@ func update_cost_icons():
 #region incoming signals
 func update_fatigue():
 	energy_cost.text = str(card_resource.energy_cost + Global.fatigue)
+	update_cost_icons()
 
 func _on_button_button_down() -> void:
 	if Global.can_play_cards:

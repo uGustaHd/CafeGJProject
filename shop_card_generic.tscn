@@ -5,7 +5,7 @@
 [ext_resource type="Theme" uid="uid://tuw56bvfysja" path="res://card system/effect_text.tres" id="3_y2rdh"]
 [ext_resource type="Texture2D" uid="uid://c7y8nxqlaw74w" path="res://card system/card_assets/card_art/New  Illusts/Green/Roots_illust.png" id="4_t826k"]
 [ext_resource type="Texture2D" uid="uid://csc8mcpkn3j0v" path="res://card system/card_assets/card_art/New  Illusts/Green/Border_ver_1.png" id="5_ud7bb"]
-[ext_resource type="Texture2D" uid="uid://cenroamv2p1t6" path="res://card system/card_assets/ManaCost_ver.1.png" id="6_3rxiw"]
+[ext_resource type="Texture2D" uid="uid://cenroamv2p1t6" path="res://card system/card_assets/card_art/cost icons/ManaCost_ver.1.png" id="6_3rxiw"]
 [ext_resource type="Texture2D" uid="uid://dm3nrxg8v3d6r" path="res://Assets/Sprites/UI/Gold_cost.png" id="7_5cc2w"]
 
 [sub_resource type="Animation" id="Animation_11dsn"]

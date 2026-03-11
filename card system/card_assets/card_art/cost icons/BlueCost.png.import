@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cenroamv2p1t6"
-path="res://.godot/imported/ManaCost_ver.1.png-173b2ea85607dbf9017fa2bdecd127b6.ctex"
+uid="uid://cy0ktvlw0tve2"
+path="res://.godot/imported/BlueCost.png-d4c82fa95be29757e29e6217ae0d5cef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://card system/card_assets/ManaCost_ver.1.png"
-dest_files=["res://.godot/imported/ManaCost_ver.1.png-173b2ea85607dbf9017fa2bdecd127b6.ctex"]
+source_file="res://card system/card_assets/card_art/cost icons/BlueCost.png"
+dest_files=["res://.godot/imported/BlueCost.png-d4c82fa95be29757e29e6217ae0d5cef.ctex"]
 
 [params]
 

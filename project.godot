@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Global="*res://Scripts/global.gd"
 DialogManager="*res://Scenes/TextBox/dialog_manager.tscn"
+GlobalNames="*res://card system/misc/global_names.gd"
 
 [display]
 
