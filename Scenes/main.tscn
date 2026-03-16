@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://bdqjd2ergavof"]
+[gd_scene load_steps=51 format=3 uid="uid://bdqjd2ergavof"]
 
 [ext_resource type="Script" uid="uid://dbtic8k4hhs0a" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://df1d5o4oc5m1e" path="res://Scenes/Customers/customer_manager.tscn" id="1_jjgbg"]
@@ -24,7 +24,9 @@
 [ext_resource type="AudioStream" uid="uid://812473dokm8m" path="res://Assets/Audio/FX/draw_card_3.mp3" id="12_o1aky"]
 [ext_resource type="Resource" uid="uid://ddjh1ex61trw3" path="res://card system/card resources/blue/water.tres" id="12_s8vy0"]
 [ext_resource type="Script" uid="uid://ga6oihrmatia" path="res://Scenes/day_report.gd" id="16_k12tt"]
+[ext_resource type="Resource" uid="uid://bpx0f3nqvch3d" path="res://card system/card resources/blue/delphinium.tres" id="17_dmskm"]
 [ext_resource type="Texture2D" uid="uid://drqgpfesycfba" path="res://Assets/Sprites/UI/knife_ui/Knife_container.png" id="17_ueoa1"]
+[ext_resource type="Resource" uid="uid://byhfbkpnr81cy" path="res://card system/card resources/blue/azure_butterfly.tres" id="18_xdkp6"]
 [ext_resource type="Texture2D" uid="uid://ddntlkfesfi5k" path="res://Assets/Sprites/UI/knife_ui/Knife_hide_button.png" id="19_1w6v2"]
 [ext_resource type="Texture2D" uid="uid://ddg1wn01w0bjt" path="res://Assets/Sprites/UI/knife_ui/Knife_hide_selected.png" id="20_ueoa1"]
 [ext_resource type="Texture2D" uid="uid://cqo8umogu58y0" path="res://Assets/Sprites/UI/knife_ui/Knife.png" id="21_6vcvc"]
@@ -113,7 +115,7 @@ vertical_alignment = 1
 
 [node name="DeckHolder" type="Node2D" parent="CardManager"]
 script = ExtResource("6_hptm8")
-starting_deck = Array[ExtResource("11_nwwfm")]([ExtResource("12_s8vy0"), ExtResource("12_s8vy0"), ExtResource("12_s8vy0"), ExtResource("12_s8vy0"), ExtResource("12_s8vy0"), ExtResource("12_s8vy0"), ExtResource("12_s8vy0"), ExtResource("12_s8vy0"), ExtResource("12_s8vy0"), ExtResource("12_s8vy0")])
+starting_deck = Array[ExtResource("11_nwwfm")]([ExtResource("12_s8vy0"), ExtResource("12_s8vy0"), ExtResource("12_s8vy0"), ExtResource("17_dmskm"), ExtResource("18_xdkp6")])
 
 [node name="Dealer" type="Node" parent="CardManager/DeckHolder"]
 script = ExtResource("6_ynf5e")

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="CostColor" load_steps=2 format=3 uid="uid://dfxiprje22vvc"]
+
+[ext_resource type="Script" uid="uid://cktlqy0k8ab5d" path="res://card system/effect resources/costs/cost_color.gd" id="1_uevww"]
+
+[resource]
+script = ExtResource("1_uevww")
+cost_color = 2
+metadata/_custom_type_script = "uid://cktlqy0k8ab5d"

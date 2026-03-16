@@ -1,7 +1,11 @@
-[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://byhfbkpnr81cy"]
+[gd_resource type="Resource" script_class="Card" load_steps=7 format=3 uid="uid://byhfbkpnr81cy"]
 
 [ext_resource type="Texture2D" uid="uid://bqw7mxopvrjlg" path="res://card system/card_assets/card_art/New  Illusts/Blue/Azure_butterfly_illust.png" id="1_dwmcm"]
 [ext_resource type="Script" uid="uid://b8yono3xc1siy" path="res://card system/card resources/card.gd" id="1_qh5ei"]
+[ext_resource type="Script" uid="uid://baadgsb7e3im8" path="res://card system/effect resources/card_cost.gd" id="2_sqgya"]
+[ext_resource type="Resource" uid="uid://d61rsalmlu48" path="res://card system/effect resources/costs/CostEnergy.tres" id="3_wjb11"]
+[ext_resource type="Script" uid="uid://eqr1871gjcrm" path="res://card system/effect resources/card_effect.gd" id="4_00et3"]
+[ext_resource type="Resource" uid="uid://diu557sbwksmy" path="res://card system/effect resources/effects/AddColor.tres" id="5_1g4f7"]
 
 [resource]
 script = ExtResource("1_qh5ei")
@@ -9,7 +13,7 @@ title = "Azure Butterfly"
 card_art = ExtResource("1_dwmcm")
 archetype = 2
 designer_notes = "The big blue"
-draw_add = 2
-blue_add = 3
-energy_cost = 2
+effects = Array[ExtResource("4_00et3")]([ExtResource("5_1g4f7")])
+costs = Array[ExtResource("2_sqgya")]([ExtResource("3_wjb11")])
+red_add = 2
 metadata/_custom_type_script = "uid://b8yono3xc1siy"
