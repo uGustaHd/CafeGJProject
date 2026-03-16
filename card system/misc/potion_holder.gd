@@ -27,7 +27,12 @@ func add_colors(added_colors : Potion) -> void:
 	held_potion.add_green(added_colors.green)
 	held_potion.add_red(added_colors.red)
 	potion_progress_changed.emit(held_potion)
-	print_debug("Colors added")
+	
+func cost_colors(added_colors : Potion) -> void:
+	held_potion.cost_blue(added_colors.blue)
+	held_potion.cost_green(added_colors.green)
+	held_potion.cost_red(added_colors.red)
+	potion_progress_changed.emit(held_potion)
 
 func add_multiplier(added_multiplier : Potion):
 	held_potion.blue_multiplier *= added_multiplier.blue_multiplier

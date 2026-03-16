@@ -15,5 +15,6 @@ archetype = 2
 designer_notes = "The big blue"
 effects = Array[ExtResource("4_00et3")]([ExtResource("5_1g4f7")])
 costs = Array[ExtResource("2_sqgya")]([ExtResource("3_wjb11")])
+energy_add = 2
 red_add = 2
 metadata/_custom_type_script = "uid://b8yono3xc1siy"

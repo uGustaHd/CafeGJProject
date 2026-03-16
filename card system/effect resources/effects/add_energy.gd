@@ -8,7 +8,7 @@ func activate(_router : EffectRouter, card : Card) -> void:
 func get_text(card : Card) -> String:
 	var effect_text : String
 	if card.energy_add >= 0:
-		effect_text = "+" + str(card.energy_add) + " Energy"
+		effect_text = "+" + str(card.energy_add) + " Energy \n"
 	elif card.energy_add < 0:
-		effect_text = "-" + str(card.energy_add) + " Energy"
+		effect_text = "-" + str(card.energy_add) + " Energy \n"
 	return effect_text

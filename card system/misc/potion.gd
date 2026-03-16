@@ -37,6 +37,19 @@ func add_green(value: int):
 func add_red(value: int):
 	red += value * red_multiplier
 	colors[2] = red
+	
+# Costs are same as add, but without multipliers
+func cost_blue(value: int):
+	blue += value
+	colors[0] = blue
+	
+func cost_green(value: int):
+	green += value
+	colors[1] = green
+	
+func cost_red(value: int):
+	red += value
+	colors[2] = red
 
 #endregion
 

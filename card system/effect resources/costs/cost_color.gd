@@ -34,7 +34,7 @@ func pay_cost(router : EffectRouter, card : Card) -> void:
 		GlobalNames.RGBColors.BLUE:
 			potion_add.add_blue(-card.blue_cost)
 			
-	router.PotionHolder.add_colors(potion_add)
+	router.PotionHolder.cost_colors(potion_add)
 			
 func get_icon(card : Card) -> CostIcon:
 	var new_cost_icon = CostIcon.new()
