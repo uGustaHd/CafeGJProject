@@ -2,6 +2,7 @@ extends Node2D
 
 @export var customer_data: CustomerData
 var current_request: Potion
+var dialog_intro : Array[String]
 var dialog_offset: Vector2 = Vector2(0,100)
 var request_text: String
 var is_potion_delivered : bool = false
@@ -38,6 +39,7 @@ func setup():
 		var new_request = Potion.new()
 		new_request.generate_potion(Global.get_difficulty())
 		current_request = new_request
+		dialog_intro = [customer_data.dialog_intro.pick_random()]
 		request_box.position = position + Vector2(80,-50)
 		request_box.visible = true
 		show_request(Potion.new())
@@ -50,14 +52,13 @@ func _ready() -> void:
 	
 	Global.can_play_cards = true
 	print("\nCustomer Appeared")
-	#TODO: Connect a signal with the potion that the player gave to the NPC
 	var card_manager = get_tree().current_scene.get_node("CardManager")
 	var potion_holder = card_manager.get_node("PotionHolder")
 	card_manager.connect("potion_delivered", Callable(self, "_on_potion_delivered"))
 	potion_holder.potion_progress_changed.connect(_on_potion_changed)
 	await audio_stream_player_2d.finished
 	await get_tree().process_frame
-	DialogManager.start_dialog(customer_data.dialog_intro, global_position + dialog_offset)
+	DialogManager.start_dialog(dialog_intro, global_position + dialog_offset)
 	#await dialog.dialog_finished
 
 	
