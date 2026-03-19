@@ -48,8 +48,6 @@ func setup():
 		print("No CustomerData")
 func _ready() -> void:
 	setup()
-	
-	
 	Global.can_play_cards = true
 	print("\nCustomer Appeared")
 	var card_manager = get_tree().current_scene.get_node("CardManager")
