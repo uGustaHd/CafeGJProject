@@ -38,6 +38,7 @@ func pay_cost(router : EffectRouter, card : Card) -> void:
 			
 func get_icon(card : Card) -> CostIcon:
 	var new_cost_icon = CostIcon.new()
+	new_cost_icon.cost = self
 	match cost_color:
 		GlobalNames.RGBColors.RED:
 			new_cost_icon.number = card.red_cost

@@ -15,9 +15,6 @@ var card_resource : Card
 @onready var animation : AnimationPlayer = $AnimationPlayer
 @onready var button : Button = $Visuals/Button
 @onready var cost_icon_container = $Visuals/CostIconContainer
-# Used only if card has energy cost.
-var energy_icon
-var energy_text : RichTextLabel
 
 @onready var effect_text : RichTextLabel = $Visuals/Base/EffectText
 @onready var title : RichTextLabel = $Visuals/Art/Title
@@ -48,6 +45,7 @@ func initialize_card(source_card : Card) -> void:
 	if card_resource.archetype != card_resource.Archetype.RAINBOW:
 		title.add_text(card_resource.title) 
 	add_cost_icons()
+	update_cost_icons()
 	fill_effect_text()
 	effect_text.add_text(card_resource.effect_text)
 	set_border()
@@ -57,14 +55,10 @@ func add_cost_icons() -> void:
 	for cost : CardCost in card_resource.costs:
 		var card_icon : CostIcon = cost.get_icon(card_resource)
 		var new_icon = icon_scene.instantiate()
+		new_icon.icon_resource = card_icon
 		new_icon.texture = card_icon.icon
-		if cost is CostEnergy:
-			energy_icon = new_icon
-			energy_text = energy_icon.get_child(0)
-			new_icon.get_child(0).text = str(card_icon.number + Global.fatigue)
-			print_debug("cost icon is energy")
-		else:
-			new_icon.get_child(0).text = str(card_icon.number)
+		new_icon.get_child(0).text = str(card_icon.number)
+
 		cost_icon_container.add_child(new_icon)
 	
 func fill_effect_text() -> void:
@@ -142,17 +136,40 @@ func _ready() -> void:
 
 #Updates color of cost icon text
 func update_cost_icons():
-	if energy_icon != null:
-		if (card_resource.energy_cost + Global.fatigue) > Global.energy:
-			energy_text.self_modulate = Color.RED
-		else:
-			energy_text.self_modulate = Color.WHITE
+	# Cycles thru icon generics attached to card
+	for icon in cost_icon_container.get_children():
+		# Energy cost case
+		if icon.icon_resource.cost == load("res://card system/effect resources/costs/CostEnergy.tres"):
+			update_fatigue(icon)
+			if (card_resource.energy_cost + Global.fatigue) > Global.energy:
+				icon.get_child(0).self_modulate = Color.RED
+			else:
+				icon.get_child(0).self_modulate = Color.WHITE
+				
+		# Color cost cases
+		elif icon.icon_resource.cost == load("res://card system/effect resources/costs/CostRed.tres"):
+			if card_resource.red_cost > Router.PotionHolder.held_potion.red:
+				icon.get_child(0).self_modulate = Color.RED
+			else:
+				icon.get_child(0).self_modulate = Color.WHITE
+		
+		elif icon.icon_resource.cost == load("res://card system/effect resources/costs/CostGreen.tres"):
+			if card_resource.green_cost > Router.PotionHolder.held_potion.green:
+				icon.get_child(0).self_modulate = Color.RED
+			else:
+				icon.get_child(0).self_modulate = Color.WHITE
+				
+		elif icon.icon_resource.cost == load("res://card system/effect resources/costs/CostBlue.tres"):
+			if card_resource.blue_cost > Router.PotionHolder.held_potion.blue:
+				icon.get_child(0).self_modulate = Color.RED
+			else:
+				icon.get_child(0).self_modulate = Color.WHITE
+
+func update_fatigue(icon):
+	icon.get_child(0).text = str(card_resource.energy_cost + Global.fatigue)
 
 #region incoming signals
-func update_fatigue():
-	if energy_icon != null:
-		energy_text.text = str(card_resource.energy_cost + Global.fatigue)
-		update_cost_icons()
+
 
 func _on_button_button_down() -> void:
 	if Global.can_play_cards:

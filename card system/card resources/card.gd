@@ -42,12 +42,3 @@ enum Archetype {RED, GREEN, BLUE, GOLD, PURPLE, RAINBOW}
 @export var evil : bool = false
 
 #endregion
-
-#func _init() -> void:
-	#
-
-#region logic
-func apply_other_effect():
-	pass
-
-#endregion

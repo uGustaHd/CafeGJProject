@@ -13,6 +13,7 @@ func pay_cost(_router : EffectRouter, card : Card) -> void:
 
 func get_icon(card : Card) -> CostIcon:
 	var new_cost_icon = CostIcon.new()
+	new_cost_icon.cost = self
 	new_cost_icon.number = card.energy_cost
 	new_cost_icon.icon = load("res://card system/card_assets/card_art/cost icons/ManaCost_ver.1.png")
 	return new_cost_icon

@@ -123,10 +123,9 @@ func add_kill(value):
 	kill = max(0, kill + value)
 	get_tree().call_group("kill_ui", "update_meter")
 	
+# NOTE: Updating fatigue on cards is handled by cards when cards are played only. 
 func add_fatigue(value):
 	fatigue = max(0, fatigue + value)
-	get_tree().call_group("cards", "update_fatigue")
 	
 func reset_fatigue():
 	fatigue = 0
-	get_tree().call_group("cards", "update_fatigue")
