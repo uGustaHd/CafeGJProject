@@ -34,10 +34,10 @@ enum Archetype {RED, GREEN, BLUE, GOLD, PURPLE, RAINBOW}
 @export var energy_cost : int = 1
 @export var joy_cost : int = 0
 @export var anguish_cost : int = 0
+@export var kill_cost : int = 0
 @export var green_cost : int = 0
 @export var blue_cost : int = 0
 @export var red_cost : int = 0
-@export var gold_cost : int = 0 # Cost to play, not to buy.
 # Mainly for counting "secret ingredients" in end of day report.
 @export var evil : bool = false
 
