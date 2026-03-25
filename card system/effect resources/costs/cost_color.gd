@@ -23,7 +23,7 @@ func check_cost(router : EffectRouter, card : Card) -> bool:
 func pay_cost(router : EffectRouter, card : Card) -> void:
 	var potion_add : Potion = Potion.new()
 	# NOTE: Cannot be consolidated into one statement because the distinction provided
-	# by the export var allows card to easily have multiple color costs and cost icons.
+	# by the export var allows cards to easily have multiple color costs and cost icons.
 	match cost_color:
 		GlobalNames.RGBColors.RED:
 			potion_add.add_red(-card.red_cost)

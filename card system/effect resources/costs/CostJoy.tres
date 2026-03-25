@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="CostJoy" load_steps=2 format=3 uid="uid://bei7vu4x5ciwa"]
+
+[ext_resource type="Script" uid="uid://srsju7t2hlfi" path="res://card system/effect resources/costs/cost_joy.gd" id="1_rceoy"]
+
+[resource]
+script = ExtResource("1_rceoy")
+metadata/_custom_type_script = "uid://srsju7t2hlfi"

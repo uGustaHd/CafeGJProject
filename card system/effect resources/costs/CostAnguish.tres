@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="CostAnguish" load_steps=2 format=3 uid="uid://cyhig11scietw"]
+
+[ext_resource type="Script" uid="uid://dhrhdy6qfdlwf" path="res://card system/effect resources/costs/cost_anguish.gd" id="1_8cab4"]
+
+[resource]
+script = ExtResource("1_8cab4")
+metadata/_custom_type_script = "uid://dhrhdy6qfdlwf"

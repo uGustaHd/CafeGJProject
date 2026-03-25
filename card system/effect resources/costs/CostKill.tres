@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="CostKill" load_steps=2 format=3 uid="uid://b4mdvu4h0jh4j"]
+
+[ext_resource type="Script" uid="uid://c34bqrbcd1h57" path="res://card system/effect resources/costs/cost_kill.gd" id="1_7ittv"]
+
+[resource]
+script = ExtResource("1_7ittv")
+metadata/_custom_type_script = "uid://c34bqrbcd1h57"

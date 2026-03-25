@@ -34,7 +34,7 @@ enum Archetype {RED, GREEN, BLUE, GOLD, PURPLE, RAINBOW}
 @export var energy_cost : int = 1
 @export var joy_cost : int = 0
 @export var anguish_cost : int = 0
-@export var kill_cost : int = 0
+@export var kill_cost : int = 0 # Restricted to ints to avoid displaying floats on cost icons.
 @export var green_cost : int = 0
 @export var blue_cost : int = 0
 @export var red_cost : int = 0
