@@ -1,15 +1,16 @@
 extends Control
+class_name CardGeneric
 
 signal card_multiplier_added(multiplier_potion : Potion)
 
 #region Initial Data
 var card_resource : Card
 
-@onready var Router : EffectRouter = $"../../../../EffectRouter"
-@onready var DiscardPile : Pile = $"../../../../DiscardHolder".held_pile
-@onready var HandPile : Pile = $"../../..".held_pile
-@onready var PotionHolder = $"../../../../PotionHolder"
-@onready var Dealer : Node = $"../../../../DeckHolder/Dealer"
+@onready var Router
+@onready var DiscardPile
+@onready var HandPile
+@onready var PotionHolder
+@onready var Dealer
 
 @onready var border : TextureRect = $Visuals/Border
 @onready var animation : AnimationPlayer = $AnimationPlayer
@@ -29,6 +30,14 @@ var card_resource : Card
 	load("res://card system/card_assets/card_art/New  Illusts/Purple/Purple_border.png"),
 	load("res://card system/card_assets/card_art/New  Illusts/Rainbow/Rainbow_border.png"),
 	]
+
+# Function necessary due to inability to override vars in child classes.
+func fill_outside_vars():
+	Router = $"../../../../EffectRouter"
+	DiscardPile = $"../../../../DiscardHolder".held_pile
+	HandPile = $"../../..".held_pile
+	PotionHolder = $"../../../../PotionHolder"
+	Dealer = $"../../../../DeckHolder/Dealer"
 
 #endregion
 
@@ -131,6 +140,7 @@ func discard_self() -> void:
 #endregion
 
 func _ready() -> void:
+	fill_outside_vars()
 	card_multiplier_added.connect(PotionHolder.on_card_multiplier_added)
 	add_to_group("cards")
 
