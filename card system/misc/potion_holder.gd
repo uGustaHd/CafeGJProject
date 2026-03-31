@@ -10,11 +10,6 @@ signal potion_progress_changed(potion: Potion)
 
 #/##############################################################################
 
-func _process(_delta: float) -> void:
-	if OS.is_debug_build():
-		if Input.is_action_just_pressed("debug_held_potion"):
-			print_debug("rgb = ", held_potion.red, held_potion.green, held_potion.blue)
-
 func check_volatility():
 	var i = 0
 	for color in held_potion.colors:
@@ -60,4 +55,25 @@ func on_customer_spawned(customer_potion : Potion):
 	held_potion.requested_potion = customer_potion
 	requested_potion = customer_potion
 	
-	
+#region debug
+func _process(_delta: float) -> void:
+	if OS.is_debug_build():
+		if Input.is_action_just_pressed("debug_held_potion"):
+			print_debug("rgb = ", held_potion.red, held_potion.green, held_potion.blue)
+		
+		if Input.is_action_just_pressed("add_red"):
+			var new_potion : Potion = Potion.new()
+			new_potion.add_red(1)
+			add_colors(new_potion)
+
+		if Input.is_action_just_pressed("add_green"):
+			var new_potion : Potion = Potion.new()
+			new_potion.add_green(1)
+			add_colors(new_potion)
+			
+		if Input.is_action_just_pressed("add_blue"):
+			var new_potion : Potion = Potion.new()
+			new_potion.add_blue(1)
+			add_colors(new_potion)
+
+#endregion

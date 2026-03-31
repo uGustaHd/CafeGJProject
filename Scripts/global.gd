@@ -62,7 +62,6 @@ func end_day_check():
 	print(anguish_bad)
 	print(anguish_warning_yesterday)
 
-
 func reset() -> void:
 	joy_warning_yesterday = false
 	anguish_warning_yesterday = false
@@ -129,3 +128,13 @@ func add_fatigue(value):
 	
 func reset_fatigue():
 	fatigue = 0
+	
+#region debug
+func _process(delta: float) -> void:
+	if OS.is_debug_build():
+		if Input.is_action_just_pressed("add_kill"):
+			add_kill(1)
+			
+		if Input.is_action_just_pressed("add_energy"):
+			add_energy(1) 
+#endregion
