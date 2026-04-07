@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="CostMultiplier" load_steps=2 format=3 uid="uid://da1yuotbkxkjj"]
+
+[ext_resource type="Script" uid="uid://bbhknvq447yeg" path="res://card system/effect resources/costs/cost_multiplier.gd" id="1_n4ist"]
+
+[resource]
+script = ExtResource("1_n4ist")
+cost_color = 2
+metadata/_custom_type_script = "uid://bbhknvq447yeg"

@@ -62,7 +62,7 @@ func _ready() -> void:
 	
 	
 #Signal
-func _on_potion_delivered(_potion : Potion) -> void: 
+func _on_potion_delivered(_potion : Potion) -> void:
 	if !is_potion_delivered:
 		#print("Potion instance id:", potion.get_instance_id())
 		#print("RAW:", potion.blue, potion.green, potion.red)
@@ -91,7 +91,7 @@ func on_request_success():
 	Global.add_joy(customer_data.joy_on_success)
 	Global.add_anguish(customer_data.anguish_on_success)
 	#NOTE: customer_data.gold_reward is the minimum amount of gold
-	Global.add_gold(customer_data.gold_reward + randi_range(0, 8)) 
+	Global.add_gold(customer_data.gold_reward + randi_range(0, 8))
 	var dialog = DialogManager.start_dialog(customer_data.dialog_success, global_position + dialog_offset)
 	request_box.visible = false
 	dialog.dialog_finished.connect(Callable(self, "_on_dialog_finished"))
@@ -100,7 +100,7 @@ func on_request_success():
 	joy_anguish_meters.update()
 	Global.plesed_customers += 1
 	
-func on_request_fail(): 
+func on_request_fail():
 	audio_stream_player_2d.stream = fail_fx
 	audio_stream_player_2d.play()
 	var joy_anguish_meters = get_tree().current_scene.get_node("UIControl/JoyAnguishMeters")
@@ -125,7 +125,7 @@ func die():
 	is_dying = true
 	Global.joy += customer_data.joy_on_kill
 	Global.anguish += customer_data.anguish_on_kill
-	Global.add_gold(customer_data.gold_reward + randi_range(0, 8)) 
+	Global.add_gold(customer_data.gold_reward + randi_range(0, 8))
 	var dialog = DialogManager.start_dialog(customer_data.dialog_kill, global_position + dialog_offset)
 	request_box.visible = false
 	dialog.dialog_finished.connect(Callable(self, "_on_dialog_finished"))
@@ -157,7 +157,7 @@ func _build_request_text(potion: Potion) -> String:
 	var blue = _build_line("Blue", potion.blue, current_request.blue, potion.blue_multiplier) + "\n"
 	var green = _build_line("Green", potion.green, current_request.green, potion.green_multiplier) + "\n"
 	var red = _build_line("Red", potion.red, current_request.red, potion.red_multiplier)
-	text = "I want: \n" + blue + green + red 
+	text = "I want: \n" + blue + green + red
 	return text
 	
 func _build_line(color_name: String, current_amount: int, required_amount: int, multiplier: int) -> String:
@@ -168,7 +168,9 @@ func _build_line(color_name: String, current_amount: int, required_amount: int, 
 	var multi
 	if multiplier > 1:
 		multi = str(multiplier) + "x"
-	else: 
+	elif multiplier < 0:
+		multi =  "/" + str(abs(multiplier))
+	else:
 		multi = ""
 	if done: return "[color=%s]%s [s]%d/%d %s[/s] %s[/color]" % [color, prefix, display_amount, required_amount, color_name, multi]
 	else: return "[color=%s]%s %d/%d %s %s[/color]" % [color, prefix, display_amount, required_amount, color_name, multi]

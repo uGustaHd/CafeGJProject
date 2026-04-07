@@ -1,7 +1,6 @@
 extends Control
 class_name CardGeneric
 
-signal card_multiplier_added(multiplier_potion : Potion)
 
 #region Initial Data
 var card_resource : Card
@@ -141,7 +140,6 @@ func discard_self() -> void:
 
 func _ready() -> void:
 	fill_outside_vars()
-	card_multiplier_added.connect(PotionHolder.on_card_multiplier_added)
 	add_to_group("cards")
 
 #Updates color of cost icon text

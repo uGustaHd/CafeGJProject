@@ -26,18 +26,76 @@ var requested_potion : Potion
 
 #_______________________________________________________________________________
 #region setters
-func add_blue(value: int):
-	blue += value * blue_multiplier
-	colors[0] = blue
-	
-func add_green(value: int):
-	green += value * green_multiplier
-	colors[1] = green
-	
 func add_red(value: int):
-	red += value * red_multiplier
-	colors[2] = red
+	if red_multiplier >= 0:
+		red += value * red_multiplier
+		colors[2] = red
 	
+	elif red_multiplier < 0:
+		@warning_ignore("narrowing_conversion")
+		red += ceilf(float(value) / float(-red_multiplier))
+		colors[2] = red
+
+func add_green(value: int):
+	if green_multiplier >= 0:
+		green += value * green_multiplier
+		colors[2] = green
+	
+	elif green_multiplier < 0:
+		@warning_ignore("narrowing_conversion")
+		green += ceilf(float(value) / float(-green_multiplier))
+		colors[2] = green
+
+func add_blue(value: int):
+	if blue_multiplier >= 0:
+		blue += value * blue_multiplier
+		colors[2] = blue
+	
+	elif blue_multiplier < 0:
+		@warning_ignore("narrowing_conversion")
+		blue += ceilf(float(value) / float(-blue_multiplier))
+		colors[2] = blue
+
+# Used for adding multiplier instead of multiplying
+func add_red_multiplier(value: int):
+	if value != 0:
+		# Skip over 0
+		# Negative to positive:
+		if red_multiplier < 0 and (red_multiplier + value) >= 0:
+			value += 1
+		
+		# Positive to negative:
+		if red_multiplier > 0 and (red_multiplier + value ) <= 0:
+			value -= 1
+
+		red_multiplier += value
+
+func add_green_multiplier(value: int):
+	if value != 0:
+		# Skip over 0
+		# Negative to positive:
+		if green_multiplier < 0 and (green_multiplier + value) >= 0:
+			value += 1
+		
+		# Positive to negative:
+		if green_multiplier > 0 and (green_multiplier + value ) <= 0:
+			value -= 1
+
+		green_multiplier += value
+	
+func add_blue_multiplier(value: int):
+	if value != 0:
+		# Skip over 0
+		# Negative to positive:
+		if blue_multiplier < 0 and (blue_multiplier + value) >= 0:
+			value += 1
+		
+		# Positive to negative:
+		if blue_multiplier > 0 and (blue_multiplier + value ) <= 0:
+			value -= 1
+
+		blue_multiplier += value
+
 # Costs are same as add, but without multipliers
 func cost_blue(value: int):
 	blue += value

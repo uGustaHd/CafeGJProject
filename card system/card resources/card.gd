@@ -35,9 +35,16 @@ enum Archetype {RED, GREEN, BLUE, GOLD, PURPLE, RAINBOW}
 @export var joy_cost : int = 0
 @export var anguish_cost : int = 0
 @export var kill_cost : int = 0 # Restricted to ints to avoid displaying floats on cost icons.
+
+@export var red_multiplier_cost : int = 0
+@export var green_multiplier_cost : int = 0
+@export var blue_multiplier_cost : int = 0
+
+@export var red_cost : int = 0
 @export var green_cost : int = 0
 @export var blue_cost : int = 0
-@export var red_cost : int = 0
+
+# TODO: Remove evil var and references to it.
 # Mainly for counting "secret ingredients" in end of day report.
 @export var evil : bool = false
 
