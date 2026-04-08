@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://dhvrf0umh1xv0"]
+[gd_resource type="Resource" script_class="Card" load_steps=5 format=3 uid="uid://dhvrf0umh1xv0"]
 
 [ext_resource type="Texture2D" uid="uid://bdiqidfmd6doo" path="res://card system/card_assets/card_art/New  Illusts/Purple/Raven_eye_illust.png" id="1_ks4a2"]
 [ext_resource type="Script" uid="uid://b8yono3xc1siy" path="res://card system/card resources/card.gd" id="1_okrp2"]
+[ext_resource type="Script" uid="uid://baadgsb7e3im8" path="res://card system/effect resources/card_cost.gd" id="2_fa3jf"]
+[ext_resource type="Script" uid="uid://eqr1871gjcrm" path="res://card system/effect resources/card_effect.gd" id="3_27re5"]
 
 [resource]
 script = ExtResource("1_okrp2")
@@ -9,8 +11,8 @@ title = "Raven Eye"
 card_art = ExtResource("1_ks4a2")
 archetype = 4
 kill_add = 0.2
-anguish_add = 10
 blue_add = 1
+anguish_add = 10
 energy_cost = 0
 evil = true
 metadata/_custom_type_script = "uid://b8yono3xc1siy"

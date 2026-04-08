@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://bijmc72mx6qlf"]
+[gd_resource type="Resource" script_class="Card" load_steps=5 format=3 uid="uid://bijmc72mx6qlf"]
 
 [ext_resource type="Texture2D" uid="uid://chfoqbcauvn1m" path="res://card system/card_assets/card_art/New  Illusts/Purple/Snake_fangs_illust.png" id="1_64k84"]
+[ext_resource type="Script" uid="uid://baadgsb7e3im8" path="res://card system/effect resources/card_cost.gd" id="2_ppk6p"]
 [ext_resource type="Script" uid="uid://b8yono3xc1siy" path="res://card system/card resources/card.gd" id="2_u420e"]
+[ext_resource type="Script" uid="uid://eqr1871gjcrm" path="res://card system/effect resources/card_effect.gd" id="3_rb4yp"]
 
 [resource]
 script = ExtResource("2_u420e")
@@ -9,8 +11,8 @@ title = "Snake Fangs"
 card_art = ExtResource("1_64k84")
 archetype = 4
 kill_add = 0.2
-anguish_add = 10
 red_add = 1
+anguish_add = 10
 energy_cost = 0
 evil = true
 metadata/_custom_type_script = "uid://b8yono3xc1siy"

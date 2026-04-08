@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://bmtttnvwrlvqh"]
+[gd_resource type="Resource" script_class="Card" load_steps=5 format=3 uid="uid://bmtttnvwrlvqh"]
 
 [ext_resource type="Script" uid="uid://b8yono3xc1siy" path="res://card system/card resources/card.gd" id="1_615g8"]
 [ext_resource type="Texture2D" uid="uid://c8fc1qvrjn85r" path="res://card system/card_assets/card_art/New  Illusts/Rainbow/Salamander_tail_illust.png" id="1_tilcd"]
+[ext_resource type="Script" uid="uid://baadgsb7e3im8" path="res://card system/effect resources/card_cost.gd" id="2_5s32x"]
+[ext_resource type="Script" uid="uid://eqr1871gjcrm" path="res://card system/effect resources/card_effect.gd" id="3_1wlai"]
 
 [resource]
 script = ExtResource("1_615g8")

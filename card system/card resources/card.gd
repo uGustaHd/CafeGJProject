@@ -1,3 +1,4 @@
+@tool
 extends Resource
 class_name Card
 
@@ -12,8 +13,8 @@ enum Archetype {RED, GREEN, BLUE, GOLD, PURPLE, RAINBOW}
 # Not seen in game, just for leaving notes on design intentions
 @export_multiline var designer_notes : String
 
-@export var effects : Array[CardEffect]
-@export var costs : Array[CardCost]
+@export_storage var effects : Array[CardEffect]
+@export_storage var costs : Array[CardCost]
 
 @export var energy_add : int = 0
 @export var draw_add : int = 0
@@ -47,5 +48,24 @@ enum Archetype {RED, GREEN, BLUE, GOLD, PURPLE, RAINBOW}
 # TODO: Remove evil var and references to it.
 # Mainly for counting "secret ingredients" in end of day report.
 @export var evil : bool = false
+
+#endregion
+
+#region Effect Spawning
+func clear_effects_and_costs():
+	effects.clear()
+	costs.clear()
+
+func add_effect_resources():
+	if energy_add > 0:
+		effects.append(load("res://card system/effect resources/effects/AddEnergy.tres"))
+	print_debug("Card resource readied, energy add = ", energy_add)
+
+func add_cost_resources():
+	pass
+
+#endregion
+
+#region Cost Spawning
 
 #endregion

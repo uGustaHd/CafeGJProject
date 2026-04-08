@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://bdqjd2ergavof"]
+[gd_scene load_steps=52 format=3 uid="uid://bdqjd2ergavof"]
 
 [ext_resource type="Script" uid="uid://dbtic8k4hhs0a" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://df1d5o4oc5m1e" path="res://Scenes/Customers/customer_manager.tscn" id="1_jjgbg"]
@@ -50,6 +50,7 @@
 [ext_resource type="AudioStream" uid="uid://cvhh0vp50ybjg" path="res://Assets/Audio/Ambience/Potion_1.mp3" id="40_aqgau"]
 [ext_resource type="Texture2D" uid="uid://b66uwx41eb0m3" path="res://Assets/Sprites/UI/energy_ui/Mana_counter.png" id="42_54nrm"]
 [ext_resource type="Texture2D" uid="uid://cnccp41y75p70" path="res://Assets/Sprites/UI/Card_counter.png" id="51_55jeb"]
+[ext_resource type="Script" uid="uid://c2wa5kxp473jp" path="res://card system/card_tool.gd" id="51_xdkp6"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_8gbba")
@@ -613,6 +614,9 @@ volume_db = -6.0
 
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
 volume_db = -10.0
+
+[node name="CardTool" type="Node" parent="."]
+script = ExtResource("51_xdkp6")
 
 [connection signal="button_down" from="CardManager/PotionHolder/SubmitButton" to="CardManager" method="_on_submit_button_button_down"]
 [connection signal="button_down" from="CardManager/PotionHolder/SubmitButton" to="CardManager/PotionHolder/SubmitButton" method="_on_button_down"]

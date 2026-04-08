@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://dkfk1ii1ti1ib"]
+[gd_resource type="Resource" script_class="Card" load_steps=5 format=3 uid="uid://dkfk1ii1ti1ib"]
 
 [ext_resource type="Texture2D" uid="uid://dwsoq4dqinjr4" path="res://card system/card_assets/card_art/New  Illusts/Red/Spider_legs_illust.png" id="1_px3fv"]
+[ext_resource type="Script" uid="uid://baadgsb7e3im8" path="res://card system/effect resources/card_cost.gd" id="2_3furl"]
 [ext_resource type="Script" uid="uid://b8yono3xc1siy" path="res://card system/card resources/card.gd" id="2_ufgx7"]
+[ext_resource type="Script" uid="uid://eqr1871gjcrm" path="res://card system/effect resources/card_effect.gd" id="3_5wush"]
 
 [resource]
 script = ExtResource("2_ufgx7")

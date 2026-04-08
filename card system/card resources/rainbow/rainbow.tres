@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://dsjky2fx1opu7"]
+[gd_resource type="Resource" script_class="Card" load_steps=5 format=3 uid="uid://dsjky2fx1opu7"]
 
 [ext_resource type="Script" uid="uid://b8yono3xc1siy" path="res://card system/card resources/card.gd" id="1_4v4o8"]
 [ext_resource type="Texture2D" uid="uid://cfq2gh08ju634" path="res://card system/card_assets/card_art/New  Illusts/Rainbow/Rainbow_illust.png" id="1_dwclo"]
+[ext_resource type="Script" uid="uid://baadgsb7e3im8" path="res://card system/effect resources/card_cost.gd" id="2_p3yb0"]
+[ext_resource type="Script" uid="uid://eqr1871gjcrm" path="res://card system/effect resources/card_effect.gd" id="3_dvlmg"]
 
 [resource]
 script = ExtResource("1_4v4o8")
@@ -9,8 +11,8 @@ title = "Rainbow"
 card_art = ExtResource("1_dwclo")
 archetype = 5
 designer_notes = "Give a little of everything"
+red_add = 2
 green_add = 2
 blue_add = 2
-red_add = 2
 energy_cost = 2
 metadata/_custom_type_script = "uid://b8yono3xc1siy"

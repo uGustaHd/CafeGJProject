@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://b26dmxm8bl10i"]
+[gd_resource type="Resource" script_class="Card" load_steps=5 format=3 uid="uid://b26dmxm8bl10i"]
 
 [ext_resource type="Texture2D" uid="uid://3umf7djqtadm" path="res://card system/card_assets/card_art/New  Illusts/Purple/Soul_essence_illust.png" id="1_pi2se"]
 [ext_resource type="Script" uid="uid://b8yono3xc1siy" path="res://card system/card resources/card.gd" id="2_uqjui"]
+[ext_resource type="Script" uid="uid://baadgsb7e3im8" path="res://card system/effect resources/card_cost.gd" id="2_x12eh"]
+[ext_resource type="Script" uid="uid://eqr1871gjcrm" path="res://card system/effect resources/card_effect.gd" id="3_d0qrp"]
 
 [resource]
 script = ExtResource("2_uqjui")
