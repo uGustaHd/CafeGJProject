@@ -32,7 +32,7 @@ enum Archetype {RED, GREEN, BLUE, GOLD, PURPLE, RAINBOW}
 @export var blue_multiply : int = 1
 @export var red_multiply : int = 1
 
-@export var energy_cost : int = 1
+@export var energy_cost : int = 100 # Set arbitrarily high so that changing it indicates energy_cost is desired
 @export var joy_cost : int = 0
 @export var anguish_cost : int = 0
 @export var kill_cost : int = 0 # Restricted to ints to avoid displaying floats on cost icons.
@@ -56,10 +56,49 @@ func clear_effects_and_costs():
 	effects.clear()
 	costs.clear()
 
+# NOTE: This func isn't great but it is only run in editor infrequently so it's fine
+# NOTE: Any new effects or costs will need to be manually referrenced here.
+# WARNING: Most effects and costs support negative numbers, use != instead of >< for most cases.
 func add_effect_resources():
-	if energy_add > 0:
+# Effects
+	if energy_add != 0:
 		effects.append(load("res://card system/effect resources/effects/AddEnergy.tres"))
-	print_debug("Card resource readied, energy add = ", energy_add)
+	if draw_add > 0: 
+		effects.append(load("res://card system/effect resources/effects/AddDraw.tres"))
+	if kill_add != 0:
+		effects.append(load("res://card system/effect resources/effects/AddKill.tres"))
+	if gold_add != 0:
+		effects.append(load("res://card system/effect resources/effects/AddGold.tres"))
+	if red_add != 0 or green_add != 0 or blue_add != 0:
+		effects.append(load("res://card system/effect resources/effects/AddColor.tres"))
+	if joy_add != 0:
+		effects.append(load("res://card system/effect resources/effects/AddJoy.tres"))
+	if anguish_add != 0:
+		effects.append(load("res://card system/effect resources/effects/AddAnguish.tres"))
+	if red_multiply != 1 or green_multiply != 1 or blue_multiply != 1:
+		effects.append(load("res://card system/effect resources/effects/AddMultiplier.tres"))
+
+# Costs
+	if energy_cost != 100:
+		effects.append(load("res://card system/effect resources/costs/CostEnergy.tres"))
+	if joy_cost != 0:
+		effects.append(load("res://card system/effect resources/costs/CostJoy.tres"))
+	if anguish_cost != 0:
+		effects.append(load("res://card system/effect resources/costs/CostAnguish.tres"))
+	if kill_cost != 0:
+		effects.append(load("res://card system/effect resources/costs/CostKill.tres"))
+	if red_multiplier_cost != 0:
+		effects.append(load("res://card system/effect resources/costs/CostRedMultiplier.tres"))
+	if blue_multiplier_cost != 0:
+		effects.append(load("res://card system/effect resources/costs/CostBlueMultiplier.tres"))
+	if green_multiplier_cost != 0:
+		effects.append(load("res://card system/effect resources/costs/CostGreenMultiplier.tres"))
+	if red_cost != 0:
+		effects.append(load("res://card system/effect resources/costs/CostRed.tres"))
+	if green_cost != 0: 
+		effects.append(load("res://card system/effect resources/costs/CostGreen.tres"))
+	if blue_cost != 0:
+		effects.append("res://card system/effect resources/costs/CostBlue.tres")
 
 func add_cost_resources():
 	pass
