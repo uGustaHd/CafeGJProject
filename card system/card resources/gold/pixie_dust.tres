@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="Card" load_steps=5 format=3 uid="uid://bg0e15o6v5t24"]
+[gd_resource type="Resource" script_class="Card" load_steps=7 format=3 uid="uid://bg0e15o6v5t24"]
 
 [ext_resource type="Script" uid="uid://b8yono3xc1siy" path="res://card system/card resources/card.gd" id="1_7d3st"]
 [ext_resource type="Texture2D" uid="uid://cpvsrouxfd4hv" path="res://card system/card_assets/card_art/New  Illusts/Gold/Pixiedust_illust.png" id="1_aj7rs"]
 [ext_resource type="Script" uid="uid://baadgsb7e3im8" path="res://card system/effect resources/card_cost.gd" id="2_jbvej"]
 [ext_resource type="Script" uid="uid://eqr1871gjcrm" path="res://card system/effect resources/card_effect.gd" id="3_1dfae"]
+[ext_resource type="Resource" uid="uid://ca6ceg68bmhjx" path="res://card system/effect resources/effects/AddDraw.tres" id="4_57m3j"]
+[ext_resource type="Resource" uid="uid://c765qxofwj5ic" path="res://card system/effect resources/effects/AddJoy.tres" id="5_kdyys"]
 
 [resource]
 script = ExtResource("1_7d3st")
@@ -11,6 +13,7 @@ title = "Pixie Dust"
 card_art = ExtResource("1_aj7rs")
 archetype = 3
 shop_price = 12
+effects = Array[ExtResource("3_1dfae")]([ExtResource("4_57m3j"), ExtResource("5_kdyys")])
 draw_add = 2
 joy_add = 10
 metadata/_custom_type_script = "uid://b8yono3xc1siy"

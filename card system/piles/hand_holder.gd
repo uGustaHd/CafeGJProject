@@ -1,7 +1,7 @@
 extends PileHolder
 
 
-@onready var CardGeneric = preload("res://card system/card_generic.tscn")
+@onready var _CardGeneric = preload("res://card system/card_generic.tscn")
 @onready var HandUI = $HandUI
 @onready var HBox = $HandUI/HandHBox
 
@@ -11,7 +11,7 @@ func add_card_to_hand(added_card : Card):
 	spawn_card_ui(added_card)
 	
 func spawn_card_ui(spawned_card):
-	var new_card_ui = CardGeneric.instantiate()
+	var new_card_ui = _CardGeneric.instantiate()
 	HBox.add_child(new_card_ui)
 	new_card_ui.initialize_card(spawned_card)
 

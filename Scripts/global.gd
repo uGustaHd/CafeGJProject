@@ -130,7 +130,7 @@ func reset_fatigue():
 	fatigue = 0
 	
 #region debug
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if OS.is_debug_build():
 		if Input.is_action_just_pressed("add_kill"):
 			add_kill(1)

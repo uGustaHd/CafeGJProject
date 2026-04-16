@@ -13,4 +13,5 @@ card_art = ExtResource("1_lcay3")
 archetype = 2
 effects = Array[ExtResource("3_ynoq8")]([ExtResource("4_kay5p")])
 energy_add = 1
+energy_cost = 1
 metadata/_custom_type_script = "uid://b8yono3xc1siy"

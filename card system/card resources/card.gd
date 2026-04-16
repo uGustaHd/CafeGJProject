@@ -32,6 +32,10 @@ enum Archetype {RED, GREEN, BLUE, GOLD, PURPLE, RAINBOW}
 @export var blue_multiply : int = 1
 @export var red_multiply : int = 1
 
+@export var flip_red_multiply : bool = false
+@export var flip_green_multiply : bool = false
+@export var flip_blue_multiply : bool = false
+
 @export var energy_cost : int = 100 # Set arbitrarily high so that changing it indicates energy_cost is desired
 @export var joy_cost : int = 0
 @export var anguish_cost : int = 0
@@ -77,6 +81,8 @@ func add_effect_resources():
 		effects.append(load("res://card system/effect resources/effects/AddAnguish.tres"))
 	if red_multiply != 1 or green_multiply != 1 or blue_multiply != 1:
 		effects.append(load("res://card system/effect resources/effects/AddMultiplier.tres"))
+	if flip_red_multiply or flip_green_multiply or flip_blue_multiply:
+		effects.append(load("res://card system/effect resources/effects/FlipMultiplier.tres"))
 
 # Costs
 	if energy_cost != 100:

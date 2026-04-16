@@ -48,6 +48,12 @@ func apply_multiplier(added_multiplier : Potion):
 	
 	potion_progress_changed.emit(held_potion)
 
+# Multiplier potion has -1 for multipliers being switched, 1 for not.
+func switch_multipliers(multiplier_potion : Potion):
+	held_potion.red_multiplier *= multiplier_potion.red_multiplier
+	held_potion.green_multiplier *= multiplier_potion.green_multiplier
+	held_potion.blue_multiplier *= multiplier_potion.blue_multiplier
+
 func cost_multiplier(added_multiplier : Potion):
 	held_potion.add_red_multiplier(added_multiplier.red_multiplier)
 	held_potion.add_green_multiplier(added_multiplier.green_multiplier)
