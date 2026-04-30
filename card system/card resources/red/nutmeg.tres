@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Card" load_steps=7 format=3 uid="uid://y48g14c04ace"]
+[gd_resource type="Resource" script_class="Card" load_steps=9 format=3 uid="uid://y48g14c04ace"]
 
 [ext_resource type="Texture2D" uid="uid://d3jjmmcyys805" path="res://card system/card_assets/card_art/New  Illusts/Red/nutmeg_illust.png" id="1_di578"]
 [ext_resource type="Script" uid="uid://b8yono3xc1siy" path="res://card system/card resources/card.gd" id="1_jc2ct"]
@@ -6,15 +6,17 @@
 [ext_resource type="Resource" uid="uid://d61rsalmlu48" path="res://card system/effect resources/costs/CostEnergy.tres" id="3_aamsr"]
 [ext_resource type="Script" uid="uid://eqr1871gjcrm" path="res://card system/effect resources/card_effect.gd" id="3_k6gwm"]
 [ext_resource type="Resource" uid="uid://cufyerg03l621" path="res://card system/effect resources/effects/AddMultiplier.tres" id="4_k6gwm"]
+[ext_resource type="Resource" uid="uid://diu557sbwksmy" path="res://card system/effect resources/effects/AddColor.tres" id="5_c64md"]
+[ext_resource type="Resource" uid="uid://dh46dphuimgmr" path="res://card system/effect resources/effects/FlipMultiplier.tres" id="7_xbdcc"]
 
 [resource]
 script = ExtResource("1_jc2ct")
 title = "Nutmeg"
 card_art = ExtResource("1_di578")
-effects = Array[ExtResource("3_k6gwm")]([ExtResource("4_k6gwm")])
+effects = Array[ExtResource("3_k6gwm")]([ExtResource("5_c64md"), ExtResource("4_k6gwm"), ExtResource("7_xbdcc")])
 costs = Array[ExtResource("2_p04yc")]([ExtResource("3_aamsr")])
-green_multiply = 3
-blue_multiply = 3
-red_multiply = 3
+red_add = 8
+red_multiply = 4
+flip_red_multiply = true
 energy_cost = 2
 metadata/_custom_type_script = "uid://b8yono3xc1siy"

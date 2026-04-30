@@ -49,7 +49,7 @@ func get_icon(card : Card) -> CostIcon:
 			new_cost_icon.icon = load("res://card system/card_assets/card_art/cost icons/GreenCost.png")
 			
 		GlobalNames.RGBColors.BLUE:
-			new_cost_icon.number = card.green_cost
+			new_cost_icon.number = card.blue_cost
 			new_cost_icon.icon = load("res://card system/card_assets/card_art/cost icons/BlueCost.png")
 		
 	return new_cost_icon

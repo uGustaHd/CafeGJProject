@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://bdqjd2ergavof"]
+[gd_scene load_steps=55 format=3 uid="uid://bdqjd2ergavof"]
 
 [ext_resource type="Script" uid="uid://dbtic8k4hhs0a" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://df1d5o4oc5m1e" path="res://Scenes/Customers/customer_manager.tscn" id="1_jjgbg"]
@@ -26,9 +26,12 @@
 [ext_resource type="Script" uid="uid://ga6oihrmatia" path="res://Scenes/day_report.gd" id="16_k12tt"]
 [ext_resource type="Resource" uid="uid://bpx0f3nqvch3d" path="res://card system/card resources/blue/delphinium.tres" id="17_dmskm"]
 [ext_resource type="Texture2D" uid="uid://drqgpfesycfba" path="res://Assets/Sprites/UI/knife_ui/Knife_container.png" id="17_ueoa1"]
-[ext_resource type="Resource" uid="uid://byhfbkpnr81cy" path="res://card system/card resources/blue/azure_butterfly.tres" id="18_xdkp6"]
+[ext_resource type="Resource" uid="uid://bpa787o7g1l73" path="res://card system/card resources/green/roots.tres" id="18_gsvbx"]
 [ext_resource type="Texture2D" uid="uid://ddntlkfesfi5k" path="res://Assets/Sprites/UI/knife_ui/Knife_hide_button.png" id="19_1w6v2"]
+[ext_resource type="Resource" uid="uid://c7g0cheydkt32" path="res://card system/card resources/green/sage_flower.tres" id="19_bv80c"]
+[ext_resource type="Resource" uid="uid://cxcqfyh8uil6e" path="res://card system/card resources/red/dried_peppers.tres" id="20_ptfg5"]
 [ext_resource type="Texture2D" uid="uid://ddg1wn01w0bjt" path="res://Assets/Sprites/UI/knife_ui/Knife_hide_selected.png" id="20_ueoa1"]
+[ext_resource type="Resource" uid="uid://biuk2lnowfevk" path="res://card system/card resources/red/mushrooms.tres" id="21_2daye"]
 [ext_resource type="Texture2D" uid="uid://cqo8umogu58y0" path="res://Assets/Sprites/UI/knife_ui/Knife.png" id="21_6vcvc"]
 [ext_resource type="Texture2D" uid="uid://d4j101p1oju7o" path="res://Assets/Sprites/UI/coin_counter2.png" id="22_1w6v2"]
 [ext_resource type="Script" uid="uid://dne0jfbuucu01" path="res://Scripts/gold_counter.gd" id="22_ee4r6"]
@@ -116,7 +119,7 @@ vertical_alignment = 1
 
 [node name="DeckHolder" type="Node2D" parent="CardManager"]
 script = ExtResource("6_hptm8")
-starting_deck = Array[ExtResource("11_nwwfm")]([ExtResource("12_s8vy0"), ExtResource("12_s8vy0"), ExtResource("12_s8vy0"), ExtResource("17_dmskm"), ExtResource("18_xdkp6")])
+starting_deck = Array[ExtResource("11_nwwfm")]([ExtResource("12_s8vy0"), ExtResource("12_s8vy0"), ExtResource("12_s8vy0"), ExtResource("17_dmskm"), ExtResource("17_dmskm"), ExtResource("18_gsvbx"), ExtResource("18_gsvbx"), ExtResource("19_bv80c"), ExtResource("20_ptfg5"), ExtResource("21_2daye")])
 
 [node name="Dealer" type="Node" parent="CardManager/DeckHolder"]
 script = ExtResource("6_ynf5e")

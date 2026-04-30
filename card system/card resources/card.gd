@@ -65,6 +65,9 @@ func clear_effects_and_costs():
 # WARNING: Most effects and costs support negative numbers, use != instead of >< for most cases.
 func add_effect_resources():
 # Effects
+	# Multipliers should be added first for design reasons.
+	if red_multiply != 1 or green_multiply != 1 or blue_multiply != 1:
+		effects.append(load("res://card system/effect resources/effects/AddMultiplier.tres"))
 	if energy_add != 0:
 		effects.append(load("res://card system/effect resources/effects/AddEnergy.tres"))
 	if draw_add > 0: 
@@ -79,8 +82,7 @@ func add_effect_resources():
 		effects.append(load("res://card system/effect resources/effects/AddJoy.tres"))
 	if anguish_add != 0:
 		effects.append(load("res://card system/effect resources/effects/AddAnguish.tres"))
-	if red_multiply != 1 or green_multiply != 1 or blue_multiply != 1:
-		effects.append(load("res://card system/effect resources/effects/AddMultiplier.tres"))
+	# Multiplier flipping should be last for design reasons.
 	if flip_red_multiply or flip_green_multiply or flip_blue_multiply:
 		effects.append(load("res://card system/effect resources/effects/FlipMultiplier.tres"))
 
