@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="Card" load_steps=7 format=3 uid="uid://d00nyq7o5sfat"]
+[gd_resource type="Resource" script_class="Card" load_steps=8 format=3 uid="uid://d00nyq7o5sfat"]
 
 [ext_resource type="Texture2D" uid="uid://cex6axrw3om2e" path="res://card system/card_assets/card_art/New  Illusts/Green/Frog_eggs_illust.png" id="1_0qy4x"]
 [ext_resource type="Script" uid="uid://b8yono3xc1siy" path="res://card system/card resources/card.gd" id="1_k61re"]
 [ext_resource type="Script" uid="uid://baadgsb7e3im8" path="res://card system/effect resources/card_cost.gd" id="2_bodkt"]
 [ext_resource type="Script" uid="uid://eqr1871gjcrm" path="res://card system/effect resources/card_effect.gd" id="3_lmfbp"]
+[ext_resource type="Resource" uid="uid://d61rsalmlu48" path="res://card system/effect resources/costs/CostEnergy.tres" id="3_xm5bo"]
 [ext_resource type="Resource" uid="uid://dojue6xo1l37e" path="res://card system/effect resources/effects/AddEnergy.tres" id="4_xm5bo"]
 [ext_resource type="Resource" uid="uid://diu557sbwksmy" path="res://card system/effect resources/effects/AddColor.tres" id="5_lmfbp"]
 
@@ -13,6 +14,7 @@ title = "Frog Eggs"
 card_art = ExtResource("1_0qy4x")
 archetype = 1
 effects = Array[ExtResource("3_lmfbp")]([ExtResource("4_xm5bo"), ExtResource("5_lmfbp")])
+costs = Array[ExtResource("2_bodkt")]([ExtResource("3_xm5bo")])
 energy_add = 1
 green_add = 3
 energy_cost = 2

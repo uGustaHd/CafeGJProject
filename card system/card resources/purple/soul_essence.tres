@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://baadgsb7e3im8" path="res://card system/effect resources/card_cost.gd" id="2_x12eh"]
 [ext_resource type="Script" uid="uid://eqr1871gjcrm" path="res://card system/effect resources/card_effect.gd" id="3_d0qrp"]
 [ext_resource type="Resource" uid="uid://ca6ceg68bmhjx" path="res://card system/effect resources/effects/AddDraw.tres" id="4_hxhuw"]
-[ext_resource type="Resource" uid="uid://14i0gf0g8r6m" path="res://card system/effect resources/effects/AddKill.tres" id="5_tl0fi"]
+[ext_resource type="Resource" uid="uid://dojue6xo1l37e" path="res://card system/effect resources/effects/AddEnergy.tres" id="4_tl0fi"]
 [ext_resource type="Resource" uid="uid://jh15od7kfw1s" path="res://card system/effect resources/effects/AddAnguish.tres" id="6_st0ne"]
 
 [resource]
@@ -14,10 +14,9 @@ title = "Soul Essence"
 card_art = ExtResource("1_pi2se")
 archetype = 4
 shop_price = 5
-effects = Array[ExtResource("3_d0qrp")]([ExtResource("4_hxhuw"), ExtResource("5_tl0fi"), ExtResource("6_st0ne")])
+effects = Array[ExtResource("3_d0qrp")]([ExtResource("4_tl0fi"), ExtResource("4_hxhuw"), ExtResource("6_st0ne")])
+energy_add = 1
 draw_add = 1
-kill_add = 0.3
 anguish_add = 10
-energy_cost = 0
 evil = true
 metadata/_custom_type_script = "uid://b8yono3xc1siy"

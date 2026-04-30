@@ -1,17 +1,23 @@
-[gd_resource type="Resource" script_class="Card" load_steps=6 format=3 uid="uid://ddjh1ex61trw3"]
+[gd_resource type="Resource" script_class="Card" load_steps=9 format=3 uid="uid://ddjh1ex61trw3"]
 
 [ext_resource type="Script" uid="uid://b8yono3xc1siy" path="res://card system/card resources/card.gd" id="1_8h7cf"]
 [ext_resource type="Texture2D" uid="uid://chjbi2mrffhpc" path="res://card system/card_assets/card_art/New  Illusts/Blue/Water_illust.png" id="1_lcay3"]
 [ext_resource type="Script" uid="uid://baadgsb7e3im8" path="res://card system/effect resources/card_cost.gd" id="2_gky07"]
+[ext_resource type="Resource" uid="uid://d61rsalmlu48" path="res://card system/effect resources/costs/CostEnergy.tres" id="3_7i7yg"]
 [ext_resource type="Script" uid="uid://eqr1871gjcrm" path="res://card system/effect resources/card_effect.gd" id="3_ynoq8"]
 [ext_resource type="Resource" uid="uid://dojue6xo1l37e" path="res://card system/effect resources/effects/AddEnergy.tres" id="4_kay5p"]
+[ext_resource type="Resource" uid="uid://ca6ceg68bmhjx" path="res://card system/effect resources/effects/AddDraw.tres" id="5_kay5p"]
+[ext_resource type="Resource" uid="uid://diu557sbwksmy" path="res://card system/effect resources/effects/AddColor.tres" id="6_7i7yg"]
 
 [resource]
 script = ExtResource("1_8h7cf")
 title = "Water"
 card_art = ExtResource("1_lcay3")
 archetype = 2
-effects = Array[ExtResource("3_ynoq8")]([ExtResource("4_kay5p")])
+effects = Array[ExtResource("3_ynoq8")]([ExtResource("4_kay5p"), ExtResource("5_kay5p"), ExtResource("6_7i7yg")])
+costs = Array[ExtResource("2_gky07")]([ExtResource("3_7i7yg")])
 energy_add = 1
+draw_add = 1
+blue_add = 1
 energy_cost = 1
 metadata/_custom_type_script = "uid://b8yono3xc1siy"

@@ -1,13 +1,21 @@
-[gd_resource type="Resource" script_class="Card" load_steps=5 format=3 uid="uid://bpx0f3nqvch3d"]
+[gd_resource type="Resource" script_class="Card" load_steps=8 format=3 uid="uid://bpx0f3nqvch3d"]
 
 [ext_resource type="Texture2D" uid="uid://qbp1rv34cpf7" path="res://card system/card_assets/card_art/New  Illusts/Blue/Delphinium_illust.png" id="1_i55er"]
 [ext_resource type="Script" uid="uid://b8yono3xc1siy" path="res://card system/card resources/card.gd" id="2_phlwb"]
 [ext_resource type="Script" uid="uid://baadgsb7e3im8" path="res://card system/effect resources/card_cost.gd" id="2_wracy"]
+[ext_resource type="Resource" uid="uid://d61rsalmlu48" path="res://card system/effect resources/costs/CostEnergy.tres" id="3_koi8r"]
 [ext_resource type="Script" uid="uid://eqr1871gjcrm" path="res://card system/effect resources/card_effect.gd" id="3_w8inb"]
+[ext_resource type="Resource" uid="uid://ca6ceg68bmhjx" path="res://card system/effect resources/effects/AddDraw.tres" id="4_61b7f"]
+[ext_resource type="Resource" uid="uid://diu557sbwksmy" path="res://card system/effect resources/effects/AddColor.tres" id="5_koi8r"]
 
 [resource]
 script = ExtResource("2_phlwb")
 title = "Delphinium"
 card_art = ExtResource("1_i55er")
 archetype = 2
+effects = Array[ExtResource("3_w8inb")]([ExtResource("4_61b7f"), ExtResource("5_koi8r")])
+costs = Array[ExtResource("2_wracy")]([ExtResource("3_koi8r")])
+draw_add = 2
+blue_add = 2
+energy_cost = 1
 metadata/_custom_type_script = "uid://b8yono3xc1siy"

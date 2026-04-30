@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="Card" load_steps=7 format=3 uid="uid://bpa787o7g1l73"]
+[gd_resource type="Resource" script_class="Card" load_steps=8 format=3 uid="uid://bpa787o7g1l73"]
 
 [ext_resource type="Script" uid="uid://b8yono3xc1siy" path="res://card system/card resources/card.gd" id="1_45ikh"]
 [ext_resource type="Texture2D" uid="uid://c7y8nxqlaw74w" path="res://card system/card_assets/card_art/New  Illusts/Green/Roots_illust.png" id="1_d6m7a"]
 [ext_resource type="Script" uid="uid://baadgsb7e3im8" path="res://card system/effect resources/card_cost.gd" id="2_j80vx"]
 [ext_resource type="Script" uid="uid://eqr1871gjcrm" path="res://card system/effect resources/card_effect.gd" id="3_dsy7q"]
+[ext_resource type="Resource" uid="uid://d61rsalmlu48" path="res://card system/effect resources/costs/CostEnergy.tres" id="3_l86xr"]
 [ext_resource type="Resource" uid="uid://dojue6xo1l37e" path="res://card system/effect resources/effects/AddEnergy.tres" id="4_l86xr"]
 [ext_resource type="Resource" uid="uid://diu557sbwksmy" path="res://card system/effect resources/effects/AddColor.tres" id="5_dsy7q"]
 
@@ -14,6 +15,8 @@ card_art = ExtResource("1_d6m7a")
 archetype = 1
 designer_notes = "Meant as a lighter version of Sage Flower."
 effects = Array[ExtResource("3_dsy7q")]([ExtResource("4_l86xr"), ExtResource("5_dsy7q")])
+costs = Array[ExtResource("2_j80vx")]([ExtResource("3_l86xr")])
 energy_add = 2
 green_add = 1
+energy_cost = 1
 metadata/_custom_type_script = "uid://b8yono3xc1siy"

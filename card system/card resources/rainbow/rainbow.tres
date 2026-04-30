@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="Card" load_steps=6 format=3 uid="uid://dsjky2fx1opu7"]
+[gd_resource type="Resource" script_class="Card" load_steps=7 format=3 uid="uid://dsjky2fx1opu7"]
 
 [ext_resource type="Script" uid="uid://b8yono3xc1siy" path="res://card system/card resources/card.gd" id="1_4v4o8"]
 [ext_resource type="Texture2D" uid="uid://cfq2gh08ju634" path="res://card system/card_assets/card_art/New  Illusts/Rainbow/Rainbow_illust.png" id="1_dwclo"]
 [ext_resource type="Script" uid="uid://baadgsb7e3im8" path="res://card system/effect resources/card_cost.gd" id="2_p3yb0"]
 [ext_resource type="Script" uid="uid://eqr1871gjcrm" path="res://card system/effect resources/card_effect.gd" id="3_dvlmg"]
+[ext_resource type="Resource" uid="uid://d61rsalmlu48" path="res://card system/effect resources/costs/CostEnergy.tres" id="3_tl17c"]
 [ext_resource type="Resource" uid="uid://diu557sbwksmy" path="res://card system/effect resources/effects/AddColor.tres" id="4_dvlmg"]
 
 [resource]
@@ -13,6 +14,7 @@ card_art = ExtResource("1_dwclo")
 archetype = 5
 designer_notes = "Give a little of everything"
 effects = Array[ExtResource("3_dvlmg")]([ExtResource("4_dvlmg")])
+costs = Array[ExtResource("2_p3yb0")]([ExtResource("3_tl17c")])
 red_add = 2
 green_add = 2
 blue_add = 2

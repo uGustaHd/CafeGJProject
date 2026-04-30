@@ -86,25 +86,25 @@ func add_effect_resources():
 
 # Costs
 	if energy_cost != 100:
-		effects.append(load("res://card system/effect resources/costs/CostEnergy.tres"))
+		costs.append(load("res://card system/effect resources/costs/CostEnergy.tres"))
 	if joy_cost != 0:
-		effects.append(load("res://card system/effect resources/costs/CostJoy.tres"))
+		costs.append(load("res://card system/effect resources/costs/CostJoy.tres"))
 	if anguish_cost != 0:
-		effects.append(load("res://card system/effect resources/costs/CostAnguish.tres"))
+		costs.append(load("res://card system/effect resources/costs/CostAnguish.tres"))
 	if kill_cost != 0:
-		effects.append(load("res://card system/effect resources/costs/CostKill.tres"))
+		costs.append(load("res://card system/effect resources/costs/CostKill.tres"))
 	if red_multiplier_cost != 0:
-		effects.append(load("res://card system/effect resources/costs/CostRedMultiplier.tres"))
+		costs.append(load("res://card system/effect resources/costs/CostRedMultiplier.tres"))
 	if blue_multiplier_cost != 0:
-		effects.append(load("res://card system/effect resources/costs/CostBlueMultiplier.tres"))
+		costs.append(load("res://card system/effect resources/costs/CostBlueMultiplier.tres"))
 	if green_multiplier_cost != 0:
-		effects.append(load("res://card system/effect resources/costs/CostGreenMultiplier.tres"))
+		costs.append(load("res://card system/effect resources/costs/CostGreenMultiplier.tres"))
 	if red_cost != 0:
-		effects.append(load("res://card system/effect resources/costs/CostRed.tres"))
+		costs.append(load("res://card system/effect resources/costs/CostRed.tres"))
 	if green_cost != 0: 
-		effects.append(load("res://card system/effect resources/costs/CostGreen.tres"))
+		costs.append(load("res://card system/effect resources/costs/CostGreen.tres"))
 	if blue_cost != 0:
-		effects.append("res://card system/effect resources/costs/CostBlue.tres")
+		costs.append(load("res://card system/effect resources/costs/CostBlue.tres"))
 
 func add_cost_resources():
 	pass

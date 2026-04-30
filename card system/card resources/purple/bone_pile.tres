@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Card" load_steps=8 format=3 uid="uid://bre7n6lly0q3x"]
+[gd_resource type="Resource" script_class="Card" load_steps=7 format=3 uid="uid://bre7n6lly0q3x"]
 
 [ext_resource type="Texture2D" uid="uid://dvv1tx67wdlto" path="res://card system/card_assets/card_art/New  Illusts/Purple/Bone_pile_illust.png" id="1_3kpw7"]
 [ext_resource type="Script" uid="uid://b8yono3xc1siy" path="res://card system/card resources/card.gd" id="1_q4e1r"]
@@ -6,17 +6,14 @@
 [ext_resource type="Script" uid="uid://eqr1871gjcrm" path="res://card system/effect resources/card_effect.gd" id="3_up618"]
 [ext_resource type="Resource" uid="uid://14i0gf0g8r6m" path="res://card system/effect resources/effects/AddKill.tres" id="4_7hwsq"]
 [ext_resource type="Resource" uid="uid://diu557sbwksmy" path="res://card system/effect resources/effects/AddColor.tres" id="5_utm0n"]
-[ext_resource type="Resource" uid="uid://jh15od7kfw1s" path="res://card system/effect resources/effects/AddAnguish.tres" id="6_ku3a1"]
 
 [resource]
 script = ExtResource("1_q4e1r")
 title = "Bone Pile"
 card_art = ExtResource("1_3kpw7")
 archetype = 4
-effects = Array[ExtResource("3_up618")]([ExtResource("4_7hwsq"), ExtResource("5_utm0n"), ExtResource("6_ku3a1")])
-kill_add = 0.2
+effects = Array[ExtResource("3_up618")]([ExtResource("4_7hwsq"), ExtResource("5_utm0n")])
+kill_add = 0.3
 red_add = 1
-anguish_add = 10
-energy_cost = 0
 evil = true
 metadata/_custom_type_script = "uid://b8yono3xc1siy"

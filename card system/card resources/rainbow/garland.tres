@@ -1,12 +1,13 @@
-[gd_resource type="Resource" script_class="Card" load_steps=8 format=3 uid="uid://diu26of0l0tse"]
+[gd_resource type="Resource" script_class="Card" load_steps=9 format=3 uid="uid://diu26of0l0tse"]
 
 [ext_resource type="Texture2D" uid="uid://c1mi1efy3qvmb" path="res://card system/card_assets/card_art/New  Illusts/Rainbow/Garland_illust.png" id="1_pgvs3"]
 [ext_resource type="Script" uid="uid://baadgsb7e3im8" path="res://card system/effect resources/card_cost.gd" id="2_dtn8y"]
 [ext_resource type="Script" uid="uid://b8yono3xc1siy" path="res://card system/card resources/card.gd" id="2_y1twe"]
 [ext_resource type="Script" uid="uid://eqr1871gjcrm" path="res://card system/effect resources/card_effect.gd" id="3_rnp6u"]
-[ext_resource type="Resource" uid="uid://diu557sbwksmy" path="res://card system/effect resources/effects/AddColor.tres" id="4_sbxbi"]
-[ext_resource type="Resource" uid="uid://c765qxofwj5ic" path="res://card system/effect resources/effects/AddJoy.tres" id="5_1y2eq"]
-[ext_resource type="Resource" uid="uid://jh15od7kfw1s" path="res://card system/effect resources/effects/AddAnguish.tres" id="6_6x50e"]
+[ext_resource type="Resource" uid="uid://ce7xuftqvk5o6" path="res://card system/effect resources/costs/CostRed.tres" id="3_sbxbi"]
+[ext_resource type="Resource" uid="uid://cyyf01gqh50m6" path="res://card system/effect resources/costs/CostGreen.tres" id="4_1y2eq"]
+[ext_resource type="Resource" uid="uid://cufyerg03l621" path="res://card system/effect resources/effects/AddMultiplier.tres" id="4_rnp6u"]
+[ext_resource type="Resource" uid="uid://dfxiprje22vvc" path="res://card system/effect resources/costs/CostBlue.tres" id="5_1y2eq"]
 
 [resource]
 script = ExtResource("2_y1twe")
@@ -14,11 +15,12 @@ title = "Garland"
 card_art = ExtResource("1_pgvs3")
 archetype = 5
 designer_notes = "Unsure what to do with this one to make it different than rainbow."
-effects = Array[ExtResource("3_rnp6u")]([ExtResource("4_sbxbi"), ExtResource("5_1y2eq"), ExtResource("6_6x50e")])
-red_add = 1
-green_add = 1
-blue_add = 1
-joy_add = 10
-anguish_add = 10
-energy_cost = 2
+effects = Array[ExtResource("3_rnp6u")]([ExtResource("4_rnp6u")])
+costs = Array[ExtResource("2_dtn8y")]([ExtResource("3_sbxbi"), ExtResource("4_1y2eq"), ExtResource("5_1y2eq")])
+green_multiply = 2
+blue_multiply = 2
+red_multiply = 2
+red_cost = 1
+green_cost = 1
+blue_cost = 1
 metadata/_custom_type_script = "uid://b8yono3xc1siy"
